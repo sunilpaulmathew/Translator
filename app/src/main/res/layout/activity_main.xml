@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="top|center_vertical"
+        android:orientation="horizontal"
+        android:background="@color/black"
+        android:padding="10dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="start"
+            android:gravity="center_vertical"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/colorAccent" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/settings_menu"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:tint="?android:attr/colorAccent"
+            android:layout_gravity="end|center"
+            android:src="@drawable/ic_settings" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:text="@string/about_summary"
+        android:textColor="@color/white"
+        android:background="@color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/copyright_Text"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:longClickable="true"
+        android:textColor="?android:attr/colorAccent"
+        android:background="@color/black" />
+
+    <include layout="@layout/rv_foreground_view" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="?android:attr/colorPrimary"
+        android:id="@+id/viewPagerID" />
+</RelativeLayout>
