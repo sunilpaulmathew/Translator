@@ -32,10 +32,12 @@
     <string name="options">Options</string>
     <string name="permission_denied_write_storage">Permission denied for writing to storage!</string>
     <string name="press_back">Press back again to exit</string>
+    <string name="report_issue">Report an Issue</string>
     <string name="save_string_error">You haven\'t added a string yet! Aborting.</string>
     <string name="save_string_message">New translation string is generated as \'%s\'!</string>
-    <string name="search_hint">Enter search word here!</string>
+    <string name="search_hint">Search…</string>
     <string name="select_question">Select %s?</string>
+    <string name="source_code">Source Code</string>
     <string name="support">Support Group</string>
     <string name="wrong_extension">Please select a file with %s extension.</string>
     <string name="yes">Yes</string>

@@ -78,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
             SubMenu about = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.about));
             about.add(Menu.NONE, 4, Menu.NONE, getString(R.string.support));
             about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.more_apps));
+            about.add(Menu.NONE, 10, Menu.NONE, getString(R.string.report_issue));
+            about.add(Menu.NONE, 11, Menu.NONE, getString(R.string.source_code));
             if (Utils.isNotDonated(this)) {
                 about.add(Menu.NONE, 9, Menu.NONE, getString(R.string.donations));
             }
@@ -158,6 +160,12 @@ public class MainActivity extends AppCompatActivity {
                                 .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> launchPS(
                                         "https://play.google.com/store/apps/details?id=com.smartpack.donate"))
                                 .show();
+                        break;
+                    case 10:
+                        launchURL("https://github.com/sunilpaulmathew/Translator/issues/new");
+                        break;
+                    case 11:
+                        launchURL("https://github.com/sunilpaulmathew/Translator");
                         break;
                 }
                 return false;
