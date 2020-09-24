@@ -80,7 +80,7 @@ public class ViewUtils {
         final AppCompatEditText editText = new AppCompatEditText(context);
         editText.setGravity(Gravity.FILL_HORIZONTAL);
         editText.setLayoutParams(new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         if (text != null) {
             editText.append(text);
         }
