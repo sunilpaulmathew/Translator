@@ -7,11 +7,10 @@
 
 package com.sunilpaulmathew.translator.utils;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.net.ConnectivityManager;
@@ -24,18 +23,10 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatEditText;
-import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.cardview.widget.CardView;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.MainActivity;
-import com.sunilpaulmathew.translator.R;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -45,7 +36,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.Objects;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on June 30, 2020
@@ -56,13 +46,6 @@ import java.util.Objects;
 public class Utils {
 
     public static AppCompatEditText mKeyEdit;
-    public static AppCompatImageButton mBack;
-    public static AppCompatImageView mDeveloper;
-    public static AppCompatTextView mAppName;
-    public static AppCompatTextView mForegroundText;
-    public static AppCompatTextView mCancel;
-    public static boolean mForegroundActive = false;
-    public static CardView mForegroundCard;
 
     public static String mKeyText;
     public static String mStringPath = Environment.getExternalStorageDirectory().toString() + "/Translator/strings.xml";
@@ -107,7 +90,7 @@ public class Utils {
                 >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 
-    private static String readAssetFile(Context context, String file) {
+    static String readAssetFile(Context context, String file) {
         InputStream input = null;
         BufferedReader buf = null;
         try {
@@ -132,34 +115,20 @@ public class Utils {
         return null;
     }
 
-    @SuppressLint("SetTextI18n")
-    public static void aboutDialogue(Activity activity) {
-        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
-        mAppName.setText(activity.getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
-        String change_log = null;
-        try {
-            change_log = new JSONObject(Objects.requireNonNull(readAssetFile(
-                    activity, "changelogs.json"))).getString("releaseNotes");
-        } catch (JSONException ignored) {
-        }
-        mForegroundText.setText(change_log);
-        mForegroundText.setVisibility(View.VISIBLE);
-        mBack.setVisibility(View.VISIBLE);
-        mCancel.setVisibility(View.VISIBLE);
-        mForegroundActive = true;
-        mForegroundCard.setVisibility(View.VISIBLE);
-    }
-
-    public static void closeForeground(Activity activity) {
-        mForegroundCard.setVisibility(View.GONE);
-        mForegroundActive = false;
-        activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
-    }
-
     public static void showSnackbar(View view, String message) {
         Snackbar snackbar;
         snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
         snackbar.show();
+    }
+
+    public static void launchURL(String url, Activity activity) {
+        try {
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            activity.startActivity(i);
+        } catch (ActivityNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public static int getOrientation(Activity activity) {

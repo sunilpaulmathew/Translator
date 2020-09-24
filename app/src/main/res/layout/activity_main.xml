@@ -58,8 +58,6 @@
         android:textColor="?android:attr/colorAccent"
         android:background="@color/black" />
 
-    <include layout="@layout/rv_foreground_view" />
-
     <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"

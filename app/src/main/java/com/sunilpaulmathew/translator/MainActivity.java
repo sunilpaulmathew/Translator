@@ -10,7 +10,6 @@ package com.sunilpaulmathew.translator;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -30,6 +29,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.sunilpaulmathew.translator.fragments.TranslatorFragment;
+import com.sunilpaulmathew.translator.utils.AboutActivity;
 import com.sunilpaulmathew.translator.utils.PagerAdapter;
 import com.sunilpaulmathew.translator.utils.Utils;
 import com.sunilpaulmathew.translator.utils.ViewUtils;
@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         AppCompatImageButton settings = findViewById(R.id.settings_menu);
         settings.setImageDrawable(getResources().getDrawable(R.drawable.ic_settings));
         settings.setOnClickListener(v -> {
-            if (Utils.mForegroundActive) return;
             PopupMenu popupMenu = new PopupMenu(this, settings);
             Menu menu = popupMenu.getMenu();
             if (Utils.existFile(Utils.mStringPath)) {
@@ -122,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case 6:
-                        Utils.aboutDialogue(this);
+                        Intent aboutView = new Intent(this, AboutActivity.class);
+                        startActivity(aboutView);
                         break;
                     case 7:
                         if (!Utils.existFile(Utils.mStringPath)) {
@@ -176,22 +176,6 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = findViewById(R.id.viewPagerID);
         AppCompatTextView copyRightText = findViewById(R.id.copyright_Text);
 
-        Utils.mForegroundCard = findViewById(R.id.foreground_card);
-        Utils.mBack = findViewById(R.id.back);
-        Utils.mAppName = findViewById(R.id.app_title);
-        Utils.mDeveloper = findViewById(R.id.developer);
-        Utils.mDeveloper.setOnClickListener(v -> {
-            launchURL("https://github.com/sunilpaulmathew");
-        });
-        Utils.mForegroundText = findViewById(R.id.foreground_text);
-        Utils.mCancel = findViewById(R.id.cancel_button);
-        Utils.mBack.setOnClickListener(v -> {
-            Utils.closeForeground(this);
-        });
-        Utils.mCancel.setOnClickListener(v -> {
-            Utils.closeForeground(this);
-        });
-
         // Allow changing Copyright Text
         if (Utils.readFile(copyright) != null) {
             copyRightText.setText(Utils.readFile(copyright));
@@ -243,13 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void launchURL(String url) {
         if (Utils.isNetworkAvailable(this)) {
-            try {
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            } catch (ActivityNotFoundException e) {
-                e.printStackTrace();
-            }
+            Utils.launchURL(url, this);
         } else {
             Utils.showSnackbar(mViewPager, getString(R.string.no_internet));
         }
@@ -291,10 +269,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (Utils.mForegroundActive) {
-            Utils.closeForeground(this);
-            return;
-        }
         if (Utils.mKeyText != null) {
             Utils.mKeyEdit.setText(null);
             Utils.mKeyText = null;
