@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+<!--Author: FiestaLake <FiestaLake@protonmail.com>-->
+<!--Created by The Translator-->
+
+    <string name="about">정보</string>
+    <string name="about_summary"><i>안드로이드 앱을 번역하는 것을 돕는 어플리케이션.</i></string>
+    <string name="cancel">취소</string>
+    <string name="change_logs">변경사항</string>
+    <string name="credits">도움을 주신 분들</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: 코드 기여\n<b><i>FiestaLake</i></b>: 한국어 번역</string>
+    <string name="dark_theme">어두운 테마</string>
+    <string name="dark_theme_auto">자동</string>
+    <string name="dark_theme_disable">끄기</string>
+    <string name="dark_theme_enable">켜기</string>
+    <string name="delete_string">번역 파일 지우기</string>
+    <string name="delete_string_error">지울 수 있는 것이 없습니다!</string>
+    <string name="delete_string_message">내부 저장소에서 현 상태의 string.xml을(를) 지우시겠어요?</string>
+    <string name="developed_by">개발자</string>
+    <string name="donations">후원</string>
+    <string name="donations_message">제 프로젝트를 후원하고 싶다면, 플레이 스토어 (Play Store)에 있는 SmartPack Donation Package 앱을 구매하는 것을 고려해보세요. 제 프로젝트들을 더 활발히 이어나갈 때 매우 큰 도움이 됩니다. 물론 필수는 아닙니다.</string>
+    <string name="donation_app">후원 앱 구매</string>
+    <string name="import_string_message">아직 그 어떤 번역 파일도 불러오지 않았습니다. 설정 메뉴에서 파일을 불러오세요!</string>
+    <string name="import_string_sdcard">번역 파일 불러오기</string>
+    <string name="more_apps">개발자의 다른 앱들 보기</string>
+    <string name="name_empty">이름이 비었습니다!</string>
+    <string name="no_internet">인터넷 연결을 확인해주세요!</string>
+    <string name="permission_denied_write_storage">저장공간 쓰기 권한이 거부되었습니다!</string>
+    <string name="press_back">나가려면 뒤로가기 버튼을 다시 누르세요</string>
+    <string name="report_issue">문제 제출하기</string>
+    <string name="save_string_message">\'%s\'에 새 번역 파일이 생성되었습니다!</string>
+    <string name="search_hint">검색…</string>
+    <string name="select_question">%s을(를) 선택하시겠어요?</string>
+    <string name="source_code">소스 코드</string>
+    <string name="support">지원 받기</string>
+    <string name="wrong_extension">%s 확장자를 가진 파일을 선택해주세요.</string>
+    <string name="yes">예</string>
+</resources>
