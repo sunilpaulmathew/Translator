@@ -28,7 +28,7 @@ If you like to appreciate my work, please consider donating to me (either via [P
      height="80">](https://ko-fi.com/sunilpaulmathew/)
 
 ## Credits
-* [Grarak](https://github.com/Grarak/), Kernel Adiutor, from where I took a lot of code
+* [Grarak](https://github.com/Grarak/), Code contributions (I took some code from [Kernel Adiutor[(https://github.com/Grarak/KernelAdiutor/)])
 
 ## License
 

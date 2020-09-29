@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
 
@@ -44,7 +45,9 @@ public class AboutActivity extends AppCompatActivity {
             if (Utils.isNetworkAvailable(this)) {
                 Utils.launchURL("https://github.com/sunilpaulmathew", this);
             } else {
-                Utils.showSnackbar(mDeveloper, getString(R.string.no_internet));
+                Snackbar snackbar;
+                snackbar = Snackbar.make(mDeveloper, (getString(R.string.no_internet)), Snackbar.LENGTH_LONG);
+                snackbar.show();
             }
         });
         mCancel.setOnClickListener(v -> {

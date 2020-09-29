@@ -5,9 +5,6 @@
     <string name="about_summary"><i>An application to help translating other android apps!</i></string>
     <string name="cancel">Cancel</string>
     <string name="change_logs">Change-logs</string>
-    <string name="copyright"><i>Let\'s translate!</i></string>
-    <string name="copyright_default">Default copyright text, %s, will be applied on next app launch!</string>
-    <string name="copyright_message">New copyright text, %s, will be applied on next app launch!</string>
     <string name="credits">Credits</string>
     <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Code base)</string>
     <string name="dark_theme">Dark Theme</string>
@@ -21,24 +18,21 @@
     <string name="donations">Donations</string>
     <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from PlayStore as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
     <string name="donation_app">Buy Donation App</string>
-    <string name="edit_string_warning">This string contains some special characters! Please be careful.</string>
     <string name="import_string_message">You haven\'t imported any translation \'string\' file yet. Go to \'Settings\' menu to import one from \'sdcard\'!</string>
     <string name="import_string_sdcard">Import \'string\'</string>
-    <string name="more">More</string>
     <string name="more_apps">More from Developer</string>
     <string name="name_empty">Name is empty! Aborting!</string>
     <string name="no_internet">Please check your internet connection!</string>
-    <string name="ok">OK</string>
-    <string name="options">Options</string>
     <string name="permission_denied_write_storage">Permission denied for writing to storage!</string>
     <string name="press_back">Press back again to exit</string>
     <string name="report_issue">Report an Issue</string>
-    <string name="save_string_error">You haven\'t added a string yet! Aborting.</string>
+    <string name="save">Save</string>
     <string name="save_string_message">New translation string is generated as \'%s\'!</string>
     <string name="search_hint">Search…</string>
     <string name="select_question">Select %s?</string>
     <string name="source_code">Source Code</string>
     <string name="support">Support Group</string>
+    <string name="update">Update</string>
     <string name="wrong_extension">Please select a file with %s extension.</string>
     <string name="yes">Yes</string>
 </resources>

@@ -12,19 +12,13 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.text.Html;
-import android.view.View;
 
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.appcompat.widget.AppCompatEditText;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.MainActivity;
 
@@ -44,11 +38,6 @@ import java.io.OutputStreamWriter;
  */
 
 public class Utils {
-
-    public static AppCompatEditText mKeyEdit;
-
-    public static String mKeyText;
-    public static String mStringPath = Environment.getExternalStorageDirectory().toString() + "/Translator/strings.xml";
 
     public static boolean isPackageInstalled(String packageID, Context context) {
         try {
@@ -77,19 +66,6 @@ public class Utils {
         }
     }
 
-    public static void makeTranslatorFolder() {
-        File file = new File(Environment.getExternalStorageDirectory().toString() + "/Translator");
-        if (file.exists() && file.isFile()) {
-            file.delete();
-        }
-        file.mkdirs();
-    }
-
-    public static boolean isTablet(Context context) {
-        return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
-                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
-    }
-
     static String readAssetFile(Context context, String file) {
         InputStream input = null;
         BufferedReader buf = null;
@@ -115,12 +91,6 @@ public class Utils {
         return null;
     }
 
-    public static void showSnackbar(View view, String message) {
-        Snackbar snackbar;
-        snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
-        snackbar.show();
-    }
-
     public static void launchURL(String url, Activity activity) {
         try {
             Intent i = new Intent(Intent.ACTION_VIEW);
@@ -129,11 +99,6 @@ public class Utils {
         } catch (ActivityNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    public static int getOrientation(Activity activity) {
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.N && activity.isInMultiWindowMode() ?
-                Configuration.ORIENTATION_PORTRAIT : activity.getResources().getConfiguration().orientation;
     }
 
     public static String readFile(String file) {
@@ -174,14 +139,6 @@ public class Utils {
             myOutWriter.close();
             fOut.close();
         } catch (Exception ignored) {
-        }
-    }
-
-    public static CharSequence htmlFrom(String text) {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            return Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY);
-        } else {
-            return Html.fromHtml(text);
         }
     }
 

@@ -2,20 +2,15 @@ package com.sunilpaulmathew.translator.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatEditText;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.sunilpaulmathew.translator.R;
-import com.sunilpaulmathew.translator.views.dialog.Dialog;
 
 import java.util.Objects;
 
@@ -27,54 +22,27 @@ import java.util.Objects;
 
 public class ViewUtils {
 
-    public static Drawable getSelectableBackground(Context context) {
-        TypedArray typedArray = context.obtainStyledAttributes(new int[]{R.attr.selectableItemBackground});
-        Drawable drawable = typedArray.getDrawable(0);
-        typedArray.recycle();
-        return drawable;
-    }
-
-    public static void dismissDialog(FragmentManager manager) {
-        FragmentTransaction ft = manager.beginTransaction();
-        Fragment fragment = manager.findFragmentByTag("dialog");
-        if (fragment != null) {
-            ft.remove(fragment).commit();
-        }
-    }
-
-    public static int getColorPrimaryColor(Context context) {
-        TypedValue value = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.colorPrimary, value, true);
-        return value.data;
-    }
-
     public static int getThemeAccentColor(Context context) {
         TypedValue value = new TypedValue();
         context.getTheme().resolveAttribute(R.attr.colorAccent, value, true);
         return value.data;
     }
 
-    public static Drawable getColoredIcon(int icon, Context context) {
-        Drawable drawable = context.getResources().getDrawable(icon);
-        drawable.setTint(ViewUtils.getThemeAccentColor(context));
-        return drawable;
-    }
-
     public interface OnDialogEditTextListener {
         void onClick(String text);
     }
 
-    public static Dialog dialogEditText(String text, final DialogInterface.OnClickListener negativeListener,
-                                        final OnDialogEditTextListener onDialogEditTextListener,
-                                        Context context) {
-        return dialogEditText(text, negativeListener, onDialogEditTextListener, -1, context);
+    public static AlertDialog.Builder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
+                                                     final OnDialogEditTextListener onDialogEditTextListener,
+                                                     Context context) {
+        return dialogEditText(text, action, negativeListener, onDialogEditTextListener, -1, context);
     }
 
-    private static Dialog dialogEditText(String text, final DialogInterface.OnClickListener negativeListener,
-                                         final OnDialogEditTextListener onDialogEditTextListener, int inputType,
-                                         Context context) {
+    private static AlertDialog.Builder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
+                                                      final OnDialogEditTextListener onDialogEditTextListener, int inputType,
+                                                      Context context) {
         LinearLayout layout = new LinearLayout(context);
-        int padding = (int) context.getResources().getDimension(R.dimen.dialog_padding);
+        int padding = 75;
         layout.setPadding(padding, padding, padding, padding);
 
         final AppCompatEditText editText = new AppCompatEditText(context);
@@ -91,12 +59,12 @@ public class ViewUtils {
 
         layout.addView(editText);
 
-        Dialog dialog = new Dialog(context).setView(layout);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context).setView(layout);
         if (negativeListener != null) {
             dialog.setNegativeButton(context.getString(R.string.cancel), negativeListener);
         }
         if (onDialogEditTextListener != null) {
-            dialog.setPositiveButton(context.getString(R.string.ok), (dialog1, which)
+            dialog.setPositiveButton(action, (dialog1, which)
                     -> onDialogEditTextListener.onClick(Objects.requireNonNull(editText.getText()).toString()))
                     .setOnDismissListener(dialog1 -> {
                         if (negativeListener != null) {

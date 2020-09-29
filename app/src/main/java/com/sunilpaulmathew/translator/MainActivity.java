@@ -17,25 +17,35 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.OpenableColumns;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.SubMenu;
+import android.view.View;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
-import androidx.viewpager.widget.ViewPager;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.sunilpaulmathew.translator.fragments.TranslatorFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.utils.AboutActivity;
-import com.sunilpaulmathew.translator.utils.PagerAdapter;
 import com.sunilpaulmathew.translator.utils.Utils;
 import com.sunilpaulmathew.translator.utils.ViewUtils;
-import com.sunilpaulmathew.translator.views.dialog.Dialog;
+import com.sunilpaulmathew.translator.views.RecycleViewAdapter;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /*
@@ -44,11 +54,17 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AppCompatEditText mSearchWord;
+    private AppCompatImageView mHelpImg;
+    private AppCompatTextView mAboutApp;
+    private AppCompatTextView mHelpTxt;
     private boolean mExit;
+    private FloatingActionButton mFab;
     private Handler mHandler = new Handler();
-    private String copyright = Environment.getExternalStorageDirectory().toString() + "/Translator/copyright";
+    private List<String> mData = new ArrayList<>();
+    private RecyclerView mRecyclerView;
+    private String mKeyText;
     private String mPath;
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,12 +73,48 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AppCompatImageButton settings = findViewById(R.id.settings_menu);
-        settings.setImageDrawable(getResources().getDrawable(R.drawable.ic_settings));
-        settings.setOnClickListener(v -> {
-            PopupMenu popupMenu = new PopupMenu(this, settings);
+        mHelpImg = findViewById(R.id.help_image);
+        mHelpTxt = findViewById(R.id.help_text);
+        mAboutApp = findViewById(R.id.about_app);
+        mSearchWord = findViewById(R.id.search_Text);
+        mFab = findViewById(R.id.fab);
+        mRecyclerView = findViewById(R.id.recycler_view);
+        AppCompatImageButton mSettings = findViewById(R.id.settings_menu);
+        AppCompatImageButton mSearch = findViewById(R.id.search_button);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setAdapter(new RecycleViewAdapter(getData()));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+        mAboutApp.setVisibility(View.VISIBLE);
+
+        mFab.setOnClickListener(v -> {
+            if (Utils.isStorageWritePermissionDenied(this)) {
+                ActivityCompat.requestPermissions(this, new String[]{
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                showSnackbar(getString(R.string.permission_denied_write_storage));
+                return;
+            }
+
+            ViewUtils.dialogEditText(null, getString(R.string.save),
+                    (dialogInterface2, iii) -> {},
+                    text -> {
+                        if (text.isEmpty()) {
+                            showSnackbar(getString(R.string.name_empty));
+                            return;
+                        }
+                        if (!text.endsWith(".xml")) {
+                            text += ".xml";
+                        }
+                        Utils.create("<!--Created by The Translator-->\n" + Utils.readFile(getFilesDir().toString() + "/strings.xml"), Environment.getExternalStorageDirectory().toString() + "/" + text);
+                        showSnackbar(getString(R.string.save_string_message, Environment.getExternalStorageDirectory().toString() + "/" + text));
+                    }, this).setOnDismissListener(dialogInterface2 -> {
+            }).show();
+        });
+
+        mSettings.setImageDrawable(getResources().getDrawable(R.drawable.ic_settings));
+        mSettings.setOnClickListener(v -> {
+            PopupMenu popupMenu = new PopupMenu(this, mSettings);
             Menu menu = popupMenu.getMenu();
-            if (Utils.existFile(Utils.mStringPath)) {
+            if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
                 menu.add(Menu.NONE, 7, Menu.NONE, getString(R.string.delete_string));
             } else {
                 menu.add(Menu.NONE, 8, Menu.NONE, getString(R.string.import_string_sdcard));
@@ -125,15 +177,15 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(aboutView);
                         break;
                     case 7:
-                        if (!Utils.existFile(Utils.mStringPath)) {
-                            Utils.showSnackbar(mViewPager, getString(R.string.delete_string_error));
+                        if (!Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
+                            showSnackbar(getString(R.string.delete_string_error));
                         } else {
-                            new Dialog(this)
+                            new AlertDialog.Builder(this)
                                     .setMessage(getString(R.string.delete_string_message))
                                     .setNegativeButton(getString(R.string.cancel), (dialogInterface3, iv) -> {
                                     })
                                     .setPositiveButton(getString(R.string.yes), (dialogInterface3, iv) -> {
-                                        new File(Utils.mStringPath).delete();
+                                        new File(getFilesDir().toString() + "/strings.xml").delete();
                                         Utils.restartApp(this);
                                     })
                                     .show();
@@ -143,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
                         if (Utils.isStorageWritePermissionDenied(this)) {
                             ActivityCompat.requestPermissions(this, new String[]{
                                     Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                            Utils.showSnackbar(mViewPager, getString(R.string.permission_denied_write_storage));
+                            showSnackbar(getString(R.string.permission_denied_write_storage));
                         } else {
                             Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
                             importString.setType("text/*");
@@ -151,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case 9:
-                        new Dialog(this)
+                        new AlertDialog.Builder(this)
                                 .setIcon(R.mipmap.ic_launcher)
                                 .setTitle(getString(R.string.donations))
                                 .setMessage(getString(R.string.donations_message))
@@ -173,51 +225,67 @@ public class MainActivity extends AppCompatActivity {
             popupMenu.show();
         });
 
-        mViewPager = findViewById(R.id.viewPagerID);
-        AppCompatTextView copyRightText = findViewById(R.id.copyright_Text);
-
-        // Allow changing Copyright Text
-        if (Utils.readFile(copyright) != null) {
-            copyRightText.setText(Utils.readFile(copyright));
-        } else {
-            copyRightText.setText(R.string.copyright);
+        if (!Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
+            mSearch.setVisibility(View.GONE);
         }
-        copyRightText.setOnLongClickListener(item -> {
-            setCopyRightText();
-            return false;
+
+        mSearch.setOnClickListener(v -> {
+            mSearchWord.setVisibility(View.VISIBLE);
+            mAboutApp.setVisibility(View.GONE);
         });
 
-        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
-        adapter.AddFragment(new TranslatorFragment(), "");
-        mViewPager.setAdapter(adapter);
+        mSearchWord.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                mData.clear();
+                mKeyText = s.toString().toLowerCase();
+                mRecyclerView.setAdapter(new RecycleViewAdapter(getSearchData()));
+            }
+        });
     }
 
-    private void setCopyRightText() {
-        if (Utils.isStorageWritePermissionDenied(this)) {
-            ActivityCompat.requestPermissions(this, new String[]{
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-            Utils.showSnackbar(mViewPager, getString(R.string.permission_denied_write_storage));
-            return;
+    private List<String> getData() {
+        if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
+            for (String line : Objects.requireNonNull(Utils.readFile(getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
+                if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
+                    String[] finalLine = line.split("\">");
+                    mData.add(finalLine[1].replace("</string>", ""));
+                }
+            }
+        } else {
+            mHelpImg.setVisibility(View.VISIBLE);
+            mHelpTxt.setVisibility(View.VISIBLE);
+            mFab.setVisibility(View.GONE);
         }
-        Utils.makeTranslatorFolder();
-        ViewUtils.dialogEditText(Utils.readFile(copyright),
-                (dialogInterface, i) -> {
-                }, text -> {
-                    if (text.equals(Utils.readFile(copyright))) return;
-                    if (text.isEmpty()) {
-                        new File(copyright).delete();
-                        Utils.showSnackbar(mViewPager, getString(R.string.copyright_default, getString(R.string.copyright)));
-                        return;
+        return mData;
+    }
+
+    private List<String> getSearchData() {
+        mData.clear();
+        if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
+            for (String line : Objects.requireNonNull(Utils.readFile(getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
+                if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
+                    String[] finalLine = line.split("\">");
+                    if (mKeyText != null && finalLine[1].toLowerCase().contains(mKeyText)) {
+                        mData.add(finalLine[1].replace("</string>", ""));
                     }
-                    Utils.create(text, copyright);
-                    Utils.showSnackbar(mViewPager, getString(R.string.copyright_message, text));
-                }, this).setOnDismissListener(dialogInterface -> {
-        }).show();
+                }
+            }
+        }
+        return mData;
     }
 
     private void launchPS(String url) {
         if (!Utils.isNetworkAvailable(this)) {
-            Utils.showSnackbar(mViewPager, getString(R.string.no_internet));
+            showSnackbar(getString(R.string.no_internet));
         } else {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
@@ -229,8 +297,14 @@ public class MainActivity extends AppCompatActivity {
         if (Utils.isNetworkAvailable(this)) {
             Utils.launchURL(url, this);
         } else {
-            Utils.showSnackbar(mViewPager, getString(R.string.no_internet));
+            showSnackbar(getString(R.string.no_internet));
         }
+    }
+
+    private void showSnackbar(String message) {
+        Snackbar snackbar;
+        snackbar = Snackbar.make(mRecyclerView, message, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 
     @Override
@@ -251,16 +325,15 @@ public class MainActivity extends AppCompatActivity {
                 mPath = Utils.getPath(file);
             }
             if (!Utils.getExtension(mPath).equals("xml")) {
-                Utils.showSnackbar(mViewPager, getString(R.string.wrong_extension, ".xml"));
+                showSnackbar(getString(R.string.wrong_extension, ".xml"));
                 return;
             }
-            new Dialog(this)
+            new AlertDialog.Builder(this)
                     .setMessage(getString(R.string.select_question, new File(mPath).toString()))
                     .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                     })
                     .setPositiveButton(getString(R.string.yes), (dialogInterface, i) -> {
-                        Utils.makeTranslatorFolder();
-                        Utils.create(Utils.readFile(mPath), Utils.mStringPath);
+                        Utils.create(Utils.readFile(mPath), getFilesDir().toString() + "/strings.xml");
                         Utils.restartApp(this);
                     })
                     .show();
@@ -269,16 +342,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (Utils.mKeyText != null) {
-            Utils.mKeyEdit.setText(null);
-            Utils.mKeyText = null;
+        if (mKeyText != null) {
+            mSearchWord.setText(null);
+            mKeyText = null;
+            return;
+        }
+        if (mAboutApp.getVisibility() == View.GONE) {
+            mSearchWord.setVisibility(View.GONE);
+            mAboutApp.setVisibility(View.VISIBLE);
             return;
         }
         if (mExit) {
             mExit = false;
             super.onBackPressed();
         } else {
-            Utils.showSnackbar(mViewPager, getString(R.string.press_back));
+            showSnackbar(getString(R.string.press_back));
             mExit = true;
             mHandler.postDelayed(() -> mExit = false, 2000);
         }
