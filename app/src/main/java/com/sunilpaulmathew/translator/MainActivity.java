@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
 
-            ViewUtils.dialogEditText(null, getString(R.string.save),
+            ViewUtils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), getString(R.string.save),
                     (dialogInterface2, iii) -> {},
                     text -> {
                         if (text.isEmpty()) {
