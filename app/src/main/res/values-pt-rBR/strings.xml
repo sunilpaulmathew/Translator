@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+<!--Created by The Translator-->
+
+    <string name="about">Sobre</string>
+    <string name="about_summary"><i>Um aplicativo para ajudar a traduzir outros aplicativos Android</i></string>
+    <string name="cancel">Cancelar</string>
+    <string name="change_logs">Lista de mudanças</string>
+    <string name="credits">Créditos</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: Contribuições de código</string>
+    <string name="dark_theme">Tema escuro</string>
+    <string name="dark_theme_auto">Automático</string>
+    <string name="dark_theme_disable">Desativar</string>
+    <string name="dark_theme_enable">Ativar</string>
+    <string name="delete_string">Deletar \'string\'</string>
+    <string name="delete_string_error">Não há nada disponível para deletar! Abortando.</string>
+    <string name="delete_string_message">Tem certeza de que deseja deletar o atual string.xml do sdcard?</string>
+    <string name="developed_by">Desenvolvido por</string>
+    <string name="donations">Doações</string>
+    <string name="donations_message">Se você aprecia meu trabalho, por favor, considere comprar o SmartPack Donation Package pela PlayStore, pois é realmente útil para continuar meus projetos mais ativos, embora não seja de todo necessário.</string>
+    <string name="donation_app">Comprar app de doação</string>
+    <string name="import_string_message">Você ainda não importou nenhum arquivo de tradução \'string\'. Vá para o menu de \'Configurações\' para importar um do \'sdcard\'!</string>
+    <string name="import_string_sdcard">Importar \'string\'</string>
+    <string name="more_apps">Mais do desenvolvedor</string>
+    <string name="name_empty">O nome está vazio! Abortando.</string>
+    <string name="no_internet">Por favor, verifique a sua conexão!</string>
+    <string name="permission_denied_write_storage">Permissão para modificar o armazenamento negada!</string>
+    <string name="press_back">Pressione voltar novamente para sair</string>
+    <string name="report_issue">Comunicar um problema</string>
+    <string name="save_string_message">Nova string de tradução foi gerada como \'%s\'!</string>
+    <string name="search_hint">Procurar…</string>
+    <string name="select_question">Selecionar %s?</string>
+    <string name="source_code">Código fonte</string>
+    <string name="support">Grupo de suporte</string>
+    <string name="wrong_extension">Por favor, selecione um arquivo com extensão %s.</string>
+    <string name="yes">Sim</string>
+</resources>
