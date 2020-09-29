@@ -2,7 +2,7 @@
 
 ![The Translator](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true)
 
-[![](https://img.shields.io/badge/The%20Translator-v0.1-green)](https://github.com/sunilpaulmathew/Translator/releases)
+[![](https://img.shields.io/badge/The%20Translator-v0.2-green)](https://github.com/sunilpaulmathew/Translator/releases)
 
 ### The Translator is a simple application to help translate android apps. Click [here](screenshots/) to see some screenshots.
 
@@ -28,7 +28,7 @@ If you like to appreciate my work, please consider donating to me (either via [P
      height="80">](https://ko-fi.com/sunilpaulmathew/)
 
 ## Credits
-* [Grarak](https://github.com/Grarak/), Code contributions (I took some code from [Kernel Adiutor](https://github.com/Grarak/KernelAdiutor/)])
+* [Grarak](https://github.com/Grarak/), Code contributions (I took some code from [Kernel Adiutor](https://github.com/Grarak/KernelAdiutor/))
 * [Lennoard Silva](https://github.com/Lennoard), Portuguese (Brazilian) Translations
 * [FiestaLake](https://github.com/FiestaLake), Korean Translations
 * [elea11](https://github.com/elea11), German Translations
