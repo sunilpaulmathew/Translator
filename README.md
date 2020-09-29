@@ -28,7 +28,10 @@ If you like to appreciate my work, please consider donating to me (either via [P
      height="80">](https://ko-fi.com/sunilpaulmathew/)
 
 ## Credits
-* [Grarak](https://github.com/Grarak/), Code contributions (I took some code from [Kernel Adiutor[(https://github.com/Grarak/KernelAdiutor/)])
+* [Grarak](https://github.com/Grarak/), Code contributions (I took some code from [Kernel Adiutor](https://github.com/Grarak/KernelAdiutor/)])
+* [Lennoard Silva](https://github.com/Lennoard), Portuguese (Brazilian) Translations
+* [FiestaLake](https://github.com/FiestaLake), Korean Translations
+* [elea11](https://github.com/elea11), German Translations
 
 ## License
 
