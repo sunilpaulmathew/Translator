@@ -33,6 +33,7 @@
     <string name="source_code">Source Code</string>
     <string name="support">Support Group</string>
     <string name="update">Update</string>
+    <string name="view_string">View \'string\'</string>
     <string name="wrong_extension">Please select a file with %s extension.</string>
     <string name="yes">Yes</string>
 </resources>

@@ -39,6 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.utils.AboutActivity;
+import com.sunilpaulmathew.translator.utils.StringViewActivity;
 import com.sunilpaulmathew.translator.utils.Utils;
 import com.sunilpaulmathew.translator.utils.ViewUtils;
 import com.sunilpaulmathew.translator.views.RecycleViewAdapter;
@@ -116,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
             Menu menu = popupMenu.getMenu();
             if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
                 menu.add(Menu.NONE, 7, Menu.NONE, getString(R.string.delete_string));
+                menu.add(Menu.NONE, 12, Menu.NONE, getString(R.string.view_string));
             } else {
                 menu.add(Menu.NONE, 8, Menu.NONE, getString(R.string.import_string_sdcard));
             }
@@ -218,6 +220,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 11:
                         launchURL("https://github.com/sunilpaulmathew/Translator");
+                        break;
+                    case 12:
+                        Intent stringView = new Intent(this, StringViewActivity.class);
+                        startActivity(stringView);
                         break;
                 }
                 return false;
