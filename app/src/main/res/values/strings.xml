@@ -3,6 +3,7 @@
 
     <string name="about">About</string>
     <string name="about_summary"><i>An application to help translating other android apps!</i></string>
+    <string name="already_exists">%s already exists! Please use a different name.</string>
     <string name="cancel">Cancel</string>
     <string name="change_logs">Change-logs</string>
     <string name="credits">Credits</string>

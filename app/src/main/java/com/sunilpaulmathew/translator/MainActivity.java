@@ -37,11 +37,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.utils.AboutActivity;
 import com.sunilpaulmathew.translator.utils.StringViewActivity;
 import com.sunilpaulmathew.translator.utils.Utils;
-import com.sunilpaulmathew.translator.utils.ViewUtils;
 import com.sunilpaulmathew.translator.views.RecycleViewAdapter;
 
 import java.io.File;
@@ -87,29 +85,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mAboutApp.setVisibility(View.VISIBLE);
 
-        mFab.setOnClickListener(v -> {
-            if (Utils.isStorageWritePermissionDenied(this)) {
-                ActivityCompat.requestPermissions(this, new String[]{
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-                showSnackbar(getString(R.string.permission_denied_write_storage));
-                return;
-            }
-
-            ViewUtils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), getString(R.string.save),
-                    (dialogInterface2, iii) -> {},
-                    text -> {
-                        if (text.isEmpty()) {
-                            showSnackbar(getString(R.string.name_empty));
-                            return;
-                        }
-                        if (!text.endsWith(".xml")) {
-                            text += ".xml";
-                        }
-                        Utils.create("<!--Created by The Translator-->\n" + Utils.readFile(getFilesDir().toString() + "/strings.xml"), Environment.getExternalStorageDirectory().toString() + "/" + text);
-                        showSnackbar(getString(R.string.save_string_message, Environment.getExternalStorageDirectory().toString() + "/" + text));
-                    }, this).setOnDismissListener(dialogInterface2 -> {
-            }).show();
-        });
+        mFab.setOnClickListener(v -> Utils.getInstance().saveString(mRecyclerView, this));
 
         mSettings.setImageDrawable(getResources().getDrawable(R.drawable.ic_settings));
         mSettings.setOnClickListener(v -> {
@@ -180,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 7:
                         if (!Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
-                            showSnackbar(getString(R.string.delete_string_error));
+                            Utils.showSnackbar(mRecyclerView, getString(R.string.delete_string_error));
                         } else {
                             new AlertDialog.Builder(this)
                                     .setMessage(getString(R.string.delete_string_message))
@@ -197,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                         if (Utils.isStorageWritePermissionDenied(this)) {
                             ActivityCompat.requestPermissions(this, new String[]{
                                     Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                            showSnackbar(getString(R.string.permission_denied_write_storage));
+                            Utils.showSnackbar(mRecyclerView, getString(R.string.permission_denied_write_storage));
                         } else {
                             Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
                             importString.setType("text/*");
@@ -291,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void launchPS(String url) {
         if (!Utils.isNetworkAvailable(this)) {
-            showSnackbar(getString(R.string.no_internet));
+            Utils.showSnackbar(mRecyclerView, getString(R.string.no_internet));
         } else {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(url));
@@ -303,14 +279,8 @@ public class MainActivity extends AppCompatActivity {
         if (Utils.isNetworkAvailable(this)) {
             Utils.launchURL(url, this);
         } else {
-            showSnackbar(getString(R.string.no_internet));
+            Utils.showSnackbar(mRecyclerView, getString(R.string.no_internet));
         }
-    }
-
-    private void showSnackbar(String message) {
-        Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_INDEFINITE);
-        snackBar.setAction(R.string.dismiss, v -> snackBar.dismiss());
-        snackBar.show();
     }
 
     @Override
@@ -331,7 +301,7 @@ public class MainActivity extends AppCompatActivity {
                 mPath = Utils.getPath(file);
             }
             if (!Utils.getExtension(mPath).equals("xml")) {
-                showSnackbar(getString(R.string.wrong_extension, ".xml"));
+                Utils.showSnackbar(mRecyclerView, getString(R.string.wrong_extension, ".xml"));
                 return;
             }
             new AlertDialog.Builder(this)
@@ -362,7 +332,7 @@ public class MainActivity extends AppCompatActivity {
             mExit = false;
             super.onBackPressed();
         } else {
-            showSnackbar(getString(R.string.press_back));
+            Utils.showSnackbar(mRecyclerView, getString(R.string.press_back));
             mExit = true;
             mHandler.postDelayed(() -> mExit = false, 2000);
         }

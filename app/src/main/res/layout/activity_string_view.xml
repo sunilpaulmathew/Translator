@@ -5,17 +5,41 @@
     android:layout_gravity="center"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="start"
-        android:layout_gravity="top"
-        android:text="@string/app_name"
-        android:textStyle="bold"
         android:background="@color/black"
-        android:textColor="?android:attr/colorAccent"
-        android:textSize="18sp"
-        android:padding="10dp" />
+        android:gravity="top|center_vertical" >
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:tint="?android:attr/colorAccent"
+            android:layout_gravity="start|center"
+            android:src="@drawable/ic_back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="start"
+            android:padding="10dp"
+            android:layout_marginStart="50dp"
+            android:text="@string/app_name"
+            android:textStyle="bold"
+            android:textColor="?android:attr/colorAccent"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/save_button"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:tint="?android:attr/colorAccent"
+            android:layout_gravity="end|center"
+            android:src="@drawable/ic_save" />
+    </FrameLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"

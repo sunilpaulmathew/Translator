@@ -7,6 +7,7 @@
 
 package com.sunilpaulmathew.translator.utils;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -16,11 +17,15 @@ import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.app.ActivityCompat;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.MainActivity;
+import com.sunilpaulmathew.translator.R;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -30,6 +35,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on June 30, 2020
@@ -38,6 +46,15 @@ import java.io.OutputStreamWriter;
  */
 
 public class Utils {
+
+    private static Utils sUtils;
+
+    public static Utils getInstance() {
+        if (sUtils == null) {
+            sUtils = new Utils();
+        }
+        return sUtils;
+    }
 
     public static boolean isPackageInstalled(String packageID, Context context) {
         try {
@@ -140,6 +157,52 @@ public class Utils {
             fOut.close();
         } catch (Exception ignored) {
         }
+    }
+
+    public static void showSnackbar(View view, String message) {
+        Snackbar snackBar = Snackbar.make(view, message, Snackbar.LENGTH_INDEFINITE);
+        snackBar.setAction(R.string.dismiss, v -> snackBar.dismiss());
+        snackBar.show();
+    }
+
+    public void saveString(View view, Activity context) {
+        if (isStorageWritePermissionDenied(context)) {
+            ActivityCompat.requestPermissions(context, new String[]{
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            showSnackbar(view, context.getString(R.string.permission_denied_write_storage));
+            return;
+        }
+        ViewUtils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), context.getString(R.string.save),
+                (dialogInterface2, iii) -> {},
+                text -> {
+                    if (text.isEmpty()) {
+                        showSnackbar(view, context.getString(R.string.name_empty));
+                        return;
+                    }
+                    if (!text.endsWith(".xml")) {
+                        text += ".xml";
+                    }
+                    if (existFile(Environment.getExternalStorageDirectory().toString() + "/" + text)) {
+                        showSnackbar(view, context.getString(R.string.already_exists, text));
+                        return;
+                    }
+                    create(getStrings(context), Environment.getExternalStorageDirectory().toString() + "/" + text);
+                    showSnackbar(view, context.getString(R.string.save_string_message, Environment.getExternalStorageDirectory().toString() + "/" + text));
+                }, context).setOnDismissListener(dialogInterface2 -> {
+        }).show();
+    }
+
+    public static String getStrings(Context context) {
+        List<String> mData = new ArrayList<>();
+        if (existFile(context.getFilesDir().toString() + "/strings.xml")) {
+            for (String line : Objects.requireNonNull(readFile(context.getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
+                if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
+                    mData.add(line);
+                }
+            }
+        }
+        return "<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:ignore=\"MissingTranslation\">\n<!--Created by The Translator-->\n\n" +
+                mData.toString().replace("[","").replace("]","").replace(",","\n") + "\n</resources>";
     }
 
     public static void restartApp(Activity activity) {
