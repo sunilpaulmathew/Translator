@@ -20,6 +20,7 @@
     <string name="donations">Donations</string>
     <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from PlayStore as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
     <string name="donation_app">Buy Donation App</string>
+    <string name="edit_string_warning">Please be careful with the special characters (%s)!</string>
     <string name="import_string_message">You haven\'t imported any translation \'string\' file yet. Go to \'Settings\' menu to import one from \'sdcard\'!</string>
     <string name="import_string_sdcard">Import \'string\'</string>
     <string name="more_apps">More from Developer</string>

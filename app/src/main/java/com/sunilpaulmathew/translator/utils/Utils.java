@@ -236,6 +236,32 @@ public class Utils {
         return path;
     }
 
+    public static String getSpecialCharacters(String string) {
+        StringBuilder sb = new StringBuilder();
+        if (string.contains("%s")) {
+            sb.append(" - %s");
+        }
+        if (string.contains("\n")) {
+            sb.append(" - \n");
+        }
+        if (string.contains("\\'")) {
+            sb.append(" - \\'");
+        }
+        if (string.contains("<b>")) {
+            sb.append(" - <b>");
+        }
+        if (string.contains("</b>")) {
+            sb.append(" - </b>");
+        }
+        if (string.contains("<i>")) {
+            sb.append(" - <i>");
+        }
+        if (string.contains("</i>")) {
+            sb.append(" - </i>");
+        }
+        return sb.toString().replaceFirst(" - ","");
+    }
+
     public static boolean isDocumentsUI(Uri uri) {
         return "com.android.providers.downloads.documents".equals(uri.getAuthority());
     }

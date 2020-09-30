@@ -29,6 +29,7 @@ import java.util.Objects;
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
 
     private List<String> data;
+
     public RecycleViewAdapter (List<String> data){
         this.data = data;
     }
@@ -61,6 +62,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         @Override
         public void onClick(View view) {
+            if (!Utils.getSpecialCharacters(this.textView.getText().toString()).isEmpty()) {
+                Utils.showSnackbar(view, view.getContext().getString(R.string.edit_string_warning, Utils.getSpecialCharacters(this.textView.getText().toString())));
+            }
             ViewUtils.dialogEditText(this.textView.getText().toString(), view.getContext().getString(R.string.update),
                     (dialogInterface1, i1) -> {
                     }, text -> {
@@ -74,4 +78,5 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             }).show();
         }
     }
+
 }
