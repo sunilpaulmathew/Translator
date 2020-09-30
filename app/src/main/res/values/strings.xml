@@ -6,7 +6,7 @@
     <string name="cancel">Cancel</string>
     <string name="change_logs">Change-logs</string>
     <string name="credits">Credits</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Code base)\n<b><i>Lennoard Silva</i></b>: Portuguese (Brazilian) translations\n<b><i>FiestaLake</i></b>: Korean translations\n<b><i>elea11</i></b>: German translations</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Code base)\n<b><i>Lennoard Silva</i></b>: Portuguese (Brazilian) translations\n<b><i>FiestaLake</i></b>: Korean translations\n<b><i>elea11</i></b>: German translations\n<b><i>Andi Krisma</i></b>: Indonesian translations</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="dark_theme_auto">Auto</string>
     <string name="dark_theme_disable">Disable</string>

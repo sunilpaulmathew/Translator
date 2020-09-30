@@ -32,6 +32,7 @@ If you like to appreciate my work, please consider donating to me (either via [P
 * [Lennoard Silva](https://github.com/Lennoard), Portuguese (Brazilian) Translations
 * [FiestaLake](https://github.com/FiestaLake), Korean Translations
 * [elea11](https://github.com/elea11), German Translations
+* [Andi Krisma](https://github.com/NiNjA1998), Indonesian Translations
 
 ## License
 
