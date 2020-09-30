@@ -308,9 +308,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showSnackbar(String message) {
-        Snackbar snackbar;
-        snackbar = Snackbar.make(mRecyclerView, message, Snackbar.LENGTH_LONG);
-        snackbar.show();
+        Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_INDEFINITE);
+        snackBar.setAction(R.string.dismiss, v -> snackBar.dismiss());
+        snackBar.show();
     }
 
     @Override

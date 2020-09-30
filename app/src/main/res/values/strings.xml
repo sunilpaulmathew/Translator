@@ -15,6 +15,7 @@
     <string name="delete_string_error">There is nothing available to delete! Aborting.</string>
     <string name="delete_string_message">Are you sure to delete current string.xml from sdcard?</string>
     <string name="developed_by">Developed By</string>
+    <string name="dismiss">Dismiss</string>
     <string name="donations">Donations</string>
     <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from PlayStore as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
     <string name="donation_app">Buy Donation App</string>

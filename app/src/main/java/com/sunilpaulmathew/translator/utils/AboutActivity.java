@@ -45,9 +45,9 @@ public class AboutActivity extends AppCompatActivity {
             if (Utils.isNetworkAvailable(this)) {
                 Utils.launchURL("https://github.com/sunilpaulmathew", this);
             } else {
-                Snackbar snackbar;
-                snackbar = Snackbar.make(mDeveloper, (getString(R.string.no_internet)), Snackbar.LENGTH_LONG);
-                snackbar.show();
+                Snackbar snackBar = Snackbar.make(findViewById(android.R.id.content), getString(R.string.no_internet), Snackbar.LENGTH_INDEFINITE);
+                snackBar.setAction(R.string.dismiss, s -> snackBar.dismiss());
+                snackBar.show();
             }
         });
         mCancel.setOnClickListener(v -> {
