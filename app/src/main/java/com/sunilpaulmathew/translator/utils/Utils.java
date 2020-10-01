@@ -15,8 +15,10 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.text.Html;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatDelegate;
@@ -55,6 +57,8 @@ public class Utils {
         }
         return sUtils;
     }
+
+    public static String mKeyText;
 
     public static boolean isPackageInstalled(String packageID, Context context) {
         try {
@@ -209,6 +213,14 @@ public class Utils {
         Intent intent = new Intent(activity, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         activity.startActivity(intent);
+    }
+
+    public static CharSequence fromHtml(String text) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return Html.fromHtml(text, Html.FROM_HTML_MODE_LEGACY);
+        } else {
+            return Html.fromHtml(text);
+        }
     }
 
     public static String getPath(File file) {

@@ -12,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -62,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
     private Handler mHandler = new Handler();
     private List<String> mData = new ArrayList<>();
     private RecyclerView mRecyclerView;
-    private String mKeyText;
     private String mPath;
 
     @Override
@@ -216,6 +216,7 @@ public class MainActivity extends AppCompatActivity {
             mAboutApp.setVisibility(View.GONE);
         });
 
+        mSearchWord.setTextColor(Color.RED);
         mSearchWord.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -228,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 mData.clear();
-                mKeyText = s.toString().toLowerCase();
+                Utils.mKeyText = s.toString().toLowerCase();
                 mRecyclerView.setAdapter(new RecycleViewAdapter(getSearchData()));
             }
         });
@@ -256,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
             for (String line : Objects.requireNonNull(Utils.readFile(getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
                 if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
                     String[] finalLine = line.split("\">");
-                    if (mKeyText != null && finalLine[1].toLowerCase().contains(mKeyText)) {
+                    if (Utils.mKeyText != null && finalLine[1].toLowerCase().contains(Utils.mKeyText)) {
                         mData.add(finalLine[1].replace("</string>", ""));
                     }
                 }
@@ -318,9 +319,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (mKeyText != null) {
+        if (Utils.mKeyText != null) {
             mSearchWord.setText(null);
-            mKeyText = null;
+            Utils.mKeyText = null;
             return;
         }
         if (mAboutApp.getVisibility() == View.GONE) {

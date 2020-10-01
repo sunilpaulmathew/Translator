@@ -7,6 +7,7 @@
 
 package com.sunilpaulmathew.translator.views;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,8 +43,13 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     }
 
     @Override
-    public void onBindViewHolder(RecycleViewAdapter.ViewHolder holder, int position) {
-        holder.textView.setText(this.data.get(position));
+    public void onBindViewHolder(@NonNull RecycleViewAdapter.ViewHolder holder, int position) {
+        if (Utils.mKeyText != null && this.data.get(position).toLowerCase().contains(Utils.mKeyText)) {
+            holder.textView.setText(Utils.fromHtml(this.data.get(position).toLowerCase().replace(Utils.mKeyText,
+                    "<b><i><font color=\"" + Color.RED + "\">" + Utils.mKeyText + "</font></i></b>")));
+        } else {
+            holder.textView.setText(this.data.get(position));
+        }
     }
 
     @Override
