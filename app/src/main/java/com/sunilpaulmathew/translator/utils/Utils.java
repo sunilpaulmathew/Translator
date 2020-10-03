@@ -215,6 +215,16 @@ public class Utils {
                 mData.toString().replace("[","").replace("]","").replace(",","\n") + "\n</resources>";
     }
 
+    public static void deleteSingleString(String string, Context context) {
+        for (String line : Objects.requireNonNull(readFile(context.getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
+            if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
+                if (line.endsWith(string)) {
+                    create(Objects.requireNonNull(readFile(context.getFilesDir().toString() + "/strings.xml")).replace(line, ""), context.getFilesDir().toString() + "/strings.xml");
+                }
+            }
+        }
+    }
+
     public static void restartApp(Activity activity) {
         Intent intent = new Intent(activity, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -11,6 +11,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -55,6 +56,19 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         if (Utils.isDarkTheme(holder.textView.getContext())) {
             holder.textView.setTextColor(ViewUtils.getThemeAccentColor(holder.textView.getContext()));
         }
+        holder.linearLayout.setOnLongClickListener(item -> {
+            new AlertDialog.Builder(holder.linearLayout.getContext())
+                    .setMessage(holder.textView.getContext().getString(R.string.delete_line_question, holder.textView.getText()))
+                    .setNegativeButton(R.string.cancel, (dialog1, id1) -> {
+                    })
+                    .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
+                        Utils.deleteSingleString(">" + holder.textView.getText() + "</string>", holder.linearLayout.getContext());
+                        data.remove(position);
+                        notifyDataSetChanged();
+                    })
+                    .show();
+            return false;
+        });
         holder.imageButton.setImageDrawable(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
                 ? holder.imageButton.getContext().getResources().getDrawable(R.drawable.ic_info)
                 : holder.imageButton.getContext().getResources().getDrawable(R.drawable.ic_warning));
@@ -83,12 +97,14 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private AppCompatTextView textView;
         private AppCompatImageButton imageButton;
+        private LinearLayout linearLayout;
 
         public ViewHolder(View view) {
             super(view);
             view.setOnClickListener(this);
             this.textView = view.findViewById(R.id.description);
             imageButton = view.findViewById(R.id.info_icon);
+            linearLayout = view.findViewById(R.id.recycler_view_layout);
         }
 
         @Override

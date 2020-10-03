@@ -12,6 +12,7 @@
     <string name="dark_theme_auto">Auto</string>
     <string name="dark_theme_disable">Disable</string>
     <string name="dark_theme_enable">Enable</string>
+    <string name="delete_line_question">Sure deleting \'%s\'?</string>
     <string name="delete_string">Delete \'string\'</string>
     <string name="delete_string_error">There is nothing available to delete! Aborting.</string>
     <string name="delete_string_message">Are you sure to delete current string.xml?</string>
