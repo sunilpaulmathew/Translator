@@ -23,6 +23,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.SubMenu;
 import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -37,6 +38,10 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sunilpaulmathew.translator.utils.AboutActivity;
 import com.sunilpaulmathew.translator.utils.StringViewActivity;
@@ -67,8 +72,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        // Initialize App Theme
+        // Initialize App Theme & Google Ads
         Utils.initializeAppTheme(this);
+        Utils.initializeGoogleAds(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -78,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         mSearchWord = findViewById(R.id.search_Text);
         mFab = findViewById(R.id.fab);
         mRecyclerView = findViewById(R.id.recycler_view);
+        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) mRecyclerView.getLayoutParams();
         AppCompatImageButton mSettings = findViewById(R.id.settings_menu);
         AppCompatImageButton mSearch = findViewById(R.id.search_button);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -155,19 +162,15 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(aboutView);
                         break;
                     case 7:
-                        if (!Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
-                            Utils.showSnackbar(mRecyclerView, getString(R.string.delete_string_error));
-                        } else {
-                            new AlertDialog.Builder(this)
-                                    .setMessage(getString(R.string.delete_string_message))
-                                    .setNegativeButton(getString(R.string.cancel), (dialogInterface3, iv) -> {
-                                    })
-                                    .setPositiveButton(getString(R.string.yes), (dialogInterface3, iv) -> {
-                                        new File(getFilesDir().toString() + "/strings.xml").delete();
-                                        Utils.restartApp(this);
-                                    })
-                                    .show();
-                        }
+                        new AlertDialog.Builder(this)
+                                .setMessage(getString(R.string.delete_string_message))
+                                .setNegativeButton(getString(R.string.cancel), (dialogInterface3, iv) -> {
+                                })
+                                .setPositiveButton(getString(R.string.yes), (dialogInterface3, iv) -> {
+                                    new File(getFilesDir().toString() + "/strings.xml").delete();
+                                    Utils.restartApp(this);
+                                })
+                                .show();
                         break;
                     case 8:
                         if (Utils.isStorageWritePermissionDenied(this)) {
@@ -233,6 +236,27 @@ public class MainActivity extends AppCompatActivity {
                 mRecyclerView.setAdapter(new RecycleViewAdapter(getSearchData()));
             }
         });
+
+        AdView mAdView = findViewById(R.id.adView);
+        if (Utils.isNetworkAvailable(this) && Utils.isNotDonated(this)) {
+            mAdView.setAdListener(new AdListener() {
+                @Override
+                public void onAdLoaded() {
+                    mAdView.setVisibility(View.VISIBLE);
+                }
+                @Override
+                public void onAdFailedToLoad(LoadAdError adError) {
+                    layoutParams.setMargins(0,0,0,0);
+                    mAdView.setVisibility(View.GONE);
+                }
+            });
+            AdRequest adRequest = new AdRequest.Builder()
+                    .build();
+            mAdView.loadAd(adRequest);
+        } else {
+            layoutParams.setMargins(0,0,0,0);
+            mAdView.setVisibility(View.GONE);
+        }
     }
 
     private List<String> getData() {

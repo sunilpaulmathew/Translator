@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,8 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="top|center_vertical"
-            android:padding="10dp"
-            tools:ignore="MissingConstraints">
+            android:padding="10dp" >
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
@@ -77,9 +75,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="105dp"
-        android:padding="10dp"
-        tools:ignore="UselessParent">
+        android:layout_marginTop="105dp" >
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/help_image"
@@ -101,27 +97,38 @@
             android:textSize="17sp"
             android:visibility="gone"
             android:textColor="?android:attr/colorAccent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="90dp" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="105dp" />
-
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true" >
+        android:orientation="vertical" >
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="75dp"
+            android:layout_marginBottom="50dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_save"
-            tools:ignore="RelativeOverlap" />
+            android:layout_gravity="end"
+            android:src="@drawable/ic_save" />
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            ads:adSize="SMART_BANNER"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adUnitId="ca-app-pub-7791710838910455/3234178631">
+        </com.google.android.gms.ads.AdView>
     </LinearLayout>
 </RelativeLayout>
