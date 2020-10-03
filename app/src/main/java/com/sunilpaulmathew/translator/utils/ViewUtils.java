@@ -2,6 +2,9 @@ package com.sunilpaulmathew.translator.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -52,7 +55,24 @@ public class ViewUtils {
         if (text != null) {
             editText.append(text);
         }
-        editText.setTextColor(getThemeAccentColor(context));
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (Utils.checkIllegalCharacters(Objects.requireNonNull(s.toString()))) {
+                    editText.setTextColor(Color.RED);
+                } else {
+                    editText.setTextColor(Utils.isDarkTheme(context) ? Color.WHITE : Color.BLACK);
+                }
+            }
+        });
         if (inputType >= 0) {
             editText.setInputType(inputType);
         }
@@ -68,7 +88,7 @@ public class ViewUtils {
                 if (Utils.checkIllegalCharacters(Objects.requireNonNull(editText.getText()).toString())) {
                     return;
                 }
-                onDialogEditTextListener.onClick(Objects.requireNonNull(editText.getText()).toString());
+                onDialogEditTextListener.onClick(editText.getText().toString());
             });
             dialog.setOnDismissListener(dialog1 -> {
                 if (negativeListener != null) {

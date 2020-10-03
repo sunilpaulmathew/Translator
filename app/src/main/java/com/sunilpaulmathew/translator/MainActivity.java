@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
             PopupMenu popupMenu = new PopupMenu(this, mSettings);
             Menu menu = popupMenu.getMenu();
             if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
-                menu.add(Menu.NONE, 7, Menu.NONE, getString(R.string.delete_string));
                 menu.add(Menu.NONE, 12, Menu.NONE, getString(R.string.view_string));
+                menu.add(Menu.NONE, 7, Menu.NONE, getString(R.string.delete_string));
             } else {
                 menu.add(Menu.NONE, 8, Menu.NONE, getString(R.string.import_string_sdcard));
             }

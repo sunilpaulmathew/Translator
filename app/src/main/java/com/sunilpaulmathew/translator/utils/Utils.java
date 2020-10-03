@@ -259,7 +259,9 @@ public class Utils {
         for (String s : array) {
             if (!s.matches("&gt;|&lt;|&amp;") && s.startsWith("&")
                     || s.startsWith("<") && s.length() == 1 || s.startsWith(">") && s.length() == 1
-                    || s.startsWith("\"") || s.startsWith("'")) return true;
+                    || s.startsWith("<b") && s.length() <= 3 || s.startsWith("</") && s.length() <= 4
+                    || s.startsWith("<i") && s.length() <= 3 || s.startsWith("\"") || s.startsWith("'"))
+                return true;
         }
         return false;
     }
