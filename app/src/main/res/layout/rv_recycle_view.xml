@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="start|center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:gravity="start|center_vertical"
-        tools:ignore="UselessParent">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="20dp"
@@ -24,9 +26,21 @@
             android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
             android:focusable="false"
             android:textSize="17sp"
-            android:textColor="?android:attr/colorAccent" />
-    </LinearLayout>
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/info_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="center"
+            android:background="@null"
+            android:tint="?android:attr/textColorPrimary"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginStart="10dp" />
+        </FrameLayout>
 </LinearLayout>

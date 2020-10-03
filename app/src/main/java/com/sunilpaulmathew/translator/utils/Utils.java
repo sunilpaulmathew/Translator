@@ -13,6 +13,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
@@ -85,6 +86,11 @@ public class Utils {
             AppCompatDelegate.setDefaultNightMode(
                     AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
+    }
+
+    public static boolean isDarkTheme(Context context) {
+        int currentNightMode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        return currentNightMode == Configuration.UI_MODE_NIGHT_YES;
     }
 
     static String readAssetFile(Context context, String file) {
@@ -246,6 +252,16 @@ public class Utils {
             path = path.replace("file%3A%2F%2F%2F", "").replace("%2F", "/");
         }
         return path;
+    }
+
+    public static boolean checkIllegalCharacters(String string) {
+        String[] array = string.trim().split("\\s+");
+        for (String s : array) {
+            if (!s.matches("&gt;|&lt;|&amp;") && s.startsWith("&")
+                    || s.startsWith("<") && s.length() == 1 || s.startsWith(">") && s.length() == 1
+                    || s.startsWith("\"") || s.startsWith("'")) return true;
+        }
+        return false;
     }
 
     public static String getSpecialCharacters(String string) {
