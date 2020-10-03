@@ -64,13 +64,17 @@ public class ViewUtils {
             dialog.setNegativeButton(context.getString(R.string.cancel), negativeListener);
         }
         if (onDialogEditTextListener != null) {
-            dialog.setPositiveButton(action, (dialog1, which)
-                    -> onDialogEditTextListener.onClick(Objects.requireNonNull(editText.getText()).toString()))
-                    .setOnDismissListener(dialog1 -> {
-                        if (negativeListener != null) {
-                            negativeListener.onClick(dialog1, 0);
-                        }
-                    });
+            dialog.setPositiveButton(action, (dialog1, which) -> {
+                if (Utils.checkIllegalCharacters(Objects.requireNonNull(editText.getText()).toString())) {
+                    return;
+                }
+                onDialogEditTextListener.onClick(Objects.requireNonNull(editText.getText()).toString());
+            });
+            dialog.setOnDismissListener(dialog1 -> {
+                if (negativeListener != null) {
+                    negativeListener.onClick(dialog1, 0);
+                }
+            });
         }
         return dialog;
     }
