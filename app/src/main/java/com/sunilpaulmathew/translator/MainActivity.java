@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
             appTheme.add(Menu.NONE, 3, Menu.NONE, getString(R.string.dark_theme_disable)).setCheckable(true)
                     .setChecked(Utils.getBoolean("light_theme", false, this));
             SubMenu about = menu.addSubMenu(Menu.NONE, 0, Menu.NONE, getString(R.string.about));
+            about.add(Menu.NONE, 13, Menu.NONE, getString(R.string.share_app));
             about.add(Menu.NONE, 4, Menu.NONE, getString(R.string.support));
             about.add(Menu.NONE, 5, Menu.NONE, getString(R.string.more_apps));
             about.add(Menu.NONE, 10, Menu.NONE, getString(R.string.report_issue));
@@ -203,6 +204,15 @@ public class MainActivity extends AppCompatActivity {
                     case 12:
                         Intent stringView = new Intent(this, StringViewActivity.class);
                         startActivity(stringView);
+                        break;
+                    case 13:
+                        Intent share_app = new Intent();
+                        share_app.setAction(Intent.ACTION_SEND);
+                        share_app.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
+                        share_app.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_message, BuildConfig.VERSION_NAME));
+                        share_app.setType("text/plain");
+                        Intent shareIntent = Intent.createChooser(share_app, getString(R.string.share_with));
+                        startActivity(shareIntent);
                         break;
                 }
                 return false;

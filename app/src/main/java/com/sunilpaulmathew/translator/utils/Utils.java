@@ -22,8 +22,10 @@ import android.preference.PreferenceManager;
 import android.text.Html;
 import android.view.View;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
 
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.snackbar.Snackbar;
@@ -201,8 +203,24 @@ public class Utils {
                         showSnackbar(view, context.getString(R.string.already_exists, text));
                         return;
                     }
-                    create(getStrings(context), Environment.getExternalStorageDirectory().toString() + "/" + text);
-                    showSnackbar(view, context.getString(R.string.save_string_message, Environment.getExternalStorageDirectory().toString() + "/" + text));
+                    String mString = Environment.getExternalStorageDirectory().toString() + "/" + text;
+                    create(getStrings(context), mString);
+                    new AlertDialog.Builder(context)
+                            .setMessage(context.getString(R.string.save_string_message, mString))
+                            .setNegativeButton(context.getString(R.string.cancel), (dialogInterface, i) -> {
+                            })
+                            .setPositiveButton(context.getString(R.string.share), (dialogInterface, i) -> {
+                                Uri uriFile = FileProvider.getUriForFile(context,
+                                        BuildConfig.APPLICATION_ID + ".provider", new File(mString));
+                                Intent shareScript = new Intent(Intent.ACTION_SEND);
+                                shareScript.setType("application/xml");
+                                shareScript.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.shared_by, new File(mString).getName()));
+                                shareScript.putExtra(Intent.EXTRA_TEXT, context.getString(R.string.share_message, BuildConfig.VERSION_NAME));
+                                shareScript.putExtra(Intent.EXTRA_STREAM, uriFile);
+                                shareScript.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                                context.startActivity(Intent.createChooser(shareScript, context.getString(R.string.share_with)));
+                            })
+                            .show();
                 }, context).setOnDismissListener(dialogInterface2 -> {
         }).show();
     }
