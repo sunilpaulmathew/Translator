@@ -12,7 +12,6 @@
     <string name="dark_theme_disable">Desativar</string>
     <string name="dark_theme_enable">Ativar</string>
     <string name="delete_string">Deletar \'string\'</string>
-    <string name="delete_string_error">Não há nada disponível para deletar! Abortando.</string>
     <string name="delete_string_message">Tem certeza de que deseja deletar o atual string.xml do sdcard?</string>
     <string name="developed_by">Desenvolvido por</string>
     <string name="donations">Doações</string>

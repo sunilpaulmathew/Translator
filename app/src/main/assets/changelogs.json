@@ -1,3 +1,3 @@
 {
-  "releaseNotes": "v0.2\n - Rebuild from nearly scratch.\n - Added German, Portuguese (Brazilian) and German transactions.\n - A bunch of bug fixes and improvements.\n - Miscellaneous changes.\n\nv0.1\n - Initial release"
+  "releaseNotes": "v0.3\n - Add info/warning icons to warn illegal characters.\n - Show real-time warning by coloring text into red when a user enters an illegal texts.\n - Allow removing lines by long click.\n - Added option to share exported string.\n - Added Indonesian and Malayalam translations.\n - Improved script view and saving.\n - Highlight matching words when searching.\n - Updated translations.\n\nv0.2\n - Rebuild from nearly scratch.\n - Added Korean, Portuguese (Brazilian) and German translations.\n - A bunch of bug fixes and improvements.\n - Miscellaneous changes.\n\nv0.1\n - Initial release."
 }

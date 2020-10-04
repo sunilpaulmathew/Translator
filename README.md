@@ -2,14 +2,17 @@
 
 ![The Translator](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true)
 
-[![](https://img.shields.io/badge/The%20Translator-v0.2-green)](https://github.com/sunilpaulmathew/Translator/releases)
+[![](https://img.shields.io/badge/The%20Translator-v0.3-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
+![](https://img.shields.io/github/languages/top/sunilpaulmathew/Translator)
+![](https://img.shields.io/github/contributors/sunilpaulmathew/Translator)
+![](https://img.shields.io/github/license/sunilpaulmathew/Translator)
 
-### The Translator is a simple application to help translate android apps. Click [here](screenshots/) to see some screenshots.
+### The Translator is a simple application to help translate android apps.
 
 ## Download
-[<img src="https://i.ibb.co/q0mdc4Z/get-it-on-github.png"
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
      alt=""
-     height="80">](https://github.com/sunilpaulmathew/Translator/releases)
+     height="80">](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
 
 ## Features
 * Quickly and easily translate android app's language strings (string.xml).
