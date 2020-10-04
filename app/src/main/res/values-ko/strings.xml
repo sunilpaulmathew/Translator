@@ -7,13 +7,12 @@
     <string name="cancel">취소</string>
     <string name="change_logs">변경사항</string>
     <string name="credits">도움을 주신 분들</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: 코드 기여\n<b><i>FiestaLake</i></b>: 한국어 번역</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: Kernel Adiutor (코드 기여)\n<b><i>Lennoard Silva</i></b>: 브라질 포르투갈어 번역\n<b><i>FiestaLake</i></b>: 한국어 번역\n<b><i>elea11</i></b>: 독일어 번역\n<b><i>Andi Krisma:</i></b> 인도네시아어 번역</string>
     <string name="dark_theme">어두운 테마</string>
     <string name="dark_theme_auto">자동</string>
     <string name="dark_theme_disable">끄기</string>
     <string name="dark_theme_enable">켜기</string>
     <string name="delete_string">번역 파일 지우기</string>
-    <string name="delete_string_error">지울 수 있는 것이 없습니다!</string>
     <string name="delete_string_message">내부 저장소에서 현 상태의 string.xml을(를) 지우시겠어요?</string>
     <string name="developed_by">개발자</string>
     <string name="donations">후원</string>
@@ -27,11 +26,14 @@
     <string name="permission_denied_write_storage">저장공간 쓰기 권한이 거부되었습니다!</string>
     <string name="press_back">나가려면 뒤로가기 버튼을 다시 누르세요</string>
     <string name="report_issue">문제 제출하기</string>
+    <string name="save">저장</string>
     <string name="save_string_message">\'%s\'에 새 번역 파일이 생성되었습니다!</string>
     <string name="search_hint">검색…</string>
     <string name="select_question">%s을(를) 선택하시겠어요?</string>
     <string name="source_code">소스 코드</string>
     <string name="support">지원 받기</string>
+    <string name="update">업데이트</string>
+    <string name="view_string">번역 파일 보기</string>
     <string name="wrong_extension">%s 확장자를 가진 파일을 선택해주세요.</string>
     <string name="yes">예</string>
 </resources>
