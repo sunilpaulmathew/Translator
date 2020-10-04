@@ -234,7 +234,7 @@ public class Utils {
                 }
             }
         }
-        return "<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:ignore=\"MissingTranslation\">\n<!--Created by The Translator-->\n\n" +
+        return "<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:ignore=\"MissingTranslation\">\n<!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->\n\n" +
                 mData.toString().replace("[","").replace("]","").replace(",","\n") + "\n</resources>";
     }
 
