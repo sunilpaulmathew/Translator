@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->
+
+    <string name="about">Sobre</string>
+    <string name="about_summary"><i>iUna aplicación para ayudar a traducir aplicaciones de código abierto para Android!</i></string>
+    <string name="already_exists">%s ya existe. Por favor, usa un nombre diferente.</string>
+    <string name="cancel">Cancelar</string>
+    <string name="change_logs">Registro de cambios</string>
+    <string name="credits">Créditos</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Código base)\n<b><i>Lennoard Silva</i></b>: traducciones a Portugués (Brasil)\n<b><i>FiestaLake</i></b>: traducciones a Koreano\n<b><i>elea11</i></b>: traducciones a Alemán\n<b><i>Andi Krisma</i></b>: traducciones a Indonesio\n<b><i>KikeCalpe</i></b>: traducciones a Español (Castellano)</string>
+    <string name="dark_theme">Tema oscuro</string>
+    <string name="dark_theme_auto">Auto</string>
+    <string name="dark_theme_disable">Deshabilitar</string>
+    <string name="dark_theme_enable">Habilitar</string>
+    <string name="delete_line_question">Confirmar borrado de \'%s\'?</string>
+    <string name="delete_string">Borrar \'string\'</string>
+    <string name="delete_string_message">Quieres borrar el archivo string.xml actual?</string>
+    <string name="developed_by">Desarrollado por</string>
+    <string name="dismiss">Descartar</string>
+    <string name="donations">Donaciones</string>
+    <string name="donations_message">Si te gusta mi trabajo, por favor, considera donar comprando la aplicación SmartPack Donation Package desde la PlayStore, dado que me ayuda muchísimo a mantener activos mis proyectos, sin embargo no es imprescindible para seguir usando las aplicaciones SmatPack.</string>
+    <string name="donation_app">Compra la aplicación de donación</string>
+    <string name="edit_string_warning">Por favor, se cuidadoso con los caracteres especiales (%s) en tu texto.</string>
+    <string name="illegal_string_warning">Algunos caracteres son considerados ilegales en formato \'xml\' y no son aceptados. Por favor, ten en cuenta que el texto completo sería rechazado, e incluso la aplicación podría dejar de funcionar en el peor de los casos, cuando se detecta un carácter ilegal.\n\nAlgunos de los caracteres prohibidos son:\n&amp; - excepto para ciertas palabras\n&lt; y &gt; -excepto para ciertos casos como &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nComilla simple (\') o comillas dobles (\") sin una barra invertida delante (\\), etc.</string>
+    <string name="import_string_message">Aún no has importado ningún archivo de \'string\' para ser traducido. Ves a \'Ajustes\'menu para importarlo desde la  memoria de tu móvil.</string>
+    <string name="import_string_sdcard">Importar \'string\'</string>
+    <string name="more_apps">Más aplicaciones del desarrollador</string>
+    <string name="name_empty">El nombre está vacío! Abortando!</string>
+    <string name="no_internet">Por favor, comprueba tu conexión a internet.</string>
+    <string name="permission_denied_write_storage">No hay permiso para guardar archivos en la memoria de tu móvil.</string>
+    <string name="please_note">Por favor, tenga en cuenta</string>
+    <string name="press_back">Pulse atrás de nuevo para salir</string>
+    <string name="report_issue">Reportar un problema</string>
+    <string name="save">Guardar</string>
+    <string name="save_string_message">La nueva cadena traducida ha sido generada como \'%s\'</string>
+    <string name="search_hint">Buscar…</string>
+    <string name="select_question">Seleccionar %s?</string>
+    <string name="share">Compartir</string>
+    <string name="share_app">Compartir App</string>
+    <string name="shared_by">%s/compartido por The Translator</string>
+    <string name="share_message">The Translator v%s puede ser obtenido desde PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_string">Compartir \'string\'</string>
+    <string name="share_with">Compartir con</string>
+    <string name="source_code">Código fuente</string>
+    <string name="support">Grupo de soporte (inglés)</string>
+    <string name="update">Actualizar</string>
+    <string name="view_string">Ver \'string\'</string>
+    <string name="warning"> Atención</string>
+    <string name="wrong_extension">Por favor, selecciona un archivo con extensión %s</string>
+    <string name="yes">Sí</string>
+</resources>
