@@ -2,7 +2,7 @@
 
 ![The Translator](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true)
 
-[![](https://img.shields.io/badge/The%20Translator-v0.3-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
+[![](https://img.shields.io/badge/The%20Translator-v0.4-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
 ![](https://img.shields.io/github/languages/top/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/contributors/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/license/sunilpaulmathew/Translator)
@@ -13,6 +13,9 @@
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
      alt=""
      height="80">](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
+[<img src="https://i.ibb.co/q0mdc4Z/get-it-on-github.png"
+     alt=""
+     height="80">](https://github.com/sunilpaulmathew/Translator/blob/master/release/com.sunilpaulmathew.translator.apk?raw=true)  
 
 ## Features
 * Quickly and easily translate android app's language strings (string.xml).
@@ -36,6 +39,8 @@ If you like to appreciate my work, please consider donating to me (either via [P
 * [FiestaLake](https://github.com/FiestaLake), Korean Translations
 * [elea11](https://github.com/elea11), German Translations
 * [Andi Krisma](https://github.com/NiNjA1998), Indonesian Translations
+* [Nikita](https://t.me/MONSTER_PC), Russian & Ukrainian Translations
+* [Kike Cabrera](https://github.com/kikecalpe), Spanish Translations
 
 ## License
 
