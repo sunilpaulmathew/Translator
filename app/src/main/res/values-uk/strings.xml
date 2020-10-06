@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->
+
+    <string name="about">Про додаток</string>
+    <string name="about_summary"><i>Додаток, який допоможе перекласти інші додатки для Android!</i></string>
+    <string name="already_exists">%s вже існує! Будь ласка, використовуйте іншу назву.</string>
+    <string name="cancel">Скасувати</string>
+    <string name="change_logs">Зміни</string>
+    <string name="credits">Подяки</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Базовий код)\n<b><i>Lennoard Silva</i></b>: Португальський (Бразильський) переклад\n<b><i>FiestaLake</i></b>: Корейський переклад\n<b><i>elea11</i></b>: Німецький переклад\n<b><i>Andi Krisma</i></b>: Індонезійський переклад\n<b><i>MONSTER_PC</i></b>: Російський та Український переклад</string>
+    <string name="dark_theme">Темна тема</string>
+    <string name="dark_theme_auto">Авто</string>
+    <string name="dark_theme_disable">Вимкнути</string>
+    <string name="dark_theme_enable">Увімкнути</string>
+    <string name="delete_line_question">Ви впевнені, що хочете видалити \'%s\'?</string>
+    <string name="delete_string">Видалити \'string\'</string>
+    <string name="delete_string_message">Ви впевнені, що хочете видалити поточний string.xml?</string>
+    <string name="developed_by">Розроблено</string>
+    <string name="dismiss">Закрити</string>
+    <string name="donations">Пожертви</string>
+    <string name="donations_message">Якщо вам подобається моя робота, купите SmartPack Donation Package в Play Маркеті. Це допоможе розвивати мої програми ще швидше.</string>
+    <string name="donation_app">Купити додаток для пожертв</string>
+    <string name="edit_string_warning">Будьте обережні зі спеціальними символами (%s) у вашому тексті!</string>
+    <string name="illegal_string_warning">Деякі символи вважаються незаконними у форматі \'xml\' і є неприйнятними! Зверніть увагу, що весь текст буде знехтувати (або навіть збій програми в гіршому випадку), коли буде виявлено незаконний символ!\n\nДеякі заборонені символи включають, але не обмежуючись ними\n&amp; - крім певних слів\n&lt; і &gt; - окрім певних випадків, таких як &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; тощо.\nОдинарні (\') або подвійні (\") лапки без косої риски (\\) спереду тощо.</string>
+    <string name="import_string_message">Ви ще не імпортували жоден файл \'string\' перекладу. Перейдіть до меню \'Налаштування\', щоб імпортувати його з \'sdcard\'!</string>
+    <string name="import_string_sdcard">Імпор \'string\'</string>
+    <string name="more_apps">Більше від розробника</string>
+    <string name="name_empty">Ім\'я пусте! Невдача!</string>
+    <string name="no_internet">Перевірте підключення до Інтернету!</string>
+    <string name="permission_denied_write_storage">Заборонено дозвіл на запис в сховище!</string>
+    <string name="please_note">Будь ласка, зверніть увагу</string>
+    <string name="press_back">Натисніть ще раз, щоб вийти</string>
+    <string name="report_issue">Повідомити про проблему</string>
+    <string name="save">Зберегти</string>
+    <string name="save_string_message">Новий рядок перекладу генерується як \'%s\'!</string>
+    <string name="search_hint">Пошук…</string>
+    <string name="select_question">Вибрати %s?</string>
+    <string name="share">Поділитися</string>
+    <string name="share_app">Поділитися додатком</string>
+    <string name="shared_by">%s/shared by The Translator</string>
+    <string name="share_message">The Translator v%s можна отримати в Play Маркеті: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_string">Поділитися \'string\'</string>
+    <string name="share_with">Поділитися з</string>
+    <string name="source_code">Вихідний код</string>
+    <string name="support">Група підтримки</string>
+    <string name="update">Оновити</string>
+    <string name="view_string">Переглянути \'string\'</string>
+    <string name="warning">Увага</string>
+    <string name="wrong_extension">Виберіть файл із розширенням %s.</string>
+    <string name="yes">Так</string>
+</resources>

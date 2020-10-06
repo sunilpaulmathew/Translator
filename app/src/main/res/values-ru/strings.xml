@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->
+
+    <string name="about">О программе</string>
+    <string name="about_summary"><i>Приложение, помогающее переводить другие приложения для Android!</i></string>
+    <string name="already_exists">%s уже существует! Пожалуйста, используйте другое имя.</string>
+    <string name="cancel">Отмена</string>
+    <string name="change_logs">Изменения</string>
+    <string name="credits">Благодарности</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Базовый код)\n<b><i>Lennoard Silva</i></b>: Португальский (Бразильский) перевод\n<b><i>FiestaLake</i></b>: Корейский перевод\n<b><i>elea11</i></b>: Немецкий перевод\n<b><i>Andi Krisma</i></b>: Индонезийский перевод\n<b><i>MONSTER_PC</i></b>: Русский и Украинский перевод</string>
+    <string name="dark_theme">Тёмная тема</string>
+    <string name="dark_theme_auto">Авто</string>
+    <string name="dark_theme_disable">Отключить</string>
+    <string name="dark_theme_enable">Включить</string>
+    <string name="delete_line_question">Вы уверены, что хотите удалить \'%s\'?</string>
+    <string name="delete_string">Удалить \'string\'</string>
+    <string name="delete_string_message">Вы уверены, что хотите удалить текущий string.xml?</string>
+    <string name="developed_by">Разработано</string>
+    <string name="dismiss">Закрыть</string>
+    <string name="donations">Пожертвования</string>
+    <string name="donations_message">Если вам нравится моя работа, купите SmartPack Donation Package в Play Маркете. Это поможет развивать мои приложения ещё быстрее.</string>
+    <string name="donation_app">Купить приложение для пожертвований</string>
+    <string name="edit_string_warning">Будьте осторожны со специальными символами (%s) в вашем тексте!</string>
+    <string name="illegal_string_warning">Некоторые символы считаются незаконными в формате xml и неприемлемы! Обратите внимание, что при обнаружении недопустимого символа весь текст будет проигнорирован (или даже произойдет сбой приложения в худшем случае)!\n\nНекоторые из запрещенных строк включают, но не ограничиваются\n&amp; - кроме некоторых слов\n&lt; и &gt; - за исключением некоторых случаев, таких как &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; и т.д.\nОдинарные (\') или двойные (\") кавычки без обратной косой черты (\\) спереди и т.д.</string>
+    <string name="import_string_message">Вы еще не импортировали ни одного \'string\' файла перевода. Зайдите в меню \'Настройки\', чтобы импортировать один из \'sdcard\'!</string>
+    <string name="import_string_sdcard">Импорт \'string\'</string>
+    <string name="more_apps">Больше от разработчика</string>
+    <string name="name_empty">Имя пустое! Неудача!</string>
+    <string name="no_internet">Пожалуйста, проверьте ваше интернет-соединение!</string>
+    <string name="permission_denied_write_storage">Запрещено разрешение на запись в хранилище!</string>
+    <string name="please_note">Пожалуйста, обратите внимание</string>
+    <string name="press_back">Нажмите еще раз, чтобы выйти</string>
+    <string name="report_issue">Сообщить о проблеме</string>
+    <string name="save">Сохранить</string>
+    <string name="save_string_message">Новая строка перевода создается как \'%s\'!</string>
+    <string name="search_hint">Поиск…</string>
+    <string name="select_question">Выбрать %s?</string>
+    <string name="share">Поделиться</string>
+    <string name="share_app">Поделиться приложением</string>
+    <string name="shared_by">%s/поделился The Translator</string>
+    <string name="share_message">The Translator v%s можно получить в Play Маркете: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_string">Поделиться \'string\'</string>
+    <string name="share_with">Поделиться с</string>
+    <string name="source_code">Исходный код</string>
+    <string name="support">Группа поддержки</string>
+    <string name="update">Обновить</string>
+    <string name="view_string">Посмотреть \'string\'</string>
+    <string name="warning">Предупреждение</string>
+    <string name="wrong_extension">Выберите файл с расширением %s.</string>
+    <string name="yes">Да</string>
+</resources>
