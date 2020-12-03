@@ -312,6 +312,10 @@ public class MainActivity extends AppCompatActivity {
                 Utils.showSnackbar(mRecyclerView, getString(R.string.wrong_extension, ".xml"));
                 return;
             }
+            if (!Objects.requireNonNull(Utils.readFile(mPath)).contains("<string name=\"")) {
+                Utils.showSnackbar(mRecyclerView, getString(R.string.import_string_error, new File(mPath).getName()));
+                return;
+            }
             new AlertDialog.Builder(this)
                     .setMessage(getString(R.string.select_question, new File(mPath).toString()))
                     .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
