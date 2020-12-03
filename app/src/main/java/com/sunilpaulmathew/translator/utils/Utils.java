@@ -27,7 +27,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
 
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.MainActivity;
@@ -94,10 +93,6 @@ public class Utils {
     public static boolean isDarkTheme(Context context) {
         int currentNightMode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         return currentNightMode == Configuration.UI_MODE_NIGHT_YES;
-    }
-
-    public static void initializeGoogleAds(Context context) {
-        MobileAds.initialize(context, "ca-app-pub-7791710838910455~9471068901");
     }
 
     static String readAssetFile(Context context, String file) {

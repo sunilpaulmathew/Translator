@@ -23,7 +23,6 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.SubMenu;
 import android.view.View;
-import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -38,10 +37,6 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.LoadAdError;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sunilpaulmathew.translator.utils.AboutActivity;
 import com.sunilpaulmathew.translator.utils.StringViewActivity;
@@ -70,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private String mPath;
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        // Initialize App Theme & Google Ads
+        // Initialize App Theme
         Utils.initializeAppTheme(this);
-        Utils.initializeGoogleAds(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -84,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         mSearchWord = findViewById(R.id.search_Text);
         mFab = findViewById(R.id.fab);
         mRecyclerView = findViewById(R.id.recycler_view);
-        ViewGroup.MarginLayoutParams layoutParams = (ViewGroup.MarginLayoutParams) mRecyclerView.getLayoutParams();
         AppCompatImageButton mSettings = findViewById(R.id.settings_menu);
         AppCompatImageButton mSearch = findViewById(R.id.search_button);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -246,27 +240,6 @@ public class MainActivity extends AppCompatActivity {
                 mRecyclerView.setAdapter(new RecycleViewAdapter(getSearchData()));
             }
         });
-
-        AdView mAdView = findViewById(R.id.adView);
-        if (Utils.isNetworkAvailable(this) && Utils.isNotDonated(this)) {
-            mAdView.setAdListener(new AdListener() {
-                @Override
-                public void onAdLoaded() {
-                    mAdView.setVisibility(View.VISIBLE);
-                }
-                @Override
-                public void onAdFailedToLoad(LoadAdError adError) {
-                    layoutParams.setMargins(0,0,0,0);
-                    mAdView.setVisibility(View.GONE);
-                }
-            });
-            AdRequest adRequest = new AdRequest.Builder()
-                    .build();
-            mAdView.loadAd(adRequest);
-        } else {
-            layoutParams.setMargins(0,0,0,0);
-            mAdView.setVisibility(View.GONE);
-        }
     }
 
     private List<String> getData() {
