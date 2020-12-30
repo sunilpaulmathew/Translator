@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--Author: Mikesew1320 <mikesew1320@gmail.com>-->
+
+    <string name="import_string_error">\"\'%s\' ትክክለኛ የቋንቋ ገመድ አይደለም። ማስወረድ!\"</string>
+    <string name="delete_string">\"ሕብረቁምፊ\" ሰርዝ \"</string>
+    <string name="import_string_sdcard">\"ሕብረቁምፊ\" አስመጣ \"</string>
+    <string name="save_string_message">\"አዲስ የትርጉም ሕብረቁምፊ እንደ \'%s\' ይፈጠራል!\"</string>
+    <string name="edit_string_warning">\"በጽሑፍዎ ውስጥ እባክዎን በልዩ ቁምፊ (%s) ይጠንቀቁ!\"</string>
+    <string name="share_string">\"ሕብረቁምፊ\" ያጋሩ</string>
+    <string name="illegal_string_warning">\"የአንዳንድ ገጸ-ባህሪዎች በ \'xml\' ቅርፀት እንደ ህገ-ወጥ ይቆጠራሉ እና ተቀባይነት የላቸውም! ህገ-ወጥ ገጸ-ባህሪይ ሲገኝ መላው ጽሑፍ ችላ (ወይም በጣም በከፋ ሁኔታ የመተግበሪያ ብልሽቶች) እንደሚወገዱ ልብ ይበሉ! \n\nከተከለከሉት ገጸ-ባህሪዎች መካከል የተወሰኑትን ያካትታል ፣ ግን አይወሰንም \n&amp; - ከተወሰኑ ቃላት በስተቀር \nእንደ &lt;b> ፣ &lt;/ b> ፣ &lt;i> ፣ &lt;/ i> ወዘተ ያሉ የተወሰኑ ጉዳዮች በስተቀር \nነጠላ (\') ወይም ድርብ (\") የጥቅስ ምልክቶች ከፊት ለፊቱ ያለ ኋላቀር ቅጥነት (\\) ፣ ወዘተ።\"</string>
+    <string name="delete_line_question">«%s» ን መሰረዝ በእርግጥ ነው?</string>
+    <string name="view_string">\"ሕብረቁምፊ\" ይመልከቱ</string>
+    <string name="import_string_message">\"እስካሁን የትኛውንም የትርጉም \'ክር\' ፋይል አላመጡም። አንዱን ከ‹ ስካርድካርድ ›ለማስገባት ወደ‹ ቅንብሮች ›ምናሌ ይሂዱ!</string>
+    <string name="already_exists">%s አስቀድሞ አለ! እባክዎ የተለየ ስም ይጠቀሙ።</string>
+    <string name="shared_by">በተርጓሚው የተጋራ%s /</string>
+    <string name="about">ስለ</string>
+    <string name="about_summary">ሌሎች የ android መተግበሪያዎችን ለመተርጎም የሚረዳ መተግበሪያ!</string>
+    <string name="delete_string_message">የአሁኑን string.xml ለመሰረዝ እርግጠኛ ነዎት?</string>
+    <string name="dark_theme_auto">ራስ-ሰር</string>
+    <string name="donation_app">የልገሳ መተግበሪያን ይግዙ</string>
+    <string name="cancel">ሰርዝ</string>
+    <string name="change_logs">ለውጥ-ምዝግብ ማስታወሻዎች</string>
+    <string name="credits">ክሬዲቶች</string>
+    <string name="dark_theme">ጨለማ ገጽታ</string>
+    <string name="developed_by">የዳበረ በ</string>
+    <string name="dark_theme_disable">አሰናክል</string>
+    <string name="dismiss">አሰናብት</string>
+    <string name="donations">ልገሳዎች</string>
+    <string name="dark_theme_enable">አንቃ</string>
+    <string name="credits_summary">ግራራክ \": Kernel Adiutor (የኮድ አስተዋጽኦች) \n“ሌኖናርድ ሲልቫ” የፖርቱጋልኛ (ብራዚላዊ) ትርጉሞች \n\"FiestaLake\": የኮሪያ ትርጉሞች \n\"elea11\": የጀርመንኛ ትርጉሞች \n“አንዲ ክሪዝማ” የኢንዶኔዥያ ትርጉሞች \n\"MONSTER_PC\": የሩሲያ / ዩክሬንኛ ትርጉሞች \nኪኪ ካብራ የስፔን ትርጉሞች</string>
+    <string name="donations_message">ስራዬን ማድነቅ ከፈለጉ እባክዎን የእኔን ፕሮጄክቶች የበለጠ ንቁ ለመቀጠል በእውነቱ ጠቃሚ ስለሆነ ከ ‹PlayStore› የስማርትፓክ ልገሳ ፓኬጅ መግዛትን ያስቡበት ምንም እንኳን በጭራሽ አስፈላጊ ባይሆንም ፡፡</string>
+    <string name="more_apps">ተጨማሪ ከገንቢ</string>
+    <string name="permission_denied_write_storage">ለማከማቻ ለመፃፍ ፈቃድ ተከልክሏል!</string>
+    <string name="no_internet">እባክዎ የበይነመረብ ግንኙነትዎን ያረጋግጡ!</string>
+    <string name="please_note">ማስታወሻ ያዝ</string>
+    <string name="wrong_extension">እባክዎ ከ%s ቅጥያ ጋር ፋይል ይምረጡ።</string>
+    <string name="press_back">ለመውጣት እንደገና ተመልሰው ይጫኑ</string>
+    <string name="report_issue">አንድ ችግር ሪፖርት ያድርጉ</string>
+    <string name="save">አስቀምጥ</string>
+    <string name="search_hint">ይፈልጉ…</string>
+    <string name="select_question">%s ን ይምረጡ?</string>
+    <string name="share">.ር ያድርጉ</string>
+    <string name="share_app">አጋራ መተግበሪያ</string>
+    <string name="share_with">ተካፈል</string>
+    <string name="source_code">ምንጭ ኮድ</string>
+    <string name="support">የድጋፍ ቡድን</string>
+    <string name="app_name">ተርጓሚው</string>
+    <string name="share_message">ተርጓሚው v %s ከ PlayStore ሊገኝ ይችላል: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="update">አዘምን</string>
+    <string name="warning">ማስጠንቀቂያ</string>
+    <string name="yes">አዎ</string>
+</resources>
