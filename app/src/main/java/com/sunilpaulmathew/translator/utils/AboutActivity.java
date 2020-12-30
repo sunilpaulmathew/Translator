@@ -51,7 +51,7 @@ public class AboutActivity extends AppCompatActivity {
             onBackPressed();
         });
 
-        mAppName.setText(getString(R.string.app_name) + " v" + BuildConfig.VERSION_NAME);
+        mAppName.setText(getString(R.string.app_name) + " " + BuildConfig.VERSION_NAME);
         String change_log = null;
         try {
             change_log = new JSONObject(Objects.requireNonNull(Utils.readAssetFile(
