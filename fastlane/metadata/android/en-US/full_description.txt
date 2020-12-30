@@ -1,0 +1,21 @@
+<i>The Translator</i> is a simple application to help translate android apps.
+
+<b>Features</b>
+
+- A simple, but elegant UI to display the individual lines of a language string.
+- Intelligently guide users to avoid mistakes.
+- Directly share (after saving) strings with the developers.
+- Long press to remove an individual line.
+- Dark and Light themes.
+- Includes translations of a number of languages (Please help me to translate this app - Original string.XML available at https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml).
+- & A lot more
+
+<b>How it work?</b>
+
+- Get the original 'string.xml' from your developer (or from the source repo, if the app is open-source).
+- Import the same from 'sdcard' to the Translator (Settings --> Import 'string').
+- The app will list each and every translatable string as separate entries.
+- Click on each of them and replace the original text with the translation from your language.
+- Please follow on-screen instructions to avoid mistakes (RED colour - Error).
+- Once you finished, save your work by clicking the save button on the bottom (or on Settings --> View 'string').
+- Send the new xml file generated at 'sdcard' to your developer and patiently wait for an update
