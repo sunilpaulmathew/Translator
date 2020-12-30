@@ -21,8 +21,9 @@
                 android:layout_gravity="start"
                 android:gravity="center_vertical"
                 android:text="@string/app_name"
+                android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="?android:attr/colorAccent" />
+                android:textColor="?attr/colorAccent" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/search_button"
@@ -30,7 +31,7 @@
                 android:layout_height="50dp"
                 android:layout_marginEnd="50dp"
                 android:background="@null"
-                android:tint="?android:attr/colorAccent"
+                android:tint="?attr/colorAccent"
                 android:layout_gravity="end|center"
                 android:src="@drawable/ic_search" />
 
@@ -39,7 +40,7 @@
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:background="@null"
-                android:tint="?android:attr/colorAccent"
+                android:tint="?attr/colorAccent"
                 android:layout_gravity="end|center"
                 android:src="@drawable/ic_settings" />
         </FrameLayout>
@@ -65,9 +66,9 @@
             android:maxLines="1"
             android:textAlignment="center"
             android:hint="@string/search_hint"
-            android:textColor="?android:attr/colorAccent"
-            android:textColorHint="?android:attr/colorAccent"
-            android:backgroundTint="?android:attr/colorAccent"
+            android:textColor="?attr/colorAccent"
+            android:textColorHint="?attr/colorAccent"
+            android:backgroundTint="?attr/colorAccent"
             android:visibility="gone"
             android:textSize="16sp" />
     </LinearLayout>
@@ -97,7 +98,8 @@
             android:focusable="false"
             android:textSize="17sp"
             android:visibility="gone"
-            android:textColor="?android:attr/colorAccent" />
+            android:textStyle="italic"
+            android:textColor="?attr/colorAccent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
