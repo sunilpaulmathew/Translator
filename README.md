@@ -41,6 +41,7 @@ If you like to appreciate my work, please consider donating to me (either via [P
 * [Andi Krisma](https://github.com/NiNjA1998), Indonesian Translations
 * [Nikita](https://t.me/MONSTER_PC), Russian & Ukrainian Translations
 * [Kike Cabrera](https://github.com/kikecalpe), Spanish Translations
+* [Mikesew1320](https://github.com/Mikesew1320), Amharic Translations
 
 ## License
 
