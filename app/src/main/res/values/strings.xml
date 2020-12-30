@@ -25,6 +25,7 @@
     <string name="import_string_message">You haven\'t imported any translation \'string\' file yet. Go to \'Settings\' menu to import one from \'sdcard\'!</string>
     <string name="import_string_sdcard">Import \'string\'</string>
     <string name="import_string_error">\'%s\' is not a proper language string. Aborting!</string>
+    <string name="licence">Licence</string>
     <string name="more_apps">More from Developer</string>
     <string name="name_empty">Name is empty! Aborting!</string>
     <string name="no_internet">Please check your internet connection!</string>

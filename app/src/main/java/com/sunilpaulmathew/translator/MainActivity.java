@@ -39,6 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.sunilpaulmathew.translator.utils.AboutActivity;
+import com.sunilpaulmathew.translator.utils.LicenceActivity;
 import com.sunilpaulmathew.translator.utils.StringViewActivity;
 import com.sunilpaulmathew.translator.utils.Utils;
 import com.sunilpaulmathew.translator.views.RecycleViewAdapter;
@@ -114,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
             if (Utils.isNotDonated(this)) {
                 about.add(Menu.NONE, 9, Menu.NONE, getString(R.string.donations));
             }
+            about.add(Menu.NONE, 14, Menu.NONE, getString(R.string.licence));
             about.add(Menu.NONE, 6, Menu.NONE, getString(R.string.about));
             popupMenu.setOnMenuItemClickListener(item -> {
                 switch (item.getItemId()) {
@@ -207,6 +209,10 @@ public class MainActivity extends AppCompatActivity {
                         share_app.setType("text/plain");
                         Intent shareIntent = Intent.createChooser(share_app, getString(R.string.share_with));
                         startActivity(shareIntent);
+                        break;
+                    case 14:
+                        Intent licence = new Intent(this, LicenceActivity.class);
+                        startActivity(licence);
                         break;
                 }
                 return false;
