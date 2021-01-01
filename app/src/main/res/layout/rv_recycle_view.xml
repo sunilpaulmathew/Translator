@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/recycler_view_layout"
+<com.google.android.material.card.MaterialCardView
+    android:id="@+id/recycler_view_card"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    app:cardBackgroundColor="?android:attr/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="start|center_vertical"
-    android:orientation="horizontal"
     android:longClickable="true"
-    android:padding="10dp">
+    app:cardCornerRadius="10dp"
+    android:layout_margin="2dp" >
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:ignore="UselessParent">
+            android:padding="10dp" >
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:layout_width="20dp"
@@ -31,7 +31,7 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:focusable="false"
-                    android:textSize="17sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="?android:attr/textColorPrimary" />
 
@@ -45,4 +45,4 @@
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginStart="10dp" />
         </FrameLayout>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

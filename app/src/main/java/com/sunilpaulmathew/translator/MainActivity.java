@@ -33,7 +33,6 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -84,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
         AppCompatImageButton mSearch = findViewById(R.id.search_button);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(new RecycleViewAdapter(getData()));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mAboutApp.setVisibility(View.VISIBLE);
 
         mFab.setOnClickListener(v -> Utils.getInstance().saveString(mRecyclerView, this));
