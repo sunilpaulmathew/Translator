@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2020-2021 sunilpaulmathew <sunil.kde@gmail.com>
+ * Copyright (C) 2021-2022 sunilpaulmathew <sunil.kde@gmail.com>
  *
  * This file is part of The Translator, An application to help translate android apps.
  *
  */
 
-package com.sunilpaulmathew.translator.utils;
+package com.sunilpaulmathew.translator.activities;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import androidx.appcompat.widget.AppCompatImageButton;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
+import com.sunilpaulmathew.translator.utils.Translator;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on September 29, 2020
@@ -34,9 +35,9 @@ public class StringViewActivity extends AppCompatActivity {
         AppCompatImageButton mBack = findViewById(R.id.back_button);
         AppCompatImageButton mSave = findViewById(R.id.save_button);
         mBack.setOnClickListener(v -> onBackPressed());
-        mSave.setOnClickListener(v -> Utils.getInstance().saveString(mSave, this));
+        mSave.setOnClickListener(v -> Translator.saveString(mSave, this));
         mCancel.setOnClickListener(v -> onBackPressed());
-        mForegroundText.setText(Utils.getStrings(this));
+        mForegroundText.setText(Translator.getStrings(this));
     }
 
 }

@@ -1,11 +1,11 @@
 /*
- * Copyright (C) 2020-2021 sunilpaulmathew <sunil.kde@gmail.com>
+ * Copyright (C) 2021-2022 sunilpaulmathew <sunil.kde@gmail.com>
  *
  * This file is part of The Translator, An application to help translate android apps.
  *
  */
 
-package com.sunilpaulmathew.translator.views;
+package com.sunilpaulmathew.translator.adapters;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -21,11 +21,10 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
+import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
-import com.sunilpaulmathew.translator.utils.ViewUtils;
 
 import java.util.List;
-import java.util.Objects;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on September 28, 2020
@@ -33,10 +32,12 @@ import java.util.Objects;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
 
-    private List<String> data;
+    private static List<String> data;
+
+    private static ClickListener clickListener;
 
     public RecycleViewAdapter (List<String> data){
-        this.data = data;
+        RecycleViewAdapter.data = data;
     }
 
     @NonNull
@@ -49,41 +50,41 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(@NonNull RecycleViewAdapter.ViewHolder holder, int position) {
-        if (Utils.mKeyText != null && this.data.get(position).toLowerCase().contains(Utils.mKeyText)) {
-            holder.description.setText(Utils.fromHtml(this.data.get(position).toLowerCase().replace(Utils.mKeyText,
-                    "<b><i><font color=\"" + Color.RED + "\">" + Utils.mKeyText + "</font></i></b>")));
+        if (Translator.mKeyText != null && data.get(position).toLowerCase().contains(Translator.mKeyText)) {
+            holder.description.setText(Utils.fromHtml(data.get(position).toLowerCase().replace(Translator.mKeyText,
+                    "<b><i><font color=\"" + Color.RED + "\">" + Translator.mKeyText + "</font></i></b>")));
         } else {
-            holder.description.setText(this.data.get(position));
+            holder.description.setText(data.get(position));
         }
         holder.description.setTextColor(Utils.isDarkTheme(holder.description.getContext()) ?
-                ViewUtils.getThemeAccentColor(holder.description.getContext()) : Color.BLACK);
+                Utils.getThemeAccentColor(holder.description.getContext()) : Color.BLACK);
         holder.layoutCard.setOnLongClickListener(item -> {
             new MaterialAlertDialogBuilder(holder.layoutCard.getContext())
                     .setMessage(holder.description.getContext().getString(R.string.delete_line_question, holder.description.getText()))
                     .setNegativeButton(R.string.cancel, (dialog1, id1) -> {
                     })
                     .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
-                        Utils.deleteSingleString(">" + holder.description.getText() + "</string>", holder.layoutCard.getContext());
+                        Translator.deleteSingleString(">" + holder.description.getText() + "</string>", holder.layoutCard.getContext());
                         data.remove(position);
                         notifyDataSetChanged();
                     })
                     .show();
             return false;
         });
-        holder.imageButton.setImageDrawable(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
+        holder.imageButton.setImageDrawable(Translator.getSpecialCharacters(data.get(position)).isEmpty()
                 ? holder.imageButton.getContext().getResources().getDrawable(R.drawable.ic_info)
                 : holder.imageButton.getContext().getResources().getDrawable(R.drawable.ic_warning));
         holder.imageButton.setColorFilter(Utils.isDarkTheme(holder.imageButton.getContext()) ? Color.WHITE : Color.BLACK);
         holder.imageButton.setOnClickListener(v -> {
             new MaterialAlertDialogBuilder(holder.imageButton.getContext())
-                    .setIcon(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
+                    .setIcon(Translator.getSpecialCharacters(data.get(position)).isEmpty()
                             ? R.drawable.ic_info : R.drawable.ic_warning)
-                    .setTitle(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
+                    .setTitle(Translator.getSpecialCharacters(data.get(position)).isEmpty()
                             ? R.string.please_note : R.string.warning)
-                    .setMessage(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
+                    .setMessage(Translator.getSpecialCharacters(data.get(position)).isEmpty()
                             ? holder.imageButton.getContext().getString(R.string.illegal_string_warning)
                             : holder.imageButton.getContext().getString(R.string.edit_string_warning,
-                            Utils.getSpecialCharacters(this.data.get(position))) + "\n\n" +
+                            Translator.getSpecialCharacters(data.get(position))) + "\n\n" +
                             holder.imageButton.getContext().getString(R.string.illegal_string_warning))
                     .setPositiveButton(holder.imageButton.getContext().getString(R.string.cancel), (dialogInterface, i) -> {
                     })
@@ -93,10 +94,10 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
     @Override
     public int getItemCount() {
-        return this.data.size();
+        return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private MaterialTextView description;
         private AppCompatImageButton imageButton;
         private MaterialCardView layoutCard;
@@ -111,18 +112,16 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
         @Override
         public void onClick(View view) {
-            ViewUtils.dialogEditText(this.description.getText().toString(), view.getContext().getString(R.string.update),
-                    (dialogInterface1, i1) -> {
-                    }, text -> {
-                        if (text.isEmpty()) {
-                            return;
-                        }
-                        Utils.create(Objects.requireNonNull(Utils.readFile(itemView.getContext().getFilesDir().toString() + "/strings.xml")).replace(">" + this.description.getText() + "</string>", ">" + text + "</string>"), itemView.getContext().getFilesDir().toString() + "/strings.xml");
-                        data.set(getLayoutPosition(), text);
-                        notifyDataSetChanged();
-                    }, view.getContext()).setOnDismissListener(dialogInterface -> {
-            }).show();
+            clickListener.onItemClick(getAdapterPosition(), view);
         }
+    }
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        RecycleViewAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onItemClick(int position, View v);
     }
 
 }

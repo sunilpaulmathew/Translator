@@ -39,7 +39,6 @@
     <string name="share_app">Compartir App</string>
     <string name="shared_by">%s/compartido por The Translator</string>
     <string name="share_message">The Translator v%s puede ser obtenido desde PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
-    <string name="share_string">Compartir \'string\'</string>
     <string name="share_with">Compartir con</string>
     <string name="source_code">Código fuente</string>
     <string name="support">Grupo de soporte (inglés)</string>

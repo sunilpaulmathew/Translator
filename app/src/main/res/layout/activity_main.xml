@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="wrap_content"
         android:background="@color/black"
         android:orientation="vertical" >
 
@@ -18,31 +20,31 @@
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
                 android:gravity="center_vertical"
                 android:text="@string/app_name"
+                android:textColor="@color/blue"
+                android:layout_gravity="start"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                android:textColor="@color/blue" />
+                android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/search_button"
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="50dp"
-                android:background="@color/black"
-                android:tint="@color/blue"
                 android:layout_gravity="end|center"
-                android:src="@drawable/ic_search" />
+                android:src="@drawable/ic_search"
+                android:background="@color/black"
+                android:tint="@color/blue" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/settings_menu"
                 android:layout_width="40dp"
                 android:layout_height="50dp"
-                android:background="@color/black"
-                android:tint="@color/blue"
                 android:layout_gravity="end|center"
-                android:src="@drawable/ic_settings" />
+                android:src="@drawable/ic_settings"
+                android:background="@color/black"
+                android:tint="@color/blue" />
         </FrameLayout>
 
         <com.google.android.material.textview.MaterialTextView
@@ -53,7 +55,6 @@
             android:paddingRight="50dp"
             android:gravity="center_horizontal"
             android:textSize="16sp"
-            android:visibility="gone"
             android:text="@string/about_summary"
             android:textColor="@color/white" />
 
@@ -73,54 +74,8 @@
             android:textSize="16sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="105dp"
-        android:padding="10dp" >
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/help_image"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:scaleType="fitCenter"
-            android:layout_gravity="center_vertical"
-            android:src="@mipmap/ic_launcher_round"
-            android:layout_marginEnd="10dp"
-            android:visibility="gone"/>
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/help_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="@string/import_string_message"
-            android:focusable="false"
-            android:textSize="17sp"
-            android:visibility="gone"
-            android:textStyle="italic"
-            android:textColor="@color/blue" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:orientation="vertical" >
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_gravity="end"
-            android:src="@drawable/ic_save" />
-    </LinearLayout>
-</RelativeLayout>
+        android:layout_height="match_parent" />
+</LinearLayout>

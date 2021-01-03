@@ -6,7 +6,6 @@
     <string name="import_string_sdcard">\"ሕብረቁምፊ\" አስመጣ \"</string>
     <string name="save_string_message">\"አዲስ የትርጉም ሕብረቁምፊ እንደ \'%s\' ይፈጠራል!\"</string>
     <string name="edit_string_warning">\"በጽሑፍዎ ውስጥ እባክዎን በልዩ ቁምፊ (%s) ይጠንቀቁ!\"</string>
-    <string name="share_string">\"ሕብረቁምፊ\" ያጋሩ</string>
     <string name="illegal_string_warning">\"የአንዳንድ ገጸ-ባህሪዎች በ \'xml\' ቅርፀት እንደ ህገ-ወጥ ይቆጠራሉ እና ተቀባይነት የላቸውም! ህገ-ወጥ ገጸ-ባህሪይ ሲገኝ መላው ጽሑፍ ችላ (ወይም በጣም በከፋ ሁኔታ የመተግበሪያ ብልሽቶች) እንደሚወገዱ ልብ ይበሉ! \n\nከተከለከሉት ገጸ-ባህሪዎች መካከል የተወሰኑትን ያካትታል ፣ ግን አይወሰንም \n&amp; - ከተወሰኑ ቃላት በስተቀር \nእንደ &lt;b> ፣ &lt;/ b> ፣ &lt;i> ፣ &lt;/ i> ወዘተ ያሉ የተወሰኑ ጉዳዮች በስተቀር \nነጠላ (\') ወይም ድርብ (\") የጥቅስ ምልክቶች ከፊት ለፊቱ ያለ ኋላቀር ቅጥነት (\\) ፣ ወዘተ።\"</string>
     <string name="delete_line_question">«%s» ን መሰረዝ በእርግጥ ነው?</string>
     <string name="view_string">\"ሕብረቁምፊ\" ይመልከቱ</string>

@@ -41,7 +41,6 @@
     <string name="share_app">Share App</string>
     <string name="shared_by">%s/shared by The Translator</string>
     <string name="share_message">The Translator v%s can be obtained from PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
-    <string name="share_string">Share \'string\'</string>
     <string name="share_with">Share with</string>
     <string name="source_code">Source Code</string>
     <string name="support">Support Group</string>

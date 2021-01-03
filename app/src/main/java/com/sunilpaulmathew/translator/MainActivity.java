@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2020-2021 sunilpaulmathew <sunil.kde@gmail.com>
+ * Copyright (C) 2021-2022 sunilpaulmathew <sunil.kde@gmail.com>
  *
  * This file is part of The Translator, An application to help translate android apps.
  *
@@ -28,24 +28,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textview.MaterialTextView;
-import com.sunilpaulmathew.translator.utils.AboutActivity;
-import com.sunilpaulmathew.translator.utils.LicenceActivity;
-import com.sunilpaulmathew.translator.utils.StringViewActivity;
+import com.sunilpaulmathew.translator.activities.AboutActivity;
+import com.sunilpaulmathew.translator.activities.LicenceActivity;
+import com.sunilpaulmathew.translator.activities.StringViewActivity;
+import com.sunilpaulmathew.translator.fragments.TranslatorFragment;
+import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
-import com.sunilpaulmathew.translator.views.RecycleViewAdapter;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /*
@@ -54,18 +49,12 @@ import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppCompatEditText mSearchWord;
-    private AppCompatImageView mHelpImg;
-    private MaterialTextView mAboutApp;
-    private MaterialTextView mHelpTxt;
+    public static AppCompatEditText mSearchWord;
     private boolean mExit;
-    private FloatingActionButton mFab;
     private Handler mHandler = new Handler();
-    private List<String> mData = new ArrayList<>();
-    private RecyclerView mRecyclerView;
+    private MaterialTextView mAboutApp;
     private String mPath;
 
-    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         // Initialize App Theme
@@ -73,25 +62,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mHelpImg = findViewById(R.id.help_image);
-        mHelpTxt = findViewById(R.id.help_text);
         mAboutApp = findViewById(R.id.about_app);
         mSearchWord = findViewById(R.id.search_Text);
-        mFab = findViewById(R.id.fab);
-        mRecyclerView = findViewById(R.id.recycler_view);
         AppCompatImageButton mSettings = findViewById(R.id.settings_menu);
         AppCompatImageButton mSearch = findViewById(R.id.search_button);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(new RecycleViewAdapter(getData()));
-        mAboutApp.setVisibility(View.VISIBLE);
 
-        mFab.setOnClickListener(v -> Utils.getInstance().saveString(mRecyclerView, this));
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new TranslatorFragment()).commit();
 
-        mSettings.setImageDrawable(getResources().getDrawable(R.drawable.ic_settings));
         mSettings.setOnClickListener(v -> {
             PopupMenu popupMenu = new PopupMenu(this, mSettings);
             Menu menu = popupMenu.getMenu();
-            if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
+            if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
                 menu.add(Menu.NONE, 12, Menu.NONE, getString(R.string.view_string));
                 menu.add(Menu.NONE, 7, Menu.NONE, getString(R.string.delete_string));
             } else {
@@ -171,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                         if (Utils.isStorageWritePermissionDenied(this)) {
                             ActivityCompat.requestPermissions(this, new String[]{
                                     Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                            Utils.showSnackbar(mRecyclerView, getString(R.string.permission_denied_write_storage));
+                            Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.permission_denied_write_storage));
                         } else {
                             Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
                             importString.setType("text/*");
@@ -185,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                                 .setMessage(getString(R.string.donations_message))
                                 .setNeutralButton(getString(R.string.cancel), (dialog1, id1) -> {
                                 })
-                                .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> launchPS(
+                                .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> launchURL(
                                         "https://play.google.com/store/apps/details?id=com.smartpack.donate"))
                                 .show();
                         break;
@@ -218,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
             popupMenu.show();
         });
 
-        if (!Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
+        if (!Utils.exist(getFilesDir().toString() + "/strings.xml")) {
             mSearch.setVisibility(View.GONE);
         }
 
@@ -226,7 +208,6 @@ public class MainActivity extends AppCompatActivity {
             mSearchWord.setVisibility(View.VISIBLE);
             mAboutApp.setVisibility(View.GONE);
         });
-
         mSearchWord.setTextColor(Color.RED);
         mSearchWord.addTextChangedListener(new TextWatcher() {
             @Override
@@ -239,59 +220,18 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                mData.clear();
-                Utils.mKeyText = s.toString().toLowerCase();
-                mRecyclerView.setAdapter(new RecycleViewAdapter(getSearchData()));
+                Translator.mData.clear();
+                Translator.mKeyText = s.toString().toLowerCase();
+                Translator.reloadUI(MainActivity.this);
             }
         });
-    }
-
-    private List<String> getData() {
-        if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
-            for (String line : Objects.requireNonNull(Utils.readFile(getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
-                if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
-                    String[] finalLine = line.split("\">");
-                    mData.add(finalLine[1].replace("</string>", ""));
-                }
-            }
-        } else {
-            mHelpImg.setVisibility(View.VISIBLE);
-            mHelpTxt.setVisibility(View.VISIBLE);
-            mFab.setVisibility(View.GONE);
-        }
-        return mData;
-    }
-
-    private List<String> getSearchData() {
-        mData.clear();
-        if (Utils.existFile(getFilesDir().toString() + "/strings.xml")) {
-            for (String line : Objects.requireNonNull(Utils.readFile(getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
-                if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
-                    String[] finalLine = line.split("\">");
-                    if (Utils.mKeyText != null && finalLine[1].toLowerCase().contains(Utils.mKeyText)) {
-                        mData.add(finalLine[1].replace("</string>", ""));
-                    }
-                }
-            }
-        }
-        return mData;
-    }
-
-    private void launchPS(String url) {
-        if (!Utils.isNetworkAvailable(this)) {
-            Utils.showSnackbar(mRecyclerView, getString(R.string.no_internet));
-        } else {
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(url));
-            startActivity(intent);
-        }
     }
 
     private void launchURL(String url) {
         if (Utils.isNetworkAvailable(this)) {
             Utils.launchURL(url, this);
         } else {
-            Utils.showSnackbar(mRecyclerView, getString(R.string.no_internet));
+            Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.no_internet));
         }
     }
 
@@ -313,11 +253,11 @@ public class MainActivity extends AppCompatActivity {
                 mPath = Utils.getPath(file);
             }
             if (!Utils.getExtension(mPath).equals("xml")) {
-                Utils.showSnackbar(mRecyclerView, getString(R.string.wrong_extension, ".xml"));
+                Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.wrong_extension, ".xml"));
                 return;
             }
-            if (!Objects.requireNonNull(Utils.readFile(mPath)).contains("<string name=\"")) {
-                Utils.showSnackbar(mRecyclerView, getString(R.string.import_string_error, new File(mPath).getName()));
+            if (!Objects.requireNonNull(Utils.read(mPath)).contains("<string name=\"")) {
+                Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_error, new File(mPath).getName()));
                 return;
             }
             new MaterialAlertDialogBuilder(this)
@@ -325,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
                     .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                     })
                     .setPositiveButton(getString(R.string.yes), (dialogInterface, i) -> {
-                        Utils.create(Utils.readFile(mPath), getFilesDir().toString() + "/strings.xml");
+                        Utils.create(Utils.read(mPath), getFilesDir().toString() + "/strings.xml");
                         Utils.restartApp(this);
                     })
                     .show();
@@ -334,9 +274,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if (Utils.mKeyText != null) {
+        if (Translator.mKeyText != null) {
             mSearchWord.setText(null);
-            Utils.mKeyText = null;
+            Translator.mKeyText = null;
             return;
         }
         if (mAboutApp.getVisibility() == View.GONE) {
@@ -348,7 +288,7 @@ public class MainActivity extends AppCompatActivity {
             mExit = false;
             super.onBackPressed();
         } else {
-            Utils.showSnackbar(mRecyclerView, getString(R.string.press_back));
+            Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.press_back));
             mExit = true;
             mHandler.postDelayed(() -> mExit = false, 2000);
         }

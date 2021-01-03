@@ -24,9 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".utils.AboutActivity" />
-        <activity android:name=".utils.LicenceActivity" />
-        <activity android:name=".utils.StringViewActivity" />
+        <activity android:name=".activities.AboutActivity" />
+        <activity android:name=".activities.LicenceActivity" />
+        <activity android:name=".activities.StringViewActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
