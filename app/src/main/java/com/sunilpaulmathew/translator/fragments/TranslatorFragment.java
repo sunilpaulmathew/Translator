@@ -53,7 +53,7 @@ public class TranslatorFragment extends Fragment {
         }
 
         mRecycleViewAdapter.setOnItemClickListener((position, v) -> {
-            Utils.dialogEditText(Translator.mData.get(position), getString(R.string.update),
+            Utils.dialogEditText(Translator.mData.get(position), getString(R.string.update), mRootView,
                     (dialogInterface1, i1) -> {
                     }, text -> {
                         if (text.isEmpty()) {

@@ -46,7 +46,7 @@ public class Translator {
             Utils.showSnackbar(view, context.getString(R.string.permission_denied_write_storage));
             return;
         }
-        Utils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), context.getString(R.string.save),
+        Utils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), context.getString(R.string.save), view,
                 (dialogInterface2, iii) -> {},
                 text -> {
                     if (text.isEmpty()) {

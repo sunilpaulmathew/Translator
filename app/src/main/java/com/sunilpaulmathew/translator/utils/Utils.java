@@ -100,13 +100,13 @@ public class Utils {
         void onClick(String text);
     }
 
-    public static MaterialAlertDialogBuilder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
+    public static MaterialAlertDialogBuilder dialogEditText(String text, String action, View view, final DialogInterface.OnClickListener negativeListener,
                                                             final OnDialogEditTextListener onDialogEditTextListener,
                                                             Context context) {
-        return dialogEditText(text, action, negativeListener, onDialogEditTextListener, -1, context);
+        return dialogEditText(text, action, view, negativeListener, onDialogEditTextListener, -1, context);
     }
 
-    private static MaterialAlertDialogBuilder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
+    private static MaterialAlertDialogBuilder dialogEditText(String text, String action, View view, final DialogInterface.OnClickListener negativeListener,
                                                              final OnDialogEditTextListener onDialogEditTextListener, int inputType,
                                                              Context context) {
         LinearLayout layout = new LinearLayout(context);
@@ -120,6 +120,7 @@ public class Utils {
         if (text != null) {
             editText.append(text);
         }
+        Snackbar snackBar = Snackbar.make(view, context.getString(R.string.illegal_string_message), Snackbar.LENGTH_INDEFINITE);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -133,8 +134,10 @@ public class Utils {
             public void afterTextChanged(Editable s) {
                 if (Translator.checkIllegalCharacters(Objects.requireNonNull(s.toString()))) {
                     editText.setTextColor(Color.RED);
+                    snackBar.show();
                 } else {
                     editText.setTextColor(Utils.isDarkTheme(context) ? Color.WHITE : Color.BLACK);
+                    snackBar.dismiss();
                 }
             }
         });
