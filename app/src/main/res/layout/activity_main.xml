@@ -15,7 +15,7 @@
             android:gravity="top|center_vertical"
             android:padding="10dp" >
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
@@ -23,15 +23,15 @@
                 android:text="@string/app_name"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:textColor="?attr/colorAccent" />
+                android:textColor="@color/blue" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/search_button"
                 android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_marginEnd="50dp"
-                android:background="@null"
-                android:tint="?attr/colorAccent"
+                android:background="@color/black"
+                android:tint="@color/blue"
                 android:layout_gravity="end|center"
                 android:src="@drawable/ic_search" />
 
@@ -39,13 +39,13 @@
                 android:id="@+id/settings_menu"
                 android:layout_width="40dp"
                 android:layout_height="50dp"
-                android:background="@null"
-                android:tint="?attr/colorAccent"
+                android:background="@color/black"
+                android:tint="@color/blue"
                 android:layout_gravity="end|center"
                 android:src="@drawable/ic_settings" />
         </FrameLayout>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/about_app"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -66,9 +66,9 @@
             android:maxLines="1"
             android:textAlignment="center"
             android:hint="@string/search_hint"
-            android:textColor="?attr/colorAccent"
-            android:textColorHint="?attr/colorAccent"
-            android:backgroundTint="?attr/colorAccent"
+            android:textColor="@color/blue"
+            android:textColorHint="@color/blue"
+            android:backgroundTint="@color/blue"
             android:visibility="gone"
             android:textSize="16sp" />
     </LinearLayout>
@@ -89,7 +89,7 @@
             android:layout_marginEnd="10dp"
             android:visibility="gone"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/help_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
             android:textSize="17sp"
             android:visibility="gone"
             android:textStyle="italic"
-            android:textColor="?attr/colorAccent" />
+            android:textColor="@color/blue" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"

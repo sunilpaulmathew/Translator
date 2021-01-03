@@ -10,9 +10,9 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatEditText;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sunilpaulmathew.translator.R;
 
 import java.util.Objects;
@@ -35,13 +35,13 @@ public class ViewUtils {
         void onClick(String text);
     }
 
-    public static AlertDialog.Builder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
-                                                     final OnDialogEditTextListener onDialogEditTextListener,
-                                                     Context context) {
+    public static MaterialAlertDialogBuilder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
+                                                            final OnDialogEditTextListener onDialogEditTextListener,
+                                                            Context context) {
         return dialogEditText(text, action, negativeListener, onDialogEditTextListener, -1, context);
     }
 
-    private static AlertDialog.Builder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
+    private static MaterialAlertDialogBuilder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
                                                       final OnDialogEditTextListener onDialogEditTextListener, int inputType,
                                                       Context context) {
         LinearLayout layout = new LinearLayout(context);
@@ -79,7 +79,7 @@ public class ViewUtils {
 
         layout.addView(editText);
 
-        AlertDialog.Builder dialog = new AlertDialog.Builder(context).setView(layout);
+        MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(context).setView(layout);
         if (negativeListener != null) {
             dialog.setNegativeButton(context.getString(R.string.cancel), negativeListener);
         }

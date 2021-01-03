@@ -14,8 +14,8 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
 
+import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
 
@@ -37,9 +37,9 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         AppCompatImageView mDeveloper = findViewById(R.id.developer);
-        AppCompatTextView mAppName = findViewById(R.id.app_title);
-        AppCompatTextView mForegroundText = findViewById(R.id.foreground_text);
-        AppCompatTextView mCancel = findViewById(R.id.cancel_button);
+        MaterialTextView mAppName = findViewById(R.id.app_title);
+        MaterialTextView mForegroundText = findViewById(R.id.foreground_text);
+        MaterialTextView mCancel = findViewById(R.id.cancel_button);
         mDeveloper.setOnClickListener(v -> {
             if (Utils.isNetworkAvailable(this)) {
                 Utils.launchURL("https://github.com/sunilpaulmathew", this);

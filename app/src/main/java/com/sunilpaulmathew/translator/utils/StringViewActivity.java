@@ -13,8 +13,8 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatTextView;
 
+import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
 
 /*
@@ -29,8 +29,8 @@ public class StringViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_string_view);
 
-        AppCompatTextView mForegroundText = findViewById(R.id.foreground_text);
-        AppCompatTextView mCancel = findViewById(R.id.cancel_button);
+        MaterialTextView mForegroundText = findViewById(R.id.foreground_text);
+        MaterialTextView mCancel = findViewById(R.id.cancel_button);
         AppCompatImageButton mBack = findViewById(R.id.back_button);
         AppCompatImageButton mSave = findViewById(R.id.save_button);
         mBack.setOnClickListener(v -> onBackPressed());

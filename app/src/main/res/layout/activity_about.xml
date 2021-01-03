@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:layout_width="match_parent"
+<com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             android:src="@mipmap/ic_launcher_round"
             android:layout_gravity="center" />
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/app_title"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -27,16 +28,15 @@
             android:gravity="center"
             android:textSize="23sp"
             android:textStyle="bold"
-            android:textColor="?android:attr/colorAccent"/>
+            android:textColor="@color/blue"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="16dp"
             android:paddingTop="5dp"
             android:gravity="center_horizontal"
             android:text="@string/about_summary"
-            android:textColor="?android:attr/textColorPrimary"
             android:textIsSelectable="true"
             android:textSize="15sp" />
 
@@ -53,14 +53,14 @@
                 android:orientation="vertical"
                 android:gravity="center_vertical" >
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:text="@string/developed_by"
-                    android:textColor="?android:attr/colorAccent"
+                    android:textColor="@color/blue"
                     android:textIsSelectable="true"
                     android:textSize="18sp" />
 
@@ -72,18 +72,18 @@
                     android:src="@drawable/ic_developer"
                     android:layout_gravity="center" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:textStyle="bold"
                     android:gravity="center_horizontal"
                     android:text="@string/credits"
-                    android:textColor="?android:attr/colorAccent"
+                    android:textColor="@color/blue"
                     android:textIsSelectable="true"
                     android:textSize="18sp" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <com.google.android.material.textview.MaterialTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="16dp"
@@ -91,41 +91,40 @@
                     android:gravity="center_horizontal"
                     android:lineSpacingExtra="5dp"
                     android:text="@string/credits_summary"
-                    android:textColor="?android:attr/textColorPrimary"
                     android:textIsSelectable="true"
                     android:textSize="15sp" />
 
-                <androidx.cardview.widget.CardView
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp" >
 
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:textStyle="bold"
                         android:gravity="center_horizontal"
                         android:text="@string/change_logs"
-                        android:textColor="?android:attr/colorAccent"
+                        android:textColor="@color/blue"
                         android:textIsSelectable="true"
                         android:textSize="18sp" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/foreground_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:padding="16dp"
                         android:gravity="start"
-                        android:textColor="?android:attr/textColorPrimary"
                         android:textIsSelectable="true"
                         android:textSize="15sp" />
-                </androidx.cardview.widget.CardView>
+                </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cancel_button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -134,7 +133,7 @@
         android:text="@string/cancel"
         android:textStyle="bold"
         android:background="@color/black"
-        android:textColor="?android:attr/colorAccent"
+        android:textColor="@color/blue"
         android:textSize="18sp"
         android:padding="10dp" />
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

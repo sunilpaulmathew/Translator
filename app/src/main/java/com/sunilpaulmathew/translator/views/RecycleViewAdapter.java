@@ -14,12 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.utils.Utils;
 import com.sunilpaulmathew.translator.utils.ViewUtils;
@@ -55,11 +55,10 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         } else {
             holder.description.setText(this.data.get(position));
         }
-        if (Utils.isDarkTheme(holder.description.getContext())) {
-            holder.description.setTextColor(ViewUtils.getThemeAccentColor(holder.description.getContext()));
-        }
+        holder.description.setTextColor(Utils.isDarkTheme(holder.description.getContext()) ?
+                ViewUtils.getThemeAccentColor(holder.description.getContext()) : Color.BLACK);
         holder.layoutCard.setOnLongClickListener(item -> {
-            new AlertDialog.Builder(holder.layoutCard.getContext())
+            new MaterialAlertDialogBuilder(holder.layoutCard.getContext())
                     .setMessage(holder.description.getContext().getString(R.string.delete_line_question, holder.description.getText()))
                     .setNegativeButton(R.string.cancel, (dialog1, id1) -> {
                     })
@@ -74,8 +73,9 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         holder.imageButton.setImageDrawable(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
                 ? holder.imageButton.getContext().getResources().getDrawable(R.drawable.ic_info)
                 : holder.imageButton.getContext().getResources().getDrawable(R.drawable.ic_warning));
+        holder.imageButton.setColorFilter(Utils.isDarkTheme(holder.imageButton.getContext()) ? Color.WHITE : Color.BLACK);
         holder.imageButton.setOnClickListener(v -> {
-            new AlertDialog.Builder(holder.imageButton.getContext())
+            new MaterialAlertDialogBuilder(holder.imageButton.getContext())
                     .setIcon(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
                             ? R.drawable.ic_info : R.drawable.ic_warning)
                     .setTitle(Utils.getSpecialCharacters(this.data.get(position)).isEmpty()
@@ -97,7 +97,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private AppCompatTextView description;
+        private MaterialTextView description;
         private AppCompatImageButton imageButton;
         private MaterialCardView layoutCard;
 

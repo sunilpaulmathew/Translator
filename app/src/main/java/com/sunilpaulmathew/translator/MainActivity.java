@@ -25,18 +25,18 @@ import android.view.SubMenu;
 import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatEditText;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.utils.AboutActivity;
 import com.sunilpaulmathew.translator.utils.LicenceActivity;
 import com.sunilpaulmathew.translator.utils.StringViewActivity;
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AppCompatEditText mSearchWord;
     private AppCompatImageView mHelpImg;
-    private AppCompatTextView mAboutApp;
-    private AppCompatTextView mHelpTxt;
+    private MaterialTextView mAboutApp;
+    private MaterialTextView mHelpTxt;
     private boolean mExit;
     private FloatingActionButton mFab;
     private Handler mHandler = new Handler();
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(aboutView);
                         break;
                     case 7:
-                        new AlertDialog.Builder(this)
+                        new MaterialAlertDialogBuilder(this)
                                 .setMessage(getString(R.string.delete_string_message))
                                 .setNegativeButton(getString(R.string.cancel), (dialogInterface3, iv) -> {
                                 })
@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case 9:
-                        new AlertDialog.Builder(this)
+                        new MaterialAlertDialogBuilder(this)
                                 .setIcon(R.mipmap.ic_launcher)
                                 .setTitle(getString(R.string.donations))
                                 .setMessage(getString(R.string.donations_message))
@@ -320,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
                 Utils.showSnackbar(mRecyclerView, getString(R.string.import_string_error, new File(mPath).getName()));
                 return;
             }
-            new AlertDialog.Builder(this)
+            new MaterialAlertDialogBuilder(this)
                     .setMessage(getString(R.string.select_question, new File(mPath).toString()))
                     .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                     })

@@ -3,12 +3,11 @@
     android:id="@+id/recycler_view_card"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    app:cardBackgroundColor="?android:attr/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:longClickable="true"
     app:cardCornerRadius="10dp"
-    android:layout_margin="2dp" >
+    android:layout_margin="3dp" >
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -24,7 +23,7 @@
                     android:src="@drawable/ic_arrow"
                     android:layout_marginEnd="10dp" />
 
-                <androidx.appcompat.widget.AppCompatTextView
+                <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -32,8 +31,7 @@
                     android:layout_marginEnd="25dp"
                     android:focusable="false"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="?android:attr/textColorPrimary" />
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/info_icon"
@@ -41,7 +39,6 @@
                     android:layout_height="20dp"
                     android:scaleType="center"
                     android:background="@null"
-                    android:tint="?android:attr/textColorPrimary"
                     android:layout_gravity="end|center_vertical"
                     android:layout_marginStart="10dp" />
         </FrameLayout>

@@ -22,11 +22,11 @@ import android.preference.PreferenceManager;
 import android.text.Html;
 import android.view.View;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
 
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.MainActivity;
@@ -200,7 +200,7 @@ public class Utils {
                     }
                     String mString = Environment.getExternalStorageDirectory().toString() + "/" + text;
                     create(getStrings(context), mString);
-                    new AlertDialog.Builder(context)
+                    new MaterialAlertDialogBuilder(context)
                             .setMessage(context.getString(R.string.save_string_message, mString))
                             .setNegativeButton(context.getString(R.string.cancel), (dialogInterface, i) -> {
                             })
