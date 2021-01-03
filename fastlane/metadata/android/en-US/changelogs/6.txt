@@ -1,4 +1,0 @@
-* Added Amharic Translations.
-* Added a licence view.
-* Switch to blue accent.
-* Miscellaneous changes.
