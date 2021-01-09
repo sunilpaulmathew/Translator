@@ -1,0 +1,53 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name" translatable="false">The Translator</string>
+
+    <string name="about">O aplikacji</string>
+    <string name="about_summary"><i>Aplikacja pomagająca w tłumaczeniu innych aplikacji na system Android!</i></string>
+    <string name="already_exists">%s już istnieje! Użyj innej nazwy.</string>
+    <string name="cancel">Anuluj</string>
+    <string name="change_logs">Dzienniki zmian</string>
+    <string name="credits">Podziękowanie</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: Kernel Adiutor (Kod podstawowy)\n<b><i>Lennoard Silva</i></b>: Portugalski (Brazylia) tłumacz\n<b><i>FiestaLake</i></b>: Koreański tłumacz\n<b><i>elea11</i></b>: Niemiecki tłumacz\n<b><i>Andi Krisma</i></b>: Indonezyjski tłumacz\n<b><i>MONSTER_PC</i></b>: Rosyjski/Ukraiński tłumacz\n<b><i>Kike Cabrera</i></b>: Hiszpański tłumacz\n<b><i>Mikesew1320</i></b>: Amharski tłumacz</string>
+    <string name="dark_theme">Motyw ciemny</string>
+    <string name="dark_theme_auto">Automatyczny</string>
+    <string name="dark_theme_disable">Wyłącz</string>
+    <string name="dark_theme_enable">Włącz</string>
+    <string name="delete_line_question">Na pewno chcesz usunąć \'%s\'?</string>
+    <string name="delete_string">Usuń \'string\'</string>
+    <string name="delete_string_message">Czy na pewno chcesz usunąć bieżący plik string.xml?</string>
+    <string name="developed_by">Opracowany przez</string>
+    <string name="dismiss">Zamknij</string>
+    <string name="donations">Darowizny</string>
+    <string name="donations_message">Jeśli chcesz docenić moją pracę, rozważ zakup pakietu darowizn SmartPack z PlayStore, pomoże to jeszcze szybciej rozwijać moje aplikacje, chociaż nie jest to wcale konieczne.</string>
+    <string name="donation_app">Kup aplikację darowizny</string>
+    <string name="edit_string_warning">Uważaj na znaki specjalne (%s) w twoim tekście!</string>
+    <string name="illegal_string_message">Wpisałeś niedozwolone znaki! Twoje zmiany nie zostaną zapisane.</string>
+    <string name="illegal_string_warning">Niektóre znaki w formacie \'xml\' są uważane za niedozwolone i nie są akceptowane! Zwróć uwagę, że jeśli zostanie znaleziony nieprawidłowy znak, cały tekst zostanie zignorowany (lub nawet zawiesi aplikację w najgorszym przypadku)!\n\nNiektóre z zabronionych znaków to między innymi\n&amp; - z wyjątkiem niektórych słów\n&lt; i &gt; - z wyjątkiem niektórych przypadków, takich jak &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; itd.\nPojedyncze (\') lub podwójne (\") cytaty bez odwrotnego ukośnika (\\) z przodu itp.</string>
+    <string name="import_string_message">Nie zaimportowałeś jeszcze żadnych plików z tłumaczeniami typu \'string\'. Przejdź do menu \'Ustawienia\' aby zaimportować je z \'sdcard\'!</string>
+    <string name="import_string_sdcard">Importuj \'string\'</string>
+    <string name="import_string_error">\'%s\' nie jest prawidłowym ciągiem językowym. Niepowodzenie!</string>
+    <string name="licence">Licencja</string>
+    <string name="more_apps">Więcej od Dewelopera</string>
+    <string name="name_empty">Nazwa jest pusta! Niepowodzenie!</string>
+    <string name="no_internet">Sprawdź swoje połączenie z internetem!</string>
+    <string name="permission_denied_write_storage">Odmowa do zapisu w pamięci!</string>
+    <string name="please_note">Uwaga</string>
+    <string name="press_back">Naciśnij ponownie, aby wyjść</string>
+    <string name="report_issue">Zgłoś błąd</string>
+    <string name="save">Zapisz</string>
+    <string name="save_string_message">Nowy ciąg tłumaczenia jest generowany jako \'%s\'!</string>
+    <string name="search_hint">Wyszukiwanie…</string>
+    <string name="select_question">Wybierz %s?</string>
+    <string name="share">Udostępnij</string>
+    <string name="share_app">Udostępnij aplikację</string>
+    <string name="shared_by">%s/udostępnione przez Tłumacza</string>
+    <string name="share_message">Tłumacz v%s można pobrać ze sklepu Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_with">Udostępnij z</string>
+    <string name="source_code">Kod źródłowy</string>
+    <string name="support">Grupa wsparcia</string>
+    <string name="update">Aktualizuj</string>
+    <string name="view_string">Pokaż \'string\'</string>
+    <string name="warning">Ostrzeżenie</string>
+    <string name="wrong_extension">Wybierz plik z rozszerzeniem %s.</string>
+    <string name="yes">Tak</string>
+</resources>
