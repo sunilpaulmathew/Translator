@@ -42,6 +42,8 @@ If you like to appreciate my work, please consider donating to me (either via [P
 * [Nikita](https://t.me/MONSTER_PC), Russian & Ukrainian Translations
 * [Kike Cabrera](https://github.com/kikecalpe), Spanish Translations
 * [Mikesew1320](https://github.com/Mikesew1320), Amharic Translations
+* [sr093906](https://github.com/sr093906), Chinese (simplified) Translations
+* [Waldemar Stoczkowski](https://github.com/WaldiSt), Polish Translations
 
 ## License
 

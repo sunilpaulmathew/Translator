@@ -1,5 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name" translatable="false">The Translator</string>
 
     <string name="about">O aplikacji</string>
     <string name="about_summary"><i>Aplikacja pomagająca w tłumaczeniu innych aplikacji na system Android!</i></string>
