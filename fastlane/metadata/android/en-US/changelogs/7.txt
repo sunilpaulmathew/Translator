@@ -1,5 +1,0 @@
-* Improved app UI.
-* Fixed crashes on various situations.
-* Overall code improvements.
-* Improved illegal character warning.
-* Miscellaneous changes.

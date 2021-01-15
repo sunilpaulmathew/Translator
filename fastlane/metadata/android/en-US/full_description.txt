@@ -7,7 +7,7 @@
 - Directly share (after saving) strings with the developers.
 - Long press to remove an individual line.
 - Dark and Light themes.
-- Includes translations of a number of languages (Please help me to translate this app - Original string.XML available at https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml).
+- Includes translations of a number of languages (Please help me to translate this app - Original string.xml available at at <a href='https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml'>GitHub</a>).
 - & A lot more
 
 <b>How it work?</b>
