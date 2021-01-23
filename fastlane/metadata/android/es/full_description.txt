@@ -1,0 +1,21 @@
+<i>The Translator</i> es una simple aplicación para ayudar a traducir aplicaciones Android.
+
+<b>Características</b>
+
+- Una interfaz de usuario sencilla pero elegante para mostrar las líneas individuales de una cadena de idiomas.
+- Guía de forma inteligente a los usuarios para no cometer errores.
+- Comparte directamente (después de guardar) las líneas con los desarrolladores.
+- Pulso largo elimina una línea individual.
+- Temas oscuros y claros.
+- Incluye traducciones a varios idiomas (Por favor, ayúdame a traducir esta aplicación - El string.xml original está disponible en <a href='https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml'>GitHub</a>).
+- Y mucho más
+
+<b>¿Cómo funciona?</b>
+
+- Obtén el 'string.xml' original de su desarrollador (o del repositorio de fuentes, si la aplicación es de código abierto).
+- Importa el mismo desde la 'sdcard' al Traductor (Configuración --> Importar 'string').
+- La aplicación listará todas y cada una de las cadenas traducibles como entradas separadas.
+- Haz clic en cada una de ellas y sustituye el texto original por la traducción en tu idioma.
+- Sigue las instrucciones en pantalla para evitar errores (color ROJO - Error).
+- Una vez que haya terminado, guarda tu trabajo haciendo clic en el botón de guardar en la parte inferior (o en Configuración --> Ver 'cadena').
+- Envía el nuevo archivo xml generado en 'sdcard' a su desarrollador y espera pacientemente una actualización
