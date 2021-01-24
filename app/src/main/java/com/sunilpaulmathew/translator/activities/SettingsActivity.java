@@ -177,15 +177,19 @@ public class SettingsActivity extends AppCompatActivity {
                 Intent shareIntent = Intent.createChooser(share_app, getString(R.string.share_with));
                 startActivity(shareIntent);
             } else if (position == 9) {
-                new MaterialAlertDialogBuilder(this)
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setTitle(getString(R.string.donations))
-                        .setMessage(getString(R.string.donations_message))
-                        .setNeutralButton(getString(R.string.read_more), (dialogInterface, i) -> Utils.launchURL(
-                                "https://smartpack.github.io/donation/", this))
-                        .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> Utils.launchURL(
-                                "https://play.google.com/store/apps/details?id=com.smartpack.donate", this))
-                        .show();
+                if (Utils.isPackageInstalled("com.android.vending", this)) {
+                    new MaterialAlertDialogBuilder(this)
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setTitle(getString(R.string.donations))
+                            .setMessage(getString(R.string.donations_message))
+                            .setNeutralButton(getString(R.string.cancel), (dialog1, id1) -> {
+                            })
+                            .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> Utils.launchURL(
+                                    "https://play.google.com/store/apps/details?id=com.smartpack.donate", this))
+                            .show();
+                } else {
+                    Utils.launchURL("https://smartpack.github.io/donation/", this);
+                }
             } else if (position == 10) {
                 Utils.launchURL("https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator", this);
             } else if (position == 11) {

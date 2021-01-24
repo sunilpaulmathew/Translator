@@ -50,9 +50,6 @@ public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleView
             holder.mTitle.setText(this.data.get(position).getTitle());
             holder.mTitle.setVisibility(View.VISIBLE);
             holder.mTitle.setTextColor(Utils.isDarkTheme(holder.mTitle.getContext()) ? Color.WHITE : Color.BLACK);
-            if (position == 3 && !Utils.exist(holder.mTitle.getContext().getFilesDir().toString() + "/strings.xml")) {
-                holder.mTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
-            }
         }
         if (this.data.get(position).getDescription() != null) {
             holder.mDescription.setText(this.data.get(position).getDescription());
@@ -62,6 +59,12 @@ public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleView
             holder.mIcon.setImageDrawable(this.data.get(position).getIcon());
             holder.mIcon.setColorFilter(Utils.isDarkTheme(holder.mIcon.getContext()) ? Color.WHITE : Color.BLACK);
             holder.mIcon.setVisibility(View.VISIBLE);
+        }
+        if (position == 2 && !Utils.exist(holder.mTitle.getContext().getFilesDir().toString() + "/strings.xml")
+                || position == 9 && Utils.isPackageInstalled("com.android.vending", holder.mTitle.getContext())
+                && !Utils.isNotDonated(holder.mTitle.getContext())) {
+            holder.mTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.mDescription.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         }
     }
 
