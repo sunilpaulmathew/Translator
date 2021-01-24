@@ -66,7 +66,7 @@ public class TranslatorFragment extends Fragment {
             }).show();
         });
 
-        mFab.setOnClickListener(v -> Translator.saveString(mRootView, requireActivity()));
+        mFab.setOnClickListener(v -> Translator.saveString(requireActivity()));
 
         return mRootView;
     }

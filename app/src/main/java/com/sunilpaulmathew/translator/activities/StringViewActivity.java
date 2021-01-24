@@ -35,7 +35,7 @@ public class StringViewActivity extends AppCompatActivity {
         AppCompatImageButton mBack = findViewById(R.id.back_button);
         AppCompatImageButton mSave = findViewById(R.id.save_button);
         mBack.setOnClickListener(v -> onBackPressed());
-        mSave.setOnClickListener(v -> Translator.saveString(mSave, this));
+        mSave.setOnClickListener(v -> Translator.saveString(this));
         mCancel.setOnClickListener(v -> onBackPressed());
         mForegroundText.setText(Translator.getStrings(this));
     }

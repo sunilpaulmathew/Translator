@@ -41,7 +41,7 @@
     <string name="share">Paylaş</string>
     <string name="share_app">Uygulama paylaş</string>
     <string name="shared_by">%s/The Translator tarafından paylaşıldı</string>
-    <string name="share_message">The Translator v%s PlayStore'den elde edilebilir: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator v%s PlayStore\'den elde edilebilir: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">İle paylaş</string>
     <string name="source_code">Kaynak kodu</string>
     <string name="support">Destek grubu</string>

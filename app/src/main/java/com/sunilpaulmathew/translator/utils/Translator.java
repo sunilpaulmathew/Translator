@@ -13,7 +13,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
-import android.view.View;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
@@ -39,46 +38,46 @@ public class Translator {
     public static RecyclerView mRecyclerView;
     public static String mKeyText;
 
-    public static void saveString(View view, Activity context) {
-        if (Utils.isStorageWritePermissionDenied(context)) {
-            ActivityCompat.requestPermissions(context, new String[]{
+    public static void saveString(Activity activity) {
+        if (Utils.isStorageWritePermissionDenied(activity)) {
+            ActivityCompat.requestPermissions(activity, new String[]{
                     Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-            Utils.showSnackbar(view, context.getString(R.string.permission_denied_write_storage));
+            Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.permission_denied_write_storage));
             return;
         }
-        Utils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), context.getString(R.string.save), view,
-                (dialogInterface2, iii) -> {},
+        Utils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), activity.getString(R.string.save),
+                activity.findViewById(android.R.id.content), (dialogInterface2, iii) -> {},
                 text -> {
                     if (text.isEmpty()) {
-                        Utils.showSnackbar(view, context.getString(R.string.name_empty));
+                        Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.name_empty));
                         return;
                     }
                     if (!text.endsWith(".xml")) {
                         text += ".xml";
                     }
                     if (Utils.exist(Environment.getExternalStorageDirectory().toString() + "/" + text)) {
-                        Utils.showSnackbar(view, context.getString(R.string.already_exists, text));
+                        Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.already_exists, text));
                         return;
                     }
                     String mString = Environment.getExternalStorageDirectory().toString() + "/" + text;
-                    Utils.create(getStrings(context), mString);
-                    new MaterialAlertDialogBuilder(context)
-                            .setMessage(context.getString(R.string.save_string_message, mString))
-                            .setNegativeButton(context.getString(R.string.cancel), (dialogInterface, i) -> {
+                    Utils.create(getStrings(activity), mString);
+                    new MaterialAlertDialogBuilder(activity)
+                            .setMessage(activity.getString(R.string.save_string_message, mString))
+                            .setNegativeButton(activity.getString(R.string.cancel), (dialogInterface, i) -> {
                             })
-                            .setPositiveButton(context.getString(R.string.share), (dialogInterface, i) -> {
-                                Uri uriFile = FileProvider.getUriForFile(context,
+                            .setPositiveButton(activity.getString(R.string.share), (dialogInterface, i) -> {
+                                Uri uriFile = FileProvider.getUriForFile(activity,
                                         BuildConfig.APPLICATION_ID + ".provider", new File(mString));
                                 Intent shareScript = new Intent(Intent.ACTION_SEND);
                                 shareScript.setType("application/xml");
-                                shareScript.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.shared_by, new File(mString).getName()));
-                                shareScript.putExtra(Intent.EXTRA_TEXT, context.getString(R.string.share_message, BuildConfig.VERSION_NAME));
+                                shareScript.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.shared_by, new File(mString).getName()));
+                                shareScript.putExtra(Intent.EXTRA_TEXT, activity.getString(R.string.share_message, BuildConfig.VERSION_NAME));
                                 shareScript.putExtra(Intent.EXTRA_STREAM, uriFile);
                                 shareScript.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                context.startActivity(Intent.createChooser(shareScript, context.getString(R.string.share_with)));
+                                activity.startActivity(Intent.createChooser(shareScript, activity.getString(R.string.share_with)));
                             })
                             .show();
-                }, context).setOnDismissListener(dialogInterface2 -> {
+                }, activity).setOnDismissListener(dialogInterface2 -> {
         }).show();
     }
 
