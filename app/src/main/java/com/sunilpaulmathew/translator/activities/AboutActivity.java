@@ -41,14 +41,10 @@ public class AboutActivity extends AppCompatActivity {
         MaterialTextView mAppName = findViewById(R.id.app_title);
         MaterialTextView mForegroundText = findViewById(R.id.foreground_text);
         MaterialTextView mCancel = findViewById(R.id.cancel_button);
-        mDeveloper.setOnClickListener(v -> {
-            Utils.launchURL("https://github.com/sunilpaulmathew", this);
-        });
-        mCancel.setOnClickListener(v -> {
-            onBackPressed();
-        });
+        mDeveloper.setOnClickListener(v -> Utils.launchURL("https://github.com/sunilpaulmathew", this));
+        mCancel.setOnClickListener(v -> onBackPressed());
 
-        mAppName.setText(getString(R.string.app_name) + " " + BuildConfig.VERSION_NAME);
+        mAppName.setText(getString(R.string.app_name) + (Utils.isDonated(this) ? " Pro " :  " ") + BuildConfig.VERSION_NAME);
         String change_log = null;
         try {
             change_log = new JSONObject(Objects.requireNonNull(Utils.readAssetFile(

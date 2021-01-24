@@ -62,7 +62,7 @@ public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleView
         }
         if (position == 2 && !Utils.exist(holder.mTitle.getContext().getFilesDir().toString() + "/strings.xml")
                 || position == 9 && Utils.isPlayStoreAvailable(holder.mTitle.getContext())
-                && !Utils.isNotDonated(holder.mTitle.getContext())) {
+                && Utils.isDonated(holder.mTitle.getContext())) {
             holder.mTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             holder.mDescription.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         }

@@ -63,9 +63,8 @@ public class Utils {
         }
     }
 
-    public static boolean isNotDonated(Context context) {
-        if (BuildConfig.DEBUG) return false;
-        return !isPackageInstalled("com.smartpack.donate", context);
+    public static boolean isDonated(Context context) {
+        return BuildConfig.DEBUG || isPackageInstalled("com.smartpack.donate", context);
     }
 
     public static boolean isPlayStoreAvailable(Context context) {

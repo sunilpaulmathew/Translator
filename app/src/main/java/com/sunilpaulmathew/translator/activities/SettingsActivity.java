@@ -60,7 +60,7 @@ public class SettingsActivity extends AppCompatActivity {
         MaterialTextView mAppDescription = findViewById(R.id.description);
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
 
-        mAppTitle.setText(getString(R.string.app_name) + " " + BuildConfig.VERSION_NAME);
+        mAppTitle.setText(getString(R.string.app_name) + (Utils.isDonated(this) ? " Pro " :  " ") + BuildConfig.VERSION_NAME);
         mAppTitle.setTextColor(Utils.isDarkTheme(this) ? Color.WHITE : Color.BLACK);
         mAppDescription.setText(BuildConfig.APPLICATION_ID);
 
