@@ -136,7 +136,7 @@ public class Utils {
                     editText.setTextColor(Color.RED);
                     snackBar.show();
                 } else {
-                    editText.setTextColor(Utils.isDarkTheme(context) ? Color.WHITE : Color.BLACK);
+                    editText.setTextColor(isDarkTheme(context) ? Color.WHITE : Color.BLACK);
                     snackBar.dismiss();
                 }
             }
@@ -197,12 +197,16 @@ public class Utils {
     }
 
     public static void launchURL(String url, Activity activity) {
-        try {
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            activity.startActivity(i);
-        } catch (ActivityNotFoundException e) {
-            e.printStackTrace();
+        if (isNetworkAvailable(activity)) {
+            try {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                activity.startActivity(i);
+            } catch (ActivityNotFoundException e) {
+                e.printStackTrace();
+            }
+        } else {
+            showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.no_internet));
         }
     }
 

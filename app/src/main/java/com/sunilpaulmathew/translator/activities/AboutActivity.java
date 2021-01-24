@@ -42,11 +42,7 @@ public class AboutActivity extends AppCompatActivity {
         MaterialTextView mForegroundText = findViewById(R.id.foreground_text);
         MaterialTextView mCancel = findViewById(R.id.cancel_button);
         mDeveloper.setOnClickListener(v -> {
-            if (Utils.isNetworkAvailable(this)) {
-                Utils.launchURL("https://github.com/sunilpaulmathew", this);
-            } else {
-                Utils.showSnackbar(mDeveloper, getString(R.string.no_internet));
-            }
+            Utils.launchURL("https://github.com/sunilpaulmathew", this);
         });
         mCancel.setOnClickListener(v -> {
             onBackPressed();
