@@ -51,6 +51,7 @@ If you like to appreciate my work, please consider donating to me (either via [L
 * [sr093906](https://github.com/sr093906), Chinese (simplified) Translations
 * [Waldemar Stoczkowski](https://github.com/WaldiSt), Polish Translations
 * [Diego](https://github.com/sguinetti), Spanish Translations
+* [anilmavis](https://github.com/anilmavis), Turkish Translations
 
 ## License
 
