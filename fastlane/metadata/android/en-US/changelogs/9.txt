@@ -1,0 +1,4 @@
+* Moved top menu items into a new Settings page.
+* Added Turkish translation.
+* Updated Chinese, Spanish and Malayalam translation.
+* Miscellaneous changes.

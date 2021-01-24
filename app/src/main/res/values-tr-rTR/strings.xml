@@ -47,7 +47,7 @@
     <string name="settings">Ayarlar</string>
     <string name="share">Paylaş</string>
     <string name="share_app">Uygulamayı paylaş</string>
-    <string name="share_app_Summary">Arkadaşlarını The Translator'ı denemeye davet et</string>
+    <string name="share_app_Summary">Arkadaşlarını The Translator\'ı denemeye davet et</string>
     <string name="shared_by">%s/The Translator tarafından paylaşıldı</string>
     <string name="share_message">The Translator v%s PlayStore\'dan elde edilebilir: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">İle paylaş</string>

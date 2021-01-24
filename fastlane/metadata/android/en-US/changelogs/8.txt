@@ -1,2 +1,0 @@
-* Added Chinese (Simplified) and Polish translations.
-* Miscellaneous changes.
