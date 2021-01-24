@@ -10,12 +10,12 @@
 ### The Translator is a simple application to help translate android apps.
 
 ## Download
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-     alt=""
-     height="80">](https://f-droid.org/packages/com.sunilpaulmathew.translator)
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
      alt=""
      height="80">](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+          alt=""
+          height="80">](https://f-droid.org/packages/com.sunilpaulmathew.translator)
 [<img src="https://i.ibb.co/q0mdc4Z/get-it-on-github.png"
      alt=""
      height="80">](https://github.com/sunilpaulmathew/Translator/releases/download/v0.8/com.sunilpaulmathew.translator-v0.8-release.apk)
@@ -50,6 +50,7 @@ If you like to appreciate my work, please consider donating to me (either via [L
 * [Mikesew1320](https://github.com/Mikesew1320), Amharic Translations
 * [sr093906](https://github.com/sr093906), Chinese (simplified) Translations
 * [Waldemar Stoczkowski](https://github.com/WaldiSt), Polish Translations
+* [Diego](https://github.com/sguinetti), Spanish Translations
 
 ## License
 
