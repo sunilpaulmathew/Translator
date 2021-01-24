@@ -1,0 +1,53 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <string name="app_name" translatable="false">The Translator</string>
+
+    <string name="about">Hakkında</string>
+    <string name="about_summary"><i>Diğer android uygulamalarının çevirisini kolaylaştıracak bir uygulama!</i></string>
+    <string name="already_exists">%s zaten var! Lütfen farklı bir ad kullan.</string>
+    <string name="cancel">İptal</string>
+    <string name="change_logs">Değişiklik kayıtları</string>
+    <string name="credits">Emeği geçenler</string>
+    <string name="credits_summary"><b><i>Grarak</i></b>: Kernel Adiutor (Kod katkıları)\n<b><i>Lennoard Silva</i></b>: Portekizce (Brezilya) çeviriler\n<b><i>FiestaLake</i></b>: Korece çeviriler\n<b><i>elea11</i></b>: Almanca çeviriler\n<b><i>Andi Krisma</i></b>: Endonezce çeviriler\n<b><i>MONSTER_PC</i></b>: Rusça/Ukraynaca çeviriler\n<b><i>Kike Cabrera</i></b>: İspanyolca çeviriler\n<b><i>Mikesew1320</i></b>: Amharca çeviriler\n<b><i>sr093906</i></b>: Çince (basitleştirilmiş) çeviriler\n<b><i>Waldemar Stoczkowski</i></b>: Lehçe çeviriler\n<b><i>Anıl Maviş</i></b>: Türkçe çeviriler</string>
+    <string name="dark_theme">Karanlık tema</string>
+    <string name="dark_theme_auto">Otomatik</string>
+    <string name="dark_theme_disable">Devre dışı bırak</string>
+    <string name="dark_theme_enable">Etkinleştir</string>
+    <string name="delete_line_question">\'%s\'\'i silmek istediğine emin misin??</string>
+    <string name="delete_string">\'string\'\'i sil</string>
+    <string name="delete_string_message">Mevcut string.xml\'yi silmek istediğine emin misin?</string>
+    <string name="developed_by">Tarafından geliştirildi</string>
+    <string name="dismiss">Reddet</string>
+    <string name="donations">Bağışlar</string>
+    <string name="donations_message">Eğer çalışmamı takdir etmek istersen, hiç gerekli olmasa da, projelerime daha aktif devam etmeme gerçekten yardımcı olduğu için lütfen SmartPack bağış paketi satın almayı düşün.</string>
+    <string name="donation_app">Bağış uygulaması satın al</string>
+    <string name="edit_string_warning">Lütfen metnindeki özel karakterlere (%s) dikkat et!</string>
+    <string name="illegal_string_message">Bazı geçersiz karakterler girdin! Değişikliklerin kaydedilmeyecek.</string>
+    <string name="illegal_string_warning">Bazı karakterler \'xml\' formatında uygunsuz kabul edilir ve kabul edilebilir değildir. Lütfen urgunsuz bir karakter tespit edildiğinde metnin tamamının ihmal edileceğini (hatta en kötü durumda uygulamanın çökeceğini) unutma.\n\nBazı yasak karakterler şunları içerir, ama sınırlı değildir\n&amp; - belirli kelimeler dışında\n&lt; ve &gt; -&lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; ve benzeri gibi belirli durumlar dışında.\nÖnünde ters slashsız (\\) tek (\') ya da çift (\") tırnak işaretleri, ve benzeri.</string>
+    <string name="import_string_message">Henüz herhangi bir çeviri \'string\'\'i dosyası içe aktarmadın. \'sdcard\'\'dan içe aktarmak için \'ayarlar\' menüsüne git!</string>
+    <string name="import_string_sdcard">\'string\'\'i içe aktar</string>
+    <string name="import_string_error">\'%s\' uygun bir dil stringi değil. İptal ediliyor!</string>
+    <string name="licence">Lisans</string>
+    <string name="more_apps">Geliştiriciden daha fazlası</string>
+    <string name="name_empty">Ad boş! İptal ediliyor!</string>
+    <string name="no_internet">Lütfen internet bağlantını kontrol et!</string>
+    <string name="permission_denied_write_storage">Depoya yazmak için izin reddedildi!</string>
+    <string name="please_note">Lütfen unutma</string>
+    <string name="press_back">Çıkmak için geriye tekrar bas</string>
+    <string name="report_issue">Sorun bildir</string>
+    <string name="save">Kaydet</string>
+    <string name="save_string_message">Yeni çeviri stringi \'%s\' olarak oluşturuldu!</string>
+    <string name="search_hint">Ara…</string>
+    <string name="select_question">%s\'i seç?</string>
+    <string name="share">Paylaş</string>
+    <string name="share_app">Uygulama paylaş</string>
+    <string name="shared_by">%s/The Translator tarafından paylaşıldı</string>
+    <string name="share_message">The Translator v%s PlayStore'den elde edilebilir: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_with">İle paylaş</string>
+    <string name="source_code">Kaynak kodu</string>
+    <string name="support">Destek grubu</string>
+    <string name="update">Güncelle</string>
+    <string name="view_string">\'String\'\'i görüntüle</string>
+    <string name="warning">Uyarı</string>
+    <string name="wrong_extension">Lütfen %s uzantılı bir dosya seç</string>
+    <string name="yes">Evet</string>
+</resources>
