@@ -16,7 +16,6 @@
     <string name="developed_by">Desenvolvido por</string>
     <string name="donations">Doações</string>
     <string name="donations_message">Se você aprecia meu trabalho, por favor, considere comprar o SmartPack Donation Package pela PlayStore, pois é realmente útil para continuar meus projetos mais ativos, embora não seja de todo necessário.</string>
-    <string name="donation_app">Comprar app de doação</string>
     <string name="import_string_message">Você ainda não importou nenhum arquivo de tradução \'string\'. Vá para o menu de \'Configurações\' para importar um do \'sdcard\'!</string>
     <string name="import_string_sdcard">Importar \'string\'</string>
     <string name="more_apps">Mais do desenvolvedor</string>

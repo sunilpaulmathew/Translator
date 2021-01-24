@@ -17,7 +17,6 @@
     <string name="developed_by">개발자</string>
     <string name="donations">후원</string>
     <string name="donations_message">제 프로젝트를 후원하고 싶다면, 플레이 스토어 (Play Store)에 있는 SmartPack Donation Package 앱을 구매하는 것을 고려해보세요. 제 프로젝트들을 더 활발히 이어나갈 때 매우 큰 도움이 됩니다. 물론 필수는 아닙니다.</string>
-    <string name="donation_app">후원 앱 구매</string>
     <string name="import_string_message">아직 그 어떤 번역 파일도 불러오지 않았습니다. 설정 메뉴에서 파일을 불러오세요!</string>
     <string name="import_string_sdcard">번역 파일 불러오기</string>
     <string name="more_apps">개발자의 다른 앱들 보기</string>

@@ -20,7 +20,6 @@
     <string name="donations">Bağışlar</string>
     <string name="donations_message">Çalışmamı takdir etmek istersen, hiç gerekli olmasa da, projelerime daha aktif devam etmeme gerçekten yardımcı olduğu için lütfen SmartPack bağış paketi satın almayı düşün.</string>
     <string name="donations_summary">Geliştiricinin bu uygulamayı tamamen ücretsiz, müdahaleci olmayan ve reklamsız olarak sağlama çabalarını takdir etmek istersen, lütfen geliştirmeyi bir şekilde desteklemeyi düşün. Daha fazla öğrenmek için buraya tıkla. Teşekkür ederim!</string>
-    <string name="donation_app">Bağış uygulaması satın al</string>
     <string name="edit_string_warning">Lütfen metnindeki özel karakterlere (%s) dikkat et!</string>
     <string name="illegal_string_message">Bazı geçersiz karakterler girdin! Değişikliklerin kaydedilmeyecek.</string>
     <string name="illegal_string_warning">Bazı karakterler \'xml\' formatında uygunsuz kabul edilir ve kabul edilebilir değildir. Lütfen urgunsuz bir karakter tespit edildiğinde metnin tamamının ihmal edileceğini (hatta en kötü durumda uygulamanın çökeceğini) unutma.\n\nBazı yasak karakterler şunları içerir, ama sınırlı değildir\n&amp; - belirli kelimeler dışında\n&lt; ve &gt; -&lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; ve benzeri gibi belirli durumlar dışında.\nÖnünde ters slashsız (\\) tek (\') ya da çift (\") tırnak işaretleri, ve benzeri.</string>

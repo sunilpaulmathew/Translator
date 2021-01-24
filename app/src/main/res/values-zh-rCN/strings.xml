@@ -19,7 +19,6 @@
     <string name="donations">捐赠</string>
     <string name="donations_message">如果您喜欢我的作品，请考虑从 PlayStore 购买 SmartPack 捐赠包，因为这对继续我的项目非常有帮助，尽管这完全没有必要。</string>
     <string name="donations_summary">如果你欣赏开发者的努力，以完全免费，无干扰和没有广告的形式提供这个应用程序，请考虑以某种方式支持开发。点击这里了解更多。谢谢你！</string>
-    <string name="donation_app">购买捐赠应用</string>
     <string name="edit_string_warning">请留意你文本中的特殊字符 \'s (%s)！</string>
     <string name="illegal_string_message">你输入了一些非法字符！你的更改将不被保存！</string>
     <string name="illegal_string_warning">一些字符在 \'xml\' 格式中被认为是非法且不可接受的！请注意，检测到非法字符时，整个文本将被忽略（在最坏的情况下，应用程序会崩溃）！\n\n一些被禁止的字符包括但不限于\n&amp; - 某些词和某些情况除外，比如 &lt;b&gt;、 &lt;/b&gt;、 &lt;i&gt;、 &lt;/i&gt; 等等。\n前面没有反斜杠（\\）的单 (\') 或 双 (\") 引号等等。</string>

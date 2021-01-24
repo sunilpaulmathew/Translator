@@ -68,6 +68,10 @@ public class Utils {
         return !isPackageInstalled("com.smartpack.donate", context);
     }
 
+    public static boolean isPlayStoreAvailable(Context context) {
+        return isPackageInstalled("com.android.vending", context);
+    }
+
     public static void initializeAppTheme(Context context) {
         if (getBoolean("dark_theme", false, context)) {
             AppCompatDelegate.setDefaultNightMode(

@@ -18,7 +18,6 @@
     <string name="dismiss">Zamknij</string>
     <string name="donations">Darowizny</string>
     <string name="donations_message">Jeśli chcesz docenić moją pracę, rozważ zakup pakietu darowizn SmartPack z PlayStore, pomoże to jeszcze szybciej rozwijać moje aplikacje, chociaż nie jest to wcale konieczne.</string>
-    <string name="donation_app">Kup aplikację darowizny</string>
     <string name="edit_string_warning">Uważaj na znaki specjalne (%s) w twoim tekście!</string>
     <string name="illegal_string_message">Wpisałeś niedozwolone znaki! Twoje zmiany nie zostaną zapisane.</string>
     <string name="illegal_string_warning">Niektóre znaki w formacie \'xml\' są uważane za niedozwolone i nie są akceptowane! Zwróć uwagę, że jeśli zostanie znaleziony nieprawidłowy znak, cały tekst zostanie zignorowany (lub nawet zawiesi aplikację w najgorszym przypadku)!\n\nNiektóre z zabronionych znaków to między innymi\n&amp; - z wyjątkiem niektórych słów\n&lt; i &gt; - z wyjątkiem niektórych przypadków, takich jak &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; itd.\nPojedyncze (\') lub podwójne (\") cytaty bez odwrotnego ukośnika (\\) z przodu itp.</string>

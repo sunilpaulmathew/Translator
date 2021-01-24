@@ -16,7 +16,6 @@
     <string name="about_summary">ሌሎች የ android መተግበሪያዎችን ለመተርጎም የሚረዳ መተግበሪያ!</string>
     <string name="delete_string_message">የአሁኑን string.xml ለመሰረዝ እርግጠኛ ነዎት?</string>
     <string name="dark_theme_auto">ራስ-ሰር</string>
-    <string name="donation_app">የልገሳ መተግበሪያን ይግዙ</string>
     <string name="cancel">ሰርዝ</string>
     <string name="change_logs">ለውጥ-ምዝግብ ማስታወሻዎች</string>
     <string name="credits">ክሬዲቶች</string>

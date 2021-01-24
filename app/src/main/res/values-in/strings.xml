@@ -18,7 +18,6 @@
     <string name="dismiss">Memberhentikan</string>
     <string name="donations">Donasi</string>
     <string name="donations_message">Jika Anda ingin menghargai pekerjaan saya, mohon pertimbangkan untuk membeli Paket Donasi SmartPack dari PlayStore karena sangat membantu untuk melanjutkan proyek saya lebih aktif, meskipun itu sama sekali tidak diperlukan.</string>
-    <string name="donation_app">Beli Aplikasi Donasi</string>
     <string name="edit_string_warning">Harap berhati-hati dengan karakter khusus (%s) dalam teks Anda!</string>
     <string name="illegal_string_warning">Beberapa karakter teks dianggap ilegal dalam format \'xml\' dan tidak dapat diterima! Harap dicatat bahwa seluruh teks akan diabaikan (atau bahkan aplikasi macet dalam kasus terburuk) ketika karakter ilegal terdeteksi!\n\nBeberapa karakter terlarang termasuk, tetapi tidak terbatas pada\n&amp; - Kecuali untuk kata-kata tertentu\n&lt; dan &gt; -kecuali untuk kasus-kasus tertentu seperti &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; dll.\nTunggal (\') atau gandakan (\") tanda kutip tanpa garis miring (\\) di depan, dll.</string>
     <string name="import_string_message">Anda belum mengimpor file \'string\' terjemahan apa pun. Buka menu \'Pengaturan\' untuk mengimpor satu dari \'sdcard\'!</string>
