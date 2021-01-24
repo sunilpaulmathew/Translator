@@ -1,6 +1,7 @@
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/blue</item>
         <item name="colorSecondary">@color/blue</item>
         <item name="android:statusBarColor">@color/black</item>
     </style>
