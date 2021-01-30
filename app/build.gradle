@@ -17,7 +17,7 @@ android {
     defaultConfig {
         applicationId "com.sunilpaulmathew.translator"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 29
         versionCode 9
         versionName "v0.9"
         vectorDrawables.useSupportLibrary = true
