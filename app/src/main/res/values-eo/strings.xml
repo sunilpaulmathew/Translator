@@ -1,0 +1,86 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <string name="about">Pri aplikaĵo</string>
+    <string name="about_summary">
+<i>Aplikaĵo helpa kun tradukado de aliaj aplikaĵoj por Androida operaciumo!</i>
+</string>
+    <string name="already_exists">%s jam ekzistas! Uzu alian nomon.</string>
+    <string name="cancel">Nuligi</string>
+    <string name="change_logs">Ŝanĝoprotokoloj</string>
+    <string name="credits">Dankoj</string>
+    <string name="credits_summary">
+<b>
+<i>Grarak</i>
+</b>
+: Kernel Adiutor (Fundamenta kodo)\n
+<b>
+<i>Lennoard Silva</i>
+</b>
+: Portugala (Brazilio) tradukisto\n
+<b>
+<i>FiestaLake</i>
+</b>
+: Korea tradukisto\n
+<b>
+<i>elea11</i>
+</b>
+: Germana tradukisto\n
+<b>
+<i>Andi Krisma</i>
+</b>
+: Indonezia tradukisto\n
+<b>
+<i>MONSTER_PC</i>
+</b>
+: Rusa/Ukraina tradukisto\n
+<b>
+<i>Kike Cabrera</i>
+</b>
+: Hispana tradukisto\n
+<b>
+<i>Mikesew1320</i>
+</b>
+: Amhara tradukisto
+</string>
+    <string name="dark_theme">Malhela etoso</string>
+    <string name="dark_theme_auto">Aŭtomate</string>
+    <string name="dark_theme_disable">Malŝalti</string>
+    <string name="dark_theme_enable">Ŝalti</string>
+    <string name="delete_line_question">Ĉu vi certe volas forigi \'%s\'?</string>
+    <string name="delete_string">Forigi \'string\'</string>
+    <string name="delete_string_message">Ĉu vi certe volas forigi nuna dosiero de string.xml?</string>
+    <string name="developed_by">Programita de</string>
+    <string name="dismiss">Kaŝi</string>
+    <string name="donations">Donacojn</string>
+    <string name="donations_message">Se vi aprezas mian laboron, konsideru aĉetado de donaca pakaĵo SmartPack de PlayStore, tio helpos min eĉ rapide evoluigi miajn aplikaĵojn, kvankam tio tute ne estas necesa.</string>
+    <string name="edit_string_warning">Atentu specialaj signoj (%s) en via teksto!</string>
+    <string name="illegal_string_message">Vi tajpas mallicaj signoj! Viaj ŝanĝoj ne estos konservita.</string>
+    <string name="illegal_string_warning">Kelkaj signoj en \'xml\' formo estas konsiderataj kiel nepermesita kaj ĝi ne estas akceptita! Atentu ke se estos trovita malĝusta signo, tuta teksto estos ignorita (aŭ eĉ povos kolapsi aplikaĵon)!\n\nKelkaj el malpermesaj signoj estas\n&amp; - escepti kelkajn vortojn\n&lt; and &gt; - escepti kelkajn kazojn, ekzemple <b>, </b>, <i>, </i> ktp.\nUnuopaj (\') aŭ duopaj (\") citaĵoj sen malsuprenstreko (\\) antaŭe ktp.</string>
+    <string name="import_string_message">Vi ne jam importis iajn dosierojn kun tradukaĵojn kun formo \'string\'. Iru al menuo \'Agordoj\' por importi ilin el \'sdcard\'!</string>
+    <string name="import_string_sdcard">Importi \'string\'</string>
+    <string name="import_string_error">\'%s\' ne estas valida traduka signovico. Fiasko!</string>
+    <string name="licence">Permesilo</string>
+    <string name="more_apps">Plu el la programisto</string>
+    <string name="name_empty">Nomo estas malplena! Fiasko!</string>
+    <string name="no_internet">Kontrolu vian retkonekton!</string>
+    <string name="permission_denied_write_storage">Malkonsentas konservi en konservejo!</string>
+    <string name="please_note">Noto</string>
+    <string name="press_back">Tuŝi denove por ĉesi aplikaĵon</string>
+    <string name="report_issue">Raporti problemon</string>
+    <string name="save">Konservi</string>
+    <string name="save_string_message">Nova traduka signovico generadas kiel \'%s\'!</string>
+    <string name="search_hint">Ŝerĉado…</string>
+    <string name="select_question">Ĉu elekti %s?</string>
+    <string name="share">Kunigi</string>
+    <string name="share_app">Kunigi aplikaĵon</string>
+    <string name="shared_by">%s/kunigita de Tradukisto</string>
+    <string name="share_message">Oni povas elŝuti Tradukisto v%s el Play butiko: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_with">Kunigi kun</string>
+    <string name="source_code">Fonta kodo</string>
+    <string name="support">Subtena grupo</string>
+    <string name="update">Ĝisdatigi</string>
+    <string name="view_string">Montri \'string\'</string>
+    <string name="warning">Averto</string>
+    <string name="wrong_extension">Elekti dosiero kun sufikso %s.</string>
+    <string name="yes">Jes</string>
+</resources>
