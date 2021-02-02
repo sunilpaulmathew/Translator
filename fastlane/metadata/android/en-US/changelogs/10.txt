@@ -1,0 +1,3 @@
+* Temporarily fixed storage related issues on Android 11.
+* Added Esperanto translation.
+* Miscellaneous changes.
