@@ -216,7 +216,7 @@ public class SettingsActivity extends AppCompatActivity {
             } else {
                 mPath = Utils.getPath(file);
             }
-            if (!Utils.getExtension(mPath).equals("xml")) {
+            if (!mPath.endsWith(".xml")) {
                 Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.wrong_extension, ".xml"));
                 return;
             }

@@ -309,14 +309,6 @@ public class Utils {
         return (cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isConnectedOrConnecting();
     }
 
-    /**
-     * Taken and used almost as such from the following stackoverflow discussion
-     * https://stackoverflow.com/questions/3571223/how-do-i-get-the-file-extension-of-a-file-in-java
-     */
-    public static String getExtension(String string) {
-        return android.webkit.MimeTypeMap.getFileExtensionFromUrl(string);
-    }
-
     /*
      * Taken and used almost as such from the following stackoverflow discussion
      * Ref: https://stackoverflow.com/questions/7203668/how-permission-can-be-checked-at-runtime-without-throwing-securityexception
