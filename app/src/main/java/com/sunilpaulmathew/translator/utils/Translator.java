@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 
 import androidx.core.app.ActivityCompat;
@@ -55,11 +56,11 @@ public class Translator {
                     if (!text.endsWith(".xml")) {
                         text += ".xml";
                     }
-                    if (Utils.exist(Environment.getExternalStorageDirectory().toString() + "/" + text)) {
+                    if (Utils.exist(getExportPath(activity) + "/" + text)) {
                         Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.already_exists, text));
                         return;
                     }
-                    String mString = Environment.getExternalStorageDirectory().toString() + "/" + text;
+                    String mString = getExportPath(activity) + "/" + text;
                     Utils.create(getStrings(activity), mString);
                     new MaterialAlertDialogBuilder(activity)
                             .setMessage(activity.getString(R.string.save_string_message, mString))
@@ -140,6 +141,14 @@ public class Translator {
             sb.append(" - </i>");
         }
         return sb.toString().replaceFirst(" - ","");
+    }
+
+    private static String getExportPath(Context context) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            return Objects.requireNonNull(context.getExternalFilesDir("downloads")).toString();
+        } else {
+            return Environment.getExternalStorageDirectory().toString();
+        }
     }
 
     public static List<String> getData(Context context) {
