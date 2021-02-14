@@ -16,6 +16,7 @@
     <string name="delete_string">Delete \'string\'</string>
     <string name="delete_string_message">Are you sure to delete current string.xml?</string>
     <string name="developed_by">Developed By</string>
+    <string name="device_storage">Device Storage</string>
     <string name="dismiss">Dismiss</string>
     <string name="donations">Donations</string>
     <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from PlayStore as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
@@ -23,10 +24,12 @@
     <string name="edit_string_warning">Please be careful with the special character\'s (%s) in your text!</string>
     <string name="illegal_string_message">You\'re entered some illegal characters! Your changes won\'t be saved.</string>
     <string name="illegal_string_warning">Some character\'s are considered illegal in \'xml\' format and are not acceptable! Please be noted that the entire text will be neglected (or even app crashes in the worst case) when an illegal character is detected!\n\nSome of the prohibited character\'s includes, but not limited to\n&amp; - except for certain words\n&lt; and &gt; -except for certain cases such as &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nSingle (\') or double (\") quotation marks without a backward slash (\\) in the front, etc.</string>
+    <string name="import_string">Import</string>
     <string name="import_string_error">\'%s\' is not a proper language string. Aborting!</string>
     <string name="import_string_message">You haven\'t imported any translation \'string\' file yet. Go to \'Settings\' menu to import one from \'sdcard\'!</string>
     <string name="import_string_sdcard">Import \'string\'</string>
     <string name="import_string_snackbar">You haven\'t imported any translation \'string\' file yet!</string>
+    <string name="importing">Importing…</string>
     <string name="licence">Licence</string>
     <string name="more_apps">More from Developer</string>
     <string name="more_apps_summary">Checkout more applications provided by the developer in Google Play</string>
@@ -57,6 +60,7 @@
     <string name="translations">Translations</string>
     <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in english</string>
     <string name="update">Update</string>
+    <string name="url">URL</string>
     <string name="view_string">View \'string\'</string>
     <string name="warning">Warning</string>
     <string name="wrong_extension">Please select a file with %s extension.</string>

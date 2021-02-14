@@ -9,9 +9,11 @@ package com.sunilpaulmathew.translator.utils;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Environment;
 
@@ -166,6 +168,45 @@ public class Translator {
             }
         }
         return mData;
+    }
+
+    public static void importStringFromURL(Activity activity) {
+        Utils.dialogEditText(null, activity.getString(R.string.import_string), mRecyclerView,
+                (dialogInterface1, i1) -> {
+                }, text -> {
+                    if (text.isEmpty()) {
+                        return;
+                    }
+                    if (text.contains("blob")) {
+                        text = text.replace("blob","raw");
+                    }
+                    String url = text;
+                    new AsyncTask<Void, Void, Void>() {
+                        private ProgressDialog mProgressDialog;
+                        @Override
+                        protected void onPreExecute() {
+                            super.onPreExecute();
+                            mProgressDialog = new ProgressDialog(activity);
+                            mProgressDialog.setMessage(activity.getString(R.string.importing));
+                            mProgressDialog.setCancelable(false);
+                            mProgressDialog.show();
+                        }
+                        @Override
+                        protected Void doInBackground(Void... voids) {
+                            Utils.download(url, activity.getFilesDir().toString() + "/strings.xml");
+                            return null;
+                        }
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                            try {
+                                mProgressDialog.dismiss();
+                            } catch (IllegalArgumentException ignored) {}
+                            Utils.restartApp(activity);
+                        }
+                    }.execute();
+                }, activity).setOnDismissListener(dialogInterface -> {
+        }).show();
     }
 
     public static void reloadUI(Context context) {

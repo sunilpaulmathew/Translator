@@ -45,7 +45,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.net.URL;
 import java.util.Objects;
 
 /*
@@ -250,6 +252,18 @@ public class Utils {
             myOutWriter.append(text);
             myOutWriter.close();
             fOut.close();
+        } catch (Exception ignored) {
+        }
+    }
+
+    public static void download(String url, String dest) {
+        try (InputStream input = new URL(url).openStream();
+             OutputStream output = new FileOutputStream(dest)) {
+            byte[] data = new byte[4096];
+            int count;
+            while ((count = input.read(data)) != -1) {
+                output.write(data, 0, count);
+            }
         } catch (Exception ignored) {
         }
     }

@@ -34,6 +34,7 @@ import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.adapters.RecycleViewItem;
 import com.sunilpaulmathew.translator.adapters.RecycleViewSettingsAdapter;
+import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
 
 import java.io.File;
@@ -140,9 +141,20 @@ public class SettingsActivity extends AppCompatActivity {
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
                         Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.permission_denied_write_storage));
                     } else {
-                        Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
-                        importString.setType("text/*");
-                        startActivityForResult(importString, 0);
+                        new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
+                                R.array.import_options), (dialogInterface, i) -> {
+                            switch (i) {
+                                case 0:
+                                    Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
+                                    importString.setType("text/*");
+                                    startActivityForResult(importString, 0);
+                                    break;
+                                case 1:
+                                    Translator.importStringFromURL(this);
+                                    break;
+                            }
+                        }).setOnDismissListener(dialogInterface -> {
+                        }).show();
                     }
                 }
             } else if (position == 2) {
@@ -228,7 +240,7 @@ public class SettingsActivity extends AppCompatActivity {
                     .setMessage(getString(R.string.select_question, new File(mPath).toString()))
                     .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                     })
-                    .setPositiveButton(getString(R.string.yes), (dialogInterface, i) -> {
+                    .setPositiveButton(getString(R.string.import_string), (dialogInterface, i) -> {
                         Utils.create(Utils.read(mPath), getFilesDir().toString() + "/strings.xml");
                         Utils.restartApp(this);
                     })
