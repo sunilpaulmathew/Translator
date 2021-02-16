@@ -1,0 +1,4 @@
+* Added option to directly import strings from URL.
+* Improved file picking on some devices.
+* Updated polish translation.
+* Miscellaneous changes.

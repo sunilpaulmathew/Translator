@@ -9,9 +9,12 @@ package com.sunilpaulmathew.translator.utils;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
 
 import androidx.core.app.ActivityCompat;
@@ -55,11 +58,11 @@ public class Translator {
                     if (!text.endsWith(".xml")) {
                         text += ".xml";
                     }
-                    if (Utils.exist(Environment.getExternalStorageDirectory().toString() + "/" + text)) {
+                    if (Utils.exist(getExportPath(activity) + "/" + text)) {
                         Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.already_exists, text));
                         return;
                     }
-                    String mString = Environment.getExternalStorageDirectory().toString() + "/" + text;
+                    String mString = getExportPath(activity) + "/" + text;
                     Utils.create(getStrings(activity), mString);
                     new MaterialAlertDialogBuilder(activity)
                             .setMessage(activity.getString(R.string.save_string_message, mString))
@@ -142,6 +145,14 @@ public class Translator {
         return sb.toString().replaceFirst(" - ","");
     }
 
+    private static String getExportPath(Context context) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            return Objects.requireNonNull(context.getExternalFilesDir("downloads")).toString();
+        } else {
+            return Environment.getExternalStorageDirectory().toString();
+        }
+    }
+
     public static List<String> getData(Context context) {
         mData.clear();
         if (Utils.exist(context.getFilesDir().toString() + "/strings.xml")) {
@@ -157,6 +168,45 @@ public class Translator {
             }
         }
         return mData;
+    }
+
+    public static void importStringFromURL(Activity activity) {
+        Utils.dialogEditText(null, activity.getString(R.string.import_string), mRecyclerView,
+                (dialogInterface1, i1) -> {
+                }, text -> {
+                    if (text.isEmpty()) {
+                        return;
+                    }
+                    if (text.contains("blob")) {
+                        text = text.replace("blob","raw");
+                    }
+                    String url = text;
+                    new AsyncTask<Void, Void, Void>() {
+                        private ProgressDialog mProgressDialog;
+                        @Override
+                        protected void onPreExecute() {
+                            super.onPreExecute();
+                            mProgressDialog = new ProgressDialog(activity);
+                            mProgressDialog.setMessage(activity.getString(R.string.importing));
+                            mProgressDialog.setCancelable(false);
+                            mProgressDialog.show();
+                        }
+                        @Override
+                        protected Void doInBackground(Void... voids) {
+                            Utils.download(url, activity.getFilesDir().toString() + "/strings.xml");
+                            return null;
+                        }
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                            try {
+                                mProgressDialog.dismiss();
+                            } catch (IllegalArgumentException ignored) {}
+                            Utils.restartApp(activity);
+                        }
+                    }.execute();
+                }, activity).setOnDismissListener(dialogInterface -> {
+        }).show();
     }
 
     public static void reloadUI(Context context) {

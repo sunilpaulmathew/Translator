@@ -12,8 +12,8 @@
 
 <b>How it work?</b>
 
-- Get the original 'string.xml' from your developer (or from the source repo, if the app is open-source).
-- Import the same from 'sdcard' to the Translator (Settings --> Import 'string').
+- Get the original 'string.xml' (or the URL to the same) from your developer (or from the source repo, if the app is open-source).
+- Import the same (from 'sdcard' or from URL) to the Translator (Settings --> Import 'string').
 - The app will list each and every translatable string as separate entries.
 - Click on each of them and replace the original text with the translation from your language.
 - Please follow on-screen instructions to avoid mistakes (RED colour - Error).

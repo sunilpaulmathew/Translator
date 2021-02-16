@@ -2,7 +2,7 @@
 
 ![The Translator](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true)
 
-[![](https://img.shields.io/badge/The%20Translator-v0.8-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
+[![](https://img.shields.io/badge/The%20Translator-v0.11-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
 ![](https://img.shields.io/github/languages/top/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/contributors/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/license/sunilpaulmathew/Translator)
@@ -16,9 +16,6 @@
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
           alt=""
           height="80">](https://f-droid.org/packages/com.sunilpaulmathew.translator)
-[<img src="https://i.ibb.co/q0mdc4Z/get-it-on-github.png"
-     alt=""
-     height="80">](https://github.com/sunilpaulmathew/Translator/releases/download/v0.8/com.sunilpaulmathew.translator-v0.8-release.apk)
 
 ## Features
 * Quickly and easily translate android app's language strings (string.xml).
@@ -52,6 +49,7 @@ If you like to appreciate my work, please consider donating to me (either via [L
 * [Waldemar Stoczkowski](https://github.com/WaldiSt), Polish Translations
 * [Diego](https://github.com/sguinetti), Spanish Translations
 * [anilmavis](https://github.com/anilmavis), Turkish Translations
+* [Jakub Fabijan](https://github.com/jakubfabijan), Esperanto Translations
 
 ## License
 

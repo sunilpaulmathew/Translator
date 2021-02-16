@@ -61,8 +61,8 @@ public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleView
             holder.mIcon.setVisibility(View.VISIBLE);
         }
         if (position == 2 && !Utils.exist(holder.mTitle.getContext().getFilesDir().toString() + "/strings.xml")
-                || position == 9 && Utils.isPackageInstalled("com.android.vending", holder.mTitle.getContext())
-                && !Utils.isNotDonated(holder.mTitle.getContext())) {
+                || position == 9 && Utils.isPlayStoreAvailable(holder.mTitle.getContext())
+                && Utils.isDonated(holder.mTitle.getContext())) {
             holder.mTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             holder.mDescription.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         }

@@ -45,7 +45,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.net.URL;
 import java.util.Objects;
 
 /*
@@ -63,9 +65,12 @@ public class Utils {
         }
     }
 
-    public static boolean isNotDonated(Context context) {
-        if (BuildConfig.DEBUG) return false;
-        return !isPackageInstalled("com.smartpack.donate", context);
+    public static boolean isDonated(Context context) {
+        return BuildConfig.DEBUG || isPackageInstalled("com.smartpack.donate", context);
+    }
+
+    public static boolean isPlayStoreAvailable(Context context) {
+        return isPackageInstalled("com.android.vending", context);
     }
 
     public static void initializeAppTheme(Context context) {
@@ -251,6 +256,18 @@ public class Utils {
         }
     }
 
+    public static void download(String url, String dest) {
+        try (InputStream input = new URL(url).openStream();
+             OutputStream output = new FileOutputStream(dest)) {
+            byte[] data = new byte[4096];
+            int count;
+            while ((count = input.read(data)) != -1) {
+                output.write(data, 0, count);
+            }
+        } catch (Exception ignored) {
+        }
+    }
+
     public static void showSnackbar(View view, String message) {
         Snackbar snackBar = Snackbar.make(view, message, Snackbar.LENGTH_INDEFINITE);
         snackBar.setAction(R.string.dismiss, v -> snackBar.dismiss());
@@ -304,14 +321,6 @@ public class Utils {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         assert cm != null;
         return (cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isConnectedOrConnecting();
-    }
-
-    /**
-     * Taken and used almost as such from the following stackoverflow discussion
-     * https://stackoverflow.com/questions/3571223/how-do-i-get-the-file-extension-of-a-file-in-java
-     */
-    public static String getExtension(String string) {
-        return android.webkit.MimeTypeMap.getFileExtensionFromUrl(string);
     }
 
     /*

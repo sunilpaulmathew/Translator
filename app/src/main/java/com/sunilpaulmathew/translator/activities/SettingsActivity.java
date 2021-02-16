@@ -34,6 +34,7 @@ import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.adapters.RecycleViewItem;
 import com.sunilpaulmathew.translator.adapters.RecycleViewSettingsAdapter;
+import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
 
 import java.io.File;
@@ -60,7 +61,7 @@ public class SettingsActivity extends AppCompatActivity {
         MaterialTextView mAppDescription = findViewById(R.id.description);
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
 
-        mAppTitle.setText(getString(R.string.app_name) + " " + BuildConfig.VERSION_NAME);
+        mAppTitle.setText(getString(R.string.app_name) + (Utils.isDonated(this) ? " Pro " :  " ") + BuildConfig.VERSION_NAME);
         mAppTitle.setTextColor(Utils.isDarkTheme(this) ? Color.WHITE : Color.BLACK);
         mAppDescription.setText(BuildConfig.APPLICATION_ID);
 
@@ -91,7 +92,8 @@ public class SettingsActivity extends AppCompatActivity {
         mData.add(new RecycleViewItem(getString(R.string.translations), getString(R.string.translations_summary), getResources().getDrawable(R.drawable.ic_translate)));
         mData.add(new RecycleViewItem(getString(R.string.source_code), getString(R.string.source_code_summary), getResources().getDrawable(R.drawable.ic_github)));
         mData.add(new RecycleViewItem(getString(R.string.share_app), getString(R.string.share_app_Summary), getResources().getDrawable(R.drawable.ic_share)));
-        mData.add(new RecycleViewItem(getString(R.string.donations), getString(R.string.donations_summary), getResources().getDrawable(R.drawable.ic_donate)));
+        mData.add(new RecycleViewItem(getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
+                R.string.donations_summary), getResources().getDrawable(R.drawable.ic_donate)));
         mData.add(new RecycleViewItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), getResources().getDrawable(R.drawable.ic_rate)));
         mData.add(new RecycleViewItem(getString(R.string.licence), null, getResources().getDrawable(R.drawable.ic_licence)));
         mData.add(new RecycleViewItem(getString(R.string.about), null, getResources().getDrawable(R.drawable.ic_info)));
@@ -139,9 +141,20 @@ public class SettingsActivity extends AppCompatActivity {
                                 Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
                         Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.permission_denied_write_storage));
                     } else {
-                        Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
-                        importString.setType("text/*");
-                        startActivityForResult(importString, 0);
+                        new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
+                                R.array.import_options), (dialogInterface, i) -> {
+                            switch (i) {
+                                case 0:
+                                    Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
+                                    importString.setType("text/*");
+                                    startActivityForResult(importString, 0);
+                                    break;
+                                case 1:
+                                    Translator.importStringFromURL(this);
+                                    break;
+                            }
+                        }).setOnDismissListener(dialogInterface -> {
+                        }).show();
                     }
                 }
             } else if (position == 2) {
@@ -177,16 +190,8 @@ public class SettingsActivity extends AppCompatActivity {
                 Intent shareIntent = Intent.createChooser(share_app, getString(R.string.share_with));
                 startActivity(shareIntent);
             } else if (position == 9) {
-                if (Utils.isPackageInstalled("com.android.vending", this)) {
-                    new MaterialAlertDialogBuilder(this)
-                            .setIcon(R.mipmap.ic_launcher)
-                            .setTitle(getString(R.string.donations))
-                            .setMessage(getString(R.string.donations_message))
-                            .setNeutralButton(getString(R.string.cancel), (dialog1, id1) -> {
-                            })
-                            .setPositiveButton(getString(R.string.donation_app), (dialogInterface, i) -> Utils.launchURL(
-                                    "https://play.google.com/store/apps/details?id=com.smartpack.donate", this))
-                            .show();
+                if (Utils.isPlayStoreAvailable(this)) {
+                    Utils.launchURL("https://play.google.com/store/apps/details?id=com.smartpack.donate", this);
                 } else {
                     Utils.launchURL("https://smartpack.github.io/donation/", this);
                 }
@@ -223,7 +228,7 @@ public class SettingsActivity extends AppCompatActivity {
             } else {
                 mPath = Utils.getPath(file);
             }
-            if (!Utils.getExtension(mPath).equals("xml")) {
+            if (!mPath.endsWith(".xml")) {
                 Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.wrong_extension, ".xml"));
                 return;
             }
@@ -235,7 +240,7 @@ public class SettingsActivity extends AppCompatActivity {
                     .setMessage(getString(R.string.select_question, new File(mPath).toString()))
                     .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                     })
-                    .setPositiveButton(getString(R.string.yes), (dialogInterface, i) -> {
+                    .setPositiveButton(getString(R.string.import_string), (dialogInterface, i) -> {
                         Utils.create(Utils.read(mPath), getFilesDir().toString() + "/strings.xml");
                         Utils.restartApp(this);
                     })

@@ -16,7 +16,6 @@
     <string name="developed_by">Entwickler:</string>
     <string name="donations">Spenden</string>
     <string name="donations_message">Wenn Du meine Arbeit unterstützen möchtest kannst Du das SmartPack-Spendenpaket im PlayStore kaufen was mir sehr bei der aktiven Verfolgung meiner Projekte hilft auch wenn es keineswegs Voraussetzung ist.</string>
-    <string name="donation_app">Spenden-App kaufen</string>
     <string name="import_string_message">Du hast noch keine String-Datei importiert. Öffne das Einstellungen-Menü um eine aus dem sdcard-Verzeichnis zu importieren!</string>
     <string name="import_string_sdcard">String importieren</string>
     <string name="more_apps">Mehr vom Entwickler</string>
