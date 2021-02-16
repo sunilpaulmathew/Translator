@@ -21,7 +21,6 @@
     <string name="donations">捐赠</string>
     <string name="donations_message">如果您喜欢我的作品，请考虑从 PlayStore 购买 SmartPack 捐赠包，因为这对继续我的项目非常有帮助，尽管这完全没有必要。</string>
     <string name="donations_summary">如果你欣赏开发者的努力，以完全免费，无干扰和没有广告的形式提供这个应用程序，请考虑以某种方式支持开发。点击这里了解更多。谢谢你！</string>
-    <string name="donation_app">购买捐赠应用</string>
     <string name="edit_string_warning">请留意你文本中的特殊字符 \'s (%s)！</string>
     <string name="illegal_string_message">你输入了一些非法字符！你的更改将不被保存！</string>
     <string name="import_string">导入</string>
