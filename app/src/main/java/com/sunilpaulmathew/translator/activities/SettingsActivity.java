@@ -79,28 +79,31 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         });
 
-        mData.add(new RecycleViewItem(getString(R.string.dark_theme), null, getResources().getDrawable(R.drawable.ic_theme)));
+        mData.add(new RecycleViewItem(getString(R.string.dark_theme), null, getResources().getDrawable(R.drawable.ic_theme), null));
         if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
-            mData.add(new RecycleViewItem(getString(R.string.view_string), null, getResources().getDrawable(R.drawable.ic_view)));
+            mData.add(new RecycleViewItem(getString(R.string.view_string), null, getResources().getDrawable(R.drawable.ic_view), null));
         } else {
-            mData.add(new RecycleViewItem(getString(R.string.import_string_sdcard), null, getResources().getDrawable(R.drawable.ic_import)));
+            mData.add(new RecycleViewItem(getString(R.string.import_string_sdcard), null, getResources().getDrawable(R.drawable.ic_import), null));
         }
-        mData.add(new RecycleViewItem(getString(R.string.delete_string), null, getResources().getDrawable(R.drawable.ic_delete)));
-        mData.add(new RecycleViewItem(getString(R.string.report_issue), getString(R.string.report_issue_summary), getResources().getDrawable(R.drawable.ic_issue)));
-        mData.add(new RecycleViewItem(getString(R.string.more_apps), getString(R.string.more_apps_summary), getResources().getDrawable(R.drawable.ic_playstore)));
-        mData.add(new RecycleViewItem(getString(R.string.support), getString(R.string.support_summary), getResources().getDrawable(R.drawable.ic_support)));
-        mData.add(new RecycleViewItem(getString(R.string.translations), getString(R.string.translations_summary), getResources().getDrawable(R.drawable.ic_translate)));
-        mData.add(new RecycleViewItem(getString(R.string.source_code), getString(R.string.source_code_summary), getResources().getDrawable(R.drawable.ic_github)));
-        mData.add(new RecycleViewItem(getString(R.string.share_app), getString(R.string.share_app_Summary), getResources().getDrawable(R.drawable.ic_share)));
+        mData.add(new RecycleViewItem(getString(R.string.delete_string), null, getResources().getDrawable(R.drawable.ic_delete), null));
+        mData.add(new RecycleViewItem(getString(R.string.report_issue), getString(R.string.report_issue_summary), getResources().getDrawable(R.drawable.ic_issue), "https://github.com/sunilpaulmathew/Translator/issues/new"));
+        mData.add(new RecycleViewItem(getString(R.string.more_apps), getString(R.string.more_apps_summary), getResources().getDrawable(R.drawable.ic_playstore), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
+        mData.add(new RecycleViewItem(getString(R.string.support), getString(R.string.support_summary), getResources().getDrawable(R.drawable.ic_support), "https://t.me/smartpack_kmanager"));
+        mData.add(new RecycleViewItem(getString(R.string.translations), getString(R.string.translations_summary), getResources().getDrawable(R.drawable.ic_translate), "https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml"));
+        mData.add(new RecycleViewItem(getString(R.string.source_code), getString(R.string.source_code_summary), getResources().getDrawable(R.drawable.ic_github), "https://github.com/sunilpaulmathew/Translator"));
+        mData.add(new RecycleViewItem(getString(R.string.share_app), getString(R.string.share_app_Summary), getResources().getDrawable(R.drawable.ic_share), null));
         mData.add(new RecycleViewItem(getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
-                R.string.donations_summary), getResources().getDrawable(R.drawable.ic_donate)));
-        mData.add(new RecycleViewItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), getResources().getDrawable(R.drawable.ic_rate)));
-        mData.add(new RecycleViewItem(getString(R.string.licence), null, getResources().getDrawable(R.drawable.ic_licence)));
-        mData.add(new RecycleViewItem(getString(R.string.credits), null, getResources().getDrawable(R.drawable.ic_credits)));
-        mData.add(new RecycleViewItem(getString(R.string.about), null, getResources().getDrawable(R.drawable.ic_info)));
+                R.string.donations_summary), getResources().getDrawable(R.drawable.ic_donate), Utils.isPlayStoreAvailable(
+                        this) ? "https://play.google.com/store/apps/details?id=com.smartpack.donate" : "https://smartpack.github.io/donation/"));
+        mData.add(new RecycleViewItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), getResources().getDrawable(R.drawable.ic_rate), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
+        mData.add(new RecycleViewItem(getString(R.string.licence), null, getResources().getDrawable(R.drawable.ic_licence), null));
+        mData.add(new RecycleViewItem(getString(R.string.credits), null, getResources().getDrawable(R.drawable.ic_credits), "https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md"));
+        mData.add(new RecycleViewItem(getString(R.string.about), null, getResources().getDrawable(R.drawable.ic_info), null));
 
         mRecycleViewAdapter.setOnItemClickListener((position, v) -> {
-            if (position == 0) {
+            if (mData.get(position).getURL() != null) {
+                Utils.launchURL(mData.get(position).getURL(), this);
+            } else if (position == 0) {
                 new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
                         R.array.app_theme), (dialogInterface, i) -> {
                     switch (i) {
@@ -172,16 +175,6 @@ public class SettingsActivity extends AppCompatActivity {
                 } else {
                     Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar));
                 }
-            } else if (position == 3) {
-                Utils.launchURL("https://github.com/sunilpaulmathew/Translator/issues/new", this);
-            } else if (position == 4) {
-                Utils.launchURL("https://play.google.com/store/apps/dev?id=5836199813143882901", this);
-            } else if (position == 5) {
-                Utils.launchURL("https://t.me/smartpack_kmanager", this);
-            } else if (position == 6) {
-                Utils.launchURL("https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml", this);
-            } else if (position == 7) {
-                Utils.launchURL("https://github.com/sunilpaulmathew/Translator", this);
             } else if (position == 8) {
                 Intent share_app = new Intent();
                 share_app.setAction(Intent.ACTION_SEND);
@@ -190,20 +183,10 @@ public class SettingsActivity extends AppCompatActivity {
                 share_app.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(share_app, getString(R.string.share_with));
                 startActivity(shareIntent);
-            } else if (position == 9) {
-                if (Utils.isPlayStoreAvailable(this)) {
-                    Utils.launchURL("https://play.google.com/store/apps/details?id=com.smartpack.donate", this);
-                } else {
-                    Utils.launchURL("https://smartpack.github.io/donation/", this);
-                }
-            } else if (position == 10) {
-                Utils.launchURL("https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator", this);
             } else if (position == 11) {
                 Intent licence = new Intent(this, LicenceActivity.class);
                 startActivity(licence);
                 finish();
-            } else if (position == 12) {
-                Utils.launchURL("https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md", this);
             } else if (position == 13) {
                 Intent aboutView = new Intent(this, AboutActivity.class);
                 startActivity(aboutView);

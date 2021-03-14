@@ -19,11 +19,13 @@ public class RecycleViewItem implements Serializable {
     private String mTitle;
     private String mDescription;
     private Drawable mIcon;
+    private String mURL;
 
-    public RecycleViewItem(String title, String description, Drawable icon) {
+    public RecycleViewItem(String title, String description, Drawable icon, String url) {
         this.mTitle = title;
         this.mDescription = description;
         this.mIcon = icon;
+        this.mURL = url;
     }
 
     public String getTitle() {
@@ -36,6 +38,10 @@ public class RecycleViewItem implements Serializable {
 
     public Drawable getIcon() {
         return mIcon;
+    }
+
+    public String getURL() {
+        return mURL;
     }
 
 }
