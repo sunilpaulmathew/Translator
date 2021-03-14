@@ -1,0 +1,6 @@
+* Improved settings page.
+* App will now allow replacing strings while saving.
+* Credits are now moved to Settings page.
+* Added Vietnamese translations
+* Updated Chinese translations.
+* Miscellaneous changes.
