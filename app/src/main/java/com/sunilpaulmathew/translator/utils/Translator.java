@@ -58,11 +58,18 @@ public class Translator {
                     if (!text.endsWith(".xml")) {
                         text += ".xml";
                     }
-                    if (Utils.exist(getExportPath(activity) + "/" + text)) {
-                        Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.already_exists, text));
+                    String mString = getExportPath() + "/" + text;
+                    if (Utils.exist(getExportPath() + "/" + text)) {
+                        new MaterialAlertDialogBuilder(activity)
+                                .setMessage(activity.getString(R.string.save_string_replace, text))
+                                .setNegativeButton(activity.getString(R.string.cancel), (dialogInterface, i) -> {
+                                })
+                                .setPositiveButton(activity.getString(R.string.replace), (dialogInterface, i) -> {
+                                    Utils.create(getStrings(activity), mString);
+                                })
+                                .show();
                         return;
                     }
-                    String mString = getExportPath(activity) + "/" + text;
                     Utils.create(getStrings(activity), mString);
                     new MaterialAlertDialogBuilder(activity)
                             .setMessage(activity.getString(R.string.save_string_message, mString))
@@ -145,12 +152,8 @@ public class Translator {
         return sb.toString().replaceFirst(" - ","");
     }
 
-    private static String getExportPath(Context context) {
-        if (Build.VERSION.SDK_INT >= 29) {
-            return Objects.requireNonNull(context.getExternalFilesDir("downloads")).toString();
-        } else {
-            return Environment.getExternalStorageDirectory().toString();
-        }
+    private static String getExportPath() {
+        return Environment.getExternalStorageDirectory().toString();
     }
 
     public static List<String> getData(Context context) {

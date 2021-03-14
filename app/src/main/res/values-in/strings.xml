@@ -3,11 +3,9 @@
 
     <string name="about">Tentang</string>
     <string name="about_summary"><i>Aplikasi untuk membantu menerjemahkan aplikasi android lainnya!</i></string>
-    <string name="already_exists">%s sudah ada! Harap gunakan nama lain.</string>
     <string name="cancel">Membatalkan</string>
     <string name="change_logs">Perubahan</string>
     <string name="credits">Kredit</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Basis kode)\n<b><i>Lennoard Silva</i></b>: Terjemahan Portugis (Brasil)\n<b><i>FiestaLake</i></b>: Terjemahan bahasa Korea\n<b><i>elea11</i></b>: Terjemahan Jerman\n<b><i>Andi Krisma</i></b>: Terjemahan bahasa Indonesia</string>
     <string name="dark_theme">Tema gelap</string>
     <string name="dark_theme_auto">Otomatis</string>
     <string name="dark_theme_disable">Nonaktifkan</string>

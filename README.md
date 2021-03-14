@@ -37,19 +37,7 @@ If you like to appreciate my work, please consider donating to me (either via [L
      height="80">](https://play.google.com/store/apps/details?id=com.smartpack.donate)
 
 ## Credits
-* [Grarak](https://github.com/Grarak/), Code contributions (I took some code from [Kernel Adiutor](https://github.com/Grarak/KernelAdiutor/))
-* [Lennoard Silva](https://github.com/Lennoard), Portuguese (Brazilian) Translations
-* [FiestaLake](https://github.com/FiestaLake), Korean Translations
-* [elea11](https://github.com/elea11), German Translations
-* [Andi Krisma](https://github.com/NiNjA1998), Indonesian Translations
-* [Nikita](https://t.me/MONSTER_PC), Russian & Ukrainian Translations
-* [Kike Cabrera](https://github.com/kikecalpe), Spanish Translations
-* [Mikesew1320](https://github.com/Mikesew1320), Amharic Translations
-* [sr093906](https://github.com/sr093906), Chinese (simplified) Translations
-* [Waldemar Stoczkowski](https://github.com/WaldiSt), Polish Translations
-* [Diego](https://github.com/sguinetti), Spanish Translations
-* [anilmavis](https://github.com/anilmavis), Turkish Translations
-* [Jakub Fabijan](https://github.com/jakubfabijan), Esperanto Translations
+A list of people who contributed to this project is available [here](Credits.md).
 
 ## License
 

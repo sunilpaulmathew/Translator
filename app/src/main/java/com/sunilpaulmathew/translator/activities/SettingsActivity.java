@@ -96,6 +96,7 @@ public class SettingsActivity extends AppCompatActivity {
                 R.string.donations_summary), getResources().getDrawable(R.drawable.ic_donate)));
         mData.add(new RecycleViewItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), getResources().getDrawable(R.drawable.ic_rate)));
         mData.add(new RecycleViewItem(getString(R.string.licence), null, getResources().getDrawable(R.drawable.ic_licence)));
+        mData.add(new RecycleViewItem(getString(R.string.credits), null, getResources().getDrawable(R.drawable.ic_credits)));
         mData.add(new RecycleViewItem(getString(R.string.about), null, getResources().getDrawable(R.drawable.ic_info)));
 
         mRecycleViewAdapter.setOnItemClickListener((position, v) -> {
@@ -202,6 +203,8 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivity(licence);
                 finish();
             } else if (position == 12) {
+                Utils.launchURL("https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md", this);
+            } else if (position == 13) {
                 Intent aboutView = new Intent(this, AboutActivity.class);
                 startActivity(aboutView);
                 finish();

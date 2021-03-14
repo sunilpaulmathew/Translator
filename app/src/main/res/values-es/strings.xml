@@ -3,11 +3,9 @@
 
     <string name="about">Acerca de</string>
     <string name="about_summary"><i>¡Una aplicación para ayudar a traducir aplicaciones de código abierto para Android!</i></string>
-    <string name="already_exists">%s ya existe. Por favor, usa un nombre diferente.</string>
     <string name="cancel">Cancelar</string>
     <string name="change_logs">Registro de cambios</string>
     <string name="credits">Créditos</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Código base)\n<b><i>Lennoard Silva</i></b>: traducciones a Portugués (Brasil)\n<b><i>FiestaLake</i></b>: traducciones a Koreano\n<b><i>elea11</i></b>: traducciones a Alemán\n<b><i>Andi Krisma</i></b>: traducciones a Indonesio\n<b><i>KikeCalpe</i></b>: traducciones a Español (Castellano)</string>
     <string name="dark_theme">Tema oscuro</string>
     <string name="dark_theme_auto">Auto</string>
     <string name="dark_theme_disable">Desactivar</string>

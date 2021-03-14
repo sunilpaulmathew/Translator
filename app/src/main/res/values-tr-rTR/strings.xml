@@ -3,11 +3,9 @@
 
     <string name="about">Hakkında</string>
     <string name="about_summary"><i>Diğer Android uygulamalarının çevirisini kolaylaştıracak bir uygulama!</i></string>
-    <string name="already_exists">%s zaten var! Lütfen farklı bir ad kullan.</string>
     <string name="cancel">İptal</string>
     <string name="change_logs">Değişiklik kayıtları</string>
     <string name="credits">Emeği geçenler</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: Kernel Adiutor (kod katkıları)\n<b><i>Lennoard Silva</i></b>: Portekizce (Brezilya) çeviriler\n<b><i>FiestaLake</i></b>: Korece çeviriler\n<b><i>elea11</i></b>: Almanca çeviriler\n<b><i>Andi Krisma</i></b>: Endonezce çeviriler\n<b><i>MONSTER_PC</i></b>: Rusça/Ukraynaca çeviriler\n<b><i>Kike Cabrera</i></b>: İspanyolca çeviriler\n<b><i>Mikesew1320</i></b>: Amharca çeviriler\n<b><i>sr093906</i></b>: Çince (basitleştirilmiş) çeviriler\n<b><i>Waldemar Stoczkowski</i></b>: Lehçe çeviriler\n<b><i>anilmavis</i></b>: Türkçe çeviriler</string>
     <string name="dark_theme">Karanlık tema</string>
     <string name="dark_theme_auto">Otomatik</string>
     <string name="dark_theme_disable">Devre dışı bırak</string>

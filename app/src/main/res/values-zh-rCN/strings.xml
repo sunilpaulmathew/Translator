@@ -2,11 +2,9 @@
 
     <string name="about">关于</string>
     <string name="about_summary"><i>一款帮助翻译其他安卓应用的程序！</i></string>
-    <string name="already_exists">%s 已存在！请使用一个不同的名称。</string>
     <string name="cancel">取消</string>
     <string name="change_logs">变更记录</string>
     <string name="credits">致谢</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>：内核帮手（代码贡献）\n<b><i>Lennoard Silva</i></b>：葡萄牙语 （巴西）翻译\n<b><i>FiestaLake</i></b>：韩语翻译\n<b><i>elea11</i></b>：德语翻译\n<b><i>Andi Krisma</i></b>：印尼语翻译\n<b><i>MONSTER_PC</i></b>：俄语/乌克兰语翻译\n<b><i>Kike Cabrera</i></b>：西班牙语翻译\n<b><i>Mikesew1320</i></b>：阿姆哈拉语翻译\n<b><i>sr093906</i></b>：简体中文翻译\n<b><i>Waldemar Stoczkowski</i></b>：波兰语翻译\n<b><i>anilmavis</i></b>: 土耳其语翻译\n<b><i>Jakub Fabijan</i></b>：世界语翻译</string>
     <string name="dark_theme">深色主题</string>
     <string name="dark_theme_auto">自动</string>
     <string name="dark_theme_disable">禁用</string>

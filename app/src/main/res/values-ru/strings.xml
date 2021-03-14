@@ -3,11 +3,9 @@
 
     <string name="about">О программе</string>
     <string name="about_summary"><i>Приложение, помогающее переводить другие приложения для Android!</i></string>
-    <string name="already_exists">%s уже существует! Пожалуйста, используйте другое имя.</string>
     <string name="cancel">Отмена</string>
     <string name="change_logs">Изменения</string>
     <string name="credits">Благодарности</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: KernelAdiutor (Базовый код)\n<b><i>Lennoard Silva</i></b>: Португальский (Бразильский) перевод\n<b><i>FiestaLake</i></b>: Корейский перевод\n<b><i>elea11</i></b>: Немецкий перевод\n<b><i>Andi Krisma</i></b>: Индонезийский перевод\n<b><i>MONSTER_PC</i></b>: Русский и Украинский перевод</string>
     <string name="dark_theme">Тёмная тема</string>
     <string name="dark_theme_auto">Авто</string>
     <string name="dark_theme_disable">Отключить</string>

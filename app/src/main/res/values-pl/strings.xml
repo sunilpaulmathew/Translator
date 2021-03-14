@@ -2,11 +2,9 @@
 
     <string name="about">O aplikacji</string>
     <string name="about_summary"><i>Aplikacja pomagająca w tłumaczeniu innych aplikacji na system Android!</i></string>
-    <string name="already_exists">%s już istnieje! Użyj innej nazwy.</string>
     <string name="cancel">Anuluj</string>
     <string name="change_logs">Dzienniki zmian</string>
     <string name="credits">Podziękowanie</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: Kernel Adiutor (Kod podstawowy)\n<b><i>Lennoard Silva</i></b>: Tłumaczenie na Portugalski (Brazylia)\n<b><i>FiestaLake</i></b>: Tłumaczenie na Koreański\n<b><i>elea11</i></b>: Tłumaczenie na Niemiecki\n<b><i>Andi Krisma</i></b>: Tłumaczenie na Indonezyjski\n<b><i>MONSTER_PC</i></b>: Tłumaczenie na Rosyjski/Ukraiński\n<b><i>Kike Cabrera</i> &amp; <i>Diego</i></b>: Tłumaczenie na Hiszpański\n<b><i>Mikesew1320</i></b>: Tłumaczenie na Amharski\n<b><i>sr093906</i></b>: Tłumaczenie na Chiński (uproszczony)\n<b><i>Waldemar Stoczkowski</i></b>: Tłumaczenie na Polski\n<b><i>anilmavis</i></b>: Tłumaczenie na Turecki\n<b><i>Jakub Fabijan</i></b>: Tłumaczenie na Esperanto</string>
     <string name="dark_theme">Motyw ciemny</string>
     <string name="dark_theme_auto">Automatyczny</string>
     <string name="dark_theme_disable">Wyłącz</string>

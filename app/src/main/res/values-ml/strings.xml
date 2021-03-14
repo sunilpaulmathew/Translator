@@ -6,7 +6,6 @@
     <string name="cancel">റദ്ദാക്കുക</string>
     <string name="change_logs">മാറ്റങ്ങൾ</string>
     <string name="credits">ക്രെഡിറ്റ്</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: Kernel Adiutor (കോഡ് സംഭാവന)\n<b><i>Lennoard Silva</i></b>: പോർച്ചുഗീസ് (ബ്രസീലിയൻ) വിവർത്തനം\n<b><i>FiestaLake</i></b>: കൊറിയൻ വിവർത്തനം\n<b><i>elea11</i></b>: ജർമ്മൻ വിവർത്തനം</string>
     <string name="dark_theme">ഇരുണ്ട തീം</string>
     <string name="dark_theme_auto">Auto</string>
     <string name="dark_theme_disable">പ്രവർത്തനരഹിതമാക്കുക</string>

@@ -7,7 +7,6 @@
     <string name="cancel">취소</string>
     <string name="change_logs">변경사항</string>
     <string name="credits">도움을 주신 분들</string>
-    <string name="credits_summary"><b><i>Grarak</i></b>: Kernel Adiutor (코드 기여)\n<b><i>Lennoard Silva</i></b>: 브라질 포르투갈어 번역\n<b><i>FiestaLake</i></b>: 한국어 번역\n<b><i>elea11</i></b>: 독일어 번역\n<b><i>Andi Krisma:</i></b> 인도네시아어 번역</string>
     <string name="dark_theme">어두운 테마</string>
     <string name="dark_theme_auto">자동</string>
     <string name="dark_theme_disable">끄기</string>
