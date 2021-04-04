@@ -60,9 +60,8 @@ public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleView
             holder.mIcon.setColorFilter(Utils.isDarkTheme(holder.mIcon.getContext()) ? Color.WHITE : Color.BLACK);
             holder.mIcon.setVisibility(View.VISIBLE);
         }
-        if (position == 2 && !Utils.exist(holder.mTitle.getContext().getFilesDir().toString() + "/strings.xml")
-                || position == 9 && Utils.isPlayStoreAvailable(holder.mTitle.getContext())
-                && Utils.isDonated(holder.mTitle.getContext())) {
+        if ((position == 2 || position == 3) && !Utils.exist(holder.mTitle.getContext().getFilesDir().toString() + "/strings.xml")
+                || position == 10 && Utils.isPlayStoreAvailable(holder.mTitle.getContext()) && Utils.isDonated(holder.mTitle.getContext())) {
             holder.mTitle.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
             holder.mDescription.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         }

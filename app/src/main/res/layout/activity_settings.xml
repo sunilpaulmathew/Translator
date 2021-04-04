@@ -16,8 +16,8 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/back_button"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:src="@drawable/ic_back"
             android:tint="@color/blue"
             android:background="@null"
@@ -27,11 +27,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/blue"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="30dp"
             android:text="@string/settings"
-            android:layout_marginStart="50dp"
             android:gravity="start"
             android:textStyle="bold"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:padding="5dp" />
     </FrameLayout>
 

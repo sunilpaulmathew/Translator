@@ -19,5 +19,6 @@ The Translator is, and as always, an open-source project which is ready to accep
 * [Jakub Fabijan](https://github.com/jakubfabijan), Esperanto Translations
 * Hoa Gia Đại Thiếu, Vietnamese Translations
 * [jason5545](https://github.com/jason5545), Chinese (traditional) Translations
+* [WalkerPt](https://github.com/WalkerPt), Portuguese Translations
 
 _If you think I missed your name, please let me know._

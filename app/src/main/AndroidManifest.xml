@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.AboutActivity" />
-        <activity android:name=".activities.LicenceActivity" />
+        <activity android:name=".activities.FindReplaceActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.StringViewActivity" />
 
