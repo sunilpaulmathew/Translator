@@ -74,7 +74,7 @@ public class FindReplaceActivity extends AppCompatActivity {
                     Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.illegal_string_message));
                     return;
                 }
-                if (getStrings().size() == 0) {
+                if (getStrings().size() == 0 || mFromText.getText().toString().equals(mToText.getText().toString())) {
                     return;
                 }
                 updateStrings();
