@@ -86,6 +86,7 @@ public class SettingsActivity extends AppCompatActivity {
             mData.add(new RecycleViewItem(getString(R.string.import_string_sdcard), null, getResources().getDrawable(R.drawable.ic_import), null));
         }
         mData.add(new RecycleViewItem(getString(R.string.delete_string), null, getResources().getDrawable(R.drawable.ic_delete), null));
+        mData.add(new RecycleViewItem(getString(R.string.find_and_replace), null, getResources().getDrawable(R.drawable.ic_search), null));
         mData.add(new RecycleViewItem(getString(R.string.report_issue), getString(R.string.report_issue_summary), getResources().getDrawable(R.drawable.ic_issue), "https://github.com/sunilpaulmathew/Translator/issues/new"));
         mData.add(new RecycleViewItem(getString(R.string.more_apps), getString(R.string.more_apps_summary), getResources().getDrawable(R.drawable.ic_playstore), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
         mData.add(new RecycleViewItem(getString(R.string.support), getString(R.string.support_summary), getResources().getDrawable(R.drawable.ic_support), "https://t.me/smartpack_kmanager"));
@@ -96,7 +97,7 @@ public class SettingsActivity extends AppCompatActivity {
                 R.string.donations_summary), getResources().getDrawable(R.drawable.ic_donate), Utils.isPlayStoreAvailable(
                         this) ? "https://play.google.com/store/apps/details?id=com.smartpack.donate" : "https://smartpack.github.io/donation/"));
         mData.add(new RecycleViewItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), getResources().getDrawable(R.drawable.ic_rate), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
-        mData.add(new RecycleViewItem(getString(R.string.licence), null, getResources().getDrawable(R.drawable.ic_licence), null));
+        mData.add(new RecycleViewItem(getString(R.string.licence), null, getResources().getDrawable(R.drawable.ic_licence), "https://www.gnu.org/licenses/gpl-3.0-standalone.html"));
         mData.add(new RecycleViewItem(getString(R.string.credits), null, getResources().getDrawable(R.drawable.ic_credits), "https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md"));
         mData.add(new RecycleViewItem(getString(R.string.about), null, getResources().getDrawable(R.drawable.ic_info), null));
 
@@ -175,7 +176,15 @@ public class SettingsActivity extends AppCompatActivity {
                 } else {
                     Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar));
                 }
-            } else if (position == 8) {
+            } else if (position == 3) {
+                if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
+                    Intent findAndReplace = new Intent(this, FindReplaceActivity.class);
+                    startActivity(findAndReplace);
+                    finish();
+                } else {
+                    Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar));
+                }
+            } else if (position == 9) {
                 Intent share_app = new Intent();
                 share_app.setAction(Intent.ACTION_SEND);
                 share_app.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.app_name));
@@ -183,11 +192,7 @@ public class SettingsActivity extends AppCompatActivity {
                 share_app.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(share_app, getString(R.string.share_with));
                 startActivity(shareIntent);
-            } else if (position == 11) {
-                Intent licence = new Intent(this, LicenceActivity.class);
-                startActivity(licence);
-                finish();
-            } else if (position == 13) {
+            } else if (position == 14) {
                 Intent aboutView = new Intent(this, AboutActivity.class);
                 startActivity(aboutView);
                 finish();

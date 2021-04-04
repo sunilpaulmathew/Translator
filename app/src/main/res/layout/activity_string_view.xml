@@ -13,8 +13,8 @@
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/back_button"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@null"
             android:tint="@color/blue"
             android:layout_gravity="start|center"
@@ -25,38 +25,29 @@
             android:layout_height="50dp"
             android:gravity="start"
             android:padding="10dp"
-            android:layout_marginStart="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_gravity="start|center_vertical"
             android:text="@string/app_name"
             android:textStyle="bold"
             android:textColor="@color/blue"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/save_button"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@null"
             android:tint="@color/blue"
             android:layout_gravity="end|center"
             android:src="@drawable/ic_save" />
     </FrameLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
-        android:background="?android:attr/colorBackground"
-        android:padding="10dp">
-
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/foreground_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="start"
-            android:textIsSelectable="true"
-            android:textSize="15sp" />
-    </androidx.core.widget.NestedScrollView>
+        android:layout_marginTop="50dp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/cancel_button"

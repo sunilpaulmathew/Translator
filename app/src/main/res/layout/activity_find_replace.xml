@@ -1,0 +1,125 @@
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="start"
+    android:orientation="vertical"
+    android:gravity="end" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:gravity="start" >
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:tint="?attr/colorAccent"
+                android:src="@drawable/ic_back"
+                android:background="@null" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorAccent"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="30dp"
+                android:text="@string/find_and_replace"
+                android:gravity="start"
+                android:textStyle="bold"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/replace"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/blue"
+            android:layout_gravity="center"
+            android:textStyle="bold|italic" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/from_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:hint="@string/add_text_hint"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textColorHint="@color/blue"
+            android:backgroundTint="@color/blue"
+            android:textSize="15sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="@string/with"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/blue"
+            android:layout_gravity="center"
+            android:textStyle="bold|italic" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/to_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:hint="@string/add_text_hint"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:textColorHint="@color/blue"
+            android:backgroundTint="@color/blue"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:id="@+id/apply"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:background="@color/black"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp" >
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_check"
+                android:layout_gravity="start|center"
+                android:tint="?attr/colorAccent"
+                android:background="@color/black"
+                android:clickable="false" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorAccent"
+                android:layout_gravity="end|center"
+                android:layout_marginStart="20dp"
+                android:text="@string/apply"
+                android:gravity="start"
+                android:textStyle="bold"
+                android:textSize="15sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

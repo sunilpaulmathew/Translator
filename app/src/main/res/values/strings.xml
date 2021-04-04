@@ -3,6 +3,8 @@
 
     <string name="about">About</string>
     <string name="about_summary"><i>An application to help translating other android apps!</i></string>
+    <string name="add_text_hint">add-text-here</string>
+    <string name="apply">Apply</string>
     <string name="cancel">Cancel</string>
     <string name="change_logs">Change-logs</string>
     <string name="credits">Credits</string>
@@ -17,9 +19,11 @@
     <string name="device_storage">Device Storage</string>
     <string name="dismiss">Dismiss</string>
     <string name="donations">Donations</string>
-    <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from PlayStore as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
+    <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from Google Play as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
     <string name="donations_summary">If you like to appreciate the efforts of the developer to provide this application entirely free, non-intrusive and without ads, please consider supporting the development in some way. Click here to know more. Thank you!</string>
     <string name="edit_string_warning">Please be careful with the special character\'s (%s) in your text!</string>
+    <string name="find_and_replace">Find &amp; Replace</string>
+    <string name="find_and_replace_question">Replace all the \"%s\" with</string>
     <string name="illegal_string_message">You\'re entered some illegal characters! Your changes won\'t be saved.</string>
     <string name="illegal_string_warning">Some character\'s are considered illegal in \'xml\' format and are not acceptable! Please be noted that the entire text will be neglected (or even app crashes in the worst case) when an illegal character is detected!\n\nSome of the prohibited character\'s includes, but not limited to\n&amp; - except for certain words\n&lt; and &gt; -except for certain cases such as &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nSingle (\') or double (\") quotation marks without a backward slash (\\) in the front, etc.</string>
     <string name="import_string">Import</string>
@@ -37,7 +41,7 @@
     <string name="please_note">Please Note</string>
     <string name="press_back">Press back again to exit</string>
     <string name="rate_us">Rate App</string>
-    <string name="rate_us_Summary">Rate or/and Review The Translator in PlayStore</string>
+    <string name="rate_us_Summary">Rate or/and Review The Translator in Google Play</string>
     <string name="report_issue">Report an Issue</string>
     <string name="report_issue_summary">Raise an issue at GitHub</string>
     <string name="replace">Replace</string>
@@ -51,7 +55,7 @@
     <string name="share_app">Share App</string>
     <string name="share_app_Summary">Invite your friends to try The Translator</string>
     <string name="shared_by">%s/shared by The Translator</string>
-    <string name="share_message">The Translator v%s can be obtained from PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator v%s can be obtained from Google Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">Share with</string>
     <string name="source_code">Source Code</string>
     <string name="source_code_summary">The Translator is an open-source application which is ready to accept contributions from the development community. Click here to check out the source code!</string>
@@ -63,6 +67,7 @@
     <string name="url">URL</string>
     <string name="view_string">View \'string\'</string>
     <string name="warning">Warning</string>
+    <string name="with">with</string>
     <string name="wrong_extension">Please select a file with %s extension.</string>
     <string name="yes">Yes</string>
 </resources>

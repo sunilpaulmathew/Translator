@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Environment;
 
 import androidx.core.app.ActivityCompat;
@@ -39,7 +38,7 @@ public class Translator {
 
     public static List<String> mData = new ArrayList<>();
     public static RecyclerView mRecyclerView;
-    public static String mKeyText;
+    public static String mFindText, mKeyText;
 
     public static void saveString(Activity activity) {
         if (Utils.isStorageWritePermissionDenied(activity)) {

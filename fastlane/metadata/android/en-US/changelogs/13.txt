@@ -1,0 +1,4 @@
+* Added Find & Replace option to Settings page.
+* Added Portuguese translations
+* Updated Chinese (traditional & simplified) translations.
+* Miscellaneous changes.
