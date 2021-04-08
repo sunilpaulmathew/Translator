@@ -3,6 +3,8 @@
 
     <string name="about">關於</string>
     <string name="about_summary"><i>一款翻譯其他 Android 應用的程式！ </i></string>
+    <string name="add_text_hint">在這裡輸入文字</string>
+    <string name="apply">套用</string>
     <string name="cancel">取消</string>
     <string name="change_logs">變更記錄</string>
     <string name="credits">致謝</string>
@@ -20,9 +22,11 @@
     <string name="donations_message">如果您喜歡我的作品，請考慮從 Google Play Store 購買 SmartPack 捐贈包，因為這對繼續我的專案非常有説明，儘管這完全沒有必要。 </string>
     <string name="donations_summary">如果你欣賞開發者的努力，以完全免費，無干擾和沒有廣告的形式提供這個應用程式，請考慮以某種方式支持開發。 點擊這裡瞭解更多。 謝謝你！ </string>
     <string name="edit_string_warning">請留意你文字中的特殊字元 \'s （%s！</string>
+    <string name="find_and_replace">尋找與取代</string>
+    <string name="find_and_replace_question">將全部的 \"%s\" 取代為</string>
     <string name="illegal_string_message">你輸入了一些非法字元！ 你的更改將不被儲存！ </string>
-    <string name="import_string">匯入</string>
     <string name="illegal_string_warning">一些字元在 \'xml\' 格式中被認為是非法且不可接受的！ 請注意，檢測到非法字元時，整個文本將被忽略（在最壞的情況下，應用程式會崩潰）！ nn一些被禁止的字元包括但不限於n&amp; - 某些詞和某些情況除外，比如 &lt;b&gt;、 &lt;/b&gt;、 &lt;i&gt;、 &lt;/i&gt; 等等。 n前面沒有反斜杠（）的單 （\'） 或 雙 （"） 引號等等。</string>
+    <string name="import_string">匯入</string>
     <string name="import_string_error">\'%s\' 不是一個合適的語言字串。 終止中！</string>
     <string name="import_string_message">你尚未匯入任何翻譯 \'string\' 檔。 請移至 \'設定\' 選單從 \'sdcard\'匯入一個！</string>
     <string name="import_string_sdcard">匯入 \'string\'</string>
@@ -40,6 +44,7 @@
     <string name="press_back">再按一次返回退出</string>
     <string name="report_issue_summary">在 GitHub 上提出一個 Issue</string>
     <string name="report_issue">報告一個問題</string>
+    <string name="replace">取代</string>
     <string name="save">儲存</string>
     <string name="save_string_message">新的翻譯字串被產生為 \'%s\'！</string>
     <string name="search_hint">搜尋......</string>
@@ -61,6 +66,7 @@
     <string name="update">更新</string>
     <string name="view_string">檢視 \'string\'</string>
     <string name="warning">警告</string>
+    <string name="with">為</string>
     <string name="wrong_extension">請核取中一個副檔名為 %s 的檔案。 </string>
     <string name="yes">好</string>
 </resources>
