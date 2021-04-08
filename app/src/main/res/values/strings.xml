@@ -21,14 +21,14 @@
     <string name="donations">Donations</string>
     <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from Google Play as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
     <string name="donations_summary">If you like to appreciate the efforts of the developer to provide this application entirely free, non-intrusive and without ads, please consider supporting the development in some way. Click here to know more. Thank you!</string>
-    <string name="edit_string_warning">Please be careful with the special character\'s (%s) in your text!</string>
+    <string name="edit_string_warning">Please be careful with the special characters (%s) in your text!</string>
     <string name="find_and_replace">Find &amp; Replace</string>
     <string name="find_and_replace_question">Replace all the \"%s\" with</string>
-    <string name="illegal_string_message">You\'re entered some illegal characters! Your changes won\'t be saved.</string>
-    <string name="illegal_string_warning">Some character\'s are considered illegal in \'xml\' format and are not acceptable! Please be noted that the entire text will be neglected (or even app crashes in the worst case) when an illegal character is detected!\n\nSome of the prohibited character\'s includes, but not limited to\n&amp; - except for certain words\n&lt; and &gt; -except for certain cases such as &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nSingle (\') or double (\") quotation marks without a backward slash (\\) in the front, etc.</string>
+    <string name="illegal_string_message">You\'ve entered some illegal characters! Your changes won\'t be saved.</string>
+    <string name="illegal_string_warning">Some character\'s are considered illegal in \'xml\' format and are not acceptable! Please be noted that the entire text will be neglected (or even app crashes in the worst case) when an illegal character is detected!\n\nSome of the prohibited characters include, but are not limited to\n&amp; - except for certain words\n&lt; and &gt; - except for certain cases such as &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nSingle (\') or double (\") quotation marks without a backward slash (\\) in the front, etc.</string>
     <string name="import_string">Import</string>
     <string name="import_string_error">\'%s\' is not a proper language string. Aborting!</string>
-    <string name="import_string_message">You haven\'t imported any translation \'string\' file yet. Go to \'Settings\' menu to import one from \'sdcard\'!</string>
+    <string name="import_string_message">You haven\'t imported any \'string\' translation file yet. Go to the \'Settings\' menu to import one from \'sdcard\'!</string>
     <string name="import_string_sdcard">Import \'string\'</string>
     <string name="import_string_snackbar">You haven\'t imported any translation \'string\' file yet!</string>
     <string name="importing">Importing…</string>
@@ -41,7 +41,7 @@
     <string name="please_note">Please Note</string>
     <string name="press_back">Press back again to exit</string>
     <string name="rate_us">Rate App</string>
-    <string name="rate_us_Summary">Rate or/and Review The Translator in Google Play</string>
+    <string name="rate_us_Summary">Rate and/or Review The Translator in Google Play</string>
     <string name="report_issue">Report an Issue</string>
     <string name="report_issue_summary">Raise an issue at GitHub</string>
     <string name="replace">Replace</string>
@@ -62,7 +62,7 @@
     <string name="support">Support Group</string>
     <string name="support_summary">Join Telegram support group</string>
     <string name="translations">Translations</string>
-    <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in english</string>
+    <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in English</string>
     <string name="update">Update</string>
     <string name="url">URL</string>
     <string name="view_string">View \'string\'</string>
