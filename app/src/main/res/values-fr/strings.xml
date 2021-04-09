@@ -1,8 +1,9 @@
-<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->
-
+<resources>
+  <!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->
     <string name="about">À propos</string>
-    <string name="about_summary"><i>Une application pour aider à traduire d\'autres applis android !</i></string>
+    <string name="about_summary">
+      <i>Une application pour aider à traduire d\'autres applis android !</i>
+    </string>
     <string name="add_text_hint">add-text-here</string>
     <string name="apply">Appliquer</string>
     <string name="cancel">Annuler</string>
@@ -25,7 +26,7 @@
     <string name="find_and_replace">Chercher &amp; Remplacer</string>
     <string name="find_and_replace_question">Remplacer tous les « %s » par</string>
     <string name="illegal_string_message">Vous avez saisi des caractère illégaux ! Vos modifications ne seront pas enregistrées.</string>
-    <string name="illegal_string_warning">Some character\'s are considered illegal in \'xml\' format and are not acceptable! Please be noted that the entire text will be neglected (or even app crashes in the worst case) when an illegal character is detected!\n\nSome of the prohibited character\'s includes, but not limited to\n&amp; - except for certain words\n&lt; and &gt; -except for certain cases such as &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nSingle (\') or double (\") quotation marks without a backward slash (\\) in the front, etc.</string>
+    <string name="illegal_string_warning">Certains caractères sont considérés comme illégaux au format « xml » et ne sont pas acceptables ! Remarquez que le texte complet sera ignoré (voire que l\'appli plantera dans le pire des cas) si un caractère illégal est détecté !\n\nVoici une liste non exaustive des caractères interdits :\n&amp; — sauf pour certains mots\n&lt; et &gt; — sauf pour certains cas comme &lt;b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nLes guillemets simples (\') ou doubles (\") s\'ils ne sont pas précédés d\'un anti-slash (\\), etc.</string>
     <string name="import_string">Import</string>
     <string name="import_string_error">« %s » n\'est pas une chaîne de langue correct. Annulé!</string>
     <string name="import_string_message">Vous n\'avez pas encore importé de fichier de traduction « string ». Allez dans le menu « Paramètres » pour en importer un de la mémoire de l\'appareil (« sdcard ») !</string>

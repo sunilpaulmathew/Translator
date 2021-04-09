@@ -1,0 +1,1 @@
+* Ajout de l'option Recherche & Remplacer sur la page Paramètres * Ajout de la traduction en portugais * Mise à jour des traductions en chinois (traditionnel et simplifié) * Divers changements
