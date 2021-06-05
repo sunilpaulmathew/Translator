@@ -2,7 +2,7 @@
 
 ![The Translator](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true)
 
-[![](https://img.shields.io/badge/The%20Translator-v0.13-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
+[![](https://img.shields.io/badge/The%20Translator-v0.15-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
 ![](https://img.shields.io/github/languages/top/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/contributors/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/license/sunilpaulmathew/Translator)

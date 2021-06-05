@@ -18,8 +18,8 @@ android {
         applicationId "com.sunilpaulmathew.translator"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 13
-        versionName "v0.13"
+        versionCode 15
+        versionName "v0.15"
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
         signingConfig signingConfigs.release
