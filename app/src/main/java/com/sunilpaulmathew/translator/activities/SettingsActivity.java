@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.OpenableColumns;
@@ -46,7 +47,7 @@ import java.util.Objects;
  */
 public class SettingsActivity extends AppCompatActivity {
 
-    private ArrayList <RecycleViewItem> mData = new ArrayList<>();
+    private final ArrayList <RecycleViewItem> mData = new ArrayList<>();
     private String mPath;
 
     @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
@@ -141,18 +142,33 @@ public class SettingsActivity extends AppCompatActivity {
                     startActivity(stringView);
                     finish();
                 } else {
-                    if (Utils.isStorageWritePermissionDenied(this)) {
-                        ActivityCompat.requestPermissions(this, new String[] {
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
-                        Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.permission_denied_write_storage));
+                    if (Build.VERSION.SDK_INT >= 30) {
+                        new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
+                                R.array.import_options_sdk30), (dialogInterface, i) -> {
+                            switch (i) {
+                                case 0:
+                                    Translator.insertString(this);
+                                    break;
+                                case 1:
+                                    Translator.importStringFromURL(this);
+                                    break;
+                            }
+                        }).setOnDismissListener(dialogInterface -> {
+                        }).show();
                     } else {
                         new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
                                 R.array.import_options), (dialogInterface, i) -> {
                             switch (i) {
                                 case 0:
-                                    Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
-                                    importString.setType("text/*");
-                                    startActivityForResult(importString, 0);
+                                    if (Utils.isPermissionDenied(this)) {
+                                        ActivityCompat.requestPermissions(this, new String[]{
+                                                Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                                        Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.permission_denied_write_storage));
+                                    } else {
+                                        Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
+                                        importString.setType("text/*");
+                                        startActivityForResult(importString, 0);
+                                    }
                                     break;
                                 case 1:
                                     Translator.importStringFromURL(this);
@@ -171,8 +187,7 @@ public class SettingsActivity extends AppCompatActivity {
                             .setPositiveButton(getString(R.string.yes), (dialogInterface3, iv) -> {
                                 new File(getFilesDir().toString() + "/strings.xml").delete();
                                 Utils.restartApp(this);
-                            })
-                            .show();
+                            }).show();
                 } else {
                     Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar));
                 }

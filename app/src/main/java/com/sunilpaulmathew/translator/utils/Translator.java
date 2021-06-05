@@ -10,11 +10,14 @@ package com.sunilpaulmathew.translator.utils;
 import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Environment;
+import android.provider.MediaStore;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.FileProvider;
@@ -23,11 +26,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
+import com.sunilpaulmathew.translator.activities.InsertStringActivity;
 import com.sunilpaulmathew.translator.adapters.RecycleViewAdapter;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Objects;
 
 /*
@@ -41,13 +48,7 @@ public class Translator {
     public static String mFindText, mKeyText;
 
     public static void saveString(Activity activity) {
-        if (Utils.isStorageWritePermissionDenied(activity)) {
-            ActivityCompat.requestPermissions(activity, new String[]{
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-            Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.permission_denied_write_storage));
-            return;
-        }
-        Utils.dialogEditText("strings-" + java.util.Locale.getDefault().getLanguage(), activity.getString(R.string.save),
+        Utils.dialogEditText("strings-" + Locale.getDefault().getLanguage(), activity.getString(R.string.save),
                 activity.findViewById(android.R.id.content), (dialogInterface2, iii) -> {},
                 text -> {
                     if (text.isEmpty()) {
@@ -59,17 +60,18 @@ public class Translator {
                     }
                     String mString = getExportPath() + "/" + text;
                     if (Utils.exist(getExportPath() + "/" + text)) {
+                        String finalText = text;
                         new MaterialAlertDialogBuilder(activity)
                                 .setMessage(activity.getString(R.string.save_string_replace, text))
                                 .setNegativeButton(activity.getString(R.string.cancel), (dialogInterface, i) -> {
                                 })
                                 .setPositiveButton(activity.getString(R.string.replace), (dialogInterface, i) -> {
-                                    Utils.create(getStrings(activity), mString);
+                                    writeFile(finalText, activity);
                                 })
                                 .show();
                         return;
                     }
-                    Utils.create(getStrings(activity), mString);
+                    writeFile(text, activity);
                     new MaterialAlertDialogBuilder(activity)
                             .setMessage(activity.getString(R.string.save_string_message, mString))
                             .setNegativeButton(activity.getString(R.string.cancel), (dialogInterface, i) -> {
@@ -152,7 +154,11 @@ public class Translator {
     }
 
     private static String getExportPath() {
-        return Environment.getExternalStorageDirectory().toString();
+        if (Build.VERSION.SDK_INT >= 30) {
+            return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
+        } else {
+            return Environment.getExternalStorageDirectory().toString();
+        }
     }
 
     public static List<String> getData(Context context) {
@@ -172,8 +178,37 @@ public class Translator {
         return mData;
     }
 
+    private static void writeFile(String name, Activity activity) {
+        if (Build.VERSION.SDK_INT >= 30) {
+            try {
+                ContentValues values = new ContentValues();
+                values.put(MediaStore.MediaColumns.DISPLAY_NAME, name);
+                values.put(MediaStore.MediaColumns.MIME_TYPE, "application/xml");
+                values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+                Uri uri = activity.getContentResolver().insert(MediaStore.Files.getContentUri("external"), values);
+                OutputStream outputStream = activity.getContentResolver().openOutputStream(uri);
+                outputStream.write(getStrings(activity).getBytes());
+                outputStream.close();
+            } catch (IOException ignored) {
+            }
+        } else {
+            if (Utils.isPermissionDenied(activity)) {
+                ActivityCompat.requestPermissions(activity, new String[] {
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.permission_denied_write_storage));
+                return;
+            }
+            Utils.create(getStrings(activity), getExportPath() + "/" + name);
+        }
+    }
+
+    public static void insertString(Activity activity) {
+        Intent insertString = new Intent(activity, InsertStringActivity.class);
+        activity.startActivity(insertString);
+    }
+
     public static void importStringFromURL(Activity activity) {
-        Utils.dialogEditText(null, activity.getString(R.string.import_string), mRecyclerView,
+        Utils.dialogEditText(null, activity.getString(R.string.import_string), activity.findViewById(android.R.id.content),
                 (dialogInterface1, i1) -> {
                 }, text -> {
                     if (text.isEmpty()) {

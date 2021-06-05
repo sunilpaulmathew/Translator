@@ -58,7 +58,7 @@ public class RecycleViewStringsAdapter extends RecyclerView.Adapter<RecycleViewS
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private MaterialTextView description;
+        private final MaterialTextView description;
 
         public ViewHolder(View view) {
             super(view);
