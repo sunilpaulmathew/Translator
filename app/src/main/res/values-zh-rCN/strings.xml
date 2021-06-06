@@ -16,6 +16,8 @@
     <string name="delete_string_message">你确定要删除当前的 string.xml 吗？</string>
     <string name="developed_by">开发者</string>
     <string name="device_storage">设备存储</string>
+    <string name="discard">丢弃</string>
+    <string name="discard_message">丢弃添加到这个页面的内容？</string>
     <string name="dismiss">不予理会</string>
     <string name="donations">捐赠</string>
     <string name="donations_message">如果您喜欢我的作品，请考虑从 Google Play 商店购买 SmartPack 捐赠包，因为这对继续我的项目非常有帮助，尽管这完全没有必要。</string>
@@ -31,6 +33,9 @@
     <string name="import_string_sdcard">导入 \'string\'</string>
     <string name="import_string_snackbar">你尚未导入任何翻译 \'string\' 文件！</string>
     <string name="importing">导入中…</string>
+    <string name="insert">插入</string>
+    <string name="insert_invalid_string">你插入了无效数据！终止中</string>
+    <string name="insert_message">只需复制-粘贴此屏幕上 XML 字符串文件的全部或部分内容并点击 \'应用\' 按钮继续。</string>
     <string name="licence">许可证</string>
     <string name="more_apps">更多来自开发者的应用</string>
     <string name="more_apps_summary">在 Google Play 商店中查看开发者提供的更多应用程序</string>
