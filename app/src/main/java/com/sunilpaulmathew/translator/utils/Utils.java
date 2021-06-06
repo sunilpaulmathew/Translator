@@ -327,7 +327,7 @@ public class Utils {
      * Taken and used almost as such from the following stackoverflow discussion
      * Ref: https://stackoverflow.com/questions/7203668/how-permission-can-be-checked-at-runtime-without-throwing-securityexception
      */
-    public static boolean isStorageWritePermissionDenied(Context context) {
+    public static boolean isPermissionDenied(Context context) {
         String permission = android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
         int res = context.checkCallingOrSelfPermission(permission);
         return (res != PackageManager.PERMISSION_GRANTED);

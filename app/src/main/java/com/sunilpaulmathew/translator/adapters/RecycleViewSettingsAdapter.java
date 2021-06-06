@@ -29,7 +29,7 @@ import java.util.ArrayList;
 
 public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleViewSettingsAdapter.ViewHolder> {
 
-    private ArrayList<RecycleViewItem> data;
+    private final ArrayList<RecycleViewItem> data;
 
     private static ClickListener mClickListener;
 
@@ -73,9 +73,8 @@ public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleView
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private AppCompatImageView mIcon;
-        private MaterialTextView mTitle;
-        private MaterialTextView mDescription;
+        private final AppCompatImageView mIcon;
+        private final MaterialTextView mDescription, mTitle;
 
         public ViewHolder(View view) {
             super(view);

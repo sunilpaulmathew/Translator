@@ -1,0 +1,6 @@
+* App will now target latest Android SDK.
+* Import string option on Android 11 and above is replaced with a more flexible copy-paste option.
+* Now built using latest Gradle plugin.
+* Added French & Hebrew translation
+* Updated Chinese (traditional & simplified) translations.
+* Miscellaneous changes.

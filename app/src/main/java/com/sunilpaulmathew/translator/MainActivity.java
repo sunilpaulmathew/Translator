@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static AppCompatEditText mSearchWord;
     private boolean mExit;
-    private Handler mHandler = new Handler();
+    private final Handler mHandler = new Handler();
     private MaterialTextView mAboutApp;
 
     @Override
