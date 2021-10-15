@@ -7,24 +7,18 @@
 
 package com.sunilpaulmathew.translator.activities;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Color;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.OpenableColumns;
 import android.provider.Settings;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,7 +32,11 @@ import com.sunilpaulmathew.translator.adapters.RecycleViewSettingsAdapter;
 import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -48,7 +46,7 @@ import java.util.Objects;
 public class SettingsActivity extends AppCompatActivity {
 
     private final ArrayList <RecycleViewItem> mData = new ArrayList<>();
-    private String mPath;
+    private String mXMLString;
 
     @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
     @Override
@@ -142,41 +140,21 @@ public class SettingsActivity extends AppCompatActivity {
                     startActivity(stringView);
                     finish();
                 } else {
-                    if (Build.VERSION.SDK_INT >= 30) {
-                        new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
-                                R.array.import_options_sdk30), (dialogInterface, i) -> {
-                            switch (i) {
-                                case 0:
-                                    Translator.insertString(this);
-                                    break;
-                                case 1:
-                                    Translator.importStringFromURL(this);
-                                    break;
-                            }
-                        }).setOnDismissListener(dialogInterface -> {
-                        }).show();
-                    } else {
-                        new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
-                                R.array.import_options), (dialogInterface, i) -> {
-                            switch (i) {
-                                case 0:
-                                    if (Utils.isPermissionDenied(this)) {
-                                        ActivityCompat.requestPermissions(this, new String[]{
-                                                Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-                                        Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.permission_denied_write_storage));
-                                    } else {
-                                        Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
-                                        importString.setType("text/*");
-                                        startActivityForResult(importString, 0);
-                                    }
-                                    break;
-                                case 1:
-                                    Translator.importStringFromURL(this);
-                                    break;
-                            }
-                        }).setOnDismissListener(dialogInterface -> {
-                        }).show();
-                    }
+                    new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
+                            R.array.import_options), (dialogInterface, i) -> {
+                        switch (i) {
+                            case 0:
+                                Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
+                                importString.setType("text/*");
+                                importString.addCategory(Intent.CATEGORY_OPENABLE);
+                                startActivityForResult(importString, 0);
+                                break;
+                            case 1:
+                                Translator.importStringFromURL(this);
+                                break;
+                        }
+                    }).setOnDismissListener(dialogInterface -> {
+                    }).show();
                 }
             } else if (position == 2) {
                 if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
@@ -222,35 +200,34 @@ public class SettingsActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == Activity.RESULT_OK && data != null) {
-            Uri uri = data.getData();
-            assert uri != null;
-            File file = new File(Objects.requireNonNull(uri.getPath()));
-            if (Utils.isDocumentsUI(uri)) {
-                @SuppressLint("Recycle") Cursor cursor = getContentResolver().query(uri, null, null, null, null);
-                if (cursor != null && cursor.moveToFirst()) {
-                    mPath = Environment.getExternalStorageDirectory().toString() + "/Download/" +
-                            cursor.getString(cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME));
+            Uri selectedFileUri = data.getData();
+
+            if (selectedFileUri != null) {
+                try {
+                    InputStream inputStream = getContentResolver().openInputStream(selectedFileUri);
+                    BufferedInputStream bis = new BufferedInputStream(inputStream);
+                    ByteArrayOutputStream buf = new ByteArrayOutputStream();
+                    for (int result = bis.read(); result != -1; result = bis.read()) {
+                        buf.write((byte) result);
+                    }
+                    mXMLString = buf.toString("UTF-8");
+                } catch (IOException ignored) {
                 }
-            } else {
-                mPath = Utils.getPath(file);
+
+                if (mXMLString == null || !mXMLString.contains("<string name=\"")) {
+                    Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_error, new File(Objects.requireNonNull(selectedFileUri.getPath())).getName()));
+                    return;
+                }
+                new MaterialAlertDialogBuilder(this)
+                        .setMessage(getString(R.string.select_question, new File(Objects.requireNonNull(selectedFileUri.getPath())).getName()))
+                        .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
+                        })
+                        .setPositiveButton(getString(R.string.import_string), (dialogInterface, i) -> {
+                            Utils.create(mXMLString, getFilesDir().toString() + "/strings.xml");
+                            Utils.restartApp(this);
+                        })
+                        .show();
             }
-            if (!mPath.endsWith(".xml")) {
-                Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.wrong_extension, ".xml"));
-                return;
-            }
-            if (!Objects.requireNonNull(Utils.read(mPath)).contains("<string name=\"")) {
-                Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_error, new File(mPath).getName()));
-                return;
-            }
-            new MaterialAlertDialogBuilder(this)
-                    .setMessage(getString(R.string.select_question, new File(mPath).toString()))
-                    .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
-                    })
-                    .setPositiveButton(getString(R.string.import_string), (dialogInterface, i) -> {
-                        Utils.create(Utils.read(mPath), getFilesDir().toString() + "/strings.xml");
-                        Utils.restartApp(this);
-                    })
-                    .show();
         }
     }
 

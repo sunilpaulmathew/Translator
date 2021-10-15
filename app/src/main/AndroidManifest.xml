@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         tools:targetApi="q" >
 
-        <activity android:name="com.sunilpaulmathew.translator.MainActivity">
+        <activity android:name="com.sunilpaulmathew.translator.MainActivity"
+            tools:ignore="IntentFilterExportedReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -28,7 +29,6 @@
         </activity>
         <activity android:name=".activities.AboutActivity" />
         <activity android:name=".activities.FindReplaceActivity" />
-        <activity android:name=".activities.InsertStringActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.StringViewActivity" />
 

@@ -17,8 +17,6 @@
     <string name="delete_string_message">Are you sure to delete current string.xml?</string>
     <string name="developed_by">Developed By</string>
     <string name="device_storage">Device Storage</string>
-    <string name="discard">Discard</string>
-    <string name="discard_message">Discard the contents added to this page?</string>
     <string name="dismiss">Dismiss</string>
     <string name="donations">Donations</string>
     <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from Google Play as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
@@ -35,8 +33,6 @@
     <string name="import_string_snackbar">You haven\'t imported any translation \'string\' file yet!</string>
     <string name="importing">Importing…</string>
     <string name="insert">Insert</string>
-    <string name="insert_invalid_string">You\'re inserted invalid data! Aborting.</string>
-    <string name="insert_message">Simply copy-paste the contents of an XML string file (partly or completely) on this screen and click the \'Apply\' button to continue.</string>
     <string name="licence">Licence</string>
     <string name="more_apps">More from Developer</string>
     <string name="more_apps_summary">Checkout more applications provided by the developer in Google Play</string>

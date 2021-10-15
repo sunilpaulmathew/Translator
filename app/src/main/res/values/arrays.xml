@@ -11,9 +11,4 @@
         <item>@string/device_storage</item>
         <item>@string/url</item>
     </string-array>
-
-    <string-array name="import_options_sdk30">
-        <item>@string/insert</item>
-        <item>@string/url</item>
-    </string-array>
 </resources>

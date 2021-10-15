@@ -26,7 +26,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
-import com.sunilpaulmathew.translator.activities.InsertStringActivity;
 import com.sunilpaulmathew.translator.adapters.RecycleViewAdapter;
 
 import java.io.File;
@@ -200,11 +199,6 @@ public class Translator {
             }
             Utils.create(getStrings(activity), getExportPath() + "/" + name);
         }
-    }
-
-    public static void insertString(Activity activity) {
-        Intent insertString = new Intent(activity, InsertStringActivity.class);
-        activity.startActivity(insertString);
     }
 
     public static void importStringFromURL(Activity activity) {
