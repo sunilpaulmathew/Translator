@@ -16,15 +16,12 @@
     <string name="dismiss">Memberhentikan</string>
     <string name="donations">Donasi</string>
     <string name="donations_message">Jika Anda ingin menghargai pekerjaan saya, mohon pertimbangkan untuk membeli Paket Donasi SmartPack dari PlayStore karena sangat membantu untuk melanjutkan proyek saya lebih aktif, meskipun itu sama sekali tidak diperlukan.</string>
-    <string name="edit_string_warning">Harap berhati-hati dengan karakter khusus (%s) dalam teks Anda!</string>
-    <string name="illegal_string_warning">Beberapa karakter teks dianggap ilegal dalam format \'xml\' dan tidak dapat diterima! Harap dicatat bahwa seluruh teks akan diabaikan (atau bahkan aplikasi macet dalam kasus terburuk) ketika karakter ilegal terdeteksi!\n\nBeberapa karakter terlarang termasuk, tetapi tidak terbatas pada\n&amp; - Kecuali untuk kata-kata tertentu\n&lt; dan &gt; -kecuali untuk kasus-kasus tertentu seperti &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; dll.\nTunggal (\') atau gandakan (\") tanda kutip tanpa garis miring (\\) di depan, dll.</string>
     <string name="import_string_message">Anda belum mengimpor file \'string\' terjemahan apa pun. Buka menu \'Pengaturan\' untuk mengimpor satu dari \'sdcard\'!</string>
     <string name="import_string_sdcard">Impor \'string\'</string>
     <string name="more_apps">Lainnya dari Pengembang</string>
     <string name="name_empty">Nama kosong! Membatalkan!</string>
     <string name="no_internet">Silakan periksa koneksi internet Anda!</string>
     <string name="permission_denied_write_storage">Izin ditolak untuk menulis ke penyimpanan!</string>
-    <string name="please_note">Tolong dicatat</string>
     <string name="press_back">Tekan kembali untuk keluar</string>
     <string name="report_issue">Laporkan Masalah</string>
     <string name="save">Menyimpan</string>
@@ -35,7 +32,5 @@
     <string name="support">Grup pendukung</string>
     <string name="update">Memperbarui</string>
     <string name="view_string">Melihat \'string\'</string>
-    <string name="warning">Peringatan</string>
-    <string name="wrong_extension">Pilih file dengan ekstensi %s.</string>
     <string name="yes">Iya</string>
 </resources>

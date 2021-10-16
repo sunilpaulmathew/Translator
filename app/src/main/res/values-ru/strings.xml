@@ -17,15 +17,12 @@
     <string name="dismiss">Закрыть</string>
     <string name="donations">Пожертвования</string>
     <string name="donations_message">Если вам нравится моя работа, купите SmartPack Donation Package в Play Маркете. Это поможет развивать мои приложения ещё быстрее.</string>
-    <string name="edit_string_warning">Будьте осторожны со специальными символами (%s) в вашем тексте!</string>
-    <string name="illegal_string_warning">Некоторые символы считаются незаконными в формате xml и неприемлемы! Обратите внимание, что при обнаружении недопустимого символа весь текст будет проигнорирован (или даже произойдет сбой приложения в худшем случае)!\n\nНекоторые из запрещенных строк включают, но не ограничиваются\n&amp; - кроме некоторых слов\n&lt; и &gt; - за исключением некоторых случаев, таких как &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; и т.д.\nОдинарные (\') или двойные (\") кавычки без обратной косой черты (\\) спереди и т.д.</string>
     <string name="import_string_message">Вы еще не импортировали ни одного \'string\' файла перевода. Зайдите в меню \'Настройки\', чтобы импортировать один из \'sdcard\'!</string>
     <string name="import_string_sdcard">Импорт \'string\'</string>
     <string name="more_apps">Больше от разработчика</string>
     <string name="name_empty">Имя пустое! Неудача!</string>
     <string name="no_internet">Пожалуйста, проверьте ваше интернет-соединение!</string>
     <string name="permission_denied_write_storage">Запрещено разрешение на запись в хранилище!</string>
-    <string name="please_note">Пожалуйста, обратите внимание</string>
     <string name="press_back">Нажмите еще раз, чтобы выйти</string>
     <string name="report_issue">Сообщить о проблеме</string>
     <string name="save">Сохранить</string>
@@ -41,7 +38,5 @@
     <string name="support">Группа поддержки</string>
     <string name="update">Обновить</string>
     <string name="view_string">Посмотреть \'string\'</string>
-    <string name="warning">Предупреждение</string>
-    <string name="wrong_extension">Выберите файл с расширением %s.</string>
     <string name="yes">Да</string>
 </resources>

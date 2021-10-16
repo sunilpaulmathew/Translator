@@ -19,9 +19,6 @@
     <string name="donations">Quyên góp</string>
     <string name="donations_message">Nếu bạn muốn đánh giá cao công việc của tôi, vui lòng xem xét mua Gói quyên góp SmartPack từ PlayStore vì thực sự hữu ích khi tiếp tục các dự án của tôi hoạt động tích cực hơn, mặc dù hoàn toàn không cần thiết.</string>
     <string name="donations_summary">Nếu bạn muốn đánh giá cao nỗ lực của nhà phát triển trong việc cung cấp ứng dụng này hoàn toàn miễn phí, không xâm nhập và không có quảng cáo, vui lòng xem xét hỗ trợ sự phát triển theo một cách nào đó. Bấm vào đây để biết thêm. Cảm ơn bạn!</string>
-    <string name="edit_string_warning">Hãy cẩn thận với ký tự đặc biệt\'s (%s) trong văn bản của bạn!</string>
-    <string name="illegal_string_message">Bạn đã nhập một số ký tự bất hợp pháp! Các thay đổi của bạn sẽ không được lưu.</string>
-    <string name="illegal_string_warning">Một số ký tự được coi là bất hợp pháp trong \'xml\' định dạng và không được chấp nhận!  Xin lưu ý rằng toàn bộ văn bản sẽ bị bỏ qua (hoặc thậm chí ứng dụng bị treo trong trường hợp xấu nhất) khi phát hiện một ký tự bất hợp pháp!\n\nMột số nhân vật bị cấm\'s bao gồm, nhưng không giới hạn ở\n&amp; - ngoại trừ một số từ\n&lt; và &gt; -ngoại trừ một số trường hợp như &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; Vân vân.\nĐộc thân (\') hoặc gấp đôi (\") dấu ngoặc kép không có dấu gạch chéo ngược (\\) ở phía trước, v.v.</string>
     <string name="import_string">Nhập khẩu</string>
     <string name="import_string_error">\'%s\' không phải là một chuỗi ngôn ngữ thích hợp. Hủy bỏ!</string>
     <string name="import_string_message">Bạn chưa nhập bất kỳ tệp dịch\'chuỗi\' nào. Đi tới menu\'Cài đặt\' để chuyển nhập một từ\'sdcard\'!</string>
@@ -34,7 +31,6 @@
     <string name="name_empty">Tên trống! Hủy bỏ!</string>
     <string name="no_internet">Xin vui lòng kiểm tra kết nối Internet của bạn!</string>
     <string name="permission_denied_write_storage">Quyền bị từ chối để ghi vào bộ nhớ!</string>
-    <string name="please_note">Xin lưu ý</string>
     <string name="press_back">Nhấn lại lần nữa để thoát</string>
     <string name="rate_us">Đánh giá ứng dụng</string>
     <string name="rate_us_Summary">Xếp hạng hoặc/và đánh giá Trình Dịch trong PlayStore</string>
@@ -60,7 +56,5 @@
     <string name="update">Cập nhật</string>
     <string name="url">URL</string>
     <string name="view_string">Xem \'chuỗi\'</string>
-    <string name="warning">Cảnh báo</string>
-    <string name="wrong_extension">Vui lòng chọn một tệp có phần mở rộng %s.</string>
     <string name="yes">Có</string>
 </resources>

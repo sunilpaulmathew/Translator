@@ -5,7 +5,7 @@
  *
  */
 
-package com.sunilpaulmathew.translator.adapters;
+package com.sunilpaulmathew.translator.utils;
 
 import android.graphics.drawable.Drawable;
 
@@ -15,12 +15,12 @@ import java.io.Serializable;
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on January 24, 2021
  */
 
-public class RecycleViewItem implements Serializable {
+public class SettingsItem implements Serializable {
 
     private final Drawable mIcon;
     private final String mDescription, mTitle, mURL;
 
-    public RecycleViewItem(String title, String description, Drawable icon, String url) {
+    public SettingsItem(String title, String description, Drawable icon, String url) {
         this.mTitle = title;
         this.mDescription = description;
         this.mIcon = icon;

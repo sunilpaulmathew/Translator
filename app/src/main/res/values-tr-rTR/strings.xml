@@ -18,9 +18,6 @@
     <string name="donations">Bağışlar</string>
     <string name="donations_message">Çalışmamı takdir etmek istersen, hiç gerekli olmasa da, projelerime daha aktif devam etmeme gerçekten yardımcı olduğu için lütfen SmartPack bağış paketi satın almayı düşün.</string>
     <string name="donations_summary">Geliştiricinin bu uygulamayı tamamen ücretsiz, müdahaleci olmayan ve reklamsız olarak sağlama çabalarını takdir etmek istersen, lütfen geliştirmeyi bir şekilde desteklemeyi düşün. Daha fazla öğrenmek için buraya tıkla. Teşekkür ederim!</string>
-    <string name="edit_string_warning">Lütfen metnindeki özel karakterlere (%s) dikkat et!</string>
-    <string name="illegal_string_message">Bazı geçersiz karakterler girdin! Değişikliklerin kaydedilmeyecek.</string>
-    <string name="illegal_string_warning">Bazı karakterler \'xml\' formatında uygunsuz kabul edilir ve kabul edilebilir değildir. Lütfen urgunsuz bir karakter tespit edildiğinde metnin tamamının ihmal edileceğini (hatta en kötü durumda uygulamanın çökeceğini) unutma.\n\nBazı yasak karakterler şunları içerir, ama sınırlı değildir\n&amp; - belirli kelimeler dışında\n&lt; ve &gt; -&lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; ve benzeri gibi belirli durumlar dışında.\nÖnünde ters slashsız (\\) tek (\') ya da çift (\") tırnak işaretleri, ve benzeri.</string>
     <string name="import_string_error">\'%s\' uygun bir dil stringi değil. İptal ediliyor!</string>
     <string name="import_string_message">Henüz herhangi bir \'string\' dosyası içe aktarmadın. \'sdcard\' konumundan içe aktarmak için \'ayarlar\' menüsüne git!</string>
     <string name="import_string_sdcard">\'String\' içe aktar</string>
@@ -31,7 +28,6 @@
     <string name="name_empty">Ad boş! İptal ediliyor!</string>
     <string name="no_internet">Lütfen internet bağlantını kontrol et!</string>
     <string name="permission_denied_write_storage">Depoya yazmak için izin reddedildi!</string>
-    <string name="please_note">Lütfen unutma</string>
     <string name="press_back">Çıkmak için tekrar geriye bas</string>
     <string name="rate_us">Uygulamayı değerlendir</string>
     <string name="rate_us_Summary">PlayStore\'da The Translator\'ı değerlendir veya eleştir</string>
@@ -56,7 +52,5 @@
     <string name="translations_summary">Bu uygulamayı çevirmeme yardım et! İngilizce orijinal dil stringlerini almak için buraya tıkla</string>
     <string name="update">Güncelle</string>
     <string name="view_string">\'String\' görüntülenecek. Emin misin?</string>
-    <string name="warning">Uyarı</string>
-    <string name="wrong_extension">Lütfen %s uzantılı bir dosya seç</string>
     <string name="yes">Evet</string>
 </resources>

@@ -14,7 +14,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
@@ -52,7 +51,6 @@ import java.util.Objects;
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on June 30, 2020
  */
-
 public class Utils {
 
     public static boolean isPackageInstalled(String packageID, Context context) {
@@ -104,14 +102,8 @@ public class Utils {
         void onClick(String text);
     }
 
-    public static MaterialAlertDialogBuilder dialogEditText(String text, String action, View view, final DialogInterface.OnClickListener negativeListener,
-                                                            final OnDialogEditTextListener onDialogEditTextListener,
-                                                            Context context) {
-        return dialogEditText(text, action, view, negativeListener, onDialogEditTextListener, -1, context);
-    }
-
-    private static MaterialAlertDialogBuilder dialogEditText(String text, String action, View view, final DialogInterface.OnClickListener negativeListener,
-                                                             final OnDialogEditTextListener onDialogEditTextListener, int inputType,
+    public static MaterialAlertDialogBuilder dialogEditText(String text, String action, final DialogInterface.OnClickListener negativeListener,
+                                                             final OnDialogEditTextListener onDialogEditTextListener,
                                                              Context context) {
         LinearLayout layout = new LinearLayout(context);
         int padding = 75;
@@ -119,12 +111,12 @@ public class Utils {
 
         final AppCompatEditText editText = new AppCompatEditText(context);
         editText.setGravity(Gravity.FILL_HORIZONTAL);
+        editText.requestFocus();
         editText.setLayoutParams(new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         if (text != null) {
             editText.append(text);
         }
-        Snackbar snackBar = Snackbar.make(view, context.getString(R.string.illegal_string_message), Snackbar.LENGTH_INDEFINITE);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -136,18 +128,15 @@ public class Utils {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (Translator.checkIllegalCharacters(Objects.requireNonNull(s.toString()))) {
-                    editText.setTextColor(Color.RED);
-                    snackBar.show();
-                } else {
-                    editText.setTextColor(isDarkTheme(context) ? Color.WHITE : Color.BLACK);
-                    snackBar.dismiss();
+                if (s.toString().contains("\n")) {
+                    editText.setText(s.toString().replace("\n","\\n"));
+                    showSnackbar(editText, context.getString(R.string.line_break_message));
+                }
+                if (s.toString().contains("<") || s.toString().contains(">")) {
+                    showSnackbar(editText, context.getString(R.string.tag_complete_message));
                 }
             }
         });
-        if (inputType >= 0) {
-            editText.setInputType(inputType);
-        }
 
         layout.addView(editText);
 
@@ -156,12 +145,7 @@ public class Utils {
             dialog.setNegativeButton(context.getString(R.string.cancel), negativeListener);
         }
         if (onDialogEditTextListener != null) {
-            dialog.setPositiveButton(action, (dialog1, which) -> {
-                if (Translator.checkIllegalCharacters(Objects.requireNonNull(editText.getText()).toString())) {
-                    return;
-                }
-                onDialogEditTextListener.onClick(editText.getText().toString());
-            });
+            dialog.setPositiveButton(action, (dialog1, which) -> onDialogEditTextListener.onClick(Objects.requireNonNull(editText.getText()).toString()));
             dialog.setOnDismissListener(dialog1 -> {
                 if (negativeListener != null) {
                     negativeListener.onClick(dialog1, 0);
@@ -268,7 +252,7 @@ public class Utils {
     }
 
     public static void showSnackbar(View view, String message) {
-        Snackbar snackBar = Snackbar.make(view, message, Snackbar.LENGTH_INDEFINITE);
+        Snackbar snackBar = Snackbar.make(view, message, Snackbar.LENGTH_LONG);
         snackBar.setAction(R.string.dismiss, v -> snackBar.dismiss());
         snackBar.show();
     }

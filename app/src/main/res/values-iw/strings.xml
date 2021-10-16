@@ -20,10 +20,8 @@
     <string name="donations">תרומות</string>
     <string name="donations_message">אם ברצונך להביע תמיכה במפתח שקול לרכוש את חבילת ה SmartPack Donation Package מ Google Play שיכולה לעזור מאוד בפיתוח עתידי.</string>
     <string name="donations_summary">אם ברצונך להביע את תמיכתך במפתח המפיץ אפליקציה זו בחינם וללא פרסומות אנא שקול לבצע זו בדרך כלשהי. לחץ לפרטים. תודה!</string>
-    <string name="edit_string_warning">יש להיזהר מהתווים (%s) בטקסט!</string>
     <string name="find_and_replace">חיפוש והחלפה</string>
     <string name="find_and_replace_question">החלף את \"%s\" עם</string>
-    <string name="illegal_string_message">הוזנו תווים בלתי חוקיים! השינויים לא יישמרו.</string>
     <string name="import_string">ייבא</string>
     <string name="import_string_error">\'%s\' אינו קובץ תרגום תקין. נעצר!</string>
     <string name="import_string_message">עדיין לא יובא קובץ תרגום \'מחרוזות\'. היכנס לתפריט \'הגדרות\' ייבא מכרטיס sd!</string>
@@ -36,7 +34,6 @@
     <string name="name_empty">שם ריק! מבוטל!</string>
     <string name="no_internet">בדוק את חיבור האינטרנט!</string>
     <string name="permission_denied_write_storage">נמנעה הגישה לכתיבה לאחסון!</string>
-    <string name="please_note">Please Note</string>
     <string name="press_back">לחץ חזור שוב ליציאה</string>
     <string name="rate_us">דרג את האפליקציה</string>
     <string name="rate_us_Summary">דרך ו/או כתוב ביקורת ל The Translator ב Google Play</string>
@@ -64,8 +61,6 @@
     <string name="update">עדכן</string>
     <string name="url">כתובת URL</string>
     <string name="view_string">הצג \'מחרוזת\'</string>
-    <string name="warning">אזהרה</string>
     <string name="with">עם</string>
-    <string name="wrong_extension">נא לבחור קובץ בעל סיומת %s.</string>
     <string name="yes">כן</string>
 </resources>

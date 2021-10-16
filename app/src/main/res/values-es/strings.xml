@@ -17,15 +17,12 @@
     <string name="dismiss">Omitir</string>
     <string name="donations">Donaciones</string>
     <string name="donations_message">Si te gusta mi trabajo, por favor, considera comprar el aplicativo SmartPack Donation Package desde la PlayStore, para que me ayude muchísimo a mantener activos mis proyectos. Sin embargo, no es obligatorio.</string>
-    <string name="edit_string_warning">Por favor, se cuidadoso con los caracteres especiales (%s) en tu texto.</string>
-    <string name="illegal_string_warning">Algunos caracteres son considerados ilegales en formato \'xml\' y no son aceptados. Por favor, ten en cuenta que el texto completo sería rechazado, e incluso la aplicación podría dejar de funcionar en el peor de los casos, cuando se detecta un carácter ilegal.\n\nAlgunos de los caracteres prohibidos son:\n&amp; - excepto para ciertas palabras\n&lt; y &gt; -excepto para ciertos casos como &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; etc.\nComilla simple (\') o comillas dobles (\") sin una barra invertida delante (\\), etc.</string>
     <string name="import_string_message">Aún no has importado ningún archivo de \'string\' para ser traducido. Entra al menú de \'Ajustes\' para importarlo desde la memoria de tu móvil.</string>
     <string name="import_string_sdcard">Importar \'string\'</string>
     <string name="more_apps">Más aplicaciones del desarrollador</string>
     <string name="name_empty">¡El nombre está vacío! ¡Abortando!</string>
     <string name="no_internet">Por favor, comprueba tu conexión a internet.</string>
     <string name="permission_denied_write_storage">No hay permiso para guardar archivos en la memoria de tu móvil.</string>
-    <string name="please_note">Por favor, toma nota</string>
     <string name="press_back">Pulsa atrás de nuevo para salir</string>
     <string name="report_issue">Reportar un problema</string>
     <string name="save">Guardar</string>
@@ -41,7 +38,5 @@
     <string name="support">Grupo de soporte (inglés)</string>
     <string name="update">Actualizar</string>
     <string name="view_string">Ver \'string\'</string>
-    <string name="warning">Preucación</string>
-    <string name="wrong_extension">Por favor, selecciona un archivo con extensión %s.</string>
     <string name="yes">Sí</string>
 </resources>

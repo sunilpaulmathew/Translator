@@ -18,18 +18,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
-import com.sunilpaulmathew.translator.adapters.RecycleViewStringsAdapter;
+import com.sunilpaulmathew.translator.adapters.StringViewAdapter;
+import com.sunilpaulmathew.translator.utils.StringsItem;
 import com.sunilpaulmathew.translator.utils.Translator;
-import com.sunilpaulmathew.translator.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on September 29, 2020
  */
-
 public class StringViewActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
@@ -43,10 +41,8 @@ public class StringViewActivity extends AppCompatActivity {
         MaterialTextView mCancel = findViewById(R.id.cancel_button);
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
 
-        if (Translator.mFindText != null) Translator.mFindText = null;
-
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(new RecycleViewStringsAdapter(getStrings()));
+        mRecyclerView.setAdapter(new StringViewAdapter(getStrings()));
 
         mBack.setOnClickListener(v -> onBackPressed());
         mSave.setOnClickListener(v -> Translator.saveString(this));
@@ -55,11 +51,12 @@ public class StringViewActivity extends AppCompatActivity {
 
     private List<String> getStrings() {
         List<String> mData = new ArrayList<>();
-        for (String line : Objects.requireNonNull(Utils.read(getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
-            if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
-                mData.add(line);
-            }
+        mData.add("<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:ignore=\"MissingTranslation\">");
+        mData.add("<!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->\n");
+        for (StringsItem item : Translator.getData(this)) {
+            mData.add(item.getTitle() + "\">\"" + item.getDescription() + "\"</string>");
         }
+        mData.add("</resources>");
         return mData;
     }
 

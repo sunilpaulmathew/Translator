@@ -43,6 +43,5 @@
     <string name="translations_summary">ഈ അപ്ലിക്കേഷൻ വിവർത്തനം ചെയ്യാൻ എന്നെ സഹായിക്കൂ! യഥാർത്ഥ ഭാഷാ സ്ട്രിംഗുകൾ ഇംഗ്ലീഷിൽ ലഭിക്കാൻ ഇവിടെ ക്ലിക്കുചെയ്യുക</string>
     <string name="update">അപ്ഡേറ്റ് ചെയ്യുക</string>
     <string name="view_string">\'string\' കാണുക</string>
-    <string name="wrong_extension">ദയവായി ഒരു \'%s\' ഫയൽ തിരഞ്ഞെടുക്കുക!</string>
     <string name="yes">അതേ</string>
 </resources>

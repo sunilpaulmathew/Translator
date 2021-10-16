@@ -27,8 +27,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
-import com.sunilpaulmathew.translator.adapters.RecycleViewItem;
-import com.sunilpaulmathew.translator.adapters.RecycleViewSettingsAdapter;
+import com.sunilpaulmathew.translator.utils.SettingsItem;
+import com.sunilpaulmathew.translator.adapters.SettingsAdapter;
 import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
 
@@ -45,10 +45,10 @@ import java.util.Objects;
  */
 public class SettingsActivity extends AppCompatActivity {
 
-    private final ArrayList <RecycleViewItem> mData = new ArrayList<>();
+    private final ArrayList <SettingsItem> mData = new ArrayList<>();
     private String mXMLString;
 
-    @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +66,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        RecycleViewSettingsAdapter mRecycleViewAdapter = new RecycleViewSettingsAdapter(mData);
+        SettingsAdapter mRecycleViewAdapter = new SettingsAdapter(mData);
         mRecyclerView.setAdapter(mRecycleViewAdapter);
 
         mAppInfo.setOnClickListener(v -> {
@@ -78,27 +78,27 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         });
 
-        mData.add(new RecycleViewItem(getString(R.string.dark_theme), null, getResources().getDrawable(R.drawable.ic_theme), null));
+        mData.add(new SettingsItem(getString(R.string.dark_theme), null, Translator.getDrawable(R.drawable.ic_theme, this), null));
         if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
-            mData.add(new RecycleViewItem(getString(R.string.view_string), null, getResources().getDrawable(R.drawable.ic_view), null));
+            mData.add(new SettingsItem(getString(R.string.view_string), null, Translator.getDrawable(R.drawable.ic_view, this), null));
         } else {
-            mData.add(new RecycleViewItem(getString(R.string.import_string_sdcard), null, getResources().getDrawable(R.drawable.ic_import), null));
+            mData.add(new SettingsItem(getString(R.string.import_string_sdcard), null, Translator.getDrawable(R.drawable.ic_import, this), null));
         }
-        mData.add(new RecycleViewItem(getString(R.string.delete_string), null, getResources().getDrawable(R.drawable.ic_delete), null));
-        mData.add(new RecycleViewItem(getString(R.string.find_and_replace), null, getResources().getDrawable(R.drawable.ic_search), null));
-        mData.add(new RecycleViewItem(getString(R.string.report_issue), getString(R.string.report_issue_summary), getResources().getDrawable(R.drawable.ic_issue), "https://github.com/sunilpaulmathew/Translator/issues/new"));
-        mData.add(new RecycleViewItem(getString(R.string.more_apps), getString(R.string.more_apps_summary), getResources().getDrawable(R.drawable.ic_playstore), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
-        mData.add(new RecycleViewItem(getString(R.string.support), getString(R.string.support_summary), getResources().getDrawable(R.drawable.ic_support), "https://t.me/smartpack_kmanager"));
-        mData.add(new RecycleViewItem(getString(R.string.translations), getString(R.string.translations_summary), getResources().getDrawable(R.drawable.ic_translate), "https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml"));
-        mData.add(new RecycleViewItem(getString(R.string.source_code), getString(R.string.source_code_summary), getResources().getDrawable(R.drawable.ic_github), "https://github.com/sunilpaulmathew/Translator"));
-        mData.add(new RecycleViewItem(getString(R.string.share_app), getString(R.string.share_app_Summary), getResources().getDrawable(R.drawable.ic_share), null));
-        mData.add(new RecycleViewItem(getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
-                R.string.donations_summary), getResources().getDrawable(R.drawable.ic_donate), Utils.isPlayStoreAvailable(
+        mData.add(new SettingsItem(getString(R.string.delete_string), null, Translator.getDrawable(R.drawable.ic_delete, this), null));
+        mData.add(new SettingsItem(getString(R.string.find_and_replace), null, Translator.getDrawable(R.drawable.ic_search, this), null));
+        mData.add(new SettingsItem(getString(R.string.report_issue), getString(R.string.report_issue_summary), Translator.getDrawable(R.drawable.ic_issue, this), "https://github.com/sunilpaulmathew/Translator/issues/new"));
+        mData.add(new SettingsItem(getString(R.string.more_apps), getString(R.string.more_apps_summary), Translator.getDrawable(R.drawable.ic_playstore, this), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
+        mData.add(new SettingsItem(getString(R.string.support), getString(R.string.support_summary), Translator.getDrawable(R.drawable.ic_support, this), "https://t.me/smartpack_kmanager"));
+        mData.add(new SettingsItem(getString(R.string.translations), getString(R.string.translations_summary), Translator.getDrawable(R.drawable.ic_translate, this), "https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml"));
+        mData.add(new SettingsItem(getString(R.string.source_code), getString(R.string.source_code_summary), Translator.getDrawable(R.drawable.ic_github, this), "https://github.com/sunilpaulmathew/Translator"));
+        mData.add(new SettingsItem(getString(R.string.share_app), getString(R.string.share_app_Summary), Translator.getDrawable(R.drawable.ic_share, this), null));
+        mData.add(new SettingsItem(getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
+                R.string.donations_summary), Translator.getDrawable(R.drawable.ic_donate, this), Utils.isPlayStoreAvailable(
                         this) ? "https://play.google.com/store/apps/details?id=com.smartpack.donate" : "https://smartpack.github.io/donation/"));
-        mData.add(new RecycleViewItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), getResources().getDrawable(R.drawable.ic_rate), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
-        mData.add(new RecycleViewItem(getString(R.string.licence), null, getResources().getDrawable(R.drawable.ic_licence), "https://www.gnu.org/licenses/gpl-3.0-standalone.html"));
-        mData.add(new RecycleViewItem(getString(R.string.credits), null, getResources().getDrawable(R.drawable.ic_credits), "https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md"));
-        mData.add(new RecycleViewItem(getString(R.string.about), null, getResources().getDrawable(R.drawable.ic_info), null));
+        mData.add(new SettingsItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), Translator.getDrawable(R.drawable.ic_rate, this), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
+        mData.add(new SettingsItem(getString(R.string.licence), null, Translator.getDrawable(R.drawable.ic_licence, this), "https://www.gnu.org/licenses/gpl-3.0-standalone.html"));
+        mData.add(new SettingsItem(getString(R.string.credits), null, Translator.getDrawable(R.drawable.ic_credits, this), "https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md"));
+        mData.add(new SettingsItem(getString(R.string.about), null, Translator.getDrawable(R.drawable.ic_info, this), null));
 
         mRecycleViewAdapter.setOnItemClickListener((position, v) -> {
             if (mData.get(position).getURL() != null) {
@@ -171,6 +171,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
             } else if (position == 3) {
                 if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
+                    Translator.setKeyText(null);
                     Intent findAndReplace = new Intent(this, FindReplaceActivity.class);
                     startActivity(findAndReplace);
                     finish();

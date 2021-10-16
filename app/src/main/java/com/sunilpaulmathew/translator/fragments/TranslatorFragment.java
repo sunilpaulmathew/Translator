@@ -7,66 +7,120 @@
 
 package com.sunilpaulmathew.translator.fragments;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatEditText;
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
-import com.sunilpaulmathew.translator.adapters.RecycleViewAdapter;
+import com.sunilpaulmathew.translator.activities.SettingsActivity;
+import com.sunilpaulmathew.translator.adapters.TranslatorAdapter;
 import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
-
-import java.util.Objects;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on January 03, 2020
  */
-
 public class TranslatorFragment extends Fragment {
+
+    private boolean mExit;
+    private final Handler mHandler = new Handler();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mRootView = inflater.inflate(R.layout.fragment_translator, container, false);
-
-        AppCompatImageView mHelpImg = mRootView.findViewById(R.id.help_image);
-        MaterialTextView mHelpTxt = mRootView.findViewById(R.id.help_text);
+        
+        AppCompatEditText mSearchWord = mRootView.findViewById(R.id.search_Text);
+        AppCompatImageButton mSettings = mRootView.findViewById(R.id.settings_menu);
+        AppCompatImageButton mSearch = mRootView.findViewById(R.id.search_button);
+        LinearLayoutCompat mHelpLayout = mRootView.findViewById(R.id.help_layout);
+        MaterialTextView mAboutApp = mRootView.findViewById(R.id.about_app);
         FloatingActionButton mFab = mRootView.findViewById(R.id.fab);
-        Translator.mRecyclerView = mRootView.findViewById(R.id.recycler_view);
 
-        RecycleViewAdapter mRecycleViewAdapter = new RecycleViewAdapter(Translator.getData(requireActivity()));
-        Translator.mRecyclerView.setLayoutManager(new LinearLayoutManager(requireActivity()));
+        Translator.initializeRecyclerView(mRootView, R.id.recycler_view);
+
+        mSettings.setOnClickListener(v -> {
+            Intent settingsMenu = new Intent(requireActivity(), SettingsActivity.class);
+            startActivity(settingsMenu);
+        });
+
+        if (!Utils.exist(requireActivity().getFilesDir().toString() + "/strings.xml")) {
+            mSearch.setVisibility(View.GONE);
+        }
+
+        mSearch.setOnClickListener(v -> {
+            mSearchWord.setVisibility(View.VISIBLE);
+            mAboutApp.setVisibility(View.GONE);
+            mSearchWord.requestFocus();
+        });
+        mSearchWord.setTextColor(Color.RED);
+        mSearchWord.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                Translator.getData(requireActivity()).clear();
+                Translator.setKeyText(s.toString().toLowerCase());
+                Translator.reloadUI(requireActivity());
+            }
+        });
+
+        TranslatorAdapter mRecycleViewAdapter = new TranslatorAdapter(Translator.getData(requireActivity()));
+        Translator.getRecyclerView().setLayoutManager(new LinearLayoutManager(requireActivity()));
         if (Utils.exist(requireActivity().getFilesDir().toString() + "/strings.xml")) {
-            Translator.mRecyclerView.setAdapter(mRecycleViewAdapter);
+            Translator.getRecyclerView().setAdapter(mRecycleViewAdapter);
         } else {
-            mHelpImg.setVisibility(View.VISIBLE);
-            mHelpTxt.setVisibility(View.VISIBLE);
+            mHelpLayout.setVisibility(View.VISIBLE);
             mFab.setVisibility(View.GONE);
         }
 
-        mRecycleViewAdapter.setOnItemClickListener((position, v) -> {
-            Utils.dialogEditText(Translator.mData.get(position), getString(R.string.update), mRootView,
-                    (dialogInterface1, i1) -> {
-                    }, text -> {
-                        if (text.isEmpty()) {
-                            return;
-                        }
-                        Utils.create(Objects.requireNonNull(Utils.read(requireActivity().getFilesDir().toString() + "/strings.xml")).replace(">" + Translator.mData.get(position) + "</string>", ">" + text + "</string>"), requireActivity().getFilesDir().toString() + "/strings.xml");
-                        Translator.mData.set(position, text);
-                        mRecycleViewAdapter.notifyDataSetChanged();
-                    }, requireActivity()).setOnDismissListener(dialogInterface -> {
-            }).show();
-        });
-
         mFab.setOnClickListener(v -> Translator.saveString(requireActivity()));
+
+        requireActivity().getOnBackPressedDispatcher().addCallback(new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (Translator.getKeyText() != null) {
+                    mSearchWord.setText(null);
+                    Translator.setKeyText(null);
+                    return;
+                }
+                if (mAboutApp.getVisibility() == View.GONE) {
+                    mSearchWord.setVisibility(View.GONE);
+                    mAboutApp.setVisibility(View.VISIBLE);
+                    return;
+                }
+                if (mExit) {
+                    mExit = false;
+                    requireActivity().finish();
+                } else {
+                    Utils.showSnackbar(requireActivity().findViewById(android.R.id.content), getString(R.string.press_back));
+                    mExit = true;
+                    mHandler.postDelayed(() -> mExit = false, 2000);
+                }
+            }
+        });
 
         return mRootView;
     }

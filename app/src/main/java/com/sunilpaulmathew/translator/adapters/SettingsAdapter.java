@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
+import com.sunilpaulmathew.translator.utils.SettingsItem;
 import com.sunilpaulmathew.translator.utils.Utils;
 
 import java.util.ArrayList;
@@ -27,25 +28,25 @@ import java.util.ArrayList;
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on January 24, 2021
  */
 
-public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleViewSettingsAdapter.ViewHolder> {
+public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHolder> {
 
-    private final ArrayList<RecycleViewItem> data;
+    private final ArrayList<SettingsItem> data;
 
     private static ClickListener mClickListener;
 
-    public RecycleViewSettingsAdapter(ArrayList<RecycleViewItem> data) {
+    public SettingsAdapter(ArrayList<SettingsItem> data) {
         this.data = data;
     }
 
     @NonNull
     @Override
-    public RecycleViewSettingsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SettingsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View rowItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle_view_settings, parent, false);
-        return new RecycleViewSettingsAdapter.ViewHolder(rowItem);
+        return new SettingsAdapter.ViewHolder(rowItem);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecycleViewSettingsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SettingsAdapter.ViewHolder holder, int position) {
         if (this.data.get(position).getTitle() != null) {
             holder.mTitle.setText(this.data.get(position).getTitle());
             holder.mTitle.setVisibility(View.VISIBLE);
@@ -91,7 +92,7 @@ public class RecycleViewSettingsAdapter extends RecyclerView.Adapter<RecycleView
     }
 
     public void setOnItemClickListener(ClickListener clickListener) {
-        RecycleViewSettingsAdapter.mClickListener = clickListener;
+        SettingsAdapter.mClickListener = clickListener;
     }
 
     public interface ClickListener {

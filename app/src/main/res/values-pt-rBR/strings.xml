@@ -28,6 +28,5 @@
     <string name="select_question">Selecionar %s?</string>
     <string name="source_code">Código fonte</string>
     <string name="support">Grupo de suporte</string>
-    <string name="wrong_extension">Por favor, selecione um arquivo com extensão %s.</string>
     <string name="yes">Sim</string>
 </resources>

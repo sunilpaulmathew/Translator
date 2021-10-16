@@ -17,9 +17,6 @@
     <string name="donations">Darowizny</string>
     <string name="donations_message">Jeśli chcesz docenić moją pracę, rozważ zakup pakietu darowizn SmartPack z PlayStore, pomoże to jeszcze szybciej rozwijać moje aplikacje, chociaż nie jest to wcale konieczne.</string>
     <string name="donations_summary">Jeśli chcesz docenić wysiłki dewelopera, w celu dostarczenia tej aplikacji całkowicie za darmo, nieinwazyjnie i bez reklam, rozważ wsparcie rozwoju w jakiś sposób. Kliknij tutaj, aby dowiedzieć się więcej. Dziękuję Ci!</string>
-    <string name="edit_string_warning">Uważaj na znaki specjalne (%s) w twoim tekście!</string>
-    <string name="illegal_string_message">Wpisałeś niedozwolone znaki! Twoje zmiany nie zostaną zapisane.</string>
-    <string name="illegal_string_warning">Niektóre znaki w formacie \'xml\' są uważane za niedozwolone i nie są akceptowane! Zwróć uwagę, że jeśli zostanie znaleziony nieprawidłowy znak, cały tekst zostanie zignorowany (lub nawet zawiesi aplikację w najgorszym przypadku)!\n\nNiektóre z zabronionych znaków to między innymi\n&amp; - z wyjątkiem niektórych słów\n&lt; i &gt; - z wyjątkiem niektórych przypadków, takich jak &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; itd.\nPojedyncze (\') lub podwójne (\") cytaty bez odwrotnego ukośnika (\\) z przodu itp.</string>
     <string name="import_string_error">\'%s\' nie jest prawidłowym ciągiem językowym. Niepowodzenie!</string>
     <string name="import_string_message">Nie zaimportowałeś jeszcze żadnych plików z tłumaczeniami typu \'string\'. Przejdź do menu \'Ustawienia\' aby zaimportować je z \'sdcard\'!</string>
     <string name="import_string_sdcard">Importuj \'string\'</string>
@@ -30,7 +27,6 @@
     <string name="name_empty">Nazwa jest pusta! Niepowodzenie!</string>
     <string name="no_internet">Sprawdź swoje połączenie z internetem!</string>
     <string name="permission_denied_write_storage">Odmowa do zapisu w pamięci!</string>
-    <string name="please_note">Uwaga</string>
     <string name="press_back">Naciśnij ponownie, aby wyjść</string>
     <string name="rate_us">Oceń aplikację</string>
     <string name="rate_us_Summary">Oceń i/lub napisz recenzję aplikacji The Translator w PlayStore</string>
@@ -55,7 +51,5 @@
     <string name="translations_summary">Pomóż przetłumaczyć tę aplikację! Kliknij tutaj, aby uzyskać oryginalne ciągi językowe w języku angielskim</string>
     <string name="update">Aktualizuj</string>
     <string name="view_string">Pokaż \'string\'</string>
-    <string name="warning">Ostrzeżenie</string>
-    <string name="wrong_extension">Wybierz plik z rozszerzeniem %s.</string>
     <string name="yes">Tak</string>
 </resources>

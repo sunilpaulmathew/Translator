@@ -18,9 +18,6 @@
     <string name="dismiss">Kaŝi</string>
     <string name="donations">Donacojn</string>
     <string name="donations_message">Se vi aprezas mian laboron, konsideru aĉetado de donaca pakaĵo SmartPack de PlayStore, tio helpos min eĉ rapide evoluigi miajn aplikaĵojn, kvankam tio tute ne estas necesa.</string>
-    <string name="edit_string_warning">Atentu specialaj signoj (%s) en via teksto!</string>
-    <string name="illegal_string_message">Vi tajpas mallicaj signoj! Viaj ŝanĝoj ne estos konservita.</string>
-    <string name="illegal_string_warning">Kelkaj signoj en \'xml\' formo estas konsiderataj kiel nepermesita kaj ĝi ne estas akceptita! Atentu ke se estos trovita malĝusta signo, tuta teksto estos ignorita (aŭ eĉ povos kolapsi aplikaĵon)!\n\nKelkaj el malpermesaj signoj estas\n&amp; - escepti kelkajn vortojn\n&lt; and &gt; - escepti kelkajn kazojn, ekzemple <b>, </b>, <i>, </i> ktp.\nUnuopaj (\') aŭ duopaj (\") citaĵoj sen malsuprenstreko (\\) antaŭe ktp.</string>
     <string name="import_string_message">Vi ne jam importis iajn dosierojn kun tradukaĵojn kun formo \'string\'. Iru al menuo \'Agordoj\' por importi ilin el \'sdcard\'!</string>
     <string name="import_string_sdcard">Importi \'string\'</string>
     <string name="import_string_error">\'%s\' ne estas valida traduka signovico. Fiasko!</string>
@@ -29,7 +26,6 @@
     <string name="name_empty">Nomo estas malplena! Fiasko!</string>
     <string name="no_internet">Kontrolu vian retkonekton!</string>
     <string name="permission_denied_write_storage">Malkonsentas konservi en konservejo!</string>
-    <string name="please_note">Noto</string>
     <string name="press_back">Tuŝi denove por ĉesi aplikaĵon</string>
     <string name="report_issue">Raporti problemon</string>
     <string name="save">Konservi</string>
@@ -45,7 +41,5 @@
     <string name="support">Subtena grupo</string>
     <string name="update">Ĝisdatigi</string>
     <string name="view_string">Montri \'string\'</string>
-    <string name="warning">Averto</string>
-    <string name="wrong_extension">Elekti dosiero kun sufikso %s.</string>
     <string name="yes">Jes</string>
 </resources>

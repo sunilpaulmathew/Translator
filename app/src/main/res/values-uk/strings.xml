@@ -17,15 +17,12 @@
     <string name="dismiss">Закрити</string>
     <string name="donations">Пожертви</string>
     <string name="donations_message">Якщо вам подобається моя робота, купите SmartPack Donation Package в Play Маркеті. Це допоможе розвивати мої програми ще швидше.</string>
-    <string name="edit_string_warning">Будьте обережні зі спеціальними символами (%s) у вашому тексті!</string>
-    <string name="illegal_string_warning">Деякі символи вважаються незаконними у форматі \'xml\' і є неприйнятними! Зверніть увагу, що весь текст буде знехтувати (або навіть збій програми в гіршому випадку), коли буде виявлено незаконний символ!\n\nДеякі заборонені символи включають, але не обмежуючись ними\n&amp; - крім певних слів\n&lt; і &gt; - окрім певних випадків, таких як &lt;b&gt;, &lt;/b&gt;, &lt;i&gt;, &lt;/i&gt; тощо.\nОдинарні (\') або подвійні (\") лапки без косої риски (\\) спереду тощо.</string>
     <string name="import_string_message">Ви ще не імпортували жоден файл \'string\' перекладу. Перейдіть до меню \'Налаштування\', щоб імпортувати його з \'sdcard\'!</string>
     <string name="import_string_sdcard">Імпор \'string\'</string>
     <string name="more_apps">Більше від розробника</string>
     <string name="name_empty">Ім\'я пусте! Невдача!</string>
     <string name="no_internet">Перевірте підключення до Інтернету!</string>
     <string name="permission_denied_write_storage">Заборонено дозвіл на запис в сховище!</string>
-    <string name="please_note">Будь ласка, зверніть увагу</string>
     <string name="press_back">Натисніть ще раз, щоб вийти</string>
     <string name="report_issue">Повідомити про проблему</string>
     <string name="save">Зберегти</string>
@@ -41,7 +38,5 @@
     <string name="support">Група підтримки</string>
     <string name="update">Оновити</string>
     <string name="view_string">Переглянути \'string\'</string>
-    <string name="warning">Увага</string>
-    <string name="wrong_extension">Виберіть файл із розширенням %s.</string>
     <string name="yes">Так</string>
 </resources>
