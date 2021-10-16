@@ -2,7 +2,7 @@
 
 ![The Translator](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png?raw=true)
 
-[![](https://img.shields.io/badge/The%20Translator-v0.15-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
+[![](https://img.shields.io/badge/The%20Translator-v0.16-green)](https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator)
 ![](https://img.shields.io/github/languages/top/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/contributors/sunilpaulmathew/Translator)
 ![](https://img.shields.io/github/license/sunilpaulmathew/Translator)
@@ -41,7 +41,7 @@ A list of people who contributed to this project is available [here](Credits.md)
 
 ## License
 
-    Copyright (C) 2020-2021 sunilpaulmathew <sunil.kde@gmail.com>
+    Copyright (C) 2021-2022 sunilpaulmathew <sunil.kde@gmail.com>
 
     The Translator is a free softwares: you can redistribute it and/or
     modify it under the terms of the GNU General Public License as published
