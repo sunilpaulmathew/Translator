@@ -29,6 +29,7 @@
     <string name="import_string_snackbar">你尚未导入任何翻译 \'string\' 文件！</string>
     <string name="importing">导入中…</string>
     <string name="licence">许可证</string>
+    <string name="line_break_message">换行符将被替换为 \"\\"n\"</string>
     <string name="more_apps">更多来自开发者的应用</string>
     <string name="more_apps_summary">在 Google Play 商店中查看开发者提供的更多应用程序</string>
     <string name="name_empty">名称为空！终止！</string>
@@ -56,6 +57,7 @@
     <string name="source_code_summary">The Translator 是一款准备准备好接受开发社区贡献的开源应用。点击此处查看源代码！</string>
     <string name="support">支持小组</string>
     <string name="support_summary">加入 Telegram 支持群组</string>
+    <string name="tag_complete_message">更新前请完成标签 (&lt; &amp; &gt;) </string>
     <string name="translations">翻译</string>
     <string name="translations_summary">帮我翻译这个应用！点击这里获得原始的英语语言字符串</string>
     <string name="update">更新</string>
