@@ -20,6 +20,7 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.R;
+import com.sunilpaulmathew.translator.interfaces.DialogEditTextListener;
 import com.sunilpaulmathew.translator.utils.StringsItem;
 import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
@@ -90,7 +91,7 @@ public class TranslatorAdapter extends RecyclerView.Adapter<TranslatorAdapter.Vi
 
         @Override
         public void onClick(View view) {
-            Utils.dialogEditText(data.get(getAdapterPosition()).getDescription(), view.getContext().getString(R.string.update),
+            DialogEditTextListener.dialogEditText(data.get(getAdapterPosition()).getDescription(), view.getContext().getString(R.string.update),
                     (dialogInterface1, i1) -> {
                     }, text -> {
                         if (text.isEmpty()) {

@@ -29,6 +29,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.adapters.TranslatorAdapter;
+import com.sunilpaulmathew.translator.interfaces.DialogEditTextListener;
 
 import java.io.File;
 import java.io.IOException;
@@ -134,7 +135,7 @@ public class Translator {
     }
 
     public static void importStringFromURL(Activity activity) {
-        Utils.dialogEditText(null, activity.getString(R.string.import_string),
+        DialogEditTextListener.dialogEditText(null, activity.getString(R.string.import_string),
                 (dialogInterface1, i1) -> {
                 }, text -> {
                     if (text.isEmpty()) {
@@ -181,7 +182,7 @@ public class Translator {
     }
 
     public static void saveString(Activity activity) {
-        Utils.dialogEditText("strings-" + Locale.getDefault().getLanguage(), activity.getString(R.string.save), (dialogInterface2, iii) -> {},
+        DialogEditTextListener.dialogEditText("strings-" + Locale.getDefault().getLanguage(), activity.getString(R.string.save), (dialogInterface2, iii) -> {},
                 text -> {
                     if (text.isEmpty()) {
                         Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.name_empty));

@@ -45,7 +45,7 @@ public class TranslatorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mRootView = inflater.inflate(R.layout.fragment_translator, container, false);
-        
+
         AppCompatEditText mSearchWord = mRootView.findViewById(R.id.search_Text);
         AppCompatImageButton mSettings = mRootView.findViewById(R.id.settings_menu);
         AppCompatImageButton mSearch = mRootView.findViewById(R.id.search_button);
