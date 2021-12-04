@@ -9,8 +9,6 @@ package com.sunilpaulmathew.translator.interfaces;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -19,7 +17,6 @@ import androidx.appcompat.widget.AppCompatEditText;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.sunilpaulmathew.translator.R;
-import com.sunilpaulmathew.translator.utils.Utils;
 
 import java.util.Objects;
 
@@ -42,26 +39,6 @@ public interface DialogEditTextListener {
         if (text != null) {
             editText.append(text);
         }
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.toString().contains("\n")) {
-                    editText.setText(s.toString().replace("\n","\\n"));
-                    Utils.showSnackbar(editText, context.getString(R.string.line_break_message));
-                }
-                if (s.toString().contains("<") || s.toString().contains(">")) {
-                    Utils.showSnackbar(editText, context.getString(R.string.tag_complete_message));
-                }
-            }
-        });
 
         layout.addView(editText);
 
