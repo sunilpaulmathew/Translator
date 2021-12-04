@@ -1,21 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <string name="about">Pri aplikaĵo</string>
-    <string name="about_summary">
-<i>Aplikaĵo helpa kun tradukado de aliaj aplikaĵoj por Androida operaciumo!</i>
-</string>
-    <string name="cancel">Nuligi</string>
+    <string name="about_summary"><i>Aplikaĵo helpa kun tradukado de aliaj aplikaĵoj por Androida operaciumo!</i></string>
     <string name="change_logs">Ŝanĝoprotokoloj</string>
     <string name="credits">Dankoj</string>
-    <string name="dark_theme">Malhela etoso</string>
-    <string name="dark_theme_auto">Aŭtomate</string>
-    <string name="dark_theme_disable">Malŝalti</string>
-    <string name="dark_theme_enable">Ŝalti</string>
     <string name="delete_line_question">Ĉu vi certe volas forigi \'%s\'?</string>
     <string name="delete_string">Forigi \'string\'</string>
     <string name="delete_string_message">Ĉu vi certe volas forigi nuna dosiero de string.xml?</string>
     <string name="developed_by">Programita de</string>
-    <string name="dismiss">Kaŝi</string>
     <string name="donations">Donacojn</string>
     <string name="donations_message">Se vi aprezas mian laboron, konsideru aĉetado de donaca pakaĵo SmartPack de PlayStore, tio helpos min eĉ rapide evoluigi miajn aplikaĵojn, kvankam tio tute ne estas necesa.</string>
     <string name="import_string_message">Vi ne jam importis iajn dosierojn kun tradukaĵojn kun formo \'string\'. Iru al menuo \'Agordoj\' por importi ilin el \'sdcard\'!</string>

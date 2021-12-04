@@ -5,19 +5,13 @@
     <string name="about_summary"><i>An application to help translating other android apps!</i></string>
     <string name="add_text_hint">add-text-here</string>
     <string name="apply">Apply</string>
-    <string name="cancel">Cancel</string>
     <string name="change_logs">Change-logs</string>
     <string name="credits">Credits</string>
-    <string name="dark_theme">Dark Theme</string>
-    <string name="dark_theme_auto">Auto</string>
-    <string name="dark_theme_disable">Disable</string>
-    <string name="dark_theme_enable">Enable</string>
     <string name="delete_line_question">Sure deleting \'%s\'?</string>
     <string name="delete_string">Delete \'string\'</string>
     <string name="delete_string_message">Are you sure to delete current string.xml?</string>
     <string name="developed_by">Developed By</string>
     <string name="device_storage">Device Storage</string>
-    <string name="dismiss">Dismiss</string>
     <string name="donations">Donations</string>
     <string name="donations_message">If you like to appreciate my work, please consider buying SmartPack Donation Package from Google Play as it is really helpful to continue my projects more active, although it is not at all necessary.</string>
     <string name="donations_summary">If you like to appreciate the efforts of developer to provide this application entirely free, non-intrusive and without ads, please consider supporting the development in some way. Click here to know more. Thank you!</string>
@@ -59,7 +53,6 @@
     <string name="support">Support Group</string>
     <string name="support_summary">Join Telegram support group</string>
     <string name="tag_complete_message">Please complete the TAG (&lt; &amp; &gt;) before updating</string>
-    <string name="translations">Translations</string>
     <string name="translations_summary">Help me to translate this app! Click here to get the original language strings in English</string>
     <string name="update">Update</string>
     <string name="url">URL</string>

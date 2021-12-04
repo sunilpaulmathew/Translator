@@ -3,19 +3,13 @@
 
     <string name="about">Acerca</string>
     <string name="about_summary"><i>Uma aplicação para ajudar a traduzir outras app Android!</i></string>
-    <string name="cancel">Cancelar</string>
     <string name="change_logs">Alterações do registo</string>
     <string name="credits">Créditos</string>
-    <string name="dark_theme">Tema escuro</string>
-    <string name="dark_theme_auto">Auto</string>
-    <string name="dark_theme_disable">Diesativar</string>
-    <string name="dark_theme_enable">Ativar</string>
     <string name="delete_line_question">Confirma eliminação \'%s\'?</string>
     <string name="delete_string">Apagar \'string\'</string>
     <string name="delete_string_message">Tens a certeza que queres apagar  a actual string.xml?</string>
     <string name="developed_by">Desenvolvido por</string>
     <string name="device_storage">Dispositivo de armazenamento</string>
-    <string name="dismiss">Dismiss</string>
     <string name="donations">Donativos</string>
     <string name="donations_message">Se você gosta e aprecia o meu trabalho por favor considere comprar SmartPack Donation Package da PlayStore pois é realmente útil para continuar com os meus projetos ativos embora não seja de todo necessário.</string>
     <string name="donations_summary">Se você quer agradecer os esforços do desenvolvedor em fornecer este aplicativo totalmente gratuito não intrusivo e sem anúncios considere apoiar o desenvolvimento de alguma forma. Clique aqui para saber mais. Obrigado!</string>
@@ -53,7 +47,6 @@
     <string name="source_code_summary">The Translator é um aplicativo de código aberto que está pronto para aceitar contribuições de desenvolvimento da comunidade.  Clique aqui para verificar o código-fonte!</string>
     <string name="support">Grupo de suporte</string>
     <string name="support_summary">Junta-te ao grupo de suporte no Telegram</string>
-    <string name="translations">Traduções</string>
     <string name="translations_summary">Ajuda-me a traduzir a app!  Clique aqui para obter as strings do idioma original em inglês</string>
     <string name="update">Atualizar</string>
     <string name="url">URL</string>

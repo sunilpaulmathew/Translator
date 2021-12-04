@@ -24,9 +24,11 @@ import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.adapters.TranslatorAdapter;
 import com.sunilpaulmathew.translator.utils.StringsItem;
 import com.sunilpaulmathew.translator.utils.Translator;
-import com.sunilpaulmathew.translator.utils.Utils;
 
+import java.io.File;
 import java.util.Objects;
+
+import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on April 04, 2021
@@ -93,7 +95,7 @@ public class FindReplaceActivity extends AppCompatActivity {
                                 .append("\"</string>").append("\n");
                     }
                     sb.append("</resources>");
-                    Utils.create(sb.toString(), getFilesDir().toString() + "/strings.xml");
+                    sUtils.create(sb.toString(), new File(getFilesDir(), "/strings.xml"));
                     reloadUI();
                 })
                 .show();

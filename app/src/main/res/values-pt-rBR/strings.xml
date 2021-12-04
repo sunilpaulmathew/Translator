@@ -3,13 +3,8 @@
 
     <string name="about">Sobre</string>
     <string name="about_summary"><i>Um aplicativo para ajudar a traduzir outros aplicativos Android</i></string>
-    <string name="cancel">Cancelar</string>
     <string name="change_logs">Lista de mudanças</string>
     <string name="credits">Créditos</string>
-    <string name="dark_theme">Tema escuro</string>
-    <string name="dark_theme_auto">Automático</string>
-    <string name="dark_theme_disable">Desativar</string>
-    <string name="dark_theme_enable">Ativar</string>
     <string name="delete_string">Deletar \'string\'</string>
     <string name="delete_string_message">Tem certeza de que deseja deletar o atual string.xml do sdcard?</string>
     <string name="developed_by">Desenvolvido por</string>

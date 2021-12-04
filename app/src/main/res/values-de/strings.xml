@@ -3,13 +3,8 @@
 
     <string name="about">Über</string>
     <string name="about_summary">Eine App zur Übersetzung anderer Android-Apps!</string>
-    <string name="cancel">Abbrechen</string>
     <string name="change_logs">Neuigkeiten</string>
     <string name="credits">Credits</string>
-    <string name="dark_theme">Dunkles Thema</string>
-    <string name="dark_theme_auto">Auto</string>
-    <string name="dark_theme_disable">Deaktiviert</string>
-    <string name="dark_theme_enable">Aktiviert</string>
     <string name="delete_string">String löschen</string>
     <string name="delete_string_message">Sicher dass Du die aktuelle string.xml aus dem sdcard-Verzeichnis löschen möchtest?</string>
     <string name="developed_by">Entwickler:</string>

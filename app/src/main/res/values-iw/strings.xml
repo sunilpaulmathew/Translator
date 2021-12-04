@@ -4,19 +4,13 @@
     <string name="about_summary"><i>תוכנת סיוע לתרגום אפליקציות אנדרואיד!</i></string>
     <string name="add_text_hint">הוסף טקסט</string>
     <string name="apply">החל</string>
-    <string name="cancel">ביטול</string>
     <string name="change_logs">שנה לוגים</string>
     <string name="credits">תודות</string>
-    <string name="dark_theme">מצב כהה</string>
-    <string name="dark_theme_auto">אוטומטי</string>
-    <string name="dark_theme_disable">השבת</string>
-    <string name="dark_theme_enable">הפעל</string>
     <string name="delete_line_question">האם למחוק את \'%s\'?</string>
     <string name="delete_string">מחק \'מחרוזת\'</string>
     <string name="delete_string_message">האם למחוק את string.xml הנוכחי?</string>
     <string name="developed_by">פותח ע"י</string>
     <string name="device_storage">אחסון פנימי</string>
-    <string name="dismiss">Dismiss</string>
     <string name="donations">תרומות</string>
     <string name="donations_message">אם ברצונך להביע תמיכה במפתח שקול לרכוש את חבילת ה SmartPack Donation Package מ Google Play שיכולה לעזור מאוד בפיתוח עתידי.</string>
     <string name="donations_summary">אם ברצונך להביע את תמיכתך במפתח המפיץ אפליקציה זו בחינם וללא פרסומות אנא שקול לבצע זו בדרך כלשהי. לחץ לפרטים. תודה!</string>
@@ -56,7 +50,6 @@
     <string name="source_code_summary">The Translator היא תוכנת קוד פתוח המוכנה לקבל תרומות מהקהילה. לחץ כאן לצפייה בקוד המקור!</string>
     <string name="support">קבוצת תמיכה</string>
     <string name="support_summary">הצטרף לקבוצת התמיכה בטלגרם</string>
-    <string name="translations">תרגומים</string>
     <string name="translations_summary">עזרו לתרגם את האפליקציה הזו! לחץ כאן לקבלת קובץ המחרוזות המקורי באנגלית</string>
     <string name="update">עדכן</string>
     <string name="url">כתובת URL</string>

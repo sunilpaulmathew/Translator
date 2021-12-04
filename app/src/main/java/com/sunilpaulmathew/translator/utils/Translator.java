@@ -13,7 +13,6 @@ import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -21,7 +20,6 @@ import android.provider.MediaStore;
 import android.view.View;
 
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -38,6 +36,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
+
+import in.sunilpaulmathew.sCommon.Utils.sExecutor;
+import in.sunilpaulmathew.sCommon.Utils.sPermissionUtils;
+import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on January 03, 2020
@@ -56,14 +58,10 @@ public class Translator {
         return false;
     }
 
-    public static Drawable getDrawable(int drawable, Context context) {
-        return ContextCompat.getDrawable(context, drawable);
-    }
-
     public static List<StringsItem> getRawData(Context context) {
         List<StringsItem> mData = new ArrayList<>();
-        if (Utils.exist(context.getFilesDir().toString() + "/strings.xml")) {
-            for (String line : Objects.requireNonNull(Utils.read(context.getFilesDir().toString() + "/strings.xml")).split("\\r?\\n")) {
+        if (sUtils.exist(new File(context.getFilesDir(), "strings.xml"))) {
+            for (String line : Objects.requireNonNull(sUtils.read(new File(context.getFilesDir(), "strings.xml"))).split("\\r?\\n")) {
                 if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
                     if (line.endsWith("\"</string>")) {
                         line = line.replace("\"</string>", "");
@@ -131,7 +129,7 @@ public class Translator {
             }
         }
         sb.append("</resources>");
-        Utils.create(sb.toString(), context.getFilesDir().toString() + "/strings.xml");
+        sUtils.create(sb.toString(), new File(context.getFilesDir(), "strings.xml"));
     }
 
     public static void importStringFromURL(Activity activity) {
@@ -145,7 +143,7 @@ public class Translator {
                         text = text.replace("blob","raw");
                     }
                     String url = text;
-                    new AsyncTasks() {
+                    new sExecutor() {
                         private ProgressDialog mProgressDialog;
 
                         @Override
@@ -185,14 +183,14 @@ public class Translator {
         DialogEditTextListener.dialogEditText("strings-" + Locale.getDefault().getLanguage(), activity.getString(R.string.save), (dialogInterface2, iii) -> {},
                 text -> {
                     if (text.isEmpty()) {
-                        Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.name_empty));
+                        sUtils.snackBar(activity.findViewById(android.R.id.content), activity.getString(R.string.name_empty)).show();
                         return;
                     }
                     if (!text.endsWith(".xml")) {
                         text += ".xml";
                     }
                     String mString = getExportPath() + "/" + text;
-                    if (Utils.exist(getExportPath() + "/" + text)) {
+                    if (sUtils.exist(new File(getExportPath(), text))) {
                         String finalText = text;
                         new MaterialAlertDialogBuilder(activity)
                                 .setMessage(activity.getString(R.string.save_string_replace, text))
@@ -241,13 +239,13 @@ public class Translator {
             } catch (IOException ignored) {
             }
         } else {
-            if (Utils.isPermissionDenied(activity)) {
+            if (sPermissionUtils.isPermissionDenied(android.Manifest.permission.WRITE_EXTERNAL_STORAGE, activity)) {
                 ActivityCompat.requestPermissions(activity, new String[] {
                         Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-                Utils.showSnackbar(activity.findViewById(android.R.id.content), activity.getString(R.string.permission_denied_write_storage));
+                sUtils.snackBar(activity.findViewById(android.R.id.content), activity.getString(R.string.permission_denied_write_storage)).show();
                 return;
             }
-            Utils.create(getStrings(activity), getExportPath() + "/" + name);
+            sUtils.create(getStrings(activity), new File(getExportPath(), name));
         }
     }
 

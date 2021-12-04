@@ -3,18 +3,12 @@
 
     <string name="about">Hakkında</string>
     <string name="about_summary"><i>Diğer Android uygulamalarının çevirisini kolaylaştıracak bir uygulama!</i></string>
-    <string name="cancel">İptal</string>
     <string name="change_logs">Değişiklik kayıtları</string>
     <string name="credits">Emeği geçenler</string>
-    <string name="dark_theme">Karanlık tema</string>
-    <string name="dark_theme_auto">Otomatik</string>
-    <string name="dark_theme_disable">Devre dışı bırak</string>
-    <string name="dark_theme_enable">Etkinleştir</string>
     <string name="delete_line_question">\'%s\' silinecek. Emin misin?</string>
     <string name="delete_string">\'String\' sil</string>
     <string name="delete_string_message">Mevcut string.xml silinecek. Emin misin?</string>
     <string name="developed_by">Tarafından geliştirildi</string>
-    <string name="dismiss">Yok say</string>
     <string name="donations">Bağışlar</string>
     <string name="donations_message">Çalışmamı takdir etmek istersen, hiç gerekli olmasa da, projelerime daha aktif devam etmeme gerçekten yardımcı olduğu için lütfen SmartPack bağış paketi satın almayı düşün.</string>
     <string name="donations_summary">Geliştiricinin bu uygulamayı tamamen ücretsiz, müdahaleci olmayan ve reklamsız olarak sağlama çabalarını takdir etmek istersen, lütfen geliştirmeyi bir şekilde desteklemeyi düşün. Daha fazla öğrenmek için buraya tıkla. Teşekkür ederim!</string>
@@ -48,7 +42,6 @@
     <string name="source_code_summary">The Translator geliştirme topluluğundan gelen katkıları kabul etmeye hazır olan açık kaynak bir uygulamadır. Kaynak kodunu kontrol etmek için buraya tıkla!</string>
     <string name="support">Destek grubu</string>
     <string name="support_summary">Telegram destek grubuna katıl</string>
-    <string name="translations">Çeviriler</string>
     <string name="translations_summary">Bu uygulamayı çevirmeme yardım et! İngilizce orijinal dil stringlerini almak için buraya tıkla</string>
     <string name="update">Güncelle</string>
     <string name="view_string">\'String\' görüntülenecek. Emin misin?</string>

@@ -2,19 +2,21 @@
 
 buildscript {
     repositories {
-        mavenCentral()
         google()
+        mavenCentral()
     }
     dependencies {
-        //noinspection AndroidGradlePluginVersion
         classpath 'com.android.tools.build:gradle:7.0.3'
     }
 }
 
 allprojects {
     repositories {
+        google()
         mavenCentral()
-        maven { url 'https://maven.google.com' }
+        maven {
+            url 'https://jitpack.io'
+        }
     }
 }
 

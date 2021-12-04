@@ -4,19 +4,13 @@
     <string name="about_summary"><i>一款帮助翻译其他安卓应用的程序！</i></string>
     <string name="add_text_hint">在此处添加文本</string>
     <string name="apply">应用</string>
-    <string name="cancel">取消</string>
     <string name="change_logs">变更记录</string>
     <string name="credits">致谢</string>
-    <string name="dark_theme">深色主题</string>
-    <string name="dark_theme_auto">自动</string>
-    <string name="dark_theme_disable">禁用</string>
-    <string name="dark_theme_enable">启用</string>
     <string name="delete_line_question">确定要删除 \'%s\'吗？</string>
     <string name="delete_string">删除 \'string\'</string>
     <string name="delete_string_message">你确定要删除当前的 string.xml 吗？</string>
     <string name="developed_by">开发者</string>
     <string name="device_storage">设备存储</string>
-    <string name="dismiss">不予理会</string>
     <string name="donations">捐赠</string>
     <string name="donations_message">如果您喜欢我的作品，请考虑从 Google Play 商店购买 SmartPack 捐赠包，因为这对继续我的项目非常有帮助，尽管这完全没有必要。</string>
     <string name="donations_summary">如果你欣赏开发者的努力，以完全免费，无干扰和没有广告的形式提供这个应用程序，请考虑以某种方式支持开发。点击这里了解更多。谢谢你！</string>
@@ -58,7 +52,6 @@
     <string name="support">支持小组</string>
     <string name="support_summary">加入 Telegram 支持群组</string>
     <string name="tag_complete_message">更新前请完成标签 (&lt; &amp; &gt;) </string>
-    <string name="translations">翻译</string>
     <string name="translations_summary">帮我翻译这个应用！点击这里获得原始的英语语言字符串</string>
     <string name="update">更新</string>
     <string name="url">URL</string>

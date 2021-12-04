@@ -3,18 +3,12 @@
 
     <string name="about">О программе</string>
     <string name="about_summary"><i>Приложение, помогающее переводить другие приложения для Android!</i></string>
-    <string name="cancel">Отмена</string>
     <string name="change_logs">Изменения</string>
     <string name="credits">Благодарности</string>
-    <string name="dark_theme">Тёмная тема</string>
-    <string name="dark_theme_auto">Авто</string>
-    <string name="dark_theme_disable">Отключить</string>
-    <string name="dark_theme_enable">Включить</string>
     <string name="delete_line_question">Вы уверены, что хотите удалить \'%s\'?</string>
     <string name="delete_string">Удалить \'string\'</string>
     <string name="delete_string_message">Вы уверены, что хотите удалить текущий string.xml?</string>
     <string name="developed_by">Разработано</string>
-    <string name="dismiss">Закрыть</string>
     <string name="donations">Пожертвования</string>
     <string name="donations_message">Если вам нравится моя работа, купите SmartPack Donation Package в Play Маркете. Это поможет развивать мои приложения ещё быстрее.</string>
     <string name="import_string_message">Вы еще не импортировали ни одного \'string\' файла перевода. Зайдите в меню \'Настройки\', чтобы импортировать один из \'sdcard\'!</string>

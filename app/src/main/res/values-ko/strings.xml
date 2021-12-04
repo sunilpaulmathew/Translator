@@ -4,13 +4,8 @@
 
     <string name="about">정보</string>
     <string name="about_summary"><i>안드로이드 앱을 번역하는 것을 돕는 어플리케이션.</i></string>
-    <string name="cancel">취소</string>
     <string name="change_logs">변경사항</string>
     <string name="credits">도움을 주신 분들</string>
-    <string name="dark_theme">어두운 테마</string>
-    <string name="dark_theme_auto">자동</string>
-    <string name="dark_theme_disable">끄기</string>
-    <string name="dark_theme_enable">켜기</string>
     <string name="delete_string">번역 파일 지우기</string>
     <string name="delete_string_message">내부 저장소에서 현 상태의 string.xml을(를) 지우시겠어요?</string>
     <string name="developed_by">개발자</string>

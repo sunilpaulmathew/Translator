@@ -3,17 +3,11 @@
 
     <string name="about">Tentang</string>
     <string name="about_summary"><i>Aplikasi untuk membantu menerjemahkan aplikasi android lainnya!</i></string>
-    <string name="cancel">Membatalkan</string>
     <string name="change_logs">Perubahan</string>
     <string name="credits">Kredit</string>
-    <string name="dark_theme">Tema gelap</string>
-    <string name="dark_theme_auto">Otomatis</string>
-    <string name="dark_theme_disable">Nonaktifkan</string>
-    <string name="dark_theme_enable">Memungkinkan</string>
     <string name="delete_string">Menghapus \'string\'</string>
     <string name="delete_string_message">Apakah Anda yakin untuk menghapus string.xml saat ini?</string>
     <string name="developed_by">Dikembangkan oleh</string>
-    <string name="dismiss">Memberhentikan</string>
     <string name="donations">Donasi</string>
     <string name="donations_message">Jika Anda ingin menghargai pekerjaan saya, mohon pertimbangkan untuk membeli Paket Donasi SmartPack dari PlayStore karena sangat membantu untuk melanjutkan proyek saya lebih aktif, meskipun itu sama sekali tidak diperlukan.</string>
     <string name="import_string_message">Anda belum mengimpor file \'string\' terjemahan apa pun. Buka menu \'Pengaturan\' untuk mengimpor satu dari \'sdcard\'!</string>

@@ -13,7 +13,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sunilpaulmathew.translator.fragments.TranslatorFragment;
-import com.sunilpaulmathew.translator.utils.Utils;
+
+import in.sunilpaulmathew.sCommon.Utils.sThemeUtils;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on June 30, 2020
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         // Initialize App Theme
-        Utils.initializeAppTheme(this);
+        sThemeUtils.initializeAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

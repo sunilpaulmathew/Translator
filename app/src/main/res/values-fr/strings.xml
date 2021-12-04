@@ -5,19 +5,13 @@
     <string name="about_summary"><i>Une application pour aider à traduire d\'autres applis android !</i></string>
     <string name="add_text_hint">add-text-here</string>
     <string name="apply">Appliquer</string>
-    <string name="cancel">Annuler</string>
     <string name="change_logs">Change-logs</string>
     <string name="credits">Crédits</string>
-    <string name="dark_theme">Thème sombre</string>
-    <string name="dark_theme_auto">Auto</string>
-    <string name="dark_theme_disable">Désactiver</string>
-    <string name="dark_theme_enable">Activer</string>
     <string name="delete_line_question">Vraiment supprimer « %s » ?</string>
     <string name="delete_string">Supprimer « string »</string>
     <string name="delete_string_message">Voulez-vous vraiment supprimer le string.xml actuel ?</string>
     <string name="developed_by">Développé par</string>
     <string name="device_storage">Stockage de l\'appareil</string>
-    <string name="dismiss">Fermer</string>
     <string name="donations">Dons</string>
     <string name="donations_message">Si vous appréciez mon travail pensez à acheter un SmartPack Donation Package sur Google Play; ça me permet de continuer à travailler sur mes projets activement bien que ce ne soit pas obligatoire.</string>
     <string name="donations_summary">Si vous appréciez les efforts du développeur pour fournir cette application entièrement gratuite non intrusive et sans pub pensez à aider le développement d\'une manière ou une autre. Cliquez ici pour en savoir plus. Merci!</string>
@@ -57,7 +51,6 @@
     <string name="source_code_summary">The Translator est une application open source qui accepte les contributions de la communauté de développeurs. Cliquez ici pour voir le code source !</string>
     <string name="support">Groupe d\'aide</string>
     <string name="support_summary">Rejoindre le groupe d\'aide sur Telegram</string>
-    <string name="translations">Traductions</string>
     <string name="translations_summary">Aidez-moi à traduire cette appli ! Cliquez ici pour récupérer les chaînes d\'origine en anglais</string>
     <string name="update">Mise à jour</string>
     <string name="url">URL</string>

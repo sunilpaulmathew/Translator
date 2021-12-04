@@ -27,7 +27,10 @@ import com.sunilpaulmathew.translator.utils.StringsItem;
 import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
 
+import java.io.File;
 import java.util.List;
+
+import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on September 28, 2020
@@ -56,7 +59,7 @@ public class TranslatorAdapter extends RecyclerView.Adapter<TranslatorAdapter.Vi
         } else {
             holder.description.setText(data.get(position).getDescription());
         }
-        holder.description.setTextColor(Utils.isDarkTheme(holder.description.getContext()) ?
+        holder.description.setTextColor(sUtils.isDarkTheme(holder.description.getContext()) ?
                 Utils.getThemeAccentColor(holder.description.getContext()) : Color.BLACK);
         holder.layoutCard.setOnLongClickListener(item -> {
             new MaterialAlertDialogBuilder(holder.layoutCard.getContext())
@@ -118,10 +121,10 @@ public class TranslatorAdapter extends RecyclerView.Adapter<TranslatorAdapter.Vi
                 public void afterTextChanged(Editable s) {
                     if (s.toString().contains("\n")) {
                         mText.setText(s.toString().replace("\n","\\n"));
-                        Utils.showSnackbar(mText, view.getContext().getString(R.string.line_break_message));
+                        sUtils.snackBar(mText, view.getContext().getString(R.string.line_break_message)).show();
                     }
                     if (s.toString().contains("<") || s.toString().contains(">")) {
-                        Utils.showSnackbar(mText, view.getContext().getString(R.string.tag_complete_message));
+                        sUtils.snackBar(mText, view.getContext().getString(R.string.tag_complete_message)).show();
                     }
                 }
             });
@@ -138,7 +141,7 @@ public class TranslatorAdapter extends RecyclerView.Adapter<TranslatorAdapter.Vi
                         }
                         String oldString = data.get(getAdapterPosition()).getTitle() + "\">\"" + data.get(getAdapterPosition()).getDescription() + "\"</string>";
                         String newString = data.get(getAdapterPosition()).getTitle() + "\">\"" + mText.getText() + "\"</string>";
-                        Utils.create(Translator.getStrings(view.getContext()).replace(oldString, newString), view.getContext().getFilesDir().toString() + "/strings.xml");
+                        sUtils.create(Translator.getStrings(view.getContext()).replace(oldString, newString), new File(view.getContext().getFilesDir(), "strings.xml"));
                         data.get(getAdapterPosition()).setDescription(mText.getText().toString());
                         notifyItemChanged(getAdapterPosition());
                     }).show();

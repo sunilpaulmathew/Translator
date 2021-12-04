@@ -3,19 +3,13 @@
 
     <string name="about">Giới thiệu</string>
     <string name="about_summary"><i>Một ứng dụng để giúp dịch các ứng dụng Android khác!</i></string>
-    <string name="cancel">Hủy</string>
     <string name="change_logs">Nhật ký thay đổi</string>
     <string name="credits">Tín dụng</string>
-    <string name="dark_theme">Chủ đề tối</string>
-    <string name="dark_theme_auto">Tự động</string>
-    <string name="dark_theme_disable">Vô hiệu hóa</string>
-    <string name="dark_theme_enable">Kích hoạt</string>
     <string name="delete_line_question">Bạn chắc chắn đang xóa \'%s\'?</string>
     <string name="delete_string">Xoá \'chuỗi\'</string>
     <string name="delete_string_message">Bạn có chắc chắn xóa string.xml hiện tại?</string>
     <string name="developed_by">Được phát triển bởi</string>
     <string name="device_storage">Thiết bị lưu trữ</string>
-    <string name="dismiss">BỎ QUA</string>
     <string name="donations">Quyên góp</string>
     <string name="donations_message">Nếu bạn muốn đánh giá cao công việc của tôi, vui lòng xem xét mua Gói quyên góp SmartPack từ PlayStore vì thực sự hữu ích khi tiếp tục các dự án của tôi hoạt động tích cực hơn, mặc dù hoàn toàn không cần thiết.</string>
     <string name="donations_summary">Nếu bạn muốn đánh giá cao nỗ lực của nhà phát triển trong việc cung cấp ứng dụng này hoàn toàn miễn phí, không xâm nhập và không có quảng cáo, vui lòng xem xét hỗ trợ sự phát triển theo một cách nào đó. Bấm vào đây để biết thêm. Cảm ơn bạn!</string>
@@ -51,7 +45,6 @@
     <string name="source_code_summary">Trình Dịch là một ứng dụng mã nguồn mở sẵn sàng chấp nhận đóng góp từ cộng đồng phát triển. Nhấn vào đây để xem mã nguồn!</string>
     <string name="support">Nhóm hỗ trợ</string>
     <string name="support_summary">Tham gia nhóm hỗ trợ Telegram</string>
-    <string name="translations">Bản dịch</string>
     <string name="translations_summary">Giúp tôi dịch ứng dụng này! Nhấn vào đây để tải các chuỗi ngôn ngữ gốc bằng tiếng Anh</string>
     <string name="update">Cập nhật</string>
     <string name="url">URL</string>

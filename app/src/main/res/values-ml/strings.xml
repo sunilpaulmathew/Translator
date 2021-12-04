@@ -3,13 +3,8 @@
 
     <string name="about">അപ്ലിക്കേഷക്കുറിച്ച്</string>
     <string name="about_summary"><i>മറ്റ് അപ്ലിക്കേഷനുകൾ വിവർത്തനം ചെയ്യാൻ സഹായിക്കുന്ന അപ്ലിക്കേഷൻ!</i></string>
-    <string name="cancel">റദ്ദാക്കുക</string>
     <string name="change_logs">മാറ്റങ്ങൾ</string>
     <string name="credits">ക്രെഡിറ്റ്</string>
-    <string name="dark_theme">ഇരുണ്ട തീം</string>
-    <string name="dark_theme_auto">Auto</string>
-    <string name="dark_theme_disable">പ്രവർത്തനരഹിതമാക്കുക</string>
-    <string name="dark_theme_enable">പ്രവർത്തനക്ഷമമാക്കുക</string>
     <string name="delete_string">\'string\' ഡിലീറ്റ് ചെയ്യുക</string>
     <string name="delete_string_message">നിലവിലുള്ള \'string.xml\' ഇല്ലാതാക്കണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?</string>
     <string name="developed_by">നിർമിച്ചത്</string>
@@ -39,7 +34,6 @@
     <string name="source_code_summary">ആൻഡ്രോയിഡ് ഡെവലപ്‌മെന്റ് കമ്മ്യൂണിറ്റിയിൽ നിന്നുള്ള സംഭാവനകൾ സ്വീകരിക്കാൻ തയ്യാറായ ഒരു ഓപ്പൺ സോഴ്‌സ് അപ്ലിക്കേഷനാണ് ട്രാൻസലേറ്റർ. സോഴ്സ് കോഡ് പരിശോധിക്കാൻ ഇവിടെ ക്ലിക്കുചെയ്യുക!</string>
     <string name="support">പിന്തുണക്കുള്ള സ്ഥലം</string>
     <string name="support_summary">ടെലിഗ്രാം പിന്തുണാ ഗ്രൂപ്പിൽ ചേരുക</string>
-    <string name="translations">വിവർത്തനങ്ങൾ</string>
     <string name="translations_summary">ഈ അപ്ലിക്കേഷൻ വിവർത്തനം ചെയ്യാൻ എന്നെ സഹായിക്കൂ! യഥാർത്ഥ ഭാഷാ സ്ട്രിംഗുകൾ ഇംഗ്ലീഷിൽ ലഭിക്കാൻ ഇവിടെ ക്ലിക്കുചെയ്യുക</string>
     <string name="update">അപ്ഡേറ്റ് ചെയ്യുക</string>
     <string name="view_string">\'string\' കാണുക</string>

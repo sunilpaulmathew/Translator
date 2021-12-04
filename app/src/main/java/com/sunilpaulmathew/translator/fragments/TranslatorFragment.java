@@ -31,7 +31,10 @@ import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.activities.SettingsActivity;
 import com.sunilpaulmathew.translator.adapters.TranslatorAdapter;
 import com.sunilpaulmathew.translator.utils.Translator;
-import com.sunilpaulmathew.translator.utils.Utils;
+
+import java.io.File;
+
+import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on January 03, 2020
@@ -60,7 +63,7 @@ public class TranslatorFragment extends Fragment {
             startActivity(settingsMenu);
         });
 
-        if (!Utils.exist(requireActivity().getFilesDir().toString() + "/strings.xml")) {
+        if (!sUtils.exist(new File(requireActivity().getFilesDir(), "strings.xml"))) {
             mSearch.setVisibility(View.GONE);
         }
 
@@ -89,7 +92,7 @@ public class TranslatorFragment extends Fragment {
 
         TranslatorAdapter mRecycleViewAdapter = new TranslatorAdapter(Translator.getData(requireActivity()));
         Translator.getRecyclerView().setLayoutManager(new LinearLayoutManager(requireActivity()));
-        if (Utils.exist(requireActivity().getFilesDir().toString() + "/strings.xml")) {
+        if (sUtils.exist(new File(requireActivity().getFilesDir(), "strings.xml"))) {
             Translator.getRecyclerView().setAdapter(mRecycleViewAdapter);
         } else {
             mHelpLayout.setVisibility(View.VISIBLE);
@@ -115,7 +118,7 @@ public class TranslatorFragment extends Fragment {
                     mExit = false;
                     requireActivity().finish();
                 } else {
-                    Utils.showSnackbar(requireActivity().findViewById(android.R.id.content), getString(R.string.press_back));
+                    sUtils.snackBar(requireActivity().findViewById(android.R.id.content), getString(R.string.press_back)).show();
                     mExit = true;
                     mHandler.postDelayed(() -> mExit = false, 2000);
                 }

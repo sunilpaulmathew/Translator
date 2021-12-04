@@ -27,7 +27,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
-import com.sunilpaulmathew.translator.utils.SettingsItem;
 import com.sunilpaulmathew.translator.adapters.SettingsAdapter;
 import com.sunilpaulmathew.translator.utils.Translator;
 import com.sunilpaulmathew.translator.utils.Utils;
@@ -40,12 +39,18 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import in.sunilpaulmathew.sCommon.Utils.sSerializableItems;
+import in.sunilpaulmathew.sCommon.Utils.sSingleItemDialog;
+import in.sunilpaulmathew.sCommon.Utils.sThemeUtils;
+import in.sunilpaulmathew.sCommon.Utils.sTranslatorUtils;
+import in.sunilpaulmathew.sCommon.Utils.sUtils;
+
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on January 24, 2021
  */
 public class SettingsActivity extends AppCompatActivity {
 
-    private final ArrayList <SettingsItem> mData = new ArrayList<>();
+    private final ArrayList <sSerializableItems> mData = new ArrayList<>();
     private String mXMLString;
 
     @SuppressLint("SetTextI18n")
@@ -61,7 +66,7 @@ public class SettingsActivity extends AppCompatActivity {
         RecyclerView mRecyclerView = findViewById(R.id.recycler_view);
 
         mAppTitle.setText(getString(R.string.app_name) + (Utils.isDonated(this) ? " Pro " :  " ") + BuildConfig.VERSION_NAME);
-        mAppTitle.setTextColor(Utils.isDarkTheme(this) ? Color.WHITE : Color.BLACK);
+        mAppTitle.setTextColor(sUtils.isDarkTheme(this) ? Color.WHITE : Color.BLACK);
         mAppDescription.setText(BuildConfig.APPLICATION_ID);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -78,106 +83,82 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         });
 
-        mData.add(new SettingsItem(getString(R.string.dark_theme), null, Translator.getDrawable(R.drawable.ic_theme, this), null));
-        if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
-            mData.add(new SettingsItem(getString(R.string.view_string), null, Translator.getDrawable(R.drawable.ic_view, this), null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_theme, this), getString(R.string.app_theme), null,  null));
+        if (sUtils.exist(new File(getFilesDir(), "strings.xml"))) {
+            mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_view, this), getString(R.string.view_string), null, null));
         } else {
-            mData.add(new SettingsItem(getString(R.string.import_string_sdcard), null, Translator.getDrawable(R.drawable.ic_import, this), null));
+            mData.add(new sSerializableItems( sUtils.getDrawable(R.drawable.ic_import, this), getString(R.string.import_string_sdcard), null,null));
         }
-        mData.add(new SettingsItem(getString(R.string.delete_string), null, Translator.getDrawable(R.drawable.ic_delete, this), null));
-        mData.add(new SettingsItem(getString(R.string.find_and_replace), null, Translator.getDrawable(R.drawable.ic_search, this), null));
-        mData.add(new SettingsItem(getString(R.string.report_issue), getString(R.string.report_issue_summary), Translator.getDrawable(R.drawable.ic_issue, this), "https://github.com/sunilpaulmathew/Translator/issues/new"));
-        mData.add(new SettingsItem(getString(R.string.more_apps), getString(R.string.more_apps_summary), Translator.getDrawable(R.drawable.ic_playstore, this), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
-        mData.add(new SettingsItem(getString(R.string.support), getString(R.string.support_summary), Translator.getDrawable(R.drawable.ic_support, this), "https://t.me/smartpack_kmanager"));
-        mData.add(new SettingsItem(getString(R.string.translations), getString(R.string.translations_summary), Translator.getDrawable(R.drawable.ic_translate, this), "https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml"));
-        mData.add(new SettingsItem(getString(R.string.source_code), getString(R.string.source_code_summary), Translator.getDrawable(R.drawable.ic_github, this), "https://github.com/sunilpaulmathew/Translator"));
-        mData.add(new SettingsItem(getString(R.string.share_app), getString(R.string.share_app_Summary), Translator.getDrawable(R.drawable.ic_share, this), null));
-        mData.add(new SettingsItem(getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
-                R.string.donations_summary), Translator.getDrawable(R.drawable.ic_donate, this), Utils.isPlayStoreAvailable(
-                        this) ? "https://play.google.com/store/apps/details?id=com.smartpack.donate" : "https://smartpack.github.io/donation/"));
-        mData.add(new SettingsItem(getString(R.string.rate_us), getString(R.string.rate_us_Summary), Translator.getDrawable(R.drawable.ic_rate, this), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
-        mData.add(new SettingsItem(getString(R.string.licence), null, Translator.getDrawable(R.drawable.ic_licence, this), "https://www.gnu.org/licenses/gpl-3.0-standalone.html"));
-        mData.add(new SettingsItem(getString(R.string.credits), null, Translator.getDrawable(R.drawable.ic_credits, this), "https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md"));
-        mData.add(new SettingsItem(getString(R.string.about), null, Translator.getDrawable(R.drawable.ic_info, this), null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_delete, this), getString(R.string.delete_string), null, null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_search, this), getString(R.string.find_and_replace), null, null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_issue, this), getString(R.string.report_issue), getString(R.string.report_issue_summary), "https://github.com/sunilpaulmathew/Translator/issues/new"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_playstore, this),getString(R.string.more_apps), getString(R.string.more_apps_summary), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_support, this), getString(R.string.support), getString(R.string.support_summary), "https://t.me/smartpack_kmanager"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_github, this), getString(R.string.source_code), getString(R.string.source_code_summary), "https://github.com/sunilpaulmathew/Translator"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_share, this), getString(R.string.share_app), getString(R.string.share_app_Summary), null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_donate, this), getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
+                R.string.donations_summary), Utils.isPlayStoreAvailable(this) ? "https://play.google.com/store/apps/details?id=com.smartpack.donate" :
+                "https://smartpack.github.io/donation/"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_rate, this), getString(R.string.rate_us), getString(R.string.rate_us_Summary), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_licence, this), getString(R.string.licence), null, "https://www.gnu.org/licenses/gpl-3.0-standalone.html"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_credits, this), getString(R.string.credits), null, "https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_info, this), getString(R.string.about), null, null));
 
         mRecycleViewAdapter.setOnItemClickListener((position, v) -> {
-            if (mData.get(position).getURL() != null) {
-                Utils.launchURL(mData.get(position).getURL(), this);
+            if (mData.get(position).getTextThree() != null) {
+                sUtils.launchUrl(mData.get(position).getTextThree(), this);
             } else if (position == 0) {
-                new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
-                        R.array.app_theme), (dialogInterface, i) -> {
-                    switch (i) {
-                        case 0:
-                            if (!Utils.getBoolean("theme_auto", true, this)) {
-                                Utils.saveBoolean("dark_theme", false, this);
-                                Utils.saveBoolean("light_theme", false, this);
-                                Utils.saveBoolean("theme_auto", true, this);
-                                Utils.restartApp(this);
-                            }
-                            break;
-                        case 1:
-                            if (!Utils.getBoolean("dark_theme", false, this)) {
-                                Utils.saveBoolean("dark_theme", true, this);
-                                Utils.saveBoolean("light_theme", false, this);
-                                Utils.saveBoolean("theme_auto", false, this);
-                                Utils.restartApp(this);
-                            }
-                            break;
-                        case 2:
-                            if (!Utils.getBoolean("light_theme", false, this)) {
-                                Utils.saveBoolean("dark_theme", false, this);
-                                Utils.saveBoolean("light_theme", true, this);
-                                Utils.saveBoolean("theme_auto", false, this);
-                                Utils.restartApp(this);
-                            }
-                            break;
-                    }
-                }).setOnDismissListener(dialogInterface -> {
-                }).show();
+                sThemeUtils.setAppTheme(this);
             } else if (position == 1) {
-                if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
+                if (sUtils.exist(new File(getFilesDir(), "strings.xml"))) {
                     Intent stringView = new Intent(this, StringViewActivity.class);
                     startActivity(stringView);
                     finish();
                 } else {
-                    new MaterialAlertDialogBuilder(this).setItems(getResources().getStringArray(
-                            R.array.import_options), (dialogInterface, i) -> {
-                        switch (i) {
-                            case 0:
-                                Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
-                                importString.setType("text/*");
-                                importString.addCategory(Intent.CATEGORY_OPENABLE);
-                                startActivityForResult(importString, 0);
-                                break;
-                            case 1:
-                                Translator.importStringFromURL(this);
-                                break;
+                    new sSingleItemDialog(R.drawable.ic_import, getString(R.string.import_string_sdcard), new String[] {
+                            getString(R.string.device_storage),
+                            getString(R.string.url)
+                    }, this) {
+                        @Override
+                        public void onItemSelected(int itemPosition) {
+                            switch (itemPosition) {
+                                case 0:
+                                    Intent importString = new Intent(Intent.ACTION_GET_CONTENT);
+                                    importString.setType("text/*");
+                                    importString.addCategory(Intent.CATEGORY_OPENABLE);
+                                    startActivityForResult(importString, 0);
+                                    break;
+                                case 1:
+                                    Translator.importStringFromURL(SettingsActivity.this);
+                                    break;
+                            }
                         }
-                    }).setOnDismissListener(dialogInterface -> {
-                    }).show();
+                    }.show();
                 }
             } else if (position == 2) {
-                if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
+                if (sUtils.exist(new File(getFilesDir(),"strings.xml"))) {
                     new MaterialAlertDialogBuilder(this)
                             .setMessage(getString(R.string.delete_string_message))
                             .setNegativeButton(getString(R.string.cancel), (dialogInterface3, iv) -> {
                             })
                             .setPositiveButton(getString(R.string.yes), (dialogInterface3, iv) -> {
-                                new File(getFilesDir().toString() + "/strings.xml").delete();
+                                new File(getFilesDir(), "strings.xml").delete();
                                 Utils.restartApp(this);
                             }).show();
                 } else {
-                    Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar));
+                    sUtils.snackBar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar)).show();
                 }
             } else if (position == 3) {
-                if (Utils.exist(getFilesDir().toString() + "/strings.xml")) {
+                if (sUtils.exist(new File(getFilesDir(), "strings.xml"))) {
                     Translator.setKeyText(null);
                     Intent findAndReplace = new Intent(this, FindReplaceActivity.class);
                     startActivity(findAndReplace);
                     finish();
                 } else {
-                    Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar));
+                    sUtils.snackBar(findViewById(android.R.id.content), getString(R.string.import_string_snackbar)).show();
                 }
+            } else if (position == 7) {
+                new sTranslatorUtils("Translator", "https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml", this).show();
             } else if (position == 9) {
                 Intent share_app = new Intent();
                 share_app.setAction(Intent.ACTION_SEND);
@@ -216,7 +197,7 @@ public class SettingsActivity extends AppCompatActivity {
                 }
 
                 if (mXMLString == null || !mXMLString.contains("<string name=\"")) {
-                    Utils.showSnackbar(findViewById(android.R.id.content), getString(R.string.import_string_error, new File(Objects.requireNonNull(selectedFileUri.getPath())).getName()));
+                    sUtils.snackBar(findViewById(android.R.id.content), getString(R.string.import_string_error, new File(Objects.requireNonNull(selectedFileUri.getPath())).getName())).show();
                     return;
                 }
                 new MaterialAlertDialogBuilder(this)
@@ -224,7 +205,7 @@ public class SettingsActivity extends AppCompatActivity {
                         .setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
                         })
                         .setPositiveButton(getString(R.string.import_string), (dialogInterface, i) -> {
-                            Utils.create(mXMLString, getFilesDir().toString() + "/strings.xml");
+                            sUtils.create(mXMLString, new File(getFilesDir(), "strings.xml"));
                             Utils.restartApp(this);
                         })
                         .show();

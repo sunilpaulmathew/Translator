@@ -5,19 +5,13 @@
     <string name="about_summary"><i>一款翻譯其他 Android 應用的程式！ </i></string>
     <string name="add_text_hint">在這裡輸入文字</string>
     <string name="apply">套用</string>
-    <string name="cancel">取消</string>
     <string name="change_logs">變更記錄</string>
     <string name="credits">致謝</string>
-    <string name="dark_theme">深色主題</string>
-    <string name="dark_theme_auto">自動</string>
-    <string name="dark_theme_disable">停用</string>
-    <string name="dark_theme_enable">啟用</string>
     <string name="delete_line_question">確定要刪除 \'%s\' 嗎？</string>
     <string name="delete_string">刪除 \'string\'</string>
     <string name="delete_string_message">你確定要刪除目前的 string.xml 嗎？</string>
     <string name="developed_by">開發者</string>
     <string name="device_storage">裝置儲存空間</string>
-    <string name="dismiss">不予理會</string>
     <string name="donations">捐贈</string>
     <string name="donations_message">如果您喜歡我的作品，請考慮從 Google Play Store 購買 SmartPack 捐贈包，因為這對繼續我的專案非常有説明，儘管這完全沒有必要。 </string>
     <string name="donations_summary">如果你欣賞開發者的努力，以完全免費，無干擾和沒有廣告的形式提供這個應用程式，請考慮以某種方式支持開發。 點擊這裡瞭解更多。 謝謝你！ </string>
@@ -55,7 +49,6 @@
     <string name="source_code_summary">The Translator 是一款準備準備好接受開發社區貢獻的開源應用。 點選此處檢視原始碼！ </string>
     <string name="source_code">原始程式碼</string>
     <string name="support_summary">加入 Telegram 支援群組</string>
-    <string name="translations">翻譯</string>
     <string name="translations_summary">幫我翻譯這個應用！ 點擊這裡獲得原始的英語語言字串</string>
     <string name="support">支援小組</string>
     <string name="url">URL</string>

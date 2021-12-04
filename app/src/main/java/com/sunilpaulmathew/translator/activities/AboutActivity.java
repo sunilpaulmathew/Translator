@@ -20,10 +20,8 @@ import com.sunilpaulmathew.translator.BuildConfig;
 import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.utils.Utils;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Objects;
+import in.sunilpaulmathew.sCommon.Utils.sJSONUtils;
+import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on September 24, 2020
@@ -41,17 +39,12 @@ public class AboutActivity extends AppCompatActivity {
         MaterialTextView mAppName = findViewById(R.id.app_title);
         MaterialTextView mForegroundText = findViewById(R.id.foreground_text);
         MaterialTextView mCancel = findViewById(R.id.cancel_button);
-        mDeveloper.setOnClickListener(v -> Utils.launchURL("https://github.com/sunilpaulmathew", this));
+        mDeveloper.setOnClickListener(v -> sUtils.launchUrl("https://github.com/sunilpaulmathew", this));
         mCancel.setOnClickListener(v -> onBackPressed());
 
         mAppName.setText(getString(R.string.app_name) + (Utils.isDonated(this) ? " Pro " :  " ") + BuildConfig.VERSION_NAME);
-        String change_log = null;
-        try {
-            change_log = new JSONObject(Objects.requireNonNull(Utils.readAssetFile(
-                    this, "changelogs.json"))).getString("releaseNotes");
-        } catch (JSONException ignored) {
-        }
-        mForegroundText.setText(change_log);
+        mForegroundText.setText(sJSONUtils.getString(sJSONUtils.getJSONObject(sUtils.readAssetFile(
+                "changelogs.json", this)), "releaseNotes"));
         mForegroundText.setVisibility(View.VISIBLE);
         mCancel.setVisibility(View.VISIBLE);
     }
