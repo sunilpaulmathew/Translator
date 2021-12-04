@@ -21,22 +21,26 @@
         tools:targetApi="q" >
 
         <activity android:name="com.sunilpaulmathew.translator.MainActivity"
-            tools:ignore="IntentFilterExportedReceiver" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.AboutActivity" />
-        <activity android:name=".activities.FindReplaceActivity" />
-        <activity android:name=".activities.SettingsActivity" />
-        <activity android:name=".activities.StringViewActivity" />
+        <activity android:name=".activities.AboutActivity"
+            android:exported="false" />
+        <activity android:name=".activities.FindReplaceActivity"
+            android:exported="false" />
+        <activity android:name=".activities.SettingsActivity"
+            android:exported="false" />
+        <activity android:name=".activities.StringViewActivity"
+            android:exported="false" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.sunilpaulmathew.translator.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
+            android:grantUriPermissions="true"
+            android:exported="false" >
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths"/>
