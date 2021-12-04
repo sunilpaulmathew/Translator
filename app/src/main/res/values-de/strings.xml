@@ -4,7 +4,6 @@
     <string name="about">Über</string>
     <string name="about_summary">Eine App zur Übersetzung anderer Android-Apps!</string>
     <string name="change_logs">Neuigkeiten</string>
-    <string name="credits">Credits</string>
     <string name="delete_string">String löschen</string>
     <string name="delete_string_message">Sicher dass Du die aktuelle string.xml aus dem sdcard-Verzeichnis löschen möchtest?</string>
     <string name="developed_by">Entwickler:</string>

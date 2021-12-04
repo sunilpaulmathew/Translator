@@ -5,7 +5,6 @@
     <string name="add_text_hint">在此处添加文本</string>
     <string name="apply">应用</string>
     <string name="change_logs">变更记录</string>
-    <string name="credits">致谢</string>
     <string name="delete_line_question">确定要删除 \'%s\'吗？</string>
     <string name="delete_string">删除 \'string\'</string>
     <string name="delete_string_message">你确定要删除当前的 string.xml 吗？</string>

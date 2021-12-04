@@ -6,7 +6,6 @@
     <string name="add_text_hint">在這裡輸入文字</string>
     <string name="apply">套用</string>
     <string name="change_logs">變更記錄</string>
-    <string name="credits">致謝</string>
     <string name="delete_line_question">確定要刪除 \'%s\' 嗎？</string>
     <string name="delete_string">刪除 \'string\'</string>
     <string name="delete_string_message">你確定要刪除目前的 string.xml 嗎？</string>

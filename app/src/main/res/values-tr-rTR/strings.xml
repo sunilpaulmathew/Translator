@@ -4,7 +4,6 @@
     <string name="about">Hakkında</string>
     <string name="about_summary"><i>Diğer Android uygulamalarının çevirisini kolaylaştıracak bir uygulama!</i></string>
     <string name="change_logs">Değişiklik kayıtları</string>
-    <string name="credits">Emeği geçenler</string>
     <string name="delete_line_question">\'%s\' silinecek. Emin misin?</string>
     <string name="delete_string">\'String\' sil</string>
     <string name="delete_string_message">Mevcut string.xml silinecek. Emin misin?</string>

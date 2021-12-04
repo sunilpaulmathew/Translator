@@ -4,7 +4,6 @@
     <string name="about">Acerca</string>
     <string name="about_summary"><i>Uma aplicação para ajudar a traduzir outras app Android!</i></string>
     <string name="change_logs">Alterações do registo</string>
-    <string name="credits">Créditos</string>
     <string name="delete_line_question">Confirma eliminação \'%s\'?</string>
     <string name="delete_string">Apagar \'string\'</string>
     <string name="delete_string_message">Tens a certeza que queres apagar  a actual string.xml?</string>

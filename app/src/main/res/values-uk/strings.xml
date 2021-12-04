@@ -4,7 +4,6 @@
     <string name="about">Про додаток</string>
     <string name="about_summary"><i>Додаток, який допоможе перекласти інші додатки для Android!</i></string>
     <string name="change_logs">Зміни</string>
-    <string name="credits">Подяки</string>
     <string name="delete_line_question">Ви впевнені, що хочете видалити \'%s\'?</string>
     <string name="delete_string">Видалити \'string\'</string>
     <string name="delete_string_message">Ви впевнені, що хочете видалити поточний string.xml?</string>

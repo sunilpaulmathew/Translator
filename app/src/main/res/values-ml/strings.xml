@@ -4,7 +4,6 @@
     <string name="about">അപ്ലിക്കേഷക്കുറിച്ച്</string>
     <string name="about_summary"><i>മറ്റ് അപ്ലിക്കേഷനുകൾ വിവർത്തനം ചെയ്യാൻ സഹായിക്കുന്ന അപ്ലിക്കേഷൻ!</i></string>
     <string name="change_logs">മാറ്റങ്ങൾ</string>
-    <string name="credits">ക്രെഡിറ്റ്</string>
     <string name="delete_string">\'string\' ഡിലീറ്റ് ചെയ്യുക</string>
     <string name="delete_string_message">നിലവിലുള്ള \'string.xml\' ഇല്ലാതാക്കണമെന്ന് നിങ്ങൾക്ക് ഉറപ്പാണോ?</string>
     <string name="developed_by">നിർമിച്ചത്</string>

@@ -6,7 +6,6 @@
     <string name="add_text_hint">add-text-here</string>
     <string name="apply">Apply</string>
     <string name="change_logs">Change-logs</string>
-    <string name="credits">Credits</string>
     <string name="delete_line_question">Sure deleting \'%s\'?</string>
     <string name="delete_string">Delete \'string\'</string>
     <string name="delete_string_message">Are you sure to delete current string.xml?</string>

@@ -4,7 +4,6 @@
     <string name="about">Giới thiệu</string>
     <string name="about_summary"><i>Một ứng dụng để giúp dịch các ứng dụng Android khác!</i></string>
     <string name="change_logs">Nhật ký thay đổi</string>
-    <string name="credits">Tín dụng</string>
     <string name="delete_line_question">Bạn chắc chắn đang xóa \'%s\'?</string>
     <string name="delete_string">Xoá \'chuỗi\'</string>
     <string name="delete_string_message">Bạn có chắc chắn xóa string.xml hiện tại?</string>

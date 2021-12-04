@@ -37,8 +37,10 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import in.sunilpaulmathew.sCommon.Utils.sCreditsUtils;
 import in.sunilpaulmathew.sCommon.Utils.sSerializableItems;
 import in.sunilpaulmathew.sCommon.Utils.sSingleItemDialog;
 import in.sunilpaulmathew.sCommon.Utils.sThemeUtils;
@@ -50,7 +52,6 @@ import in.sunilpaulmathew.sCommon.Utils.sUtils;
  */
 public class SettingsActivity extends AppCompatActivity {
 
-    private final ArrayList <sSerializableItems> mData = new ArrayList<>();
     private String mXMLString;
 
     @SuppressLint("SetTextI18n")
@@ -71,7 +72,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-        SettingsAdapter mRecycleViewAdapter = new SettingsAdapter(mData);
+        SettingsAdapter mRecycleViewAdapter = new SettingsAdapter(getData());
         mRecyclerView.setAdapter(mRecycleViewAdapter);
 
         mAppInfo.setOnClickListener(v -> {
@@ -83,30 +84,9 @@ public class SettingsActivity extends AppCompatActivity {
             finish();
         });
 
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_theme, this), getString(R.string.app_theme), null,  null));
-        if (sUtils.exist(new File(getFilesDir(), "strings.xml"))) {
-            mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_view, this), getString(R.string.view_string), null, null));
-        } else {
-            mData.add(new sSerializableItems( sUtils.getDrawable(R.drawable.ic_import, this), getString(R.string.import_string_sdcard), null,null));
-        }
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_delete, this), getString(R.string.delete_string), null, null));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_search, this), getString(R.string.find_and_replace), null, null));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_issue, this), getString(R.string.report_issue), getString(R.string.report_issue_summary), "https://github.com/sunilpaulmathew/Translator/issues/new"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_playstore, this),getString(R.string.more_apps), getString(R.string.more_apps_summary), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_support, this), getString(R.string.support), getString(R.string.support_summary), "https://t.me/smartpack_kmanager"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_github, this), getString(R.string.source_code), getString(R.string.source_code_summary), "https://github.com/sunilpaulmathew/Translator"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_share, this), getString(R.string.share_app), getString(R.string.share_app_Summary), null));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_donate, this), getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
-                R.string.donations_summary), Utils.isPlayStoreAvailable(this) ? "https://play.google.com/store/apps/details?id=com.smartpack.donate" :
-                "https://smartpack.github.io/donation/"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_rate, this), getString(R.string.rate_us), getString(R.string.rate_us_Summary), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_licence, this), getString(R.string.licence), null, "https://www.gnu.org/licenses/gpl-3.0-standalone.html"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_credits, this), getString(R.string.credits), null, "https://github.com/sunilpaulmathew/Translator/blob/master/Credits.md"));
-        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_info, this), getString(R.string.about), null, null));
-
         mRecycleViewAdapter.setOnItemClickListener((position, v) -> {
-            if (mData.get(position).getTextThree() != null) {
-                sUtils.launchUrl(mData.get(position).getTextThree(), this);
+            if (getData().get(position).getTextThree() != null) {
+                sUtils.launchUrl(getData().get(position).getTextThree(), this);
             } else if (position == 0) {
                 sThemeUtils.setAppTheme(this);
             } else if (position == 1) {
@@ -167,6 +147,13 @@ public class SettingsActivity extends AppCompatActivity {
                 share_app.setType("text/plain");
                 Intent shareIntent = Intent.createChooser(share_app, getString(R.string.share_with));
                 startActivity(shareIntent);
+            } else if (position == 13) {
+                new sCreditsUtils(getCredits(),
+                        sUtils.getDrawable(R.mipmap.ic_launcher, this),
+                        sUtils.getDrawable(R.drawable.ic_back, this),
+                        sUtils.getColor(R.color.blue, this),
+                        20, getString(R.string.app_name), "2021-2022, sunilpaulmathew",
+                        BuildConfig.VERSION_NAME).launchCredits(this);
             } else if (position == 14) {
                 Intent aboutView = new Intent(this, AboutActivity.class);
                 startActivity(aboutView);
@@ -175,6 +162,55 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         mBack.setOnClickListener(v -> onBackPressed());
+    }
+
+    private List<sSerializableItems> getData() {
+        ArrayList <sSerializableItems> mData = new ArrayList<>();
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_theme, this), getString(R.string.app_theme), null,  null));
+        if (sUtils.exist(new File(getFilesDir(), "strings.xml"))) {
+            mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_view, this), getString(R.string.view_string), null, null));
+        } else {
+            mData.add(new sSerializableItems( sUtils.getDrawable(R.drawable.ic_import, this), getString(R.string.import_string_sdcard), null,null));
+        }
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_delete, this), getString(R.string.delete_string), null, null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_search, this), getString(R.string.find_and_replace), null, null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_issue, this), getString(R.string.report_issue), getString(R.string.report_issue_summary), "https://github.com/sunilpaulmathew/Translator/issues/new"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_playstore, this),getString(R.string.more_apps), getString(R.string.more_apps_summary), "https://play.google.com/store/apps/dev?id=5836199813143882901"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_support, this), getString(R.string.support), getString(R.string.support_summary), "https://t.me/smartpack_kmanager"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_translate, this), getString(R.string.translations), getString(R.string.translations_summary),null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_github, this), getString(R.string.source_code), getString(R.string.source_code_summary), "https://github.com/sunilpaulmathew/Translator"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_share, this), getString(R.string.share_app), getString(R.string.share_app_Summary), null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_donate, this), getString(R.string.donations), getString(Utils.isPlayStoreAvailable(this) ? R.string.donations_message :
+                R.string.donations_summary), Utils.isPlayStoreAvailable(this) ? "https://play.google.com/store/apps/details?id=com.smartpack.donate" :
+                "https://smartpack.github.io/donation/"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_rate, this), getString(R.string.rate_us), getString(R.string.rate_us_Summary), "https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_licence, this), getString(R.string.licence), null, "https://www.gnu.org/licenses/gpl-3.0-standalone.html"));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_credits, this), getString(R.string.credits), null, null));
+        mData.add(new sSerializableItems(sUtils.getDrawable(R.drawable.ic_info, this), getString(R.string.about), null, null));
+        return mData;
+    }
+
+    public static List<sSerializableItems> getCredits() {
+        List<sSerializableItems> mData = new ArrayList<>();
+        mData.add(new sSerializableItems(null, "Grarak", "Code contributions", "https://github.com/Grarak/"));
+        mData.add(new sSerializableItems(null, "Lennoard Silva", "Portuguese (Brazilian) Translations", "https://github.com/Lennoard/"));
+        mData.add(new sSerializableItems(null, "FiestaLake", "Korean Translations", "https://github.com/FiestaLake"));
+        mData.add(new sSerializableItems(null, "elea11", "German Translations", "https://github.com/elea11"));
+        mData.add(new sSerializableItems(null, "Andi Krisma", "Indonesian Translations", "https://github.com/NiNjA1998"));
+        mData.add(new sSerializableItems(null, "Nikita", "Russian & Ukrainian Translations", "https://t.me/MONSTER_PC"));
+        mData.add(new sSerializableItems(null, "Kike Cabrera", "Spanish Translations", "https://github.com/kikecalpe"));
+        mData.add(new sSerializableItems(null, "Mikesew1320", "Amharic Translations", "https://github.com/Mikesew1320"));
+        mData.add(new sSerializableItems(null, "sr093906", "Chinese (simplified) Translations", "https://github.com/sr093906"));
+        mData.add(new sSerializableItems(null, "Waldemar Stoczkowski", "Polish Translations", "https://github.com/WaldiSt"));
+        mData.add(new sSerializableItems(null, "Diego", "Spanish Translations", "https://github.com/sguinetti"));
+        mData.add(new sSerializableItems(null, "anilmavis", "Turkish Translations", "https://github.com/anilmavis"));
+        mData.add(new sSerializableItems(null, "Jakub Fabijan", "Esperanto Translations", "https://github.com/jakubfabijan"));
+        mData.add(new sSerializableItems(null, "Hoa Gia Đại Thiếu", "Vietnamese Translations", null));
+        mData.add(new sSerializableItems(null, "jason5545", "Chinese (traditional) Translations", "https://github.com/jason5545"));
+        mData.add(new sSerializableItems(null, "WalkerPt", "Portuguese Translations", "https://github.com/WalkerPt"));
+        mData.add(new sSerializableItems(null, "Julien Lepiller", "French Translations", null));
+        mData.add(new sSerializableItems(null, "David Delarosa", "Hebrew Translations", "https://github.com/xdavidel"));
+        return mData;
     }
 
     @Override

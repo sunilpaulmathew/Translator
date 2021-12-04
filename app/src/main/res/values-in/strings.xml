@@ -4,7 +4,6 @@
     <string name="about">Tentang</string>
     <string name="about_summary"><i>Aplikasi untuk membantu menerjemahkan aplikasi android lainnya!</i></string>
     <string name="change_logs">Perubahan</string>
-    <string name="credits">Kredit</string>
     <string name="delete_string">Menghapus \'string\'</string>
     <string name="delete_string_message">Apakah Anda yakin untuk menghapus string.xml saat ini?</string>
     <string name="developed_by">Dikembangkan oleh</string>

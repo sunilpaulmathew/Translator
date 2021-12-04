@@ -22,7 +22,7 @@ import com.sunilpaulmathew.translator.R;
 import com.sunilpaulmathew.translator.utils.Utils;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.util.List;
 
 import in.sunilpaulmathew.sCommon.Utils.sSerializableItems;
 import in.sunilpaulmathew.sCommon.Utils.sUtils;
@@ -33,11 +33,11 @@ import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHolder> {
 
-    private final ArrayList<sSerializableItems> data;
+    private final List<sSerializableItems> data;
 
     private static ClickListener mClickListener;
 
-    public SettingsAdapter(ArrayList<sSerializableItems> data) {
+    public SettingsAdapter(List<sSerializableItems> data) {
         this.data = data;
     }
 

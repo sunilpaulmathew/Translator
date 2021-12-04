@@ -5,7 +5,6 @@
     <string name="add_text_hint">הוסף טקסט</string>
     <string name="apply">החל</string>
     <string name="change_logs">שנה לוגים</string>
-    <string name="credits">תודות</string>
     <string name="delete_line_question">האם למחוק את \'%s\'?</string>
     <string name="delete_string">מחק \'מחרוזת\'</string>
     <string name="delete_string_message">האם למחוק את string.xml הנוכחי?</string>

@@ -3,7 +3,6 @@
     <string name="about">Pri aplikaĵo</string>
     <string name="about_summary"><i>Aplikaĵo helpa kun tradukado de aliaj aplikaĵoj por Androida operaciumo!</i></string>
     <string name="change_logs">Ŝanĝoprotokoloj</string>
-    <string name="credits">Dankoj</string>
     <string name="delete_line_question">Ĉu vi certe volas forigi \'%s\'?</string>
     <string name="delete_string">Forigi \'string\'</string>
     <string name="delete_string_message">Ĉu vi certe volas forigi nuna dosiero de string.xml?</string>

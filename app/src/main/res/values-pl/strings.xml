@@ -3,7 +3,6 @@
     <string name="about">O aplikacji</string>
     <string name="about_summary"><i>Aplikacja pomagająca w tłumaczeniu innych aplikacji na system Android!</i></string>
     <string name="change_logs">Dzienniki zmian</string>
-    <string name="credits">Podziękowanie</string>
     <string name="delete_line_question">Na pewno chcesz usunąć \'%s\'?</string>
     <string name="delete_string">Usuń \'string\'</string>
     <string name="delete_string_message">Czy na pewno chcesz usunąć bieżący plik string.xml?</string>

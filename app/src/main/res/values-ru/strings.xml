@@ -4,7 +4,6 @@
     <string name="about">О программе</string>
     <string name="about_summary"><i>Приложение, помогающее переводить другие приложения для Android!</i></string>
     <string name="change_logs">Изменения</string>
-    <string name="credits">Благодарности</string>
     <string name="delete_line_question">Вы уверены, что хотите удалить \'%s\'?</string>
     <string name="delete_string">Удалить \'string\'</string>
     <string name="delete_string_message">Вы уверены, что хотите удалить текущий string.xml?</string>
