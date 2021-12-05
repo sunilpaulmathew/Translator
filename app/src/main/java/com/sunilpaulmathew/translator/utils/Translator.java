@@ -97,7 +97,7 @@ public class Translator {
     }
 
     private static String getExportPath() {
-        if (Build.VERSION.SDK_INT >= 30) {
+        if (Build.VERSION.SDK_INT >= 29) {
             return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString();
         } else {
             return Environment.getExternalStorageDirectory().toString();
@@ -189,7 +189,6 @@ public class Translator {
                     if (!text.endsWith(".xml")) {
                         text += ".xml";
                     }
-                    String mString = getExportPath() + "/" + text;
                     if (sUtils.exist(new File(getExportPath(), text))) {
                         String finalText = text;
                         new MaterialAlertDialogBuilder(activity)
@@ -201,22 +200,6 @@ public class Translator {
                         return;
                     }
                     writeFile(text, activity);
-                    new MaterialAlertDialogBuilder(activity)
-                            .setMessage(activity.getString(R.string.save_string_message, mString))
-                            .setNegativeButton(activity.getString(R.string.cancel), (dialogInterface, i) -> {
-                            })
-                            .setPositiveButton(activity.getString(R.string.share), (dialogInterface, i) -> {
-                                Uri uriFile = FileProvider.getUriForFile(activity,
-                                        BuildConfig.APPLICATION_ID + ".provider", new File(mString));
-                                Intent shareScript = new Intent(Intent.ACTION_SEND);
-                                shareScript.setType("application/xml");
-                                shareScript.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.shared_by, new File(mString).getName()));
-                                shareScript.putExtra(Intent.EXTRA_TEXT, activity.getString(R.string.share_message, BuildConfig.VERSION_NAME));
-                                shareScript.putExtra(Intent.EXTRA_STREAM, uriFile);
-                                shareScript.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                                activity.startActivity(Intent.createChooser(shareScript, activity.getString(R.string.share_with)));
-                            })
-                            .show();
                 }, activity).setOnDismissListener(dialogInterface2 -> {
         }).show();
     }
@@ -226,7 +209,7 @@ public class Translator {
     }
 
     private static void writeFile(String name, Activity activity) {
-        if (Build.VERSION.SDK_INT >= 30) {
+        if (Build.VERSION.SDK_INT >= 29) {
             try {
                 ContentValues values = new ContentValues();
                 values.put(MediaStore.MediaColumns.DISPLAY_NAME, name);
@@ -247,6 +230,22 @@ public class Translator {
             }
             sUtils.create(getStrings(activity), new File(getExportPath(), name));
         }
+        new MaterialAlertDialogBuilder(activity)
+                .setMessage(activity.getString(R.string.save_string_message, getExportPath() + "/" + name))
+                .setNegativeButton(activity.getString(R.string.cancel), (dialogInterface, i) -> {
+                })
+                .setPositiveButton(activity.getString(R.string.share), (dialogInterface, i) -> {
+                    Uri uriFile = FileProvider.getUriForFile(activity,
+                            BuildConfig.APPLICATION_ID + ".provider", new File(getExportPath() + "/" + name));
+                    Intent shareScript = new Intent(Intent.ACTION_SEND);
+                    shareScript.setType("application/xml");
+                    shareScript.putExtra(Intent.EXTRA_SUBJECT, activity.getString(R.string.shared_by, new File(getExportPath(), name).getName()));
+                    shareScript.putExtra(Intent.EXTRA_TEXT, activity.getString(R.string.share_message, BuildConfig.VERSION_NAME));
+                    shareScript.putExtra(Intent.EXTRA_STREAM, uriFile);
+                    shareScript.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    activity.startActivity(Intent.createChooser(shareScript, activity.getString(R.string.share_with)));
+                })
+                .show();
     }
 
 }
