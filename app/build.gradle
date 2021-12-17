@@ -41,6 +41,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.sunilpaulmathew:sCommon:101f0ee72b'
+    implementation 'com.github.sunilpaulmathew:sCommon:e87d14913d'
     implementation 'com.google.android.material:material:1.4.0'
 }

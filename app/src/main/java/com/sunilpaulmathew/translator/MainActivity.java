@@ -14,7 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.sunilpaulmathew.translator.fragments.TranslatorFragment;
 
+import java.io.File;
+
+import in.sunilpaulmathew.sCommon.Utils.sCrashReporterUtils;
 import in.sunilpaulmathew.sCommon.Utils.sThemeUtils;
+import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on June 30, 2020
@@ -27,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         sThemeUtils.initializeAppTheme(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new sCrashReporterUtils(sUtils.getDrawable(R.drawable.ic_back, this), new File(getExternalFilesDir("log"), "crashLog"),
+                sUtils.getColor(R.color.blue, this), 20).initialize(this);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                 new TranslatorFragment()).commit();
