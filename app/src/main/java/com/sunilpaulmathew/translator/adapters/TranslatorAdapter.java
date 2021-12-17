@@ -91,60 +91,62 @@ public class TranslatorAdapter extends RecyclerView.Adapter<TranslatorAdapter.Vi
             super(view);
             view.setOnClickListener(this);
             this.description = view.findViewById(R.id.description);
-            layoutCard = view.findViewById(R.id.recycler_view_card);
+            this.layoutCard = view.findViewById(R.id.recycler_view_card);
         }
 
         @Override
         public void onClick(View view) {
-            LayoutInflater mLayoutInflater = LayoutInflater.from(view.getContext());
-            View editLayout = mLayoutInflater.inflate(R.layout.layout_string_edit, null);
-            AppCompatEditText mText = editLayout.findViewById(R.id.text);
-            MaterialCardView mReload = editLayout.findViewById(R.id.reload);
+            try {
+                LayoutInflater mLayoutInflater = LayoutInflater.from(view.getContext());
+                View editLayout = mLayoutInflater.inflate(R.layout.layout_string_edit, null);
+                AppCompatEditText mText = editLayout.findViewById(R.id.text);
+                MaterialCardView mReload = editLayout.findViewById(R.id.reload);
 
-            mReload.setOnClickListener(v -> {
-                if (mText.getText() != null && !mText.getText().toString().trim().equals(data.get(getAdapterPosition()).getDescription())) {
-                    mText.setText(data.get(getAdapterPosition()).getDescription());
-                }
-            });
-
-            mText.setText(data.get(getAdapterPosition()).getDescription());
-            mText.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                }
-
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {
-                }
-
-                @Override
-                public void afterTextChanged(Editable s) {
-                    if (s.toString().contains("\n")) {
-                        mText.setText(s.toString().replace("\n","\\n"));
-                        sUtils.snackBar(mText, view.getContext().getString(R.string.line_break_message)).show();
+                mReload.setOnClickListener(v -> {
+                    if (mText.getText() != null && !mText.getText().toString().trim().equals(data.get(getAdapterPosition()).getDescription())) {
+                        mText.setText(data.get(getAdapterPosition()).getDescription());
                     }
-                    if (s.toString().contains("<") || s.toString().contains(">")) {
-                        sUtils.snackBar(mText, view.getContext().getString(R.string.tag_complete_message)).show();
-                    }
-                }
-            });
-            mText.requestFocus();
+                });
 
-            new MaterialAlertDialogBuilder(view.getContext())
-                    .setView(editLayout)
-                    .setNegativeButton(R.string.cancel, (dialog1, id1) -> {
-                    })
-                    .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
-                        if (mText.getText() == null || mText.getText().toString().trim().isEmpty() ||
-                                mText.getText().toString().trim().equals(data.get(getAdapterPosition()).getDescription())) {
-                            return;
+                mText.setText(data.get(getAdapterPosition()).getDescription());
+                mText.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        if (s.toString().contains("\n")) {
+                            mText.setText(s.toString().replace("\n", "\\n"));
+                            sUtils.snackBar(mText, view.getContext().getString(R.string.line_break_message)).show();
                         }
-                        String oldString = data.get(getAdapterPosition()).getTitle() + "\">\"" + data.get(getAdapterPosition()).getDescription() + "\"</string>";
-                        String newString = data.get(getAdapterPosition()).getTitle() + "\">\"" + mText.getText() + "\"</string>";
-                        sUtils.create(Translator.getStrings(view.getContext()).replace(oldString, newString), new File(view.getContext().getFilesDir(), "strings.xml"));
-                        data.get(getAdapterPosition()).setDescription(mText.getText().toString());
-                        notifyItemChanged(getAdapterPosition());
-                    }).show();
+                        if (s.toString().contains("<") || s.toString().contains(">")) {
+                            sUtils.snackBar(mText, view.getContext().getString(R.string.tag_complete_message)).show();
+                        }
+                    }
+                });
+                mText.requestFocus();
+
+                new MaterialAlertDialogBuilder(view.getContext())
+                        .setView(editLayout)
+                        .setNegativeButton(R.string.cancel, (dialog1, id1) -> {
+                        })
+                        .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
+                            if (mText.getText() == null || mText.getText().toString().trim().isEmpty() ||
+                                    mText.getText().toString().trim().equals(data.get(getAdapterPosition()).getDescription())) {
+                                return;
+                            }
+                            String oldString = data.get(getAdapterPosition()).getTitle() + "\">\"" + data.get(getAdapterPosition()).getDescription() + "\"</string>";
+                            String newString = data.get(getAdapterPosition()).getTitle() + "\">\"" + mText.getText() + "\"</string>";
+                            sUtils.create(Translator.getStrings(view.getContext()).replace(oldString, newString), new File(view.getContext().getFilesDir(), "strings.xml"));
+                            data.get(getAdapterPosition()).setDescription(mText.getText().toString());
+                            notifyItemChanged(getAdapterPosition());
+                        }).show();
+            } catch (ArrayIndexOutOfBoundsException ignored) {}
         }
     }
 
