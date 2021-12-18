@@ -44,7 +44,7 @@
     <string name="share_app">分享应用</string>
     <string name="share_app_Summary">邀请你的好友试试 The Translator</string>
     <string name="shared_by">%s/ 通过 The Translator 分享</string>
-    <string name="share_message">The Translator v%s 可从 Google Play 商店 获取：https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator %s 可从 Google Play 商店 获取：https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">分享方式</string>
     <string name="source_code">源代码</string>
     <string name="source_code_summary">The Translator 是一款准备准备好接受开发社区贡献的开源应用。点击此处查看源代码！</string>

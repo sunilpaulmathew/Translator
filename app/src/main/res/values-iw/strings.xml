@@ -43,7 +43,7 @@
     <string name="share_app">שתף אפליקציה זו</string>
     <string name="share_app_Summary">הזמן את החברים להשתמש ב The Translator</string>
     <string name="shared_by">%s/שותף ע"י The Translator</string>
-    <string name="share_message">The Translator v%s ניתן להורדה מ Google Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator %s ניתן להורדה מ Google Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">שתף עם</string>
     <string name="source_code">קוד מקור</string>
     <string name="source_code_summary">The Translator היא תוכנת קוד פתוח המוכנה לקבל תרומות מהקהילה. לחץ כאן לצפייה בקוד המקור!</string>

@@ -30,7 +30,7 @@
     <string name="source_code">ምንጭ ኮድ</string>
     <string name="support">የድጋፍ ቡድን</string>
     <string name="app_name">ተርጓሚው</string>
-    <string name="share_message">ተርጓሚው v %s ከ PlayStore ሊገኝ ይችላል: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">ተርጓሚው %s ከ PlayStore ሊገኝ ይችላል: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="update">አዘምን</string>
     <string name="yes">አዎ</string>
 </resources>

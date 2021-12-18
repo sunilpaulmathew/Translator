@@ -40,7 +40,7 @@
     <string name="share_app">Partilha a App</string>
     <string name="share_app_Summary">Convida os teus amigos a experimentar The Translator</string>
     <string name="shared_by">%s/partilhado pelo The Translator</string>
-    <string name="share_message">The Translator v%s pode ser obtido na PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator %s pode ser obtido na PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">Partilhar com</string>
     <string name="source_code">Código Fonte</string>
     <string name="source_code_summary">The Translator é um aplicativo de código aberto que está pronto para aceitar contribuições de desenvolvimento da comunidade.  Clique aqui para verificar o código-fonte!</string>

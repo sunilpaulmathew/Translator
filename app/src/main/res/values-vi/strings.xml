@@ -38,7 +38,7 @@
     <string name="share_app">Chia sẻ ứng dụng</string>
     <string name="share_app_Summary">Mời bạn bè của bạn dùng thử Trình Dịch</string>
     <string name="shared_by">%s/ được chia sẻ bởi Trình Dịch</string>
-    <string name="share_message">Bộ dịch v%s có thể lấy được từ PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">Bộ dịch %s có thể lấy được từ PlayStore: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">Chia sẽ với</string>
     <string name="source_code">Mã nguồn</string>
     <string name="source_code_summary">Trình Dịch là một ứng dụng mã nguồn mở sẵn sàng chấp nhận đóng góp từ cộng đồng phát triển. Nhấn vào đây để xem mã nguồn!</string>

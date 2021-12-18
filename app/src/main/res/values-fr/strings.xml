@@ -44,7 +44,7 @@
     <string name="share_app">Partager l\'appli</string>
     <string name="share_app_Summary">Invitez vos amis à essayer The Translator</string>
     <string name="shared_by">%s/partagé par The Translator</string>
-    <string name="share_message">The Translator v%s se trouve sur Google Play : https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator %s se trouve sur Google Play : https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">Partager avec</string>
     <string name="source_code">Code source</string>
     <string name="source_code_summary">The Translator est une application open source qui accepte les contributions de la communauté de développeurs. Cliquez ici pour voir le code source !</string>

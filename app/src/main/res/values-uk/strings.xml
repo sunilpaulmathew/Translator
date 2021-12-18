@@ -25,7 +25,7 @@
     <string name="share">Поділитися</string>
     <string name="share_app">Поділитися додатком</string>
     <string name="shared_by">%s/shared by The Translator</string>
-    <string name="share_message">The Translator v%s можна отримати в Play Маркеті: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator %s можна отримати в Play Маркеті: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">Поділитися з</string>
     <string name="source_code">Вихідний код</string>
     <string name="support">Група підтримки</string>

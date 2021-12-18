@@ -26,7 +26,7 @@
     <string name="share">Kunigi</string>
     <string name="share_app">Kunigi aplikaĵon</string>
     <string name="shared_by">%s/kunigita de Tradukisto</string>
-    <string name="share_message">Oni povas elŝuti Tradukisto v%s el Play butiko: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">Oni povas elŝuti Tradukisto %s el Play butiko: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">Kunigi kun</string>
     <string name="source_code">Fonta kodo</string>
     <string name="support">Subtena grupo</string>

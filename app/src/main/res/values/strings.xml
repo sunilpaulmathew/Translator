@@ -45,7 +45,7 @@
     <string name="share_app">Share App</string>
     <string name="share_app_Summary">Invite your friends to try The Translator</string>
     <string name="shared_by">%s/shared by The Translator</string>
-    <string name="share_message">The Translator v%s can be obtained from Google Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_message">The Translator %s can be obtained from Google Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
     <string name="share_with">Share with</string>
     <string name="source_code">Source Code</string>
     <string name="source_code_summary">The Translator is an open-source application which is ready to accept contributions from the development community. Click here to check out the source code!</string>
