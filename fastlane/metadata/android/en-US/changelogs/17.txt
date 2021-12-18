@@ -1,0 +1,6 @@
+* Improved string editing menu (now includes a reload button).
+* Fixed occasional crashes on saving strings.
+* App now monitor and prompt to report crashes.
+* App now targets Android 12.
+* Brand-New credits page.
+* Miscellaneous changes.

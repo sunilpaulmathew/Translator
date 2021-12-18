@@ -1,6 +1,0 @@
-* Removed restrictions related to illegal text (except for very few cases).
-* Restore picking xml files from device storage on Android 11.
-* Included a bunch of internal improvements.
-* Now built using latest Gradle plugin.
-* Updated Chinese (simplified) translations.
-* Miscellaneous changes.
