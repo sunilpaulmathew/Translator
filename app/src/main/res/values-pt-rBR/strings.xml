@@ -1,117 +1,61 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 <!--Created by The Translator-->
 
-   <string name="about">Sobre</string> 
-
+    <string name="about">Sobre</string>
     <string name="about_summary"><i>Um aplicativo para ajudar a traduzir outros aplicativos Android!</i></string> 
-
-    <string name="add_text_hint">adicione-o-texto-aqui</string> 
-
-    <string name="apply">Aplicar</string> 
-
-    <string name="change_logs">Registros de alterações</string> 
-
-    <string name="delete_line_question">Está excluindo \'%s\'?</string> 
-
-    <string name="delete_string">Excluir \'string\'</string> 
-
-    <string name="delete_string_message">Tem certeza de excluir o string.xml atual?</string> 
-
-    <string name="developed_by">Desenvolvido por</string> 
-
-    <string name="device_storage">Armazenamento do dispositivo</string> 
-
-    <string name="donations">Doações</string> 
-
-    <string name="donations_message">Se você gosta de apreciar meu trabalho, considere comprar o SmartPack Donation Package do Google Play, pois é muito útil para continuar meus projetos mais ativos, embora não seja necessário.</string> 
-
-    <string name="donations_summary">Se você gosta de apreciar os esforços do desenvolvedor para fornecer este aplicativo totalmente gratuito, não intrusivo e sem anúncios, considere apoiar o desenvolvimento de alguma forma. Clique aqui para saber mais. Obrigado!</string> 
-
-    <string name="find_and_replace">Localizar &amp; Substituir</string> 
-
-    <string name="find_and_replace_question">Substituir todos os \"%s\" por</string> 
-
-    <string name="import_string">Importar</string> 
-
-    <string name="import_string_error">\'%s\' não é uma string de idioma adequada. Abortando!</string> 
-
-    <string name="import_string_message">Você ainda não importou nenhum arquivo de tradução \'string\'. Vá para o menu \'Configurações\' para importar um do \'sdcard\'!</string> 
-
-    <string name="import_string_sdcard">Importar \'string\'</string> 
-
-    <string name="import_string_snackbar">Você ainda não importou nenhum arquivo \'string\' de tradução!</string> 
-
-    <string name="importing">Importando…</string> 
-
-    <string name="licence">Licença</string> 
-
-    <string name="line_break_message">As quebras de linha serão substituídas por \"\\"n\"</string> 
-
-    <string name="more_apps">Mais do Desenvolvedor</string> 
-
-    <string name="more_apps_summary">Confira mais aplicativos fornecidos pelo desenvolvedor no Google Play</string> 
-
-    <string name="name_empty">O nome está vazio! Abortando!</string> 
-
-    <string name="no_internet">Por favor, verifique sua conexão à internet!</string> 
-
-    <string name="permission_denied_write_storage">Permissão negada para gravar no armazenamento!</string> 
-
-    <string name="press_back">Pressione novamente para sair</string> 
-
-    <string name="rate_us">Avaliar aplicativo</string> 
-
-    <string name="rate_us_Summary">Avalie e/ou comente The Translator no Google Play</string> 
-
-    <string name="report_issue">Informar um problema</string> 
-
-    <string name="report_issue_summary">Levantar um problema no GitHub</string> 
-
-    <string name="replace">Substituir</string> 
-
-    <string name="save">Salvar</string> 
-
-    <string name="save_string_message">Nova string de tradução foi gerada como \'%s\'!</string> 
-
-    <string name="save_string_replace">%s já existe! Quer substituir?</string> 
-
-    <string name="search_hint">Procurar…</string> 
-
-    <string name="select_question">Selecionar %s?</string> 
-
-    <string name="settings">Configurações</string> 
-
-    <string name="share">Compartilhar</string> 
-
-    <string name="share_app">Compartilhe o aplicativo</string> 
-
-    <string name="share_app_Summary">Convide seus amigos para experimentar o The Translator</string> 
-
-    <string name="shared_by">%s/compartilhado por The Translator</string> 
-
-    <string name="share_message">The Translator %s pode ser obtido no Google Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string> 
-
-    <string name="share_with">Compartilhar com</string> 
-
-    <string name="source_code">Código fonte</string> 
-
-    <string name="source_code_summary">The Translator é um aplicativo de código aberto que está pronto para aceitar contribuições da comunidade de desenvolvimento. Clique aqui para conferir o código fonte!</string> 
-
-    <string name="support">Grupo de suporte</string> 
-
-    <string name="support_summary">Junte-se ao grupo de suporte do Telegram</string> 
-
-    <string name="tag_complete_message">Preencha a TAG (&lt; &amp; &gt;) antes de atualizar</string> 
-
-    <string name="translations_summary">Ajude-me a traduzir este app! Clique aqui para obter as strings do idioma original em inglês</string> 
-
-    <string name="update">Atualizar</string> 
-
-    <string name="url">URL</string> 
-
-    <string name="view_string">Ver \'string\'</string> 
-
-    <string name="with">com</string> 
-
-    <string name="yes">Sim</string> 
+    <string name="add_text_hint">adicione-o-texto-aqui</string>
+    <string name="apply">Aplicar</string>
+    <string name="change_logs">Registros de alterações</string>
+    <string name="delete_line_question">Está excluindo \'%s\'?</string>
+    <string name="delete_string">Excluir \'string\'</string>
+    <string name="delete_string_message">Tem certeza de excluir o string.xml atual?</string>
+    <string name="developed_by">Desenvolvido por</string>
+    <string name="device_storage">Armazenamento do dispositivo</string>
+    <string name="donations">Doações</string>
+    <string name="donations_message">Se você gosta de apreciar meu trabalho, considere comprar o SmartPack Donation Package do Google Play, pois é muito útil para continuar meus projetos mais ativos, embora não seja necessário.</string>
+    <string name="donations_summary">Se você gosta de apreciar os esforços do desenvolvedor para fornecer este aplicativo totalmente gratuito, não intrusivo e sem anúncios, considere apoiar o desenvolvimento de alguma forma. Clique aqui para saber mais. Obrigado!</string>
+    <string name="find_and_replace">Localizar &amp; Substituir</string>
+    <string name="find_and_replace_question">Substituir todos os \"%s\" por</string>
+    <string name="import_string">Importar</string>
+    <string name="import_string_error">\'%s\' não é uma string de idioma adequada. Abortando!</string>
+    <string name="import_string_message">Você ainda não importou nenhum arquivo de tradução \'string\'. Vá para o menu \'Configurações\' para importar um do \'sdcard\'!</string>
+    <string name="import_string_sdcard">Importar \'string\'</string>
+    <string name="import_string_snackbar">Você ainda não importou nenhum arquivo \'string\' de tradução!</string>
+    <string name="importing">Importando…</string>
+    <string name="licence">Licença</string>
+    <string name="line_break_message">As quebras de linha serão substituídas por \"\\"n\"</string>
+    <string name="more_apps">Mais do Desenvolvedor</string>
+    <string name="more_apps_summary">Confira mais aplicativos fornecidos pelo desenvolvedor no Google Play</string>
+    <string name="name_empty">O nome está vazio! Abortando!</string>
+    <string name="no_internet">Por favor, verifique sua conexão à internet!</string>
+    <string name="permission_denied_write_storage">Permissão negada para gravar no armazenamento!</string>
+    <string name="press_back">Pressione novamente para sair</string>
+    <string name="rate_us">Avaliar aplicativo</string>
+    <string name="rate_us_Summary">Avalie e/ou comente The Translator no Google Play</string>
+    <string name="report_issue">Informar um problema</string>
+    <string name="report_issue_summary">Levantar um problema no GitHub</string>
+    <string name="replace">Substituir</string>
+    <string name="save">Salvar</string>
+    <string name="save_string_message">Nova string de tradução foi gerada como \'%s\'!</string>
+    <string name="save_string_replace">%s já existe! Quer substituir?</string>
+    <string name="search_hint">Procurar…</string>
+    <string name="select_question">Selecionar %s?</string>
+    <string name="settings">Configurações</string>
+    <string name="share">Compartilhar</string>
+    <string name="share_app">Compartilhe o aplicativo</string>
+    <string name="share_app_Summary">Convide seus amigos para experimentar o The Translator</string>
+    <string name="shared_by">%s/compartilhado por The Translator</string>
+    <string name="share_message">The Translator %s pode ser obtido no Google Play: https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator</string>
+    <string name="share_with">Compartilhar com</string>
+    <string name="source_code">Código fonte</string>
+    <string name="source_code_summary">The Translator é um aplicativo de código aberto que está pronto para aceitar contribuições da comunidade de desenvolvimento. Clique aqui para conferir o código fonte!</string>
+    <string name="support">Grupo de suporte</string>
+    <string name="support_summary">Junte-se ao grupo de suporte do Telegram</string>
+    <string name="tag_complete_message">Preencha a TAG (&lt; &amp; &gt;) antes de atualizar</string>
+    <string name="translations_summary">Ajude-me a traduzir este app! Clique aqui para obter as strings do idioma original em inglês</string>
+    <string name="update">Atualizar</string>
+    <string name="url">URL</string>
+    <string name="view_string">Ver \'string\'</string>
+    <string name="with">com</string>
+    <string name="yes">Sim</string>
 </resources>
