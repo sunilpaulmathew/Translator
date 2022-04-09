@@ -5,7 +5,7 @@ The Translator is, and as always, an open-source project which is ready to accep
 * [Grarak](https://github.com/Grarak/): Kernel Adiutor, from where some code is taken
 
 ## Translations
-* [Lennoard Silva](https://github.com/Lennoard), Portuguese (Brazilian) Translations
+* [Lennoard Silva](https://github.com/Lennoard) & [Alison Martins](https://github.com/Alimsoftware), Portuguese (Brazilian) Translations
 * [FiestaLake](https://github.com/FiestaLake), Korean Translations
 * [elea11](https://github.com/elea11), German Translations
 * [Andi Krisma](https://github.com/NiNjA1998), Indonesian Translations

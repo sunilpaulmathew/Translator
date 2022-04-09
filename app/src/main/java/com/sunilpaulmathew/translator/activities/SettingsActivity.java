@@ -210,6 +210,7 @@ public class SettingsActivity extends AppCompatActivity {
         mData.add(new sSerializableItems(null, "WalkerPt", "Portuguese Translations", "https://github.com/WalkerPt"));
         mData.add(new sSerializableItems(null, "Julien Lepiller", "French Translations", null));
         mData.add(new sSerializableItems(null, "David Delarosa", "Hebrew Translations", "https://github.com/xdavidel"));
+        mData.add(new sSerializableItems(null, "Alison Martins", "Portuguese (Brazilian) Translations", "https://github.com/Alimsoftware"));
         return mData;
     }
 
