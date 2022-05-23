@@ -22,6 +22,6 @@ The Translator is, and as always, an open-source project which is ready to accep
 * [WalkerPt](https://github.com/WalkerPt), Portuguese Translations
 * Julien Lepiller, French Translations
 * [David Delarosa](https://github.com/xdavidel), Hebrew Translations
-* [NRMODS](https://t.me/NRMODS), Arabic Translations
+* [XiMods](https://t.me/XiModsOfficial), Arabic Translations
 
 _If you think I missed your name, please let me know._

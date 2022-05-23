@@ -6,7 +6,7 @@
     <string name="apply">تطبيق</string>
     <string name="change_logs">سجلات التغيير</string>
     <string name="delete_line_question">"من المؤكد حذف '%s'?"</string>
-    <string name="delete_string">"حذف 'String'"</string>
+    <string name="delete_string">حذف \"سلسلة\"</string>
     <string name="delete_string_message">هل أنت متأكد من حذف Strings.xml الحالية؟</string>
     <string name="developed_by">تم تطويره بواسطة</string>
     <string name="device_storage">تخزين الجهاز</string>
@@ -21,7 +21,7 @@
     <string name="import_string_sdcard">"استيراد 'string'"</string>
     <string name="import_string_snackbar">لم تستورد أي ملف \"سلسلة\" الترجمة حتى الآن!</string>
     <string name="importing">استيراد …</string>
-    <string name="licence">رخصة</string>
+    <string name="licence">ترخيص</string>
     <string name="line_break_message">سيتم استبدال فواصل الخط مع \"\\n\"</string>
     <string name="more_apps">أكثر من المطور</string>
     <string name="more_apps_summary">تحقق المزيد من التطبيقات التي يوفرها المطور في Google Play</string>
@@ -53,7 +53,7 @@
     <string name="tag_complete_message">يرجى ملء العلامة (&lt; &amp; >) قبل التحديث</string>
     <string name="translations_summary">ساعدني في ترجمة هذا التطبيق! انقر هنا للحصول على سلاسل اللغة الأصلية باللغة الإنجليزية</string>
     <string name="update">تحديث</string>
-    <string name="view_string">"عرض 'string'"</string>
+    <string name="view_string">عرض \"سلسلة\"</string>
     <string name="with">مع</string>
     <string name="yes">نعم</string>
 </resources>
