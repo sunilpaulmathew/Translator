@@ -49,7 +49,7 @@
             android:layout_marginStart="10dp"
             android:textColor="@color/blue"
             android:layout_gravity="center"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/from_text"
@@ -72,7 +72,7 @@
             android:layout_marginStart="10dp"
             android:textColor="@color/blue"
             android:layout_gravity="center"
-            android:textStyle="bold|italic" />
+            android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/to_text"

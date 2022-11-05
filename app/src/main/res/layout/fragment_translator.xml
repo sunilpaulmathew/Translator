@@ -98,7 +98,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/import_string_message"
                 android:textColor="@color/blue"
-                android:textStyle="italic"
                 android:focusable="false"
                 android:textSize="17sp" />
         </androidx.appcompat.widget.LinearLayoutCompat>

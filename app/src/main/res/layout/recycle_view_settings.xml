@@ -32,7 +32,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="?android:attr/textColorPrimary"
-                    android:textStyle="italic"
                     android:visibility="gone" />
         </LinearLayout>
 </LinearLayout>
