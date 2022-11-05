@@ -11,13 +11,13 @@ android {
         }
     }
 
-    compileSdkVersion 31
-    buildToolsVersion '30.0.3'
+    namespace 'com.sunilpaulmathew.translator'
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.sunilpaulmathew.translator"
         minSdkVersion 23
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 17
         versionName "v0.17"
         vectorDrawables.useSupportLibrary = true
@@ -42,5 +42,5 @@ android {
 
 dependencies {
     implementation 'com.github.sunilpaulmathew:sCommon:0000d792e2'
-    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.google.android.material:material:1.7.0'
 }
