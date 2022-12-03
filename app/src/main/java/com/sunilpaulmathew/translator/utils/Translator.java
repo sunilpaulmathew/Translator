@@ -61,7 +61,7 @@ public class Translator {
     public static List<StringsItem> getRawData(Context context) {
         List<StringsItem> mData = new ArrayList<>();
         if (sUtils.exist(new File(context.getFilesDir(), "strings.xml"))) {
-            for (String line : Objects.requireNonNull(sUtils.read(new File(context.getFilesDir(), "strings.xml"))).split("\\r?\\n")) {
+            for (String line : Objects.requireNonNull(sUtils.read(new File(context.getFilesDir(), "strings.xml"))).trim().split("\\r?\\n")) {
                 if (line.contains("<string name=") && line.endsWith("</string>") && !line.contains("translatable=\"false")) {
                     if (line.endsWith("\"</string>")) {
                         line = line.replace("\"</string>", "");
@@ -72,8 +72,10 @@ public class Translator {
                     if (line.contains("\">\"")) {
                         line = line.replace("\">\"", "\">");
                     }
-                    String[] finalLine = line.split("\">");
-                    mData.add(new StringsItem(finalLine[0], finalLine[1]));
+                    try {
+                        String[] finalLine = line.trim().split("\">");
+                        mData.add(new StringsItem(finalLine[0], finalLine[1]));
+                    } catch (ArrayIndexOutOfBoundsException ignored) {}
                 }
             }
         }
