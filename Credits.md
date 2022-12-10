@@ -23,5 +23,6 @@ The Translator is, and as always, an open-source project which is ready to accep
 * Julien Lepiller, French Translations
 * [David Delarosa](https://github.com/xdavidel), Hebrew Translations
 * [XiMods](https://t.me/XiModsOfficial), Arabic Translations
+* [Alpha](https://github.com/alpha4041), Italian Translations
 
 _If you think I missed your name, please let me know._

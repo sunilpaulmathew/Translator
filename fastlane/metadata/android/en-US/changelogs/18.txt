@@ -1,0 +1,6 @@
+* Completely fixed occasional crashes.
+* Improved string editing layout
+* Added Arabic and Italian translations.
+* Updated Portuguese (Brazilian) and Turkish translations.
+* Updated build tools.
+* Miscellaneous changes.

@@ -18,8 +18,8 @@ android {
         applicationId "com.sunilpaulmathew.translator"
         minSdkVersion 23
         targetSdkVersion 33
-        versionCode 17
-        versionName "v0.17"
+        versionCode 18
+        versionName "v0.18"
         vectorDrawables.useSupportLibrary = true
         archivesBaseName = "$applicationId-$versionName"
         signingConfig signingConfigs.release
@@ -41,6 +41,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.sunilpaulmathew:sCommon:0000d792e2'
+    implementation 'com.github.sunilpaulmathew:sCommon:ed84559b58'
     implementation 'com.google.android.material:material:1.7.0'
 }
