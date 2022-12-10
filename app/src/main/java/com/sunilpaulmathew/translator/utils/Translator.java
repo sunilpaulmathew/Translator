@@ -110,28 +110,15 @@ public class Translator {
         return mKeyText;
     }
 
-    public static String getStrings(Context context) {
+    public static String getStrings(List<StringsItem> stringsItems) {
         StringBuilder sb = new StringBuilder();
         sb.append("<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:ignore=\"MissingTranslation\">").append("\n");
         sb.append("<!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->\n\n");
-        for (StringsItem item : getRawData(context)) {
+        for (StringsItem item : stringsItems) {
             sb.append(item.getTitle()).append("\">\"").append(item.getDescription()).append("\"</string>").append("\n");
         }
         sb.append("</resources>");
         return sb.toString();
-    }
-
-    public static void deleteSingleString(StringsItem itemToDelete, Context context) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:ignore=\"MissingTranslation\">").append("\n");
-        sb.append("<!--Created by The Translator <https://play.google.com/store/apps/details?id=com.sunilpaulmathew.translator>-->\n\n");
-        for (StringsItem item : getRawData(context)) {
-            if (!item.getDescription().equals(itemToDelete.getDescription())) {
-                sb.append(item.getTitle()).append("\">\"").append(item.getDescription()).append("\"</string>").append("\n");
-            }
-        }
-        sb.append("</resources>");
-        sUtils.create(sb.toString(), new File(context.getFilesDir(), "strings.xml"));
     }
 
     public static void importStringFromURL(Activity activity) {
@@ -219,7 +206,7 @@ public class Translator {
                 values.put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
                 Uri uri = activity.getContentResolver().insert(MediaStore.Files.getContentUri("external"), values);
                 OutputStream outputStream = activity.getContentResolver().openOutputStream(Objects.requireNonNull(uri));
-                Objects.requireNonNull(outputStream).write(getStrings(activity).getBytes());
+                Objects.requireNonNull(outputStream).write(getStrings(getRawData(activity)).getBytes());
                 outputStream.close();
             } catch (IOException ignored) {
             }
@@ -230,7 +217,7 @@ public class Translator {
                 sUtils.snackBar(activity.findViewById(android.R.id.content), activity.getString(R.string.permission_denied_write_storage)).show();
                 return;
             }
-            sUtils.create(getStrings(activity), new File(getExportPath(), name));
+            sUtils.create(getStrings(getRawData(activity)), new File(getExportPath(), name));
         }
         new MaterialAlertDialogBuilder(activity)
                 .setMessage(activity.getString(R.string.save_string_message, getExportPath() + "/" + name))

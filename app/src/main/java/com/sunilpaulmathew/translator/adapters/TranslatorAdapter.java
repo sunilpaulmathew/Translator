@@ -8,6 +8,7 @@
 package com.sunilpaulmathew.translator.adapters;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -30,6 +31,7 @@ import com.sunilpaulmathew.translator.utils.Utils;
 import java.io.File;
 import java.util.List;
 
+import in.sunilpaulmathew.sCommon.Utils.sExecutor;
 import in.sunilpaulmathew.sCommon.Utils.sUtils;
 
 /*
@@ -61,19 +63,63 @@ public class TranslatorAdapter extends RecyclerView.Adapter<TranslatorAdapter.Vi
         }
         holder.description.setTextColor(sUtils.isDarkTheme(holder.description.getContext()) ?
                 Utils.getThemeAccentColor(holder.description.getContext()) : Color.BLACK);
-        holder.layoutCard.setOnLongClickListener(item -> {
+        holder.layoutCard.setOnClickListener(v -> {
+            LayoutInflater mLayoutInflater = LayoutInflater.from(v.getContext());
+            View editLayout = mLayoutInflater.inflate(R.layout.layout_string_edit, null);
+            AppCompatEditText mText = editLayout.findViewById(R.id.text);
+            MaterialCardView mReload = editLayout.findViewById(R.id.reload);
+
+            mReload.setOnClickListener(view -> {
+                if (mText.getText() != null && !mText.getText().toString().trim().equals(data.get(position).getDescription())) {
+                    mText.setText(data.get(position).getDescription());
+                    mText.setSelection(mText.getText().length());
+                }
+            });
+
+            mText.setText(data.get(position).getDescription());
+            mText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                    if (s.toString().trim().contains("\n")) {
+                        mText.setText(s.toString().trim().replace("\n", "\\n"));
+                        sUtils.snackBar(mText, v.getContext().getString(R.string.line_break_message)).show();
+                    }
+                    if (s.toString().trim().contains("<") || s.toString().trim().contains(">")) {
+                        sUtils.snackBar(mText, v.getContext().getString(R.string.tag_complete_message)).show();
+                    }
+                }
+            });
+            mText.requestFocus();
+
+            new MaterialAlertDialogBuilder(v.getContext())
+                    .setView(editLayout)
+                    .setNegativeButton(R.string.cancel, (dialog, id) -> {
+                    })
+                    .setPositiveButton(R.string.yes, (dialog, id) -> {
+                                if (mText.getText() == null || mText.getText().toString().trim().isEmpty()
+                                        || mText.getText().toString().equals(data.get(position).getDescription())) {
+                                    return;
+                                }
+                                updateString(position, mText.getText().toString(), v.getContext());
+                            }
+                    ).show();
+        });
+        holder.layoutCard.setOnLongClickListener(v -> {
             new MaterialAlertDialogBuilder(holder.layoutCard.getContext())
                     .setMessage(holder.description.getContext().getString(R.string.delete_line_question, holder.description.getText()))
-                    .setNegativeButton(R.string.cancel, (dialog1, id1) -> {
+                    .setNegativeButton(R.string.cancel, (dialog, id) -> {
                     })
-                    .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
-
-                        Translator.deleteSingleString(data.get(position), holder.layoutCard.getContext());
-                        data.remove(position);
-                        notifyItemRemoved(position);
-                        notifyItemRangeChanged(position, data.size());
-                    })
-                    .show();
+                    .setPositiveButton(R.string.yes, (dialog, id) ->
+                            removeString(position, v.getContext())
+                    ).show();
             return false;
         });
     }
@@ -83,71 +129,56 @@ public class TranslatorAdapter extends RecyclerView.Adapter<TranslatorAdapter.Vi
         return data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         private final MaterialCardView layoutCard;
         private final MaterialTextView description;
 
         public ViewHolder(View view) {
             super(view);
-            view.setOnClickListener(this);
             this.description = view.findViewById(R.id.description);
             this.layoutCard = view.findViewById(R.id.recycler_view_card);
         }
+    }
 
-        @Override
-        public void onClick(View view) {
-            try {
-                LayoutInflater mLayoutInflater = LayoutInflater.from(view.getContext());
-                View editLayout = mLayoutInflater.inflate(R.layout.layout_string_edit, null);
-                AppCompatEditText mText = editLayout.findViewById(R.id.text);
-                MaterialCardView mReload = editLayout.findViewById(R.id.reload);
+    private void removeString(int position, Context context) {
+        new sExecutor() {
 
-                mReload.setOnClickListener(v -> {
-                    if (mText.getText() != null && !mText.getText().toString().trim().equals(data.get(getAdapterPosition()).getDescription())) {
-                        mText.setText(data.get(getAdapterPosition()).getDescription());
-                    }
-                });
+            @Override
+            public void onPreExecute() {
+            }
 
-                mText.setText(data.get(getAdapterPosition()).getDescription());
-                mText.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
+            @Override
+            public void doInBackground() {
+                data.remove(position);
+                sUtils.create(Translator.getStrings(data), new File(context.getFilesDir(), "strings.xml"));
+            }
 
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    }
+            @Override
+            public void onPostExecute() {
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, data.size());
+            }
+        }.execute();
+    }
 
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        if (s.toString().contains("\n")) {
-                            mText.setText(s.toString().replace("\n", "\\n"));
-                            sUtils.snackBar(mText, view.getContext().getString(R.string.line_break_message)).show();
-                        }
-                        if (s.toString().contains("<") || s.toString().contains(">")) {
-                            sUtils.snackBar(mText, view.getContext().getString(R.string.tag_complete_message)).show();
-                        }
-                    }
-                });
-                mText.requestFocus();
+    private void updateString(int position, String text, Context context) {
+        new sExecutor() {
 
-                new MaterialAlertDialogBuilder(view.getContext())
-                        .setView(editLayout)
-                        .setNegativeButton(R.string.cancel, (dialog1, id1) -> {
-                        })
-                        .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
-                            if (mText.getText() == null || mText.getText().toString().trim().isEmpty() ||
-                                    mText.getText().toString().trim().equals(data.get(getAdapterPosition()).getDescription())) {
-                                return;
-                            }
-                            String oldString = data.get(getAdapterPosition()).getTitle() + "\">\"" + data.get(getAdapterPosition()).getDescription() + "\"</string>";
-                            String newString = data.get(getAdapterPosition()).getTitle() + "\">\"" + mText.getText() + "\"</string>";
-                            sUtils.create(Translator.getStrings(view.getContext()).replace(oldString, newString), new File(view.getContext().getFilesDir(), "strings.xml"));
-                            data.get(getAdapterPosition()).setDescription(mText.getText().toString());
-                            notifyItemChanged(getAdapterPosition());
-                        }).show();
-            } catch (ArrayIndexOutOfBoundsException ignored) {}
-        }
+            @Override
+            public void onPreExecute() {
+            }
+
+            @Override
+            public void doInBackground() {
+                data.get(position).setDescription(text);
+                sUtils.create(Translator.getStrings(data), new File(context.getFilesDir(), "strings.xml"));
+            }
+
+            @Override
+            public void onPostExecute() {
+                notifyItemChanged(position);
+            }
+        }.execute();
     }
 
 }
