@@ -1,0 +1,1 @@
+Egy alkalmazás, amely segít más android alkalmazások fordításában!

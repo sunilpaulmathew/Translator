@@ -1,0 +1,21 @@
+<i>The Translator</i> egy egyszerû alkalmazás, amely segít lefordítani az android alkalmazásokat.
+
+<b>Jellemzõk</b>
+
+- Egyszerû, de elegáns felhasználói felület egy nyelvi karakterlánc egyes sorainak megjelenítéséhez.
+- Intelligens útmutató a felhasználóknak, hogy elkerüljék a hibákat.
+- Közvetlenül (mentés után) megoszthatja a karakterláncokat a fejlesztõkkel.
+- Hosszan nyomva eltávolíthatja az adott sort.
+- Sötét és világos témák.
+- Számos nyelvre le van fordítva (Kérem segítsen lefordítani ezt az alkalmazást. Az eredeti string.xml megtalálható a <a href='https://github.com/sunilpaulmathew/Translator/blob/master/app/src/main/res/values/strings.xml'>GitHubon</a>).
+- & Sokkal több
+
+<b>Hogyan mûködik?</b>
+
+- Szerezze be az eredeti string.xml fájlt (vagy annak URL-jét) a fejlesztõtõl (vagy a forrás tárolójából, ha az alkalmazás nyílt forráskódú).
+- Importálja („sdcard”-ról vagy az URL-rõl) a fordítóba (Beállítások --> Importálás „karakterlánc”).
+- Az alkalmazás minden egyes lefordítható karakterláncot külön bejegyzésként listáz.
+- Kattintson rájuk és cserélje ki az eredeti szöveget az Ön nyelvén készült fordításra.
+- Kérem kövesse a képernyõn megjelenõ utasításokat a hibák elkerülése érdekében (PIROS szín - Hiba).
+- Ha végzett mentse el munkáját az alul található mentés gombra kattintva (vagy a Beállítások --> Nézet, 'karakterlánc' menüpontban).
+- Küldje el az „sdcard” címen található új xml fájlt a fejlesztõnek és türelmesen várja meg a frissítést.
