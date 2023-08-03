@@ -1,21 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+   
 
     <string name="about">O aplikacji</string>
     <string name="about_summary"><i>Aplikacja pomagająca w tłumaczeniu innych aplikacji na system Android!</i></string>
-    <string name="change_logs">Dzienniki zmian</string>
+    <string name="add_text_hint">dodaj-tekst-tutaj</string>
+    <string name="apply">Akceptuj</string>
+	<string name="change_logs">Dziennik zmian</string>
     <string name="delete_line_question">Na pewno chcesz usunąć \'%s\'?</string>
     <string name="delete_string">Usuń \'string\'</string>
     <string name="delete_string_message">Czy na pewno chcesz usunąć bieżący plik string.xml?</string>
     <string name="developed_by">Opracowany przez</string>
+	<string name="device_storage">Pamięć urządzenia</string>
     <string name="donations">Darowizny</string>
     <string name="donations_message">Jeśli chcesz docenić moją pracę, rozważ zakup pakietu darowizn SmartPack z PlayStore, pomoże to jeszcze szybciej rozwijać moje aplikacje, chociaż nie jest to wcale konieczne.</string>
     <string name="donations_summary">Jeśli chcesz docenić wysiłki dewelopera, w celu dostarczenia tej aplikacji całkowicie za darmo, nieinwazyjnie i bez reklam, rozważ wsparcie rozwoju w jakiś sposób. Kliknij tutaj, aby dowiedzieć się więcej. Dziękuję Ci!</string>
-    <string name="import_string_error">\'%s\' nie jest prawidłowym ciągiem językowym. Niepowodzenie!</string>
+    <string name="find_and_replace">Szukaj &amp; Zastąp</string>
+    <string name="find_and_replace_question">Zastąp wszystkie \"%s\"</string>
+    <string name="import_string">Importuj</string>
+	<string name="import_string_error">\'%s\' nie jest prawidłowym ciągiem językowym. Niepowodzenie!</string>
     <string name="import_string_message">Nie zaimportowałeś jeszcze żadnych plików z tłumaczeniami typu \'string\'. Przejdź do menu \'Ustawienia\' aby zaimportować je z \'sdcard\'!</string>
     <string name="import_string_sdcard">Importuj \'string\'</string>
     <string name="import_string_snackbar">Nie zaimportowałeś jeszcze żadnego pliku tłumaczenia \'string\'!</string>
-    <string name="licence">Licencja</string>
-    <string name="more_apps">Więcej od Dewelopera</string>
+    <string name="importing">Importowanie…</string>
+	<string name="licence">Licencja</string>
+    <string name="line_break_message">Przerwy w linii zostaną zastąpione \"\\"n\"</string>
+	<string name="more_apps">Więcej od Dewelopera</string>
     <string name="more_apps_summary">Sprawdź więcej aplikacji dostarczonych przez programistę w Google Play</string>
     <string name="name_empty">Nazwa jest pusta! Niepowodzenie!</string>
     <string name="no_internet">Sprawdź swoje połączenie z internetem!</string>
@@ -25,9 +34,11 @@
     <string name="rate_us_Summary">Oceń i/lub napisz recenzję aplikacji The Translator w PlayStore</string>
     <string name="report_issue">Zgłoś błąd</string>
     <string name="report_issue_summary">Zgłoś problem w GitHub</string>
-    <string name="save">Zapisz</string>
+    <string name="replace">Zastąp</string>
+	<string name="save">Zapisz</string>
     <string name="save_string_message">Nowy ciąg tłumaczenia jest generowany jako \'%s\'!</string>
-    <string name="search_hint">Wyszukiwanie…</string>
+    <string name="save_string_replace">%s już istnieje! Czy chcesz zastąpić?</string>
+	<string name="search_hint">Wyszukiwanie…</string>
     <string name="select_question">Wybierz %s?</string>
     <string name="settings">Ustawienia</string>
     <string name="share">Udostępnij</string>
@@ -40,8 +51,11 @@
     <string name="source_code_summary">The Translator jest aplikacją open source, która jest gotowa zaakceptować wkład społeczności programistów. Kliknij tutaj, aby sprawdzić kod źródłowy!</string>
     <string name="support">Grupa wsparcia</string>
     <string name="support_summary">Dołącz do grupy wsparcia Telegram</string>
-    <string name="translations_summary">Pomóż przetłumaczyć tę aplikację! Kliknij tutaj, aby uzyskać oryginalne ciągi językowe w języku angielskim</string>
+    <string name="tag_complete_message">Przed aktualizacją uzupełnij TAG (&lt; &amp; &gt;)</string>
+	<string name="translations_summary">Pomóż przetłumaczyć tę aplikację! Kliknij tutaj, aby uzyskać oryginalne ciągi językowe w języku angielskim</string>
     <string name="update">Aktualizuj</string>
-    <string name="view_string">Pokaż \'string\'</string>
-    <string name="yes">Tak</string>
+    <string name="url">URL</string>
+	<string name="view_string">Pokaż \'string\'</string>
+    <string name="with">z</string>
+	<string name="yes">Tak</string>
 </resources>
